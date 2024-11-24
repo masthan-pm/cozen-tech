@@ -2,33 +2,32 @@
   <div class="logo">
     <img src="assets/Cozen Logo.png" alt="Cozen Logo" class="logo-img" />
   </div>
-  <span class="spacer"></span>
   <nav>
-    <button mat-button routerLink="/home" class="active">Home</button>
-    <button mat-button routerLink="/about">About Us</button>
+    @for (item of navItems; track $index) { @if (!item.isDropdown) {
+    <button mat-button [routerLink]="item.route">
+      {{ item.label }}
+    </button>
+    } @if (item.isDropdown) {
     <button
       mat-button
       [matMenuTriggerFor]="solutionsMenu"
       #menuTrigger="matMenuTrigger"
+      (menuOpened)="toggleArrow()"
+      (menuClosed)="toggleArrow()"
     >
-      Our Solutions
-      <span class="material-icons"> expand_less </span>
-      <span class="material-icons"> expand_more </span>
-    </button>
-    <mat-menu #solutionsMenu="matMenu" yPosition="below">
-      <div (mouseleave)="menuTrigger.closeMenu()">
-        <button mat-menu-item routerLink="/solutions/solution1">
-          Solution 1
-        </button>
-        <button mat-menu-item routerLink="/solutions/solution2">
-          Solution 2
-        </button>
-      </div>
-    </mat-menu>
+      {{ item.label }}
+      <span
+        class="icon-{{ isOpen ? 'up-arrow' : 'down-arrow' }}"
+      ></span></button
+    >}
 
-    <button mat-button routerLink="/careers">Careers</button>
-    <button mat-button routerLink="/blog">Blog</button>
-    <button mat-button routerLink="/clients">Clients</button>
-    <button mat-button routerLink="/contact">Contact Us</button>
+    <mat-menu #solutionsMenu="matMenu" yPosition="below">
+      <div>
+        @for (subItem of item.submenu; track $index) {
+        <button mat-menu-item [routerLink]="subItem.route">
+          {{ subItem.label }}</button
+        >}
+      </div> </mat-menu
+    >}
   </nav>
 </mat-toolbar>
