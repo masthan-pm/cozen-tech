@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" class="header">
+  <div class="logo">
+    <img src="assets/Cozen Logo.png" alt="Cozen Logo" class="logo-img" />
+  </div>
+  <span class="spacer"></span>
+  <nav>
+    <button mat-button routerLink="/home" class="active">Home</button>
+    <button mat-button routerLink="/about">About Us</button>
+    <button
+      mat-button
+      [matMenuTriggerFor]="solutionsMenu"
+      #menuTrigger="matMenuTrigger"
+    >
+      Our Solutions
+      <span class="material-icons"> expand_less </span>
+      <span class="material-icons"> expand_more </span>
+    </button>
+    <mat-menu #solutionsMenu="matMenu" yPosition="below">
+      <div (mouseleave)="menuTrigger.closeMenu()">
+        <button mat-menu-item routerLink="/solutions/solution1">
+          Solution 1
+        </button>
+        <button mat-menu-item routerLink="/solutions/solution2">
+          Solution 2
+        </button>
+      </div>
+    </mat-menu>
+
+    <button mat-button routerLink="/careers">Careers</button>
+    <button mat-button routerLink="/blog">Blog</button>
+    <button mat-button routerLink="/clients">Clients</button>
+    <button mat-button routerLink="/contact">Contact Us</button>
+  </nav>
+</mat-toolbar>
