@@ -129,12 +129,10 @@ nav {
 
     .icon-down-arrow {
       background-image: url($menu-down-arrow-hovered);
-      transform: rotate(180deg);
     }
 
     .icon-up-arrow {
       background-image: url($menu-up-arrow-hovered);
-      transform: rotate(180deg);
     }
   }
 }
