@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { WelcomeComponent } from './components/main/welcome/welcome.component';
+import { SolutionsComponent } from './components/pages/solutions/solutions.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, WelcomeComponent],
+  imports: [HeaderComponent, WelcomeComponent, SolutionsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
