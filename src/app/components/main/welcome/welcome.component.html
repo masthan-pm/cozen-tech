@@ -1,42 +1,40 @@
 <div class="welcome-container">
-  <header class="hero">
-    <h1>
-      Welcome to <span class="highlight">{{ companyName }}</span>
-    </h1>
-    <p class="tagline">Empowering Global Business Through Technology</p>
-  </header>
-
-  <section class="main-content">
-    <div class="intro-text">
-      <p>
-        Cozen Technology Solutions (CTS) stands as an eminent symbol of
-        excellence in the worldwide IT, Business Consulting, and Outsourcing
-        domain.
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Empowering Your Business Through Technology</h1>
+      <p class="hero-description">
+        We connect top talent with innovative companies to drive digital
+        transformation and business success.
       </p>
-      <p>
-        Our foundational principles were crystal clear: leverage technology to
-        empower businesses, eliminate geographical barriers, streamline
-        processes, and enhance global profitability.
-      </p>
-      <p>
-        The journey we've embarked upon since then is characterized by nearly
-        {{ yearsFounded }} years of pioneering accomplishments, steadfast
-        dedication, and unparalleled proficiency.
-      </p>
+      <div class="hero-buttons">
+        <a routerLink="/solutions" class="btn btn-primary">
+          Our Solutions
+          <i class="arrow-right"></i>
+        </a>
+        <a routerLink="/contact" class="btn btn-secondary"> Contact Us </a>
+      </div>
     </div>
+  </section>
 
-    <div class="features">
-      <div class="feature-card">
-        <h3>IT Solutions</h3>
-        <p>Cutting-edge technology solutions tailored to your needs</p>
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-container">
+      <div class="stat-card">
+        <i class="users-icon"></i>
+        <h3>500+</h3>
+        <p>Clients Served</p>
       </div>
-      <div class="feature-card">
-        <h3>Business Consulting</h3>
-        <p>Strategic guidance for sustainable growth</p>
+      <div class="stat-card">
+        <i class="briefcase-icon"></i>
+        <h3>1000+</h3>
+        <p>Successful Placements</p>
       </div>
-      <div class="feature-card">
-        <h3>Outsourcing</h3>
-        <p>Global talent pool for optimal efficiency</p>
+      <div class="stat-card">
+        <i class="award-icon"></i>
+        <h3>98%</h3>
+        <p>Client Satisfaction</p>
       </div>
     </div>
   </section>
