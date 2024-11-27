@@ -3,7 +3,8 @@ import { SolutionsComponent } from './components/main/solutions/solutions.compon
 import { WelcomeComponent } from './components/main/welcome/welcome.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: WelcomeComponent },
   { path: 'home', component: WelcomeComponent },
   { path: 'solutions', component: SolutionsComponent },
   { path: '**', redirectTo: '/home' },
