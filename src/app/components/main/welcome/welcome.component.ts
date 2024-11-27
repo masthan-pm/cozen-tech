@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { CompanyOverviewComponent } from '../company-overview/company-overview.component';
+import { ServicesComponent } from '../services/services.component';
+import { SolutionsComponent } from '../solutions/solutions.component';
 
 @Component({
   selector: 'app-welcome',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    CompanyOverviewComponent,
+    ServicesComponent,
+    SolutionsComponent,
+  ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss',
 })
