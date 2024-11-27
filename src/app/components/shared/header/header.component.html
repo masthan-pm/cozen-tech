@@ -1,0 +1,33 @@
+<mat-toolbar color="primary" class="header">
+  <div class="logo">
+    <img src="assets/Cozen Logo.png" alt="Cozen Logo" class="logo-img" />
+  </div>
+  <nav>
+    @for (item of navItems; track $index) { @if (!item.isDropdown) {
+    <button mat-button [routerLink]="item.route">
+      {{ item.label }}
+    </button>
+    } @if (item.isDropdown) {
+    <button
+      mat-button
+      [matMenuTriggerFor]="solutionsMenu"
+      #menuTrigger="matMenuTrigger"
+      (menuOpened)="toggleArrow()"
+      (menuClosed)="toggleArrow()"
+    >
+      {{ item.label }}
+      <span
+        class="icon-{{ !isOpen ? 'up-arrow' : 'down-arrow' }}"
+      ></span></button
+    >}
+
+    <mat-menu #solutionsMenu="matMenu" yPosition="below">
+      <div>
+        @for (subItem of item.submenu; track $index) {
+        <button mat-menu-item [routerLink]="subItem.route">
+          {{ subItem.label }}</button
+        >}
+      </div> </mat-menu
+    >}
+  </nav>
+</mat-toolbar>

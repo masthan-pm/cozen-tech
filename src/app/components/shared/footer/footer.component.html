@@ -1,0 +1,76 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <!-- Company Info -->
+      <div class="company-info">
+        <div class="company-title">
+          <span class="material-icons">business</span>
+          <span class="company-name">Cozen Tech</span>
+        </div>
+        <p class="company-description">
+          Empowering businesses through innovative IT solutions and talent
+          acquisition.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li *ngFor="let item of quickLinks">
+            <a [routerLink]="['/' + item.toLowerCase().replace(' ', '-')]">
+              {{ item }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>
+            <span class="material-icons">email</span>
+            <a href="mailto:info@cozentech.com">{{ email }}</a>
+          </li>
+          <li>
+            <span class="material-icons">phone</span>
+            <a href="tel:+1234567890">(123) 456-7890</a>
+          </li>
+          <li>
+            <span class="material-icons">location_on</span>
+            <span>
+              123 Tech Street,<br />
+              Silicon Valley, CA 94025
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="social-media">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <span class="material-icons">facebook</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <span class="material-icons">facebook</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <span class="material-icons">facebook</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <span class="material-icons">facebook</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © {{ currentYear }} Cozen Technology Solutions. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

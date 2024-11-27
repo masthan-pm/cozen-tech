@@ -1,24 +1,20 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
-import { provideNativeDateAdapter } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { Component } from '@angular/core';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { WelcomeComponent } from './components/main/welcome/welcome.component';
+import { SolutionsComponent } from './components/main/solutions/solutions.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
+    HeaderComponent,
+    WelcomeComponent,
+    SolutionsComponent,
+    FooterComponent,
   ],
-  providers: [provideNativeDateAdapter()],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  standalone: true,
 })
 export class AppComponent {
   title = 'cozen-tech';
