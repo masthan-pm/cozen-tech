@@ -6,6 +6,7 @@ import { ServicesComponent } from '../services/services.component';
 import { SolutionsComponent } from '../solutions/solutions.component';
 import { ClientsComponent } from '../clients/clients.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-welcome',
@@ -17,6 +18,7 @@ import { TestimonialsComponent } from '../testimonials/testimonials.component';
     ServicesComponent,
     ClientsComponent,
     TestimonialsComponent,
+    ContactComponent,
     SolutionsComponent,
   ],
   templateUrl: './welcome.component.html',
