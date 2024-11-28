@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { GlobalComponent } from '../../pages/our-solutions/global/global.component';
 
 @Component({
   selector: 'app-solutions',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, GlobalComponent],
   templateUrl: './solutions.component.html',
   styleUrl: './solutions.component.scss',
 })
