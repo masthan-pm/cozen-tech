@@ -6,6 +6,7 @@ import { GlobalComponent } from './components/pages/our-solutions/global/global.
 import { StaffingComponent } from './components/pages/our-solutions/staffing/staffing.component';
 import { HRPayrollComponent } from './components/pages/our-solutions/hr-payroll/hr-payroll.component';
 import { FinanceComponent } from './components/pages/our-solutions/finance/finance.component';
+import { DataSupportComponent } from './components/pages/our-solutions/data-support/data-support.component';
 
 export const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: 'solutions/staffing', component: StaffingComponent },
   { path: 'solutions/hr-payroll', component: HRPayrollComponent },
   { path: 'solutions/finance', component: FinanceComponent },
+  { path: 'solutions/data-support', component: DataSupportComponent },
   { path: '**', redirectTo: '/home' },
 ];
