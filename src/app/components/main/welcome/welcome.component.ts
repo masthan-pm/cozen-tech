@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CompanyOverviewComponent } from '../company-overview/company-overview.component';
 import { ServicesComponent } from '../services/services.component';
 import { SolutionsComponent } from '../solutions/solutions.component';
+import { ClientsComponent } from '../clients/clients.component';
 
 @Component({
   selector: 'app-welcome',
@@ -13,6 +14,7 @@ import { SolutionsComponent } from '../solutions/solutions.component';
     RouterModule,
     CompanyOverviewComponent,
     ServicesComponent,
+    ClientsComponent,
     SolutionsComponent,
   ],
   templateUrl: './welcome.component.html',
