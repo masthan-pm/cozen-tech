@@ -5,6 +5,7 @@ import { CompanyOverviewComponent } from '../company-overview/company-overview.c
 import { ServicesComponent } from '../services/services.component';
 import { SolutionsComponent } from '../solutions/solutions.component';
 import { ClientsComponent } from '../clients/clients.component';
+import { TestimonialsComponent } from '../testimonials/testimonials.component';
 
 @Component({
   selector: 'app-welcome',
@@ -15,6 +16,7 @@ import { ClientsComponent } from '../clients/clients.component';
     CompanyOverviewComponent,
     ServicesComponent,
     ClientsComponent,
+    TestimonialsComponent,
     SolutionsComponent,
   ],
   templateUrl: './welcome.component.html',
