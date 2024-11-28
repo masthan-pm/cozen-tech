@@ -7,6 +7,7 @@ import { StaffingComponent } from './components/pages/our-solutions/staffing/sta
 import { HRPayrollComponent } from './components/pages/our-solutions/hr-payroll/hr-payroll.component';
 import { FinanceComponent } from './components/pages/our-solutions/finance/finance.component';
 import { DataSupportComponent } from './components/pages/our-solutions/data-support/data-support.component';
+import { BlogComponent } from './components/pages/blog/blog.component';
 
 export const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,5 +20,6 @@ export const routes: Routes = [
   { path: 'solutions/hr-payroll', component: HRPayrollComponent },
   { path: 'solutions/finance', component: FinanceComponent },
   { path: 'solutions/data-support', component: DataSupportComponent },
+  { path: 'blog', component: BlogComponent },
   { path: '**', redirectTo: '/home' },
 ];
