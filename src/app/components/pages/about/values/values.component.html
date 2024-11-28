@@ -1,0 +1,21 @@
+<section class="values-section">
+  <div class="container">
+    <div class="header">
+      <h2>Our Core Values</h2>
+      <p>
+        These principles guide every decision we make and shape how we work with
+        our clients, candidates, and team members.
+      </p>
+    </div>
+
+    <div class="values-grid">
+      <div *ngFor="let value of values" class="value-card">
+        <div class="icon-container">
+          <i class="material-icons">{{ value.icon }}</i>
+        </div>
+        <h3>{{ value.title }}</h3>
+        <p>{{ value.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
