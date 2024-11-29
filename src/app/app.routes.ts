@@ -10,6 +10,7 @@ import { DataSupportComponent } from './components/pages/our-solutions/data-supp
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { CareersComponent } from './components/pages/careers/careers.component';
 import { ClientsComponent } from './components/pages/clients/clients.component';
+import { MortgageComponent } from './components/pages/our-solutions/mortgage/mortgage.component';
 export const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '', component: WelcomeComponent },
@@ -24,5 +25,6 @@ export const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'careers', component: CareersComponent },
   { path: 'clients', component: ClientsComponent },
+  { path: 'solutions/mortgage', component: MortgageComponent },
   { path: '**', redirectTo: '/home' },
 ];
