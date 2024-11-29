@@ -9,7 +9,7 @@ import { FinanceComponent } from './components/pages/our-solutions/finance/finan
 import { DataSupportComponent } from './components/pages/our-solutions/data-support/data-support.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { CareersComponent } from './components/pages/careers/careers.component';
-
+import { ClientsComponent } from './components/pages/clients/clients.component';
 export const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '', component: WelcomeComponent },
@@ -23,5 +23,6 @@ export const routes: Routes = [
   { path: 'solutions/data-support', component: DataSupportComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'careers', component: CareersComponent },
+  { path: 'clients', component: ClientsComponent },
   { path: '**', redirectTo: '/home' },
 ];
