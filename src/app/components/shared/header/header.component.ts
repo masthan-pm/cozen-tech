@@ -46,7 +46,7 @@ export class HeaderComponent {
         { label: 'HR and Payroll Services', route: '/solutions/hr-payroll' },
         { label: 'Data Support', route: '/solutions/data-support' },
         { label: 'Mortgage Services', route: '/solutions/mortgage' },
-        { label: 'Master Vendor Program', route: '/solutions/vendor-program' },
+        { label: 'Master Vendor Program', route: '/solutions/master-vendor' },
         { label: 'Training Programs', route: '/solutions/training' },
         { label: 'Technologies', route: '/solutions/technologies' },
       ],
