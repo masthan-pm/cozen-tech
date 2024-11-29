@@ -67,6 +67,12 @@ nav {
   box-shadow: 0 2px 8px rgba(0, 11, 61, 0.1);
   animation: slideDown 0.5s ease-out;
   padding: 0 2rem;
+  height: auto;
+  min-height: 5.25rem;
+
+  @media (max-width: 1024px) {
+    padding: 0 1rem;
+  }
 
   .logo {
     display: flex;
@@ -80,6 +86,10 @@ nav {
       &:hover {
         transform: scale(1.05);
         filter: brightness(1.1);
+      }
+
+      @media (max-width: 768px) {
+        width: 8rem;
       }
     }
   }
@@ -138,6 +148,11 @@ nav {
       background-image: url($menu-up-arrow-hovered);
     }
   }
+
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 }
 
 .mat-menu-panel {
@@ -146,6 +161,39 @@ nav {
   margin-top: 0.5rem;
   box-shadow: 0 4px 20px rgba(0, 11, 61, 0.15);
   background: white;
+
+  // Menu panel adjustments for mobile
+  @media (max-width: 1024px) {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &.open {
+      display: flex;
+      animation: slideDown 0.3s ease-out;
+    }
+
+    .mat-mdc-button-base {
+      width: 100%;
+      justify-content: flex-start;
+      padding: 0.75rem 1rem;
+
+      &:hover {
+        background-color: rgba($primary-color, 0.05);
+      }
+    }
+
+    .mat-icon {
+      margin-left: auto;
+    }
+  }
 }
 
 .mat-menu-item {
@@ -245,4 +293,61 @@ nav {
 
 body {
   padding-top: 6.25rem;
+}
+
+// Desktop Navigation
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+// Mobile Menu Button
+.mobile-menu-btn {
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Mobile Navigation
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  gap: 0.5rem;
+
+  @media (max-width: 1024px) {
+    &.open {
+      display: flex;
+      animation: slideDown 0.3s ease-out;
+    }
+  }
+
+  .mat-mdc-button-base {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+
+    &:hover {
+      background-color: rgba($primary-color, 0.05);
+    }
+  }
+
+  .mat-icon {
+    margin-left: auto;
+  }
 }

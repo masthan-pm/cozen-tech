@@ -20,13 +20,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  // TODO: 1.Need to change the our solutions dropdown design
-  // TODO: 2. Scroll to top button is missing
-  // TODO: 3. On scroll color of the header is not changing
   isOpen: boolean = false;
+  isMobileMenuOpen: boolean = false;
+
   toggleArrow() {
     this.isOpen = !this.isOpen;
   }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
   navItems = [
     { label: 'Home', route: '/home' },
     { label: 'About Us', route: '/about' },

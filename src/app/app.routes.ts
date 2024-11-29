@@ -14,11 +14,12 @@ import { MortgageComponent } from './components/pages/our-solutions/mortgage/mor
 import { MasterVendorComponent } from './components/pages/our-solutions/master-vendor/master-vendor.component';
 import { TrainingComponent } from './components/pages/our-solutions/training/training.component';
 import { TechnologiesComponent } from './components/pages/our-solutions/technologies/technologies.component';
+import { OurSolutionsComponent } from './components/pages/our-solutions/our-solutions.component';
 export const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '', component: WelcomeComponent },
   { path: 'home', component: WelcomeComponent },
-  { path: 'solutions', component: SolutionsComponent },
+  { path: 'solutions', component: OurSolutionsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'solutions/global', component: GlobalComponent },
   { path: 'solutions/staffing', component: StaffingComponent },

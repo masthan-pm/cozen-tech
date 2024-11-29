@@ -42,6 +42,89 @@ export class OurSolutionsComponent {
         'Direct Hire',
       ],
     },
-    // ... (remaining solutions following the same pattern)
+    {
+      icon: 'storage',
+      title: 'Data Support',
+      description:
+        'Comprehensive data management and analytics solutions to drive informed decision-making.',
+      features: [
+        'Data Analytics',
+        'Database Management',
+        'Business Intelligence',
+        'Data Migration',
+      ],
+    },
+    {
+      icon: 'trending_up',
+      title: 'Finance and Accounting',
+      description:
+        'Expert financial services and accounting solutions for business growth and compliance.',
+      features: [
+        'Financial Analysis',
+        'Accounting Services',
+        'Risk Management',
+        'Compliance',
+      ],
+    },
+    {
+      icon: 'security',
+      title: 'HR and Payroll Services',
+      description:
+        'Streamline your HR operations with our comprehensive human resources solutions.',
+      features: [
+        'Payroll Processing',
+        'Benefits Administration',
+        'HR Consulting',
+        'Employee Management',
+      ],
+    },
+    {
+      icon: 'business_center',
+      title: 'Master Vendor Program',
+      description:
+        'Simplified vendor management and procurement processes for enhanced efficiency.',
+      features: [
+        'Vendor Management',
+        'Cost Optimization',
+        'Quality Control',
+        'Performance Tracking',
+      ],
+    },
+    {
+      icon: 'school',
+      title: 'Training Programs',
+      description:
+        'Comprehensive training solutions to upskill your workforce and stay competitive.',
+      features: [
+        'Technical Training',
+        'Soft Skills Development',
+        'Leadership Programs',
+        'Certification Courses',
+      ],
+    },
+    {
+      icon: 'code',
+      title: 'Technologies',
+      description:
+        'Cutting-edge technology solutions across various domains and platforms.',
+      features: [
+        'Cloud Computing',
+        'AI & Machine Learning',
+        'Blockchain',
+        'IoT Solutions',
+      ],
+    },
+    {
+      icon: 'home',
+      title: 'Mortgage Services',
+      description:
+        'Comprehensive mortgage processing and underwriting solutions for financial institutions.',
+      features: [
+        'Loan Processing',
+        'Underwriting Services',
+        'Document Verification',
+        'Compliance Review',
+      ],
+    },
   ];
 }
