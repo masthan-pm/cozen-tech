@@ -2,6 +2,12 @@ import { Routes } from '@angular/router';
 import { SolutionsComponent } from './components/main/solutions/solutions.component';
 import { WelcomeComponent } from './components/main/welcome/welcome.component';
 import { AboutComponent } from './components/pages/about/about.component';
+import { GlobalComponent } from './components/pages/our-solutions/global/global.component';
+import { StaffingComponent } from './components/pages/our-solutions/staffing/staffing.component';
+import { HRPayrollComponent } from './components/pages/our-solutions/hr-payroll/hr-payroll.component';
+import { FinanceComponent } from './components/pages/our-solutions/finance/finance.component';
+import { DataSupportComponent } from './components/pages/our-solutions/data-support/data-support.component';
+import { BlogComponent } from './components/pages/blog/blog.component';
 
 export const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -9,5 +15,11 @@ export const routes: Routes = [
   { path: 'home', component: WelcomeComponent },
   { path: 'solutions', component: SolutionsComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'solutions/global', component: GlobalComponent },
+  { path: 'solutions/staffing', component: StaffingComponent },
+  { path: 'solutions/hr-payroll', component: HRPayrollComponent },
+  { path: 'solutions/finance', component: FinanceComponent },
+  { path: 'solutions/data-support', component: DataSupportComponent },
+  { path: 'blog', component: BlogComponent },
   { path: '**', redirectTo: '/home' },
 ];

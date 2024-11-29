@@ -36,7 +36,7 @@ export class HeaderComponent {
       submenu: [
         {
           label: 'Global Technology Solutions',
-          route: '/solutions/global-tech',
+          route: 'solutions/global',
         },
         { label: 'Staffing and Recruitment', route: '/solutions/staffing' },
         {

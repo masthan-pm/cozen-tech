@@ -1,0 +1,91 @@
+<div class="staffing-solutions">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Staffing & Recruitment</h1>
+      <p>
+        Connect with exceptional tech talent through our comprehensive
+        recruitment solutions
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="header">
+        <h2>Our Recruitment Services</h2>
+        <p>
+          Comprehensive staffing solutions tailored to meet your technical
+          talent needs.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div *ngFor="let service of services" class="service-card">
+          <div class="card-content">
+            <div class="title-wrapper">
+              <i class="material-icons">{{ service.icon }}</i>
+              <h3>{{ service.title }}</h3>
+            </div>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <div class="header">
+        <h2>Our Recruitment Process</h2>
+        <p>
+          A proven methodology to identify and secure the best talent for your
+          organization.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div *ngFor="let phase of phases" class="phase-card">
+          <div class="step-number">{{ phase.step }}</div>
+          <h3>{{ phase.title }}</h3>
+          <p>{{ phase.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specializations Section -->
+  <section class="specializations-section">
+    <div class="container">
+      <div class="header">
+        <h2>Our Specializations</h2>
+        <p>
+          We specialize in recruiting for various technical domains and roles.
+        </p>
+      </div>
+
+      <div class="tech-grid">
+        <div *ngFor="let specialization of specializations" class="tech-card">
+          <span>{{ specialization }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="content">
+        <h2>Ready to Find Your Next Tech Star?</h2>
+        <p>
+          Let's discuss how our recruitment solutions can help build your dream
+          team.
+        </p>
+        <a routerLink="/contact" class="cta-button">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+</div>
