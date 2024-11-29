@@ -13,8 +13,8 @@ interface Solution {
   selector: 'app-our-solutions',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './our-solutions.component.html',
-  styleUrls: ['./our-solutions.component.scss'],
+  templateUrl: './solutions.component.html',
+  styleUrls: ['./solutions.component.scss'],
 })
 export class OurSolutionsComponent {
   solutions: Solution[] = [
