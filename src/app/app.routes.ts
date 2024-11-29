@@ -13,6 +13,7 @@ import { ClientsComponent } from './components/pages/clients/clients.component';
 import { MortgageComponent } from './components/pages/our-solutions/mortgage/mortgage.component';
 import { MasterVendorComponent } from './components/pages/our-solutions/master-vendor/master-vendor.component';
 import { TrainingComponent } from './components/pages/our-solutions/training/training.component';
+import { TechnologiesComponent } from './components/pages/our-solutions/technologies/technologies.component';
 export const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '', component: WelcomeComponent },
@@ -30,5 +31,6 @@ export const routes: Routes = [
   { path: 'solutions/mortgage', component: MortgageComponent },
   { path: 'solutions/master-vendor', component: MasterVendorComponent },
   { path: 'solutions/training', component: TrainingComponent },
+  { path: 'solutions/technologies', component: TechnologiesComponent },
   { path: '**', redirectTo: '/home' },
 ];

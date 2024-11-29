@@ -1,0 +1,95 @@
+<div class="technologies-solutions">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Technologies</h1>
+      <p>
+        Leverage cutting-edge technologies to drive innovation and digital
+        transformation
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="header">
+        <h2>Technology Solutions</h2>
+        <p>
+          Comprehensive technology solutions to power your digital
+          transformation.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div *ngFor="let service of services" class="service-card">
+          <div class="card-content">
+            <div class="title-wrapper">
+              <i class="material-icons">{{ service.icon }}</i>
+              <h3>{{ service.title }}</h3>
+            </div>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="tech-stack-section">
+    <div class="container">
+      <div class="header">
+        <h2>Our Tech Stack</h2>
+        <p>
+          Modern technologies we use to build robust and scalable solutions.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div *ngFor="let stack of techStack" class="feature-card">
+          <h3>{{ stack.category }}</h3>
+          <ul>
+            <li *ngFor="let tech of stack.technologies">
+              <span class="bullet"></span>
+              {{ tech }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="header">
+        <h2>Key Features</h2>
+        <p>Essential features of our technology solutions.</p>
+      </div>
+
+      <div class="features-grid">
+        <div *ngFor="let feature of features" class="feature-card">
+          <h3>{{ feature.category }}</h3>
+          <ul>
+            <li *ngFor="let item of feature.items">
+              <span class="bullet"></span>
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="content">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Let's discuss how our technology solutions can help you succeed.</p>
+        <a routerLink="/contact" class="cta-button">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+</div>
