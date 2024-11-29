@@ -8,6 +8,7 @@ import { HRPayrollComponent } from './components/pages/our-solutions/hr-payroll/
 import { FinanceComponent } from './components/pages/our-solutions/finance/finance.component';
 import { DataSupportComponent } from './components/pages/our-solutions/data-support/data-support.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
+import { CareersComponent } from './components/pages/careers/careers.component';
 
 export const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,5 +22,6 @@ export const routes: Routes = [
   { path: 'solutions/finance', component: FinanceComponent },
   { path: 'solutions/data-support', component: DataSupportComponent },
   { path: 'blog', component: BlogComponent },
+  { path: 'careers', component: CareersComponent },
   { path: '**', redirectTo: '/home' },
 ];
