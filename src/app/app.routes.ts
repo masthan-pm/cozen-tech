@@ -15,6 +15,7 @@ import { TrainingComponent } from './components/pages/solutions/training/trainin
 import { TechnologiesComponent } from './components/pages/solutions/technologies/technologies.component';
 import { OurSolutionsComponent } from './components/pages/solutions/solutions.component';
 export const routes: Routes = [
+  // All ROutes
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '', component: WelcomeComponent },
   { path: 'home', component: WelcomeComponent },
