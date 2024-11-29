@@ -1,0 +1,108 @@
+<div class="clients-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Our Clients</h1>
+      <p>Partnering with leading companies to drive innovation and growth</p>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <section class="clients-section">
+    <div class="container">
+      <div class="header">
+        <h2>Trusted by Industry Leaders</h2>
+        <p>
+          We work with companies of all sizes, from startups to enterprises,
+          helping them build exceptional teams.
+        </p>
+      </div>
+
+      <div class="clients-grid">
+        <div *ngFor="let client of clients" class="client-card">
+          <img [src]="client.logo" [alt]="client.name" class="client-logo" />
+          <span class="sr-only">{{ client.name }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="header">
+        <h2>What Our Clients Say</h2>
+        <p>
+          Don't just take our word for it - hear from some of our satisfied
+          clients.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div *ngFor="let testimonial of testimonials" class="testimonial-card">
+          <div class="quote-icon">
+            <i class="material-icons">format_quote</i>
+          </div>
+          <div class="profile">
+            <img
+              [src]="testimonial.image"
+              [alt]="testimonial.name"
+              class="profile-image"
+            />
+            <div class="profile-info">
+              <h3>{{ testimonial.name }}</h3>
+              <p>{{ testimonial.position }}</p>
+            </div>
+          </div>
+          <p class="quote">{{ testimonial.quote }}</p>
+          <div class="stars">
+            <i *ngFor="let star of stars" class="material-icons">star</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="success-stories-section">
+    <div class="container">
+      <div class="header">
+        <h2>Success Stories</h2>
+        <p>Real results from our partnerships with leading companies.</p>
+      </div>
+
+      <div class="stories-grid">
+        <div *ngFor="let story of successStories" class="story-card">
+          <img [src]="story.image" [alt]="story.title" class="story-image" />
+          <div class="card-content">
+            <h3>{{ story.title }}</h3>
+            <p>{{ story.description }}</p>
+            <ul class="results-list">
+              <li *ngFor="let result of story.results">
+                <span class="bullet"></span>
+                {{ result }}
+              </li>
+            </ul>
+            <a routerLink="/contact" class="read-more">
+              Read Full Story
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Join Our Success Stories?</h2>
+      <p>
+        Let's discuss how we can help you achieve your business goals through
+        our IT solutions and talent acquisition services.
+      </p>
+      <a routerLink="/contact" class="cta-button"> Get Started Today </a>
+    </div>
+  </section>
+</div>

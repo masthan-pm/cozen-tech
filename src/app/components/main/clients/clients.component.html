@@ -1,0 +1,18 @@
+<section class="clients-section">
+  <div class="container">
+    <div class="header">
+      <h2>Trusted by Industry Leaders</h2>
+      <p>
+        We work with forward-thinking companies across various industries,
+        helping them achieve their technology and talent goals.
+      </p>
+    </div>
+
+    <div class="clients-grid">
+      <div *ngFor="let client of clients; let i = index" class="client-card">
+        <img [src]="client.logo" [alt]="client.name" class="client-logo" />
+        <span class="sr-only">{{ client.name }}</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<section class="hero-section">
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>About Cozen Tech</h1>
+    <p>
+      Building the future of technology through innovation and exceptional
+      talent since 2010
+    </p>
+  </div>
+</section>
+
+<section class="mission-section">
+  <div class="container">
+    <div class="header">
+      <h2>Our Mission</h2>
+      <p>
+        To bridge the gap between exceptional talent and innovative companies,
+        fostering growth and success in the ever-evolving technology landscape.
+        We strive to be the catalyst that transforms businesses through
+        cutting-edge technology solutions and unparalleled talent acquisition
+        services.
+      </p>
+    </div>
+
+    <div class="stats-grid">
+      <div *ngFor="let item of stats" class="stat-card">
+        <i class="material-icons">{{ item.icon }}</i>
+        <h3>{{ item.stat }}</h3>
+        <p>{{ item.label }}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,93 @@
+<div class="data-support-solutions">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Data Support Services</h1>
+      <p>
+        Transform your data into actionable insights with our comprehensive data
+        management solutions
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="header">
+        <h2>Our Data Services</h2>
+        <p>
+          Comprehensive data solutions to help you make informed business
+          decisions.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div *ngFor="let service of services" class="service-card">
+          <div class="card-content">
+            <div class="title-wrapper">
+              <i class="material-icons">{{ service.icon }}</i>
+              <h3>{{ service.title }}</h3>
+            </div>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <div class="header">
+        <h2>Our Data Management Process</h2>
+        <p>A systematic approach to handling your data needs effectively.</p>
+      </div>
+
+      <div class="process-grid">
+        <div *ngFor="let phase of phases" class="phase-card">
+          <div class="step-number">{{ phase.step }}</div>
+          <h3>{{ phase.title }}</h3>
+          <p>{{ phase.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Section -->
+  <section class="capabilities-section">
+    <div class="container">
+      <div class="header">
+        <h2>Our Capabilities</h2>
+        <p>
+          Comprehensive data management capabilities across various domains.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div *ngFor="let capability of capabilities" class="feature-card">
+          <h3>{{ capability.category }}</h3>
+          <ul>
+            <li *ngFor="let item of capability.items">
+              <span class="bullet"></span>
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="content">
+        <h2>Ready to Transform Your Data?</h2>
+        <p>
+          Let's discuss how our data solutions can drive your business success.
+        </p>
+        <a routerLink="/contact" class="cta-button">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,387 @@
+.clients-page {
+  width: 100%;
+}
+
+// Hero Section styles
+.hero-section {
+  height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-image: url("/assets/HR.png");
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 0.6s ease-out;
+  text-align: center;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+// Container styles
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  color: white;
+
+  @media (min-width: 640px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeInDown 0.8s ease-out;
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    max-width: 42rem;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out;
+  }
+}
+
+// Clients section styles
+.clients-section {
+  padding: 5rem 0;
+  background-color: white;
+
+  .container {
+    color: inherit;
+  }
+}
+
+// Header styles
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInDown 0.6s ease-out;
+
+  h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+}
+
+// Clients grid styles
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.client-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .client-logo {
+    height: 3rem;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+
+  &:hover .client-logo {
+    filter: grayscale(0%);
+  }
+}
+
+// Testimonials section styles
+.testimonials-section {
+  padding: 5rem 0;
+  background-color: #f9fafb;
+
+  .container {
+    color: inherit;
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease-out;
+
+  .quote-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: #e5e7eb;
+
+    i {
+      font-size: 2rem;
+    }
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .profile-image {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 1rem;
+    }
+
+    .profile-info {
+      h3 {
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 0.25rem;
+      }
+
+      p {
+        color: #6b7280;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  .quote {
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .stars {
+    color: #fbbf24;
+    display: flex;
+    gap: 0.25rem;
+
+    i {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// Success Stories section styles
+.success-stories-section {
+  padding: 5rem 0;
+  background-color: white;
+
+  .container {
+    color: inherit;
+  }
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.story-card {
+  background: #f9fafb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .story-image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #4b5563;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+  }
+
+  .results-list {
+    margin-bottom: 1.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      color: #4b5563;
+      margin-bottom: 0.5rem;
+
+      .bullet {
+        width: 0.375rem;
+        height: 0.375rem;
+        background-color: #0d6efd;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .read-more {
+    display: inline-flex;
+    align-items: center;
+    color: #0d6efd;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #0b5ed7;
+    }
+
+    i {
+      font-size: 1.125rem;
+      margin-left: 0.25rem;
+    }
+  }
+}
+
+// CTA Section styles
+.cta-section {
+  padding: 5rem 0;
+  background-color: #0d6efd;
+  text-align: center;
+
+  .container {
+    max-width: 48rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: white;
+    color: #0d6efd;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f9fafb;
+    }
+  }
+}
+
+// Utility classes
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
