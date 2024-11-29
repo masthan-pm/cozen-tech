@@ -12,6 +12,7 @@ import { CareersComponent } from './components/pages/careers/careers.component';
 import { ClientsComponent } from './components/pages/clients/clients.component';
 import { MortgageComponent } from './components/pages/our-solutions/mortgage/mortgage.component';
 import { MasterVendorComponent } from './components/pages/our-solutions/master-vendor/master-vendor.component';
+import { TrainingComponent } from './components/pages/our-solutions/training/training.component';
 export const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '', component: WelcomeComponent },
@@ -28,5 +29,6 @@ export const routes: Routes = [
   { path: 'clients', component: ClientsComponent },
   { path: 'solutions/mortgage', component: MortgageComponent },
   { path: 'solutions/master-vendor', component: MasterVendorComponent },
+  { path: 'solutions/training', component: TrainingComponent },
   { path: '**', redirectTo: '/home' },
 ];
