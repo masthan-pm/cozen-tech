@@ -1,0 +1,109 @@
+<div class="training-solutions">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Training Programs</h1>
+      <p>
+        Empower your workforce with comprehensive technical and professional
+        development programs
+      </p>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="header">
+        <h2>Our Training Programs</h2>
+        <p>
+          Comprehensive learning solutions designed to enhance skills and
+          accelerate careers.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div *ngFor="let program of programs" class="service-card">
+          <div class="card-content">
+            <div class="title-wrapper">
+              <i class="material-icons">{{ program.icon }}</i>
+              <h3>{{ program.title }}</h3>
+            </div>
+            <p>{{ program.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <div class="header">
+        <h2>Learning Journey</h2>
+        <p>
+          A structured approach to skill development and professional growth.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div *ngFor="let phase of phases" class="phase-card">
+          <div class="step-number">{{ phase.step }}</div>
+          <h3>{{ phase.title }}</h3>
+          <p>{{ phase.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="header">
+        <h2>Program Features</h2>
+        <p>Comprehensive training features designed for effective learning.</p>
+      </div>
+
+      <div class="features-grid">
+        <div *ngFor="let feature of features" class="feature-card">
+          <h3>{{ feature.category }}</h3>
+          <ul>
+            <li *ngFor="let item of feature.items">
+              <span class="bullet"></span>
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section class="technologies-section">
+    <div class="container">
+      <div class="header">
+        <h2>Technologies Covered</h2>
+        <p>
+          Stay current with training in the latest technologies and frameworks.
+        </p>
+      </div>
+
+      <div class="tech-grid">
+        <div *ngFor="let tech of technologies" class="tech-card">
+          <span>{{ tech }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="content">
+        <h2>Ready to Start Your Learning Journey?</h2>
+        <p>Let's discuss how our training programs can benefit your team.</p>
+        <a routerLink="/contact" class="cta-button">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+</div>

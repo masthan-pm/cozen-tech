@@ -1,19 +1,25 @@
 import { Routes } from '@angular/router';
-import { SolutionsComponent } from './components/main/solutions/solutions.component';
 import { WelcomeComponent } from './components/main/welcome/welcome.component';
 import { AboutComponent } from './components/pages/about/about.component';
-import { GlobalComponent } from './components/pages/our-solutions/global/global.component';
-import { StaffingComponent } from './components/pages/our-solutions/staffing/staffing.component';
-import { HRPayrollComponent } from './components/pages/our-solutions/hr-payroll/hr-payroll.component';
-import { FinanceComponent } from './components/pages/our-solutions/finance/finance.component';
-import { DataSupportComponent } from './components/pages/our-solutions/data-support/data-support.component';
+import { GlobalComponent } from './components/pages/solutions/global/global.component';
+import { StaffingComponent } from './components/pages/solutions/staffing/staffing.component';
+import { HRPayrollComponent } from './components/pages/solutions/hr-payroll/hr-payroll.component';
+import { FinanceComponent } from './components/pages/solutions/finance/finance.component';
+import { DataSupportComponent } from './components/pages/solutions/data-support/data-support.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
-
+import { CareersComponent } from './components/pages/careers/careers.component';
+import { ClientsComponent } from './components/pages/clients/clients.component';
+import { MortgageComponent } from './components/pages/solutions/mortgage/mortgage.component';
+import { MasterVendorComponent } from './components/pages/solutions/master-vendor/master-vendor.component';
+import { TrainingComponent } from './components/pages/solutions/training/training.component';
+import { TechnologiesComponent } from './components/pages/solutions/technologies/technologies.component';
+import { OurSolutionsComponent } from './components/pages/solutions/solutions.component';
 export const routes: Routes = [
+  // All ROutes
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '', component: WelcomeComponent },
   { path: 'home', component: WelcomeComponent },
-  { path: 'solutions', component: SolutionsComponent },
+  { path: 'solutions', component: OurSolutionsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'solutions/global', component: GlobalComponent },
   { path: 'solutions/staffing', component: StaffingComponent },
@@ -21,5 +27,11 @@ export const routes: Routes = [
   { path: 'solutions/finance', component: FinanceComponent },
   { path: 'solutions/data-support', component: DataSupportComponent },
   { path: 'blog', component: BlogComponent },
+  { path: 'careers', component: CareersComponent },
+  { path: 'clients', component: ClientsComponent },
+  { path: 'solutions/mortgage', component: MortgageComponent },
+  { path: 'solutions/master-vendor', component: MasterVendorComponent },
+  { path: 'solutions/training', component: TrainingComponent },
+  { path: 'solutions/technologies', component: TechnologiesComponent },
   { path: '**', redirectTo: '/home' },
 ];

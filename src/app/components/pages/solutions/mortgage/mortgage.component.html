@@ -1,0 +1,95 @@
+<div class="mortgage-solutions">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Mortgage Services</h1>
+      <p>
+        Streamline your mortgage operations with our comprehensive processing
+        solutions
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="header">
+        <h2>Our Mortgage Services</h2>
+        <p>
+          Comprehensive mortgage processing solutions to streamline your
+          operations.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div *ngFor="let service of services" class="service-card">
+          <div class="card-content">
+            <div class="title-wrapper">
+              <i class="material-icons">{{ service.icon }}</i>
+              <h3>{{ service.title }}</h3>
+            </div>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <div class="header">
+        <h2>Our Mortgage Process</h2>
+        <p>A streamlined approach to mortgage processing and underwriting.</p>
+      </div>
+
+      <div class="process-grid">
+        <div *ngFor="let phase of process" class="process-card">
+          <div class="step-number">{{ phase.step }}</div>
+          <h3>{{ phase.title }}</h3>
+          <p>{{ phase.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="header">
+        <h2>Service Features</h2>
+        <p>
+          Comprehensive mortgage processing features to ensure efficiency and
+          accuracy.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div *ngFor="let feature of features" class="feature-card">
+          <h3>{{ feature.category }}</h3>
+          <ul>
+            <li *ngFor="let item of feature.items">
+              <span class="bullet"></span>
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="content">
+        <h2>Ready to Streamline Your Mortgage Operations?</h2>
+        <p>
+          Let's discuss how our mortgage services can enhance your business
+          efficiency.
+        </p>
+        <a routerLink="/contact" class="cta-button">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+</div>
