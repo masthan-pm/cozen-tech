@@ -160,6 +160,10 @@ nav {
       height: 2px;
       background-color: $accent-color;
     }
+
+    &:hover {
+      color: white;
+    }
   }
 
   @media (max-width: 1024px) {
