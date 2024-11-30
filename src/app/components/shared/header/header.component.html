@@ -27,16 +27,18 @@
       <span class="icon-{{ !isOpen ? 'up-arrow' : 'down-arrow' }}"></span>
     </button>
 
-    <mat-menu #solutionsMenu="matMenu" yPosition="below">
-      @for (subItem of item.submenu; track $index) {
-      <div class="dropdown-item">
-        <a [routerLink]="subItem.route">
-          <div class="dropdown-content">
-            <span class="dropdown-label">{{ subItem.label }}</span>
-          </div>
-        </a>
+    <mat-menu #solutionsMenu="matMenu" yPosition="below" [hasBackdrop]="false">
+      <div (mouseleave)="menuTrigger.closeMenu()">
+        @for (subItem of item.submenu; track $index) {
+        <div class="dropdown-item">
+          <a [routerLink]="subItem.route">
+            <div class="dropdown-content">
+              <span class="dropdown-label">{{ subItem.label }}</span>
+            </div>
+          </a>
+        </div>
+        }
       </div>
-      }
     </mat-menu>
     } }
   </nav>
