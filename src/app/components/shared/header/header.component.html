@@ -6,7 +6,12 @@
   <!-- Desktop Navigation -->
   <nav class="desktop-nav">
     @for (item of navItems; track $index) { @if (!item.isDropdown) {
-    <button mat-button [routerLink]="item.route">
+    <button
+      mat-button
+      [routerLink]="item.route"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       {{ item.label }}
     </button>
     } @if (item.isDropdown) {

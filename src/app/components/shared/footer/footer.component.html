@@ -18,8 +18,8 @@
         <h3>Quick Links</h3>
         <ul>
           <li *ngFor="let item of quickLinks">
-            <a [routerLink]="['/' + item.toLowerCase().replace(' ', '-')]">
-              {{ item }}
+            <a [routerLink]="item.path">
+              {{ item.title }}
             </a>
           </li>
         </ul>
