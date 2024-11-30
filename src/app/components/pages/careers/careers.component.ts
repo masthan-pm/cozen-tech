@@ -115,8 +115,8 @@ export class CareersComponent {
     },
   ];
 
-  toggleJob(index: number) {
-    this.expandedJob = this.expandedJob === index ? null : index;
+  toggleJob(index: number | null) {
+    this.expandedJob = index;
   }
 
   get filteredJobs() {

@@ -43,7 +43,12 @@
   <section class="jobs-section">
     <div class="container">
       <div class="jobs-grid">
-        <div *ngFor="let job of filteredJobs; let i = index" class="job-card">
+        <div
+          *ngFor="let job of filteredJobs; let i = index"
+          class="job-card"
+          (mouseenter)="toggleJob(i)"
+          (mouseleave)="toggleJob(null)"
+        >
           <div class="card-content">
             <div class="job-header">
               <div class="job-info">
