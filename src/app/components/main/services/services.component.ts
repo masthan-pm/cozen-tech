@@ -7,6 +7,7 @@ interface Service {
   title: string;
   description: string;
   image: string;
+  destinatedLink: string;
 }
 
 @Component({
@@ -24,6 +25,7 @@ export class ServicesComponent {
       description:
         'End-to-end software development and IT consulting services tailored to your business needs.',
       image: 'assets/Global.png',
+      destinatedLink: '/solutions/global',
     },
     {
       icon: 'group',
@@ -31,6 +33,7 @@ export class ServicesComponent {
       description:
         'Connect with top tech talent through our extensive network and proven recruitment process.',
       image: 'assets/staffing.png',
+      destinatedLink: '/solutions/staffing',
     },
     {
       icon: 'attach_money',
@@ -38,6 +41,7 @@ export class ServicesComponent {
       description:
         'Comprehensive financial services and solutions to drive business growth and success.',
       image: 'assets/finance.png',
+      destinatedLink: '/solutions/finance',
     },
     {
       icon: 'shield',
@@ -45,6 +49,7 @@ export class ServicesComponent {
       description:
         'Streamline your HR operations with our comprehensive human resources solutions.',
       image: 'assets/HR.png',
+      destinatedLink: '/solutions/hr',
     },
     {
       icon: 'storage',
@@ -52,6 +57,7 @@ export class ServicesComponent {
       description:
         'Expert data management and analytics solutions for informed decision-making.',
       image: 'assets/data.png',
+      destinatedLink: '/solutions/data',
     },
     {
       icon: 'home',
@@ -59,6 +65,7 @@ export class ServicesComponent {
       description:
         'Specialized mortgage processing and underwriting services for financial institutions.',
       image: 'assets/Mortgage.png',
+      destinatedLink: '/solutions/mortgage',
     },
     {
       icon: 'work',
@@ -66,6 +73,7 @@ export class ServicesComponent {
       description:
         'Simplified vendor management and procurement processes for enhanced efficiency.',
       image: 'assets/master.png',
+      destinatedLink: '/solutions/master',
     },
     {
       icon: 'school',
@@ -73,6 +81,7 @@ export class ServicesComponent {
       description:
         'Comprehensive training solutions to upskill your workforce and stay competitive.',
       image: 'assets/training.png',
+      destinatedLink: '/solutions/training',
     },
     {
       icon: 'code',
@@ -80,6 +89,7 @@ export class ServicesComponent {
       description:
         'Cutting-edge technology solutions across various domains and platforms.',
       image: 'assets/technologies.png',
+      destinatedLink: '/solutions/technologies',
     },
   ];
 }
