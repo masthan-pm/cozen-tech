@@ -2,6 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { BlogService } from '../blog/blog.service';
 
@@ -32,13 +38,37 @@ interface FormData {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, ClickOutsideDirective],
+  imports: [
+    CommonModule,
+    RouterModule,
+    ReactiveFormsModule,
+    ClickOutsideDirective,
+    FormsModule,
+  ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
   constructor(private blogService: BlogService) {}
   contactEmail = 'info@cozentech.com';
+  contactForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    companyName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', Validators.required),
+    subject: new FormControl('', Validators.required),
+    message: new FormControl('', Validators.required),
+  });
+
+  isCountryDropdownOpen = false;
+
+  selectedCountry: Country = {
+    name: 'United States',
+    code: 'US',
+    dialCode: '+1',
+    flag: 'US',
+  };
+
   offices: Office[] = [
     {
       city: 'San Francisco',
@@ -81,46 +111,8 @@ export class ContactComponent {
     { name: 'Singapore', code: 'SG', dialCode: '+65', flag: 'SG' },
   ];
 
-  formData: FormData = {
-    name: '',
-    companyName: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-  };
-
-  selectedCountry: Country = this.countries[0];
-  isCountryDropdownOpen = false;
-
-  onSubmit() {
-    // console.log('Form submitted:', {
-    //   ...this.formData,
-    //   country: this.selectedCountry,
-    // });
-
-    const data = {
-      ...this.formData,
-      country: this.selectedCountry.name,
-    };
-    this.blogService.postData(data).subscribe({
-      next: (res) => {
-        console.log(res);
-      },
-    });
-
-    console.log(data);
-
-    // Here you would typically send the form data to your backend
-
-    this.formData = {
-      name: '',
-      companyName: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    };
+  toggleCountryDropdown() {
+    this.isCountryDropdownOpen = !this.isCountryDropdownOpen;
   }
 
   selectCountry(country: Country) {
@@ -128,34 +120,18 @@ export class ContactComponent {
     this.isCountryDropdownOpen = false;
   }
 
-  toggleCountryDropdown() {
-    this.isCountryDropdownOpen = !this.isCountryDropdownOpen;
-  }
-
-  closeCountryDropdown() {
-    this.isCountryDropdownOpen = false;
-  }
-
-  validateEmail(email: string): boolean {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-
-  validatePhone(phone: string): boolean {
-    const phoneRegex = /^\+?[\d\s-]{8,}$/;
-    return phoneRegex.test(phone);
-  }
-
-  validateForm(): boolean {
-    if (!this.formData.name || !this.formData.email || !this.formData.message) {
-      return false;
+  onSubmit() {
+    if (this.contactForm.valid) {
+      const data = {
+        ...this.contactForm.value,
+        country: this.selectedCountry.name,
+      };
+      this.blogService.postData(data).subscribe({
+        next: (res) => {
+          console.log(res);
+        },
+      });
+      this.contactForm.reset();
     }
-    if (!this.validateEmail(this.formData.email)) {
-      return false;
-    }
-    if (this.formData.phone && !this.validatePhone(this.formData.phone)) {
-      return false;
-    }
-    return true;
   }
 }

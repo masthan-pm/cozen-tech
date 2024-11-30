@@ -54,8 +54,7 @@ export class BlogComponent {
       author: 'Sarah Johnson',
       date: 'March 15, 2024',
       readTime: '5 min read',
-      image:
-        'https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&q=80',
+      image: 'assets/pages/blog/blog-img1.jpg',
       excerpt:
         'Explore how remote work is reshaping the technology industry and what it means for companies and employees.',
       tags: ['Remote Work', 'Technology', 'Future of Work'],
@@ -66,8 +65,7 @@ export class BlogComponent {
       author: 'Michael Chen',
       date: 'March 12, 2024',
       readTime: '8 min read',
-      image:
-        'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&q=80',
+      image: 'assets/pages/blog/blog-img2.jpg',
       excerpt:
         'Learn best practices for designing and implementing scalable microservices architecture for enterprise applications.',
       tags: ['Microservices', 'Architecture', 'Development'],
@@ -78,8 +76,7 @@ export class BlogComponent {
       author: 'Emily Rodriguez',
       date: 'March 10, 2024',
       readTime: '6 min read',
-      image:
-        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80',
+      image: 'assets/pages/blog/blog-img3.jpg',
       excerpt:
         "Discover the most in-demand skills that tech professionals need to stay competitive in today's job market.",
       tags: ['Career Growth', 'Skills', 'Technology'],
@@ -90,8 +87,7 @@ export class BlogComponent {
       author: 'David Kim',
       date: 'March 8, 2024',
       readTime: '7 min read',
-      image:
-        'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&q=80',
+      image: 'assets/pages/blog/blog-img4.jpg',
       excerpt:
         'How artificial intelligence is revolutionizing the recruitment process and improving candidate matching.',
       tags: ['AI', 'Recruitment', 'HR Tech'],
@@ -102,8 +98,7 @@ export class BlogComponent {
       author: 'Alex Thompson',
       date: 'March 5, 2024',
       readTime: '10 min read',
-      image:
-        'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
+      image: 'assets/pages/blog/blog-img5.jpg',
       excerpt:
         'Essential security practices for protecting your cloud infrastructure and applications.',
       tags: ['Cloud', 'Security', 'Best Practices'],
@@ -114,8 +109,7 @@ export class BlogComponent {
       author: 'Lisa Wong',
       date: 'March 1, 2024',
       readTime: '4 min read',
-      image:
-        'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&q=80',
+      image: 'assets/pages/blog/blog-img6.jpg',
       excerpt:
         'Exciting news about our expansion into the Asia Pacific market and what it means for our clients.',
       tags: ['Company News', 'Growth', 'Global'],
