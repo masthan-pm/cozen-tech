@@ -1,7 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+  FormsModule,
+} from '@angular/forms';
+import { BlogService } from './blog.service';
 
 interface BlogPost {
   title: string;
@@ -17,13 +24,18 @@ interface BlogPost {
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent {
+  constructor(private blogService: BlogService) {}
   searchTerm: string = '';
   selectedCategory: string = 'all';
+
+  emailForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+  });
 
   categories: string[] = [
     'All',
@@ -119,6 +131,22 @@ export class BlogComponent {
         this.selectedCategory.toLowerCase() === 'all' ||
         post.category.toLowerCase() === this.selectedCategory.toLowerCase();
       return matchesSearch && matchesCategory;
+    });
+  }
+
+  submitForm() {
+    console.log(this.emailForm.value.email);
+    const data = {
+      email: this.emailForm.value.email,
+    };
+
+    this.blogService.postData(data).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (err) => {
+        console.log(err);
+      },
     });
   }
 }

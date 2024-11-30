@@ -78,10 +78,11 @@
       inset: 0;
       background-color: rgba(0, 0, 0, 0);
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       opacity: 0;
       transition: all 0.3s ease;
+      padding-bottom: 1rem;
 
       .social-links {
         display: flex;
@@ -89,9 +90,14 @@
 
         .social-link {
           background-color: white;
-          padding: 0.5rem;
-          border-radius: 9999px;
+          width: 2.5rem;
+          height: 2.5rem;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           transition: all 0.2s;
+          text-decoration: none;
 
           &:hover {
             background-color: #dbeafe;

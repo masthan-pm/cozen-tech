@@ -12,7 +12,13 @@ import { RouterLink } from '@angular/router';
 export class FooterComponent {
   currentYear = new Date().getFullYear();
   email = 'info@cozentech.com';
-  quickLinks = ['About Us', 'Our Solutions', 'Careers', 'Blog', 'Contact'];
+  quickLinks = [
+    { title: 'About Us', path: '/about' },
+    { title: 'Our Solutions', path: '/solutions' },
+    { title: 'Careers', path: '/careers' },
+    { title: 'Blog', path: '/blog' },
+    { title: 'Contact', path: '/contact' },
+  ];
   socialLinks = [
     { name: 'LinkedIn', href: '#' },
     { name: 'Twitter', href: '#' },

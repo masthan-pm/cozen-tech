@@ -14,7 +14,9 @@ import { MasterVendorComponent } from './components/pages/solutions/master-vendo
 import { TrainingComponent } from './components/pages/solutions/training/training.component';
 import { TechnologiesComponent } from './components/pages/solutions/technologies/technologies.component';
 import { OurSolutionsComponent } from './components/pages/solutions/solutions.component';
+import { ContactComponent } from './components/pages/contact/contact.component';
 export const routes: Routes = [
+  // All ROutes
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '', component: WelcomeComponent },
   { path: 'home', component: WelcomeComponent },
@@ -32,5 +34,6 @@ export const routes: Routes = [
   { path: 'solutions/master-vendor', component: MasterVendorComponent },
   { path: 'solutions/training', component: TrainingComponent },
   { path: 'solutions/technologies', component: TechnologiesComponent },
+  { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '/home' },
 ];

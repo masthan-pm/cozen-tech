@@ -86,9 +86,16 @@
           Subscribe to receive the latest insights, industry trends, and company
           updates directly in your inbox.
         </p>
+
         <div class="form">
-          <input type="email" placeholder="Enter your email" />
-          <button>Subscribe</button>
+          <form [formGroup]="emailForm">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              formControlName="email"
+            />
+          </form>
+          <button (click)="submitForm()">Subscribe</button>
         </div>
       </div>
     </div>
