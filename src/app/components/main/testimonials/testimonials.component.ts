@@ -20,21 +20,21 @@ export class TestimonialsComponent {
     {
       name: 'John Smith',
       position: 'CTO, TechCorp',
-      image: 'assets/testimonial1.png',
+      image: 'assets/pages/home/testimonials/testimonial1.jpg',
       quote:
         'Cozen Tech has been instrumental in helping us build our engineering team. Their understanding of our technical requirements and company culture is exceptional.',
     },
     {
       name: 'Sarah Chen',
       position: 'HR Director, InnovateSoft',
-      image: 'assets/testimonial2.png',
+      image: 'assets/pages/home/testimonials/testimonial2.jpg',
       quote:
         'The quality of candidates and the speed of recruitment have exceeded our expectations. Their team is professional and thorough in their approach.',
     },
     {
       name: 'Michael Rodriguez',
       position: 'CEO, DataFlow',
-      image: 'assets/testimonial3.png',
+      image: 'assets/pages/home/testimonials/testimonial3.jpg',
       quote:
         'Working with Cozen Tech has transformed our hiring process. They understand our needs and consistently deliver top talent.',
     },
