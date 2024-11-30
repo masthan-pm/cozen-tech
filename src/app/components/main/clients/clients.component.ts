@@ -15,11 +15,29 @@ interface Client {
 })
 export class ClientsComponent {
   clients: Client[] = [
-    { name: 'TechCorp', logo: 'assets/flutter.jpg' },
-    { name: 'InnovateSoft', logo: 'assets/entity.jpg' },
-    { name: 'DataFlow', logo: 'assets/net.jpg' },
-    { name: 'CloudNet', logo: 'assets/nhibernate.jpg' },
-    { name: 'SecureIT', logo: 'assets/tech_corp.jpeg' },
-    { name: 'DevPro', logo: 'assets/asp.jpg' },
+    {
+      name: 'AWS',
+      logo: 'assets/shared/clients/trusted/home/aws.jpg',
+    },
+    {
+      name: 'Azure',
+      logo: 'assets/shared/clients/trusted/home/azure.jpg',
+    },
+    {
+      name: 'DigitalOcean',
+      logo: 'assets/shared/clients/trusted/home/digital.jpg',
+    },
+    {
+      name: 'iOS',
+      logo: 'assets/shared/clients/trusted/home/ios.jpg',
+    },
+    {
+      name: 'Redis',
+      logo: 'assets/shared/clients/trusted/home/redis.jpg',
+    },
+    {
+      name: 'SQL',
+      logo: 'assets/shared/clients/trusted/home/sql.jpg',
+    },
   ];
 }

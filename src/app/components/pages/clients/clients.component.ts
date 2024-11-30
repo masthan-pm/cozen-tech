@@ -32,12 +32,30 @@ interface SuccessStory {
 })
 export class ClientsComponent {
   clients: Client[] = [
-    { name: 'TechCorp', logo: 'assets/sql.jpg' },
-    { name: 'InnovateSoft', logo: 'assets/nhibernate.jpg' },
-    { name: 'DataFlow', logo: 'assets/redis.jpg' },
-    { name: 'CloudNet', logo: 'assets/flutter.jpg' },
-    { name: 'SecureIT', logo: 'assets/iso.jpg' },
-    { name: 'DevPro', logo: 'assets/net.jpg' },
+    {
+      name: 'ASP.NET',
+      logo: 'assets/shared/clients/trusted/dedicated/asp.jpg',
+    },
+    {
+      name: 'Entity Framework',
+      logo: 'assets/shared/clients/trusted/dedicated/entity.jpg',
+    },
+    {
+      name: 'Flutter',
+      logo: 'assets/shared/clients/trusted/dedicated/flutter.jpg',
+    },
+    {
+      name: 'Net',
+      logo: 'assets/shared/clients/trusted/dedicated/net.jpg',
+    },
+    {
+      name: 'NHibernate',
+      logo: 'assets/shared/clients/trusted/dedicated/nhibernate.jpg',
+    },
+    {
+      name: 'TechCorp',
+      logo: 'assets/shared/clients/trusted/dedicated/tech_corp.jpg',
+    },
   ];
 
   testimonials: Testimonial[] = [
