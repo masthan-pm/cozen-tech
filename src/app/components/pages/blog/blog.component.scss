@@ -128,7 +128,7 @@
 
         &:focus {
           outline: none;
-          border-color: #0d6efd;
+          border-color: #00b2b2;
           box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
         }
       }
@@ -143,7 +143,7 @@
 
       &:focus {
         outline: none;
-        border-color: #0d6efd;
+        border-color: #00b2b2;
         box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
       }
     }
@@ -217,7 +217,7 @@
 
       .category {
         background-color: #e6f0ff;
-        color: #0d6efd;
+        color: #00b2b2;
         padding: 0.25rem 0.75rem;
         border-radius: 9999px;
         font-weight: 500;
@@ -256,7 +256,7 @@
         display: flex;
         align-items: center;
         gap: 0.25rem;
-        color: #0d6efd;
+        color: #00b2b2;
         font-weight: 500;
         font-size: 0.875rem;
         text-decoration: none;
@@ -294,7 +294,7 @@
 // Newsletter section styles
 .newsletter-section {
   padding: 5rem 0;
-  background-color: #0d6efd;
+  background-color: #00b2b2;
 
   .container {
     max-width: 48rem;
@@ -345,7 +345,7 @@
       button {
         padding: 0.75rem 2rem;
         background-color: white;
-        color: #0d6efd;
+        color: #00b2b2;
         border: none;
         border-radius: 0.5rem;
         font-weight: 500;
