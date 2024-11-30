@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ClickOutsideDirective } from './click-outside.directive';
+import { BlogService } from '../blog/blog.service';
 
 interface Office {
   city: string;
@@ -36,6 +37,7 @@ interface FormData {
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
+  constructor(private blogService: BlogService) {}
   contactEmail = 'info@cozentech.com';
   offices: Office[] = [
     {
@@ -92,10 +94,23 @@ export class ContactComponent {
   isCountryDropdownOpen = false;
 
   onSubmit() {
-    console.log('Form submitted:', {
+    // console.log('Form submitted:', {
+    //   ...this.formData,
+    //   country: this.selectedCountry,
+    // });
+
+    const data = {
       ...this.formData,
-      country: this.selectedCountry,
+      country: this.selectedCountry.name,
+    };
+    this.blogService.postData(data).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
     });
+
+    console.log(data);
+
     // Here you would typically send the form data to your backend
 
     this.formData = {
