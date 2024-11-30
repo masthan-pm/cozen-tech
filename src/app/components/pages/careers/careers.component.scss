@@ -7,7 +7,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  background-image: url("/assets/staffing.png");
+  background-image: url("/assets/pages/careers/careers.jpg");
   background-size: cover;
   background-position: center;
   animation: fadeIn 0.6s ease-out;
@@ -93,7 +93,7 @@
 
         &:focus {
           outline: none;
-          border-color: #0d6efd;
+          border-color: #00b2b2;
           box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
         }
       }
@@ -108,7 +108,7 @@
 
       &:focus {
         outline: none;
-        border-color: #0d6efd;
+        border-color: #00b2b2;
         box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
       }
     }
@@ -182,7 +182,7 @@
       .toggle-btn {
         background: none;
         border: none;
-        color: #0d6efd;
+        color: #00b2b2;
         cursor: pointer;
         padding: 0.25rem;
         transition: color 0.2s;
@@ -242,7 +242,7 @@
         align-items: center;
         gap: 0.5rem;
         padding: 0.75rem 1.5rem;
-        background-color: #0d6efd;
+        background-color: #00b2b2;
         color: white;
         border-radius: 0.5rem;
         font-weight: 500;

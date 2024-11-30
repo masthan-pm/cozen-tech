@@ -8,7 +8,7 @@
   height: 90vh;
   display: flex;
   align-items: center;
-  background-image: url("/assets/hero.png");
+  background-image: url("/assets/pages/home/hero.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -43,7 +43,7 @@
     animation: fadeInDown 0.8s ease-out;
 
     .highlight {
-      color: #60a5fa;
+      color: #00b2b2;
     }
   }
 
@@ -79,11 +79,11 @@
     }
 
     &.btn-primary {
-      background-color: #2563eb;
+      background-color: #00b2b2;
       color: white;
 
       &:hover {
-        background-color: #1d4ed8;
+        background-color: #00b2b2;
       }
     }
 
