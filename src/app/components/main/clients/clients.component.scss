@@ -68,12 +68,8 @@
   .client-logo {
     height: 3rem;
     object-fit: contain;
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
     transition: filter 0.3s ease;
-  }
-
-  &:hover .client-logo {
-    filter: grayscale(0%);
   }
 }
 

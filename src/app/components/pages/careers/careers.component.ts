@@ -96,22 +96,19 @@ export class CareersComponent {
       title: 'Health & Wellness',
       description:
         'Comprehensive medical, dental, and vision coverage for you and your family.',
-      image:
-        'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&q=80',
+      image: 'assets/pages/careers/careers-img1.jpg',
     },
     {
       title: 'Growth & Development',
       description:
         'Continuous learning opportunities, mentorship programs, and career advancement.',
-      image:
-        'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80',
+      image: 'assets/pages/careers/careers-img2.jpg',
     },
     {
       title: 'Work-Life Balance',
       description:
         'Flexible work arrangements, paid time off, and remote work options.',
-      image:
-        'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80',
+      image: 'assets/pages/careers/careers-img3.jpg',
     },
   ];
 

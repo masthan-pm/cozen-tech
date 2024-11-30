@@ -32,19 +32,37 @@ interface SuccessStory {
 })
 export class ClientsComponent {
   clients: Client[] = [
-    { name: 'TechCorp', logo: 'assets/sql.jpg' },
-    { name: 'InnovateSoft', logo: 'assets/nhibernate.jpg' },
-    { name: 'DataFlow', logo: 'assets/redis.jpg' },
-    { name: 'CloudNet', logo: 'assets/flutter.jpg' },
-    { name: 'SecureIT', logo: 'assets/iso.jpg' },
-    { name: 'DevPro', logo: 'assets/net.jpg' },
+    {
+      name: 'ASP.NET',
+      logo: 'assets/shared/clients/trusted/dedicated/asp.jpg',
+    },
+    {
+      name: 'Entity Framework',
+      logo: 'assets/shared/clients/trusted/dedicated/entity.jpg',
+    },
+    {
+      name: 'Flutter',
+      logo: 'assets/shared/clients/trusted/dedicated/flutter.jpg',
+    },
+    {
+      name: 'Net',
+      logo: 'assets/shared/clients/trusted/dedicated/net.jpg',
+    },
+    {
+      name: 'NHibernate',
+      logo: 'assets/shared/clients/trusted/dedicated/nhibernate.jpg',
+    },
+    {
+      name: 'TechCorp',
+      logo: 'assets/shared/clients/trusted/dedicated/tech_corp.jpg',
+    },
   ];
 
   testimonials: Testimonial[] = [
     {
       name: 'John Smith',
       position: 'CTO, TechCorp',
-      image: 'assets/testimonial3.png',
+      image: 'assets/shared/clients/testimonials/testimonial3.jpg',
       quote:
         'Cozen Tech has been instrumental in helping us build our engineering team. Their understanding of our technical requirements and company culture is exceptional.',
       rating: 5,
@@ -52,7 +70,7 @@ export class ClientsComponent {
     {
       name: 'Sarah Chen',
       position: 'HR Director, InnovateSoft',
-      image: 'assets/testimonial2.png',
+      image: 'assets/shared/clients/testimonials/testimonial2.jpg',
       quote:
         'The quality of candidates and the speed of recruitment have exceeded our expectations. Their team is professional and thorough in their approach.',
       rating: 5,
@@ -60,7 +78,7 @@ export class ClientsComponent {
     {
       name: 'Michael Rodriguez',
       position: 'CEO, DataFlow',
-      image: 'assets/testimonial1.png',
+      image: 'assets/shared/clients/testimonials/testimonial1.jpg',
       quote:
         'Working with Cozen Tech has transformed our hiring process. They understand our needs and consistently deliver top talent.',
       rating: 5,
@@ -71,7 +89,7 @@ export class ClientsComponent {
     {
       client: 'TechCorp',
       title: 'Building a World-Class Engineering Team',
-      image: 'assets/staffing.png',
+      image: 'assets/pages/clients/stories/story1.jpg',
       description:
         'How we helped TechCorp scale their engineering team from 10 to 50 members in just 6 months.',
       results: [
@@ -83,7 +101,7 @@ export class ClientsComponent {
     {
       client: 'InnovateSoft',
       title: 'Digital Transformation Success',
-      image: 'assets/Mortgage.png',
+      image: 'assets/pages/clients/stories/story2.jpg',
       description:
         "Supporting InnovateSoft's digital transformation journey with key technical talent.",
       results: [
@@ -95,7 +113,7 @@ export class ClientsComponent {
     {
       client: 'DataFlow',
       title: 'Rapid Team Expansion',
-      image: 'assets/master.png',
+      image: 'assets/pages/clients/stories/story3.jpg',
       description:
         'Helping DataFlow rapidly scale their development team for a major product launch.',
       results: [
