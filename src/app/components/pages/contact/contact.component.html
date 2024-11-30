@@ -11,22 +11,20 @@
   </section>
 
   <!-- Contact Form Section -->
-  <section class="form-section">
+  <section class="contact-section">
     <div class="container">
-      <div class="content-grid">
+      <div class="contact-grid">
         <!-- Contact Information -->
-        <div class="info-section">
-          <div class="info-header">
-            <h2>Let's Connect</h2>
-            <p>
-              Whether you're looking for IT solutions, talent acquisition
-              services, or just want to learn more about what we do, we'd love
-              to hear from you.
-            </p>
-          </div>
+        <div class="contact-info">
+          <h2>Let's Connect</h2>
+          <p>
+            Whether you're looking for IT solutions, talent acquisition
+            services, or just want to learn more about what we do, we'd love to
+            hear from you.
+          </p>
 
           <div class="contact-methods">
-            <div class="method">
+            <div class="contact-method">
               <i class="material-icons">mail</i>
               <div>
                 <h3>Email</h3>
@@ -34,7 +32,7 @@
               </div>
             </div>
 
-            <div class="method">
+            <div class="contact-method">
               <i class="material-icons">phone</i>
               <div>
                 <h3>Phone</h3>
@@ -42,8 +40,8 @@
               </div>
             </div>
 
-            <div class="method">
-              <i class="material-icons">chat</i>
+            <div class="contact-method">
+              <i class="material-icons">message</i>
               <div>
                 <h3>Live Chat</h3>
                 <p>Available Monday to Friday, 9:00 AM - 6:00 PM PST</p>
@@ -54,16 +52,19 @@
 
         <!-- Contact Form -->
         <div class="form-container">
-          <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+          <form
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()"
+            class="contact-form"
+          >
             <div class="form-grid">
               <div class="form-group">
                 <label for="name">Full Name</label>
                 <input
                   type="text"
                   id="name"
-                  name="name"
-                  [(ngModel)]="formData.name"
-                  required
+                  formControlName="name"
+                  class="form-control"
                 />
               </div>
 
@@ -72,9 +73,8 @@
                 <input
                   type="text"
                   id="companyName"
-                  name="companyName"
-                  [(ngModel)]="formData.companyName"
-                  required
+                  formControlName="companyName"
+                  class="form-control"
                 />
               </div>
             </div>
@@ -85,9 +85,8 @@
                 <input
                   type="email"
                   id="email"
-                  name="email"
-                  [(ngModel)]="formData.email"
-                  required
+                  formControlName="email"
+                  class="form-control"
                 />
               </div>
 
@@ -96,40 +95,36 @@
                 <div class="phone-input">
                   <div
                     class="country-selector"
-                    clickOutside
-                    (clickOutside)="closeCountryDropdown()"
+                    (clickOutside)="isCountryDropdownOpen = false"
                   >
                     <button
                       type="button"
                       (click)="toggleCountryDropdown()"
                       class="country-button"
                     >
-                      <span class="flag">{{ selectedCountry.flag }}</span>
-                      <span class="dial-code">{{
-                        selectedCountry.dialCode
-                      }}</span>
-                      <i class="material-icons">arrow_drop_down</i>
+                      <span>{{ selectedCountry.flag }}</span>
+                      <span>{{ selectedCountry.dialCode }}</span>
+                      <i class="material-icons">expand_more</i>
                     </button>
 
                     <div *ngIf="isCountryDropdownOpen" class="country-dropdown">
                       <button
-                        type="button"
                         *ngFor="let country of countries"
+                        type="button"
                         (click)="selectCountry(country)"
                         class="country-option"
                       >
-                        <span class="flag">{{ country.flag }}</span>
-                        <span class="country-name">{{ country.name }}</span>
+                        <span>{{ country.flag }}</span>
+                        <span>{{ country.name }}</span>
                         <span class="dial-code">{{ country.dialCode }}</span>
                       </button>
                     </div>
                   </div>
-
                   <input
                     type="tel"
                     id="phone"
-                    name="phone"
-                    [(ngModel)]="formData.phone"
+                    formControlName="phone"
+                    class="form-control"
                   />
                 </div>
               </div>
@@ -139,9 +134,8 @@
               <label for="subject">Subject</label>
               <select
                 id="subject"
-                name="subject"
-                [(ngModel)]="formData.subject"
-                required
+                formControlName="subject"
+                class="form-control"
               >
                 <option value="">Select a subject</option>
                 <option value="IT Solutions">IT Solutions</option>
@@ -155,10 +149,9 @@
               <label for="message">Message</label>
               <textarea
                 id="message"
-                name="message"
-                [(ngModel)]="formData.message"
-                required
+                formControlName="message"
                 rows="4"
+                class="form-control"
               ></textarea>
             </div>
 
