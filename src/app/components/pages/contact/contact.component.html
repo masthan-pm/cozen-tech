@@ -3,8 +3,8 @@
   <section class="hero-section">
     <div class="overlay"></div>
     <div class="container">
-      <h1>Contact Us</h1>
-      <p>
+      <h1 class="animate-fade-down">Contact Us</h1>
+      <p class="animate-fade-up">
         Get in touch with our team to discuss how we can help your business grow
       </p>
     </div>
@@ -15,7 +15,7 @@
     <div class="container">
       <div class="contact-grid">
         <!-- Contact Information -->
-        <div class="contact-info">
+        <div class="contact-info animate-fade-right">
           <h2>Let's Connect</h2>
           <p>
             Whether you're looking for IT solutions, talent acquisition
@@ -51,7 +51,7 @@
         </div>
 
         <!-- Contact Form -->
-        <div class="form-container">
+        <div class="form-container animate-fade-left">
           <form
             [formGroup]="contactForm"
             (ngSubmit)="onSubmit()"
@@ -132,17 +132,20 @@
 
             <div class="form-group">
               <label for="subject">Subject</label>
-              <select
-                id="subject"
-                formControlName="subject"
-                class="form-control"
-              >
-                <option value="">Select a subject</option>
-                <option value="IT Solutions">IT Solutions</option>
-                <option value="Talent Acquisition">Talent Acquisition</option>
-                <option value="Partnership">Partnership</option>
-                <option value="General Inquiry">General Inquiry</option>
-              </select>
+              <div class="select-wrapper">
+                <select
+                  id="subject"
+                  formControlName="subject"
+                  class="form-control"
+                >
+                  <option value="">Select a subject</option>
+                  <option value="IT Solutions">IT Solutions</option>
+                  <option value="Talent Acquisition">Talent Acquisition</option>
+                  <option value="Partnership">Partnership</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
+                <i class="material-icons select-arrow">expand_more</i>
+              </div>
             </div>
 
             <div class="form-group">
@@ -168,7 +171,7 @@
   <!-- Office Locations -->
   <section class="offices-section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header animate-fade-down">
         <h2>Our Offices</h2>
         <p>
           Visit us at one of our global offices or reach out to the location
@@ -177,7 +180,11 @@
       </div>
 
       <div class="offices-grid">
-        <div *ngFor="let office of offices" class="office-card">
+        <div
+          *ngFor="let office of offices; let i = index"
+          class="office-card animate-fade-up"
+          [style.animation-delay]="i * 0.1 + 's'"
+        >
           <h3>{{ office.city }}</h3>
           <div class="office-details">
             <div class="detail">
