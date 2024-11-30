@@ -1,0 +1,211 @@
+<div class="contact-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>
+        Get in touch with our team to discuss how we can help your business grow
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="form-section">
+    <div class="container">
+      <div class="content-grid">
+        <!-- Contact Information -->
+        <div class="info-section">
+          <div class="info-header">
+            <h2>Let's Connect</h2>
+            <p>
+              Whether you're looking for IT solutions, talent acquisition
+              services, or just want to learn more about what we do, we'd love
+              to hear from you.
+            </p>
+          </div>
+
+          <div class="contact-methods">
+            <div class="method">
+              <i class="material-icons">mail</i>
+              <div>
+                <h3>Email</h3>
+                <p>{{ contactEmail }}</p>
+              </div>
+            </div>
+
+            <div class="method">
+              <i class="material-icons">phone</i>
+              <div>
+                <h3>Phone</h3>
+                <p>+1 (888) 555-0123</p>
+              </div>
+            </div>
+
+            <div class="method">
+              <i class="material-icons">chat</i>
+              <div>
+                <h3>Live Chat</h3>
+                <p>Available Monday to Friday, 9:00 AM - 6:00 PM PST</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="form-container">
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  [(ngModel)]="formData.name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input
+                  type="text"
+                  id="companyName"
+                  name="companyName"
+                  [(ngModel)]="formData.companyName"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="formData.email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <div class="phone-input">
+                  <div
+                    class="country-selector"
+                    clickOutside
+                    (clickOutside)="closeCountryDropdown()"
+                  >
+                    <button
+                      type="button"
+                      (click)="toggleCountryDropdown()"
+                      class="country-button"
+                    >
+                      <span class="flag">{{ selectedCountry.flag }}</span>
+                      <span class="dial-code">{{
+                        selectedCountry.dialCode
+                      }}</span>
+                      <i class="material-icons">arrow_drop_down</i>
+                    </button>
+
+                    <div *ngIf="isCountryDropdownOpen" class="country-dropdown">
+                      <button
+                        type="button"
+                        *ngFor="let country of countries"
+                        (click)="selectCountry(country)"
+                        class="country-option"
+                      >
+                        <span class="flag">{{ country.flag }}</span>
+                        <span class="country-name">{{ country.name }}</span>
+                        <span class="dial-code">{{ country.dialCode }}</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    [(ngModel)]="formData.phone"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select
+                id="subject"
+                name="subject"
+                [(ngModel)]="formData.subject"
+                required
+              >
+                <option value="">Select a subject</option>
+                <option value="IT Solutions">IT Solutions</option>
+                <option value="Talent Acquisition">Talent Acquisition</option>
+                <option value="Partnership">Partnership</option>
+                <option value="General Inquiry">General Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                [(ngModel)]="formData.message"
+                required
+                rows="4"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">
+              Send Message
+              <i class="material-icons">send</i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Office Locations -->
+  <section class="offices-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Offices</h2>
+        <p>
+          Visit us at one of our global offices or reach out to the location
+          nearest to you.
+        </p>
+      </div>
+
+      <div class="offices-grid">
+        <div *ngFor="let office of offices" class="office-card">
+          <h3>{{ office.city }}</h3>
+          <div class="office-details">
+            <div class="detail">
+              <i class="material-icons">location_on</i>
+              <p>{{ office.address }}</p>
+            </div>
+            <div class="detail">
+              <i class="material-icons">phone</i>
+              <p>{{ office.phone }}</p>
+            </div>
+            <div class="detail">
+              <i class="material-icons">mail</i>
+              <p>{{ office.email }}</p>
+            </div>
+            <div class="detail">
+              <i class="material-icons">schedule</i>
+              <p>{{ office.hours }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
