@@ -18,6 +18,7 @@
     <button
       mat-button
       [matMenuTriggerFor]="solutionsMenu"
+      (mouseenter)="menuTrigger.openMenu()"
       #menuTrigger="matMenuTrigger"
       (menuOpened)="toggleArrow()"
       (menuClosed)="toggleArrow()"
@@ -27,13 +28,15 @@
     </button>
 
     <mat-menu #solutionsMenu="matMenu" yPosition="below">
-      <div>
-        @for (subItem of item.submenu; track $index) {
-        <button mat-menu-item [routerLink]="subItem.route">
-          {{ subItem.label }}
-        </button>
-        }
+      @for (subItem of item.submenu; track $index) {
+      <div class="dropdown-item">
+        <a [routerLink]="subItem.route">
+          <div class="dropdown-content">
+            <span class="dropdown-label">{{ subItem.label }}</span>
+          </div>
+        </a>
       </div>
+      }
     </mat-menu>
     } }
   </nav>

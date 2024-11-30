@@ -6,6 +6,20 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+interface SubMenuItem {
+  label: string;
+  route: string;
+  icon?: string;
+  description?: string;
+}
+
+interface NavItem {
+  label: string;
+  route?: string;
+  isDropdown?: boolean;
+  submenu?: SubMenuItem[];
+}
+
 @Component({
   selector: 'app-header',
   imports: [
@@ -31,7 +45,7 @@ export class HeaderComponent {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  navItems = [
+  navItems: NavItem[] = [
     { label: 'Home', route: '/home' },
     { label: 'About Us', route: '/about' },
     {
