@@ -31,6 +31,21 @@ export interface BlogPost {
   tags: string[];
 }
 
+export interface Office {
+  city: string;
+  address: string;
+  phone: string;
+  email: string;
+  hours: string;
+}
+
+export interface Country {
+  name: string;
+  code: string;
+  dialCode: string;
+  flag: string;
+}
+
 export interface Service {
   icon: string;
   title: string;
