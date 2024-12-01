@@ -4,6 +4,12 @@ export interface HeroContent {
   image: string;
 }
 
+export interface Stat {
+  icon: string;
+  stat: string;
+  label: string;
+}
+
 export interface Service {
   icon: string;
   title: string;

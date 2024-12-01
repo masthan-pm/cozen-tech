@@ -1,13 +1,7 @@
-<section class="hero-section">
-  <div class="overlay"></div>
-  <div class="container">
-    <h1>About Cozen Tech</h1>
-    <p>
-      Building the future of technology through innovation and exceptional
-      talent since 2010
-    </p>
-  </div>
-</section>
+<app-hero [backgroundImage]="about.image">
+  <h1 hero-header>{{ about.header }}</h1>
+  <p hero-text>{{ about.text }}</p>
+</app-hero>
 
 <section class="mission-section">
   <div class="container">
