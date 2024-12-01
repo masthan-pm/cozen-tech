@@ -10,9 +10,13 @@ export interface Service {
   description: string;
 }
 
-//data support
 export interface Phase {
   step: string;
+  title: string;
+  description: string;
+}
+
+export interface Benefit {
   title: string;
   description: string;
 }
@@ -22,18 +26,11 @@ export interface Capability {
   items: string[];
 }
 
-//finance
-export interface Benefit {
-  title: string;
-  description: string;
-}
-
 export interface Expertise {
   category: string;
   items: string[];
 }
 
-//hr payroll
 export interface Feature {
   category: string;
   items: string[];
