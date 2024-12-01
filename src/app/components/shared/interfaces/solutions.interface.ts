@@ -10,7 +10,7 @@ export interface Service {
   description: string;
 }
 
-//data-support.component.ts
+//data support
 export interface Phase {
   step: string;
   title: string;
@@ -22,7 +22,7 @@ export interface Capability {
   items: string[];
 }
 
-//finance.component.ts
+//finance
 export interface Benefit {
   title: string;
   description: string;
@@ -33,7 +33,7 @@ export interface Expertise {
   items: string[];
 }
 
-//hr-payroll.component.ts
+//hr payroll
 export interface Feature {
   category: string;
   items: string[];
