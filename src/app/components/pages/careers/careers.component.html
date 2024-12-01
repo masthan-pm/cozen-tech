@@ -1,15 +1,9 @@
 <div class="careers-page">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Join Our Team</h1>
-      <p>
-        Build your career with a company that values innovation, growth, and
-        excellence
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="careers.image">
+    <h1 hero-header>{{ careers.header }}</h1>
+    <p hero-text>{{ careers.text }}</p>
+  </app-hero>
 
   <!-- Search Section -->
   <section class="search-section">

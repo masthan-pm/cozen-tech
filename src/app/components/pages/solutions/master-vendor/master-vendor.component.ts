@@ -1,26 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Benefit {
-  category: string;
-  items: string[];
-}
+import {
+  Expertise,
+  Service,
+  HeroContent,
+} from '../../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-master-vendor',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent],
   templateUrl: './master-vendor.component.html',
   styleUrls: ['./master-vendor.component.scss'],
 })
 export class MasterVendorComponent {
+  masterVendor: HeroContent = {
+    header: 'Master Vendor Program',
+    text: 'Optimize your vendor management with our comprehensive master vendor solutions',
+    image: '/assets/shared/services/master.jpg',
+  };
   services: Service[] = [
     {
       icon: 'work',
@@ -72,7 +72,7 @@ export class MasterVendorComponent {
     },
   ];
 
-  benefits: Benefit[] = [
+  benefits: Expertise[] = [
     {
       category: 'Cost Management',
       items: [

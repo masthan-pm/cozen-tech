@@ -1,27 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Phase {
-  step: string;
-  title: string;
-  description: string;
-}
+import {
+  Service,
+  Phase,
+  HeroContent,
+} from '../../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-global',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent],
   templateUrl: './global.component.html',
   styleUrls: ['./global.component.scss'],
 })
 export class GlobalComponent {
+  global: HeroContent = {
+    header: 'Global Technology Solutions',
+    text: 'Comprehensive software development and IT consulting services tailored to your business needs',
+    image: '/assets/shared/services/global.jpg',
+  };
   services: Service[] = [
     {
       icon: 'code',

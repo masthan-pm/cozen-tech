@@ -1,15 +1,9 @@
 <div class="training-solutions">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Training Programs</h1>
-      <p>
-        Empower your workforce with comprehensive technical and professional
-        development programs
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="training.image">
+    <h1 hero-header>{{ training.header }}</h1>
+    <p hero-text>{{ training.text }}</p>
+  </app-hero>
 
   <!-- Programs Section -->
   <section class="services-section">

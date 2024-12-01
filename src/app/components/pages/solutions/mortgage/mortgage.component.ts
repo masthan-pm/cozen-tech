@@ -1,26 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Feature {
-  category: string;
-  items: string[];
-}
+import {
+  Expertise,
+  Service,
+  HeroContent,
+} from '../../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-mortgage',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent],
   templateUrl: './mortgage.component.html',
   styleUrls: ['./mortgage.component.scss'],
 })
 export class MortgageComponent {
+  mortgage: HeroContent = {
+    header: 'Mortgage Services',
+    text: 'Streamline your mortgage operations with our comprehensive processing solutions',
+    image: '/assets/shared/services/mortgage.jpg',
+  };
   services: Service[] = [
     {
       icon: 'description',
@@ -67,7 +67,7 @@ export class MortgageComponent {
     { step: '04', title: 'Closing', description: 'Final approval and closing' },
   ];
 
-  features: Feature[] = [
+  features: Expertise[] = [
     {
       category: 'Processing Services',
       items: [

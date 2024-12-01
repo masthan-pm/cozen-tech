@@ -1,15 +1,9 @@
 <div class="finance-solutions">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Finance & Accounting Services</h1>
-      <p>
-        Comprehensive financial solutions to drive your business growth and
-        success
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="finance.image">
+    <h1 hero-header>{{ finance.header }}</h1>
+    <p hero-text>{{ finance.text }}</p>
+  </app-hero>
 
   <!-- Services Section -->
   <section class="services-section">

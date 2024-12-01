@@ -1,27 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Phase {
-  step: string;
-  title: string;
-  description: string;
-}
+import {
+  Service,
+  Phase,
+  HeroContent,
+} from '../../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-staffing',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent],
   templateUrl: './staffing.component.html',
   styleUrls: ['./staffing.component.scss'],
 })
 export class StaffingComponent {
+  staffing: HeroContent = {
+    header: 'Staffing & Recruitment',
+    text: 'Connect with exceptional tech talent through our comprehensive recruitment solutions',
+    image: '/assets/shared/services/staffing.jpg',
+  };
   services: Service[] = [
     {
       icon: 'search',

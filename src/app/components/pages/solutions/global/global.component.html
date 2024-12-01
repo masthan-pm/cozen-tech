@@ -1,15 +1,9 @@
 <div class="global-solutions">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Global Technology Solutions</h1>
-      <p>
-        Comprehensive software development and IT consulting services tailored
-        to your business needs
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="global.image">
+    <h1 hero-header>{{ global.header }}</h1>
+    <p hero-text>{{ global.text }}</p>
+  </app-hero>
 
   <!-- Services Section -->
   <section class="services-section">

@@ -1,15 +1,9 @@
 <div class="technologies-solutions">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Technologies</h1>
-      <p>
-        Leverage cutting-edge technologies to drive innovation and digital
-        transformation
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="technologies.image">
+    <h1 hero-header>{{ technologies.header }}</h1>
+    <p hero-text>{{ technologies.text }}</p>
+  </app-hero>
 
   <!-- Services Section -->
   <section class="services-section">
@@ -50,7 +44,7 @@
         <div *ngFor="let stack of techStack" class="feature-card">
           <h3>{{ stack.category }}</h3>
           <ul>
-            <li *ngFor="let tech of stack.technologies">
+            <li *ngFor="let tech of stack.items">
               <span class="bullet"></span>
               {{ tech }}
             </li>

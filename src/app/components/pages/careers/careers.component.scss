@@ -1,23 +1,7 @@
+@use "../../../../styles/colors" as *;
+
 .careers-page {
   width: 100%;
-}
-
-.hero-section {
-  height: 400px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-image: url("/assets/pages/careers/careers.jpg");
-  background-size: cover;
-  background-position: center;
-  animation: fadeIn 0.6s ease-out;
-  text-align: center;
-
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
 }
 
 .container {
@@ -25,7 +9,7 @@
   margin: 0 auto;
   padding: 0 1rem;
   position: relative;
-  color: white;
+  color: $white;
 
   @media (min-width: 640px) {
     padding: 0 1.5rem;
@@ -33,17 +17,6 @@
 
   @media (min-width: 1024px) {
     padding: 0 2rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    animation: fadeInDown 0.8s ease-out;
-
-    @media (min-width: 768px) {
-      font-size: 3rem;
-    }
   }
 
   p {
@@ -56,7 +29,7 @@
 
 .search-section {
   padding: 2rem 0;
-  background-color: white;
+  background-color: $white;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
   .container {
@@ -81,19 +54,19 @@
         left: 1rem;
         top: 50%;
         transform: translateY(-50%);
-        color: #6b7280;
+        color: $gray-charcol;
       }
 
       input {
         width: 100%;
         padding: 0.75rem 1rem 0.75rem 3rem;
-        border: 1px solid #e5e7eb;
+        border: 1px solid $lavender-gray;
         border-radius: 0.5rem;
         font-size: 1rem;
 
         &:focus {
           outline: none;
-          border-color: #00b2b2;
+          border-color: $accent-color;
           box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
         }
       }
@@ -101,14 +74,14 @@
 
     select {
       padding: 0.75rem 1rem;
-      border: 1px solid #e5e7eb;
+      border: 1px solid $lavender-gray;
       border-radius: 0.5rem;
       font-size: 1rem;
       min-width: 200px;
 
       &:focus {
         outline: none;
-        border-color: #00b2b2;
+        border-color: $accent-color;
         box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
       }
     }
@@ -117,7 +90,7 @@
 
 .jobs-section {
   padding: 5rem 0;
-  background-color: #f9fafb;
+  background-color: $gray-light;
 
   .container {
     color: inherit;
@@ -131,7 +104,7 @@
 }
 
 .job-card {
-  background: white;
+  background: $white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -156,7 +129,7 @@
         h3 {
           font-size: 1.25rem;
           font-weight: 600;
-          color: #111827;
+          color: $blue-gray;
           margin-bottom: 0.75rem;
         }
 
@@ -164,7 +137,7 @@
           display: flex;
           flex-wrap: wrap;
           gap: 1rem;
-          color: #6b7280;
+          color: $gray-charcol;
           font-size: 0.875rem;
 
           span {
@@ -182,13 +155,13 @@
       .toggle-btn {
         background: none;
         border: none;
-        color: #00b2b2;
+        color: $accent-color;
         cursor: pointer;
         padding: 0.25rem;
         transition: color 0.2s;
 
         &:hover {
-          color: #0b5ed7;
+          color: $primary-color;
         }
 
         i {
@@ -198,7 +171,7 @@
     }
 
     .job-details {
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid $lavender-gray;
       margin-top: 1rem;
       padding-top: 1rem;
 
@@ -210,7 +183,7 @@
       }
 
       p {
-        color: #4b5563;
+        color: $gray-dark;
         margin-bottom: 1.5rem;
         line-height: 1.5;
         text-align: left;
@@ -222,7 +195,7 @@
       h4 {
         font-size: 1.125rem;
         font-weight: 600;
-        color: #111827;
+        color: $blue-gray;
         margin-bottom: 1rem;
       }
 
@@ -230,7 +203,7 @@
         list-style-type: disc;
         padding-left: 1.5rem;
         margin-bottom: 1.5rem;
-        color: #4b5563;
+        color: $gray-dark;
 
         li {
           margin-bottom: 0.5rem;
@@ -242,15 +215,15 @@
         align-items: center;
         gap: 0.5rem;
         padding: 0.75rem 1.5rem;
-        background-color: #00b2b2;
-        color: white;
+        background-color: $accent-color;
+        color: $white;
         border-radius: 0.5rem;
         font-weight: 500;
         text-decoration: none;
         transition: background-color 0.2s;
 
         &:hover {
-          background-color: #0b5ed7;
+          background-color: $primary-color;
         }
 
         i {
@@ -263,7 +236,7 @@
 
 .benefits-section {
   padding: 5rem 0;
-  background-color: white;
+  background-color: $white;
 
   .container {
     color: inherit;
@@ -277,13 +250,13 @@
     h2 {
       font-size: 2rem;
       font-weight: 700;
-      color: #111827;
+      color: $blue-gray;
       margin-bottom: 1rem;
     }
 
     p {
       font-size: 1.125rem;
-      color: #4b5563;
+      color: $gray-dark;
       max-width: 42rem;
       margin: 0 auto;
     }
@@ -301,7 +274,7 @@
 }
 
 .benefit-card {
-  background: white;
+  background: $white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -324,44 +297,13 @@
     h3 {
       font-size: 1.25rem;
       font-weight: 600;
-      color: #111827;
+      color: $blue-gray;
       margin-bottom: 0.75rem;
     }
 
     p {
-      color: #4b5563;
+      color: $gray-dark;
       line-height: 1.5;
     }
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

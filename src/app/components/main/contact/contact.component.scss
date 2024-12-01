@@ -1,6 +1,8 @@
+@use "../../../../styles/colors" as *;
+
 .contact-section {
   padding: 5rem 0;
-  background-color: #00b2b2;
+  background-color: $accent-color;
 }
 
 .container {
@@ -19,7 +21,7 @@
 
 .content {
   text-align: center;
-  color: white;
+  color: $white;
   animation: fadeInUp 0.6s ease-out;
 
   h2 {
@@ -30,7 +32,7 @@
 
   p {
     font-size: 1.25rem;
-    color: #bfdbfe;
+    color: $light-sky-blue;
     max-width: 42rem;
     margin: 0 auto 2rem;
   }
@@ -62,8 +64,8 @@
 .contact-button {
   display: inline-flex;
   align-items: center;
-  background-color: white;
-  color: #2563eb;
+  background-color: $white;
+  color: $accent-color;
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
   font-weight: 500;
@@ -71,9 +73,10 @@
   transition: background-color 0.2s;
   gap: 0.5rem;
 
-  &:hover {
-    background-color: #f0f9ff;
-  }
+  // &:hover {
+  //   background-color: $primary-color;
+  //   color: $white;
+  // }
 
   i {
     transition: transform 0.2s ease;
@@ -81,16 +84,5 @@
 
   &:hover i {
     transform: translateX(4px);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

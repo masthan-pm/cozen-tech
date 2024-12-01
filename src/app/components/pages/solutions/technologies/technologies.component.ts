@@ -1,31 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface TechStack {
-  category: string;
-  technologies: string[];
-}
-
-interface Feature {
-  category: string;
-  items: string[];
-}
+import {
+  Capability,
+  Service,
+  Feature,
+  HeroContent,
+} from '../../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-technologies',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent],
   templateUrl: './technologies.component.html',
   styleUrls: ['./technologies.component.scss'],
 })
 export class TechnologiesComponent {
+  technologies: HeroContent = {
+    header: 'Technologies',
+    text: 'Leverage cutting-edge technologies to drive innovation and digital transformation',
+    image: '/assets/shared/services/technologies.jpg',
+  };
   services: Service[] = [
     {
       icon: 'code',
@@ -60,10 +56,10 @@ export class TechnologiesComponent {
     },
   ];
 
-  techStack: TechStack[] = [
+  techStack: Capability[] = [
     {
       category: 'Frontend',
-      technologies: [
+      items: [
         'React',
         'Angular',
         'Vue.js',
@@ -74,18 +70,11 @@ export class TechnologiesComponent {
     },
     {
       category: 'Backend',
-      technologies: [
-        'Node.js',
-        'Python',
-        'Java',
-        '.NET',
-        'Go',
-        'Ruby on Rails',
-      ],
+      items: ['Node.js', 'Python', 'Java', '.NET', 'Go', 'Ruby on Rails'],
     },
     {
       category: 'Cloud & DevOps',
-      technologies: [
+      items: [
         'AWS',
         'Azure',
         'Google Cloud',
@@ -96,7 +85,7 @@ export class TechnologiesComponent {
     },
     {
       category: 'Data & AI',
-      technologies: [
+      items: [
         'TensorFlow',
         'PyTorch',
         'MongoDB',

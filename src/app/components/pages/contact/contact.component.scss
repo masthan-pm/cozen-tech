@@ -1,24 +1,7 @@
+@use "../../../../styles/colors" as *;
+
 .contact-page {
   width: 100%;
-}
-
-// Hero Section
-.hero-section {
-  height: 400px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-image: url("/assets/pages/contact.jpg");
-  background-size: cover;
-  background-position: center;
-  animation: fadeIn 0.6s ease-out;
-  text-align: center;
-
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
 }
 
 // Container styles
@@ -27,7 +10,7 @@
   margin: 0 auto;
   padding: 0 1rem;
   position: relative;
-  color: white;
+  color: $white;
 
   @media (min-width: 640px) {
     padding: 0 1.5rem;
@@ -36,32 +19,12 @@
   @media (min-width: 1024px) {
     padding: 0 2rem;
   }
-
-  .hero-container {
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      animation: fadeInDown 0.8s ease-out;
-
-      @media (min-width: 768px) {
-        font-size: 3rem;
-      }
-    }
-
-    p {
-      font-size: 1.25rem;
-      max-width: 42rem;
-      margin: 0 auto;
-      animation: fadeInUp 0.8s ease-out;
-    }
-  }
 }
 
 // Contact Section styles
 .contact-section {
   padding: 4rem 0;
-  background-color: #f9fafb;
+  background-color: $gray-light;
 
   .contact-grid {
     display: grid;
@@ -79,12 +42,12 @@
   h2 {
     font-size: 1.875rem;
     font-weight: bold;
-    color: #111827;
+    color: $blue-gray;
     margin-bottom: 1rem;
   }
 
   p {
-    color: #4b5563;
+    color: $gray-dark;
     margin-bottom: 2rem;
   }
 
@@ -100,18 +63,18 @@
     gap: 1rem;
 
     i {
-      color: #2563eb;
+      color: $accent-color;
       font-size: 1.5rem;
     }
 
     h3 {
       font-weight: 600;
-      color: #111827;
+      color: $blue-gray;
       margin-bottom: 0.25rem;
     }
 
     p {
-      color: #4b5563;
+      color: $gray-dark;
       margin: 0;
     }
   }
@@ -119,7 +82,7 @@
 
 // Form styles
 .form-container {
-  background-color: white;
+  background-color: $white;
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -144,7 +107,7 @@
       display: block;
       font-size: 0.875rem;
       font-weight: 500;
-      color: #374151;
+      color: $blue-charcol;
       margin-bottom: 0.5rem;
     }
   }
@@ -152,15 +115,15 @@
   .form-control {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid $light-grayish-blue;
     border-radius: 0.375rem;
-    background-color: white;
-    color: #111827;
+    background-color: $white;
+    color: $blue-charcol;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:focus {
       outline: none;
-      border-color: #2563eb;
+      border-color: $accent-color;
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
       transform: translateY(-2px);
     }
@@ -179,13 +142,13 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.75rem;
-      border: 1px solid #d1d5db;
+      border: 1px solid $light-grayish-blue;
       border-radius: 0.375rem;
-      background-color: white;
+      background-color: $white;
       cursor: pointer;
 
       &:hover {
-        background-color: #f9fafb;
+        background-color: $gray-light;
       }
     }
 
@@ -197,8 +160,8 @@
       width: 16rem;
       max-height: 15rem;
       overflow-y: auto;
-      background-color: white;
-      border: 1px solid #d1d5db;
+      background-color: $white;
+      border: 1px solid $light-grayish-blue;
       border-radius: 0.375rem;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
       margin-top: 0.25rem;
@@ -215,12 +178,12 @@
       text-align: left;
 
       &:hover {
-        background-color: #f9fafb;
+        background-color: $gray-light;
       }
 
       .dial-code {
         margin-left: auto;
-        color: #6b7280;
+        color: $gray-charcol;
       }
     }
   }
@@ -233,8 +196,8 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background-color: #2563eb;
-  color: white;
+  background-color: $accent-color;
+  color: $white;
   border: none;
   border-radius: 0.375rem;
   font-weight: 500;
@@ -243,7 +206,7 @@
     background-color 0.3s ease;
 
   &:hover {
-    background-color: #1d4ed8;
+    background-color: $accent-color;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
   }
@@ -256,7 +219,7 @@
 // Offices Section
 .offices-section {
   padding: 4rem 0;
-  background-color: white;
+  background-color: $white;
 
   .section-header {
     text-align: center;
@@ -265,12 +228,12 @@
     h2 {
       font-size: 1.875rem;
       font-weight: bold;
-      color: #111827;
+      color: $blue-gray;
       margin-bottom: 1rem;
     }
 
     p {
-      color: #4b5563;
+      color: $gray-dark;
       max-width: 36rem;
       margin: 0 auto;
     }
@@ -291,7 +254,7 @@
   }
 
   .office-card {
-    background-color: #f9fafb;
+    background-color: $gray-light;
     padding: 1.5rem;
     border-radius: 0.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -304,7 +267,7 @@
     h3 {
       font-size: 1.25rem;
       font-weight: 600;
-      color: #111827;
+      color: $blue-gray;
       margin-bottom: 1rem;
     }
 
@@ -320,12 +283,12 @@
       gap: 0.75rem;
 
       i {
-        color: #2563eb;
+        color: $accent-color;
         font-size: 1.25rem;
       }
 
       p {
-        color: #4b5563;
+        color: $gray-dark;
         margin: 0;
       }
     }
@@ -372,7 +335,7 @@
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    color: #6b7280;
+    color: $gray-charcol;
     pointer-events: none;
   }
 
@@ -398,26 +361,4 @@
 
 .animate-fade-right {
   animation: fadeInRight 0.8s ease-out;
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }

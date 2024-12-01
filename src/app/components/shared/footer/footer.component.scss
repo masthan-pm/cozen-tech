@@ -1,8 +1,11 @@
+@use "../../../../styles/colors" as *;
+
 .footer {
-  background-color: #111827;
-  color: white;
+  background-color: $blue-gray;
+  color: $white;
   padding: 4rem 1rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.6s ease-out;
 }
 
 .footer-container {
@@ -15,6 +18,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
+  animation: fadeInUp 0.8s ease-out;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
@@ -28,10 +32,11 @@
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 1.5rem;
+    animation: fadeInLeft 0.8s ease-out;
 
     .material-icons {
       font-size: 2rem;
-      color: #00b2b2;
+      color: $accent-color;
     }
 
     .company-name {
@@ -42,21 +47,25 @@
   }
 
   .company-description {
-    color: #9ca3af;
+    color: $light-slate-gray;
     line-height: 1.6;
     font-size: 0.95rem;
+    animation: fadeInUp 1s ease-out;
   }
 }
 
 .quick-links,
 .contact-info,
 .social-media {
+  animation: fadeInUp 0.8s ease-out;
+
   h3 {
     font-weight: 600;
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 0.75rem;
+    animation: fadeInDown 0.8s ease-out;
 
     &:after {
       content: "";
@@ -65,7 +74,7 @@
       bottom: 0;
       width: 2.5rem;
       height: 2px;
-      background-color: #00b2b2;
+      background-color: $accent-color;
     }
   }
 
@@ -80,7 +89,7 @@
   }
 
   a {
-    color: #9ca3af;
+    color: $light-slate-gray;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -88,7 +97,7 @@
     gap: 0.5rem;
 
     &:hover {
-      color: #00b2b2;
+      color: $accent-color;
       transform: translateX(5px);
     }
   }
@@ -102,12 +111,12 @@
     margin-bottom: 1.25rem;
 
     .material-icons {
-      color: #00b2b2;
+      color: $accent-color;
       font-size: 1.25rem;
     }
 
     span:not(.material-icons) {
-      color: #9ca3af;
+      color: $light-slate-gray;
       line-height: 1.6;
     }
   }
@@ -116,6 +125,7 @@
 .social-links {
   display: flex;
   gap: 1.25rem;
+  animation: fadeInRight 0.8s ease-out;
 
   a {
     background-color: rgba(96, 165, 250, 0.1);
@@ -129,15 +139,15 @@
 
     .material-icons {
       font-size: 1.25rem;
-      color: #00b2b2;
+      color: $accent-color;
     }
 
     &:hover {
-      background-color: #00b2b2;
+      background-color: $accent-color;
       transform: translateY(-3px);
 
       .material-icons {
-        color: white;
+        color: $white;
       }
     }
   }
@@ -148,8 +158,9 @@
   padding-top: 2rem;
   border-top: 1px solid rgba(156, 163, 175, 0.1);
   text-align: center;
-  color: #9ca3af;
+  color: $light-slate-gray;
   font-size: 0.9rem;
+  animation: fadeInUp 1s ease-out;
 
   p {
     opacity: 0.8;

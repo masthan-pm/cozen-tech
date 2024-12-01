@@ -1,24 +1,6 @@
+@use "../../../../../styles/colors" as *;
 .staffing-solutions {
   width: 100%;
-}
-
-// Hero Section styles following global component pattern
-.hero-section {
-  height: 400px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-image: url("/assets/shared/services/staffing.jpg");
-  background-size: cover;
-  background-position: center;
-  animation: fadeIn 0.6s ease-out;
-  text-align: center;
-
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
 }
 
 // Container styles following your pattern
@@ -27,7 +9,7 @@
   margin: 0 auto;
   padding: 0 1rem;
   position: relative;
-  color: white;
+  color: $white;
 
   @media (min-width: 640px) {
     padding: 0 1.5rem;
@@ -35,17 +17,6 @@
 
   @media (min-width: 1024px) {
     padding: 0 2rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    animation: fadeInDown 0.8s ease-out;
-
-    @media (min-width: 768px) {
-      font-size: 3rem;
-    }
   }
 
   p {
@@ -74,13 +45,13 @@
   h2 {
     font-size: 1.875rem;
     font-weight: 700;
-    color: #111827;
+    color: $blue-gray;
     margin-bottom: 1rem;
   }
 
   p {
     font-size: 1.25rem;
-    color: #4b5563;
+    color: $gray-dark;
     max-width: 48rem;
     margin: 0 auto;
   }
@@ -102,7 +73,7 @@
 }
 
 .service-card {
-  background: white;
+  background: $white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -124,19 +95,19 @@
 
       i {
         font-size: 1.5rem;
-        color: #00b2b2;
+        color: $accent-color;
       }
 
       h3 {
         font-size: 1.25rem;
         font-weight: 600;
         margin: 0;
-        color: #1a1a1a;
+        color: $black-gray;
       }
     }
 
     p {
-      color: #666;
+      color: $gray-charcol;
       margin-bottom: 1.5rem;
     }
   }
@@ -145,7 +116,7 @@
 // Process section styles
 .process-section {
   padding: 5rem 0;
-  background-color: white;
+  background-color: $white;
 
   .container {
     color: inherit;
@@ -174,8 +145,8 @@
   .step-number {
     width: 4rem;
     height: 4rem;
-    background-color: #dbeafe;
-    color: #00b2b2;
+    background-color: $light-periwinkle;
+    color: $accent-color;
     border-radius: 9999px;
     display: flex;
     align-items: center;
@@ -188,12 +159,12 @@
   h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #111827;
+    color: $blue-gray;
     margin-bottom: 0.5rem;
   }
 
   p {
-    color: #4b5563;
+    color: $gray-dark;
     font-size: 1rem;
   }
 }
@@ -201,7 +172,7 @@
 // Specializations section styles
 .specializations-section {
   padding: 5rem 0;
-  background-color: #f9fafb;
+  background-color: $gray-light;
 
   .container {
     color: inherit;
@@ -223,7 +194,7 @@
 }
 
 .tech-card {
-  background: white;
+  background: $white;
   padding: 1rem;
   border-radius: 0.5rem;
   text-align: center;
@@ -237,7 +208,7 @@
   }
 
   span {
-    color: #111827;
+    color: $blue-gray;
     font-weight: 500;
   }
 }
@@ -245,7 +216,7 @@
 // CTA Section styles
 .cta-section {
   padding: 5rem 0;
-  background-color: #00b2b2;
+  background-color: $accent-color;
   text-align: center;
 
   .container {
@@ -264,13 +235,13 @@
     p {
       font-size: 1.25rem;
       margin-bottom: 2rem;
-      color: #e5e7eb;
+      color: $lavender-gray;
     }
 
     .cta-button {
       display: inline-block;
-      background-color: white;
-      color: #00b2b2;
+      background-color: $white;
+      color: $accent-color;
       padding: 0.75rem 2rem;
       border-radius: 0.5rem;
       font-weight: 500;
@@ -278,40 +249,8 @@
       transition: background-color 0.2s;
 
       &:hover {
-        background-color: #f0f9ff;
+        background-color: $blue-white;
       }
     }
-  }
-}
-
-// Animations
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
