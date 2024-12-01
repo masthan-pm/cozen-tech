@@ -32,3 +32,9 @@ export interface Expertise {
   category: string;
   items: string[];
 }
+
+//hr-payroll.component.ts
+export interface Feature {
+  category: string;
+  items: string[];
+}

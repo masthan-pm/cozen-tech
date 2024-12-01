@@ -1,32 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Phase {
-  step: string;
-  title: string;
-  description: string;
-}
-
-interface Feature {
-  category: string;
-  items: string[];
-}
+import {
+  Service,
+  Phase,
+  Feature,
+  HeroContent,
+} from '../../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-hr-payroll',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent],
   templateUrl: './hr-payroll.component.html',
   styleUrls: ['./hr-payroll.component.scss'],
 })
 export class HRPayrollComponent {
+  hrPayroll: HeroContent = {
+    header: 'HR & Payroll Services',
+    text: 'Streamline your HR operations with our comprehensive human resources solutions',
+    image: '/assets/shared/services/hr.jpg',
+  };
   services: Service[] = [
     {
       icon: 'attach_money',
