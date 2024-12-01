@@ -1,6 +1,8 @@
+@use "../../../../styles/colors" as *;
+
 .footer {
-  background-color: #111827;
-  color: white;
+  background-color: $blue-gray;
+  color: $white;
   padding: 4rem 1rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -31,7 +33,7 @@
 
     .material-icons {
       font-size: 2rem;
-      color: #00b2b2;
+      color: $accent-color;
     }
 
     .company-name {
@@ -42,7 +44,7 @@
   }
 
   .company-description {
-    color: #9ca3af;
+    color: $light-slate-gray;
     line-height: 1.6;
     font-size: 0.95rem;
   }
@@ -65,7 +67,7 @@
       bottom: 0;
       width: 2.5rem;
       height: 2px;
-      background-color: #00b2b2;
+      background-color: $accent-color;
     }
   }
 
@@ -80,7 +82,7 @@
   }
 
   a {
-    color: #9ca3af;
+    color: $light-slate-gray;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -88,7 +90,7 @@
     gap: 0.5rem;
 
     &:hover {
-      color: #00b2b2;
+      color: $accent-color;
       transform: translateX(5px);
     }
   }
@@ -102,12 +104,12 @@
     margin-bottom: 1.25rem;
 
     .material-icons {
-      color: #00b2b2;
+      color: $accent-color;
       font-size: 1.25rem;
     }
 
     span:not(.material-icons) {
-      color: #9ca3af;
+      color: $light-slate-gray;
       line-height: 1.6;
     }
   }
@@ -129,15 +131,15 @@
 
     .material-icons {
       font-size: 1.25rem;
-      color: #00b2b2;
+      color: $accent-color;
     }
 
     &:hover {
-      background-color: #00b2b2;
+      background-color: $accent-color;
       transform: translateY(-3px);
 
       .material-icons {
-        color: white;
+        color: $white;
       }
     }
   }
@@ -148,7 +150,7 @@
   padding-top: 2rem;
   border-top: 1px solid rgba(156, 163, 175, 0.1);
   text-align: center;
-  color: #9ca3af;
+  color: $light-slate-gray;
   font-size: 0.9rem;
 
   p {

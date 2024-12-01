@@ -1,6 +1,8 @@
+@use "../../../../../styles/colors" as *;
+
 .values-section {
   padding: 4rem 0;
-  background-color: #f9fafb;
+  background-color: $gray-light;
 }
 
 .container {
@@ -25,13 +27,13 @@
   h2 {
     font-size: 1.875rem;
     font-weight: 700;
-    color: #111827;
+    color: $blue-gray;
     margin-bottom: 1rem;
   }
 
   p {
     font-size: 1.25rem;
-    color: #4b5563;
+    color: $gray-dark;
     max-width: 32rem;
     margin: 0 auto;
   }
@@ -68,26 +70,26 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #dbeafe;
+    background-color: $light-periwinkle;
     padding: 0.75rem;
     border-radius: 0.5rem;
     margin-bottom: 1.5rem;
 
     i {
       font-size: 2rem;
-      color: #00b2b2;
+      color: $accent-color;
     }
   }
 
   h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #111827;
+    color: $blue-gray;
     margin-bottom: 1rem;
   }
 
   p {
-    color: #4b5563;
+    color: $gray-dark;
     line-height: 1.625;
   }
 }

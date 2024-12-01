@@ -1,3 +1,5 @@
+@use "../../../../styles/colors" as *;
+
 .blog-page {
   width: 100%;
 }
@@ -25,7 +27,7 @@
   margin: 0 auto;
   padding: 0 1rem;
   position: relative;
-  color: white;
+  color: $white;
 
   @media (min-width: 640px) {
     padding: 0 1.5rem;
@@ -59,7 +61,7 @@
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 1rem;
-  color: white;
+  color: $white;
 
   @media (min-width: 640px) {
     padding: 0 1.5rem;
@@ -91,7 +93,7 @@
 // Search section styles
 .search-section {
   padding: 2rem 0;
-  background-color: white;
+  background-color: $white;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
   .container {
@@ -116,19 +118,19 @@
         left: 1rem;
         top: 50%;
         transform: translateY(-50%);
-        color: #6b7280;
+        color: $gray-charcol;
       }
 
       input {
         width: 100%;
         padding: 0.75rem 1rem 0.75rem 3rem;
-        border: 1px solid #e5e7eb;
+        border: 1px solid $lavender-gray;
         border-radius: 0.5rem;
         font-size: 1rem;
 
         &:focus {
           outline: none;
-          border-color: #00b2b2;
+          border-color: $accent-color;
           box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
         }
       }
@@ -136,14 +138,14 @@
 
     select {
       padding: 0.75rem 1rem;
-      border: 1px solid #e5e7eb;
+      border: 1px solid $lavender-gray;
       border-radius: 0.5rem;
       font-size: 1rem;
       min-width: 200px;
 
       &:focus {
         outline: none;
-        border-color: #00b2b2;
+        border-color: $accent-color;
         box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
       }
     }
@@ -153,12 +155,11 @@
 // Posts section styles
 .posts-section {
   padding: 3rem 0;
-  background-color: #f9fafb;
+  background-color: $gray-light;
 
   .container {
     color: inherit;
 
-    // Add the grid styles directly here instead of using .services-grid
     .posts-grid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -177,7 +178,7 @@
 
 // Post card styles (remove duplicate declarations)
 .post-card {
-  background: white;
+  background: $white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -200,11 +201,11 @@
     h2 {
       font-size: 1.4rem;
       font-weight: 600;
-      color: #111827;
+      color: $blue-gray;
     }
 
     p {
-      color: #4b5563;
+      color: $gray-dark;
       // margin-bottom: 11.5rem;
     }
 
@@ -212,19 +213,19 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: #6b7280;
+      color: $gray-charcol;
       font-size: 0.875rem;
 
       .category {
-        background-color: #e6f0ff;
-        color: #00b2b2;
+        background-color: $light-ice-blue;
+        color: $accent-color;
         padding: 0.25rem 0.75rem;
         border-radius: 9999px;
         font-weight: 500;
       }
 
       .divider {
-        color: #d1d5db;
+        color: $light-grayish-blue;
       }
 
       i {
@@ -238,13 +239,13 @@
       justify-content: space-between;
       align-items: center;
       padding-top: 1rem;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid $lavender-gray;
 
       .author {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        color: #6b7280;
+        color: $gray-charcol;
         font-size: 0.875rem;
 
         i {
@@ -256,7 +257,7 @@
         display: flex;
         align-items: center;
         gap: 0.25rem;
-        color: #00b2b2;
+        color: $accent-color;
         font-weight: 500;
         font-size: 0.875rem;
         text-decoration: none;
@@ -277,11 +278,11 @@
         display: flex;
         align-items: center;
         gap: 0.25rem;
-        background-color: #f3f4f6;
+        background-color: $gray-off-white;
         padding: 0.25rem 0.75rem;
         border-radius: 9999px;
         font-size: 0.75rem;
-        color: #4b5563;
+        color: $gray-dark;
 
         i {
           font-size: 0.875rem;
@@ -344,8 +345,8 @@
 
       button {
         padding: 0.75rem 2rem;
-        background-color: white;
-        color: #00b2b2;
+        background-color: $white;
+        color: $accent-color;
         border: none;
         border-radius: 0.5rem;
         font-weight: 500;
@@ -353,7 +354,7 @@
         transition: background-color 0.2s;
 
         &:hover {
-          background-color: #f0f9ff;
+          background-color: $blue-white;
         }
       }
     }

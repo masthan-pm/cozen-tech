@@ -1,6 +1,8 @@
+@use "../../../../../styles/colors" as *;
+
 .teams-section {
   padding: 4rem 0;
-  background-color: white;
+  background-color: $white;
 }
 
 .container {
@@ -25,13 +27,13 @@
   h2 {
     font-size: 1.875rem;
     font-weight: 700;
-    color: #111827;
+    color: $blue-gray;
     margin-bottom: 1rem;
   }
 
   p {
     font-size: 1.25rem;
-    color: #4b5563;
+    color: $gray-dark;
     max-width: 42rem;
     margin: 0 auto;
   }
@@ -52,7 +54,7 @@
 }
 
 .team-card {
-  background-color: #f9fafb;
+  background-color: $gray-light;
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -89,7 +91,7 @@
         gap: 1rem;
 
         .social-link {
-          background-color: white;
+          background-color: $white;
           width: 2.5rem;
           height: 2.5rem;
           border-radius: 50%;
@@ -100,11 +102,11 @@
           text-decoration: none;
 
           &:hover {
-            background-color: #dbeafe;
+            background-color: $light-periwinkle;
           }
 
           i {
-            color: #00b2b2;
+            color: $accent-color;
             font-size: 1.25rem;
           }
         }
@@ -123,18 +125,18 @@
     h3 {
       font-size: 1.25rem;
       font-weight: 600;
-      color: #111827;
+      color: $blue-gray;
       margin-bottom: 0.5rem;
     }
 
     .role {
-      color: #00b2b2;
+      color: $accent-color;
       font-weight: 500;
       margin-bottom: 0.75rem;
     }
 
     .bio {
-      color: #4b5563;
+      color: $gray-dark;
       font-size: 0.875rem;
       line-height: 1.5;
     }

@@ -1,6 +1,8 @@
+@use "../../../../styles/colors" as *;
+
 .services-section {
   padding: 5rem 0;
-  background-color: #f9fafb;
+  background-color: $white;
 }
 
 .container {
@@ -25,13 +27,13 @@
   h2 {
     font-size: 1.875rem;
     font-weight: 700;
-    color: #111827;
+    color: $blue-gray;
     margin-bottom: 1rem;
   }
 
   p {
     font-size: 1.25rem;
-    color: #4b5563;
+    color: $gray-dark;
     max-width: 48rem;
     margin: 0 auto;
   }
@@ -52,7 +54,7 @@
 }
 
 .service-card {
-  background-color: white;
+  background-color: $white;
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -80,7 +82,7 @@
       position: absolute;
       bottom: 1rem;
       left: 1rem;
-      color: white;
+      color: $white;
       z-index: 1;
 
       .icon {
@@ -110,7 +112,7 @@
     padding: 1.5rem;
 
     p {
-      color: #4b5563;
+      color: $gray-dark;
       margin-bottom: 1rem;
       line-height: 1.5;
     }
@@ -118,14 +120,14 @@
     .learn-more {
       display: inline-flex;
       align-items: center;
-      color: #00b2b2;
+      color: $accent-color;
       font-weight: 500;
       text-decoration: none;
       transition: color 0.2s;
       gap: 0.5rem;
 
       &:hover {
-        color: #00b2b2;
+        color: $accent-color;
       }
 
       i {
