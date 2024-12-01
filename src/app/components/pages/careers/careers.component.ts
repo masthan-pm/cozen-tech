@@ -3,26 +3,17 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-interface Job {
-  title: string;
-  department: string;
-  location: string;
-  type: string;
-  salary: string;
-  description: string;
-  requirements: string[];
-}
-
-interface Benefit {
-  title: string;
-  description: string;
-  image: string;
-}
+import {
+  Job,
+  CareerBenefit,
+  HeroContent,
+} from '../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-careers',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule, HeroComponent],
   templateUrl: './careers.component.html',
   styleUrls: ['./careers.component.scss'],
 })
@@ -31,6 +22,11 @@ export class CareersComponent {
   searchTerm: string = '';
   selectedLocation: string = 'all';
   selectedDepartment: string = 'all';
+  careers: HeroContent = {
+    header: 'Join Our Team',
+    text: 'Build your career with a company that values innovation, growth, and excellence',
+    image: '/assets/pages/careers/careers.jpg',
+  };
 
   locations: string[] = [
     'San Francisco, CA',
@@ -91,7 +87,7 @@ export class CareersComponent {
     },
   ];
 
-  benefits: Benefit[] = [
+  benefits: CareerBenefit[] = [
     {
       title: 'Health & Wellness',
       description:

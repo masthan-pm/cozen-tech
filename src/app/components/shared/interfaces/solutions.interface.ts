@@ -10,6 +10,16 @@ export interface Stat {
   label: string;
 }
 
+export interface Job {
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  salary: string;
+  description: string;
+  requirements: string[];
+}
+
 export interface BlogPost {
   title: string;
   category: string;
@@ -51,4 +61,10 @@ export interface Expertise {
 export interface Feature {
   category: string;
   items: string[];
+}
+
+export interface CareerBenefit {
+  title: string;
+  description: string;
+  image: string;
 }
