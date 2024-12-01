@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+// src/styles.scss
+
+@use "styles/colors" as *; // Import all variables globally
+
+/* Your existing styles can go here */
 
 html,
 body {
