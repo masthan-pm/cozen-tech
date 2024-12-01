@@ -1,15 +1,9 @@
 <div class="staffing-solutions">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Staffing & Recruitment</h1>
-      <p>
-        Connect with exceptional tech talent through our comprehensive
-        recruitment solutions
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="staffing.image">
+    <h1 hero-header>{{ staffing.header }}</h1>
+    <p hero-text>{{ staffing.text }}</p>
+  </app-hero>
 
   <!-- Services Section -->
   <section class="services-section">
