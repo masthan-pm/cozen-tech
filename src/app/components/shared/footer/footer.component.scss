@@ -5,6 +5,7 @@
   color: $white;
   padding: 4rem 1rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.6s ease-out;
 }
 
 .footer-container {
@@ -17,6 +18,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
+  animation: fadeInUp 0.8s ease-out;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
@@ -30,6 +32,7 @@
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 1.5rem;
+    animation: fadeInLeft 0.8s ease-out;
 
     .material-icons {
       font-size: 2rem;
@@ -47,18 +50,22 @@
     color: $light-slate-gray;
     line-height: 1.6;
     font-size: 0.95rem;
+    animation: fadeInUp 1s ease-out;
   }
 }
 
 .quick-links,
 .contact-info,
 .social-media {
+  animation: fadeInUp 0.8s ease-out;
+
   h3 {
     font-weight: 600;
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 0.75rem;
+    animation: fadeInDown 0.8s ease-out;
 
     &:after {
       content: "";
@@ -118,6 +125,7 @@
 .social-links {
   display: flex;
   gap: 1.25rem;
+  animation: fadeInRight 0.8s ease-out;
 
   a {
     background-color: rgba(96, 165, 250, 0.1);
@@ -152,6 +160,7 @@
   text-align: center;
   color: $light-slate-gray;
   font-size: 0.9rem;
+  animation: fadeInUp 1s ease-out;
 
   p {
     opacity: 0.8;
