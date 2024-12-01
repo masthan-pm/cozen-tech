@@ -1,27 +1,28 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Program {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Feature {
-  category: string;
-  items: string[];
-}
+import {
+  Service,
+  Feature,
+  HeroContent,
+} from '../../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-training',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent],
   templateUrl: './training.component.html',
   styleUrls: ['./training.component.scss'],
 })
 export class TrainingComponent {
-  programs: Program[] = [
+  training: HeroContent = {
+    header: 'Training Programs',
+    text: 'Empower your workforce with comprehensive technical and professional development programs',
+    image: '/assets/shared/services/training.jpg',
+  };
+
+  programs: Service[] = [
     {
       icon: 'menu_book',
       title: 'Technical Training',
