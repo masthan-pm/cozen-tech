@@ -1,32 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Phase {
-  step: string;
-  title: string;
-  description: string;
-}
-
-interface Capability {
-  category: string;
-  items: string[];
-}
+import { HeroComponent } from '../../../shared/hero/hero.component';
+import {
+  Service,
+  Phase,
+  Capability,
+  HeroContent,
+} from '../../../shared/interfaces/solutions.interface';
 
 @Component({
   selector: 'app-data-support',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent],
   templateUrl: './data-support.component.html',
   styleUrls: ['./data-support.component.scss'],
 })
 export class DataSupportComponent {
+  dataSupport: HeroContent = {
+    header: 'Data Support',
+    text: 'Transform your data into actionable insights with our comprehensive data management solutions',
+    image: '/assets/shared/services/data.jpg',
+  };
   services: Service[] = [
     {
       icon: 'database',
