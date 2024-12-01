@@ -4,13 +4,13 @@ export interface HeroContent {
   image: string;
 }
 
-//data-support.component.ts
 export interface Service {
   icon: string;
   title: string;
   description: string;
 }
 
+//data-support.component.ts
 export interface Phase {
   step: string;
   title: string;
@@ -18,6 +18,17 @@ export interface Phase {
 }
 
 export interface Capability {
+  category: string;
+  items: string[];
+}
+
+//finance.component.ts
+export interface Benefit {
+  title: string;
+  description: string;
+}
+
+export interface Expertise {
   category: string;
   items: string[];
 }

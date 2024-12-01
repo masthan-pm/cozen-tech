@@ -1,31 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Benefit {
-  title: string;
-  description: string;
-}
-
-interface Expertise {
-  category: string;
-  items: string[];
-}
+import {
+  Service,
+  Benefit,
+  Expertise,
+  HeroContent,
+} from '../../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-finance',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent],
   templateUrl: './finance.component.html',
   styleUrls: ['./finance.component.scss'],
 })
 export class FinanceComponent {
+  finance: HeroContent = {
+    header: 'Finance & Accounting Services',
+    text: 'Comprehensive financial solutions to drive your business growth and success',
+    image: '/assets/shared/services/finance.jpg',
+  };
   services: Service[] = [
     {
       icon: 'attach_money',

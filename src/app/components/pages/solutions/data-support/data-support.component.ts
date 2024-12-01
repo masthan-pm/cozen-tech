@@ -18,13 +18,13 @@ import {
 })
 export class DataSupportComponent {
   dataSupport: HeroContent = {
-    header: 'Data Support',
+    header: 'Data Support Services',
     text: 'Transform your data into actionable insights with our comprehensive data management solutions',
     image: '/assets/shared/services/data.jpg',
   };
   services: Service[] = [
     {
-      icon: 'database',
+      icon: 'storage',
       title: 'Data Management',
       description:
         'Comprehensive data organization, storage, and maintenance solutions.',
