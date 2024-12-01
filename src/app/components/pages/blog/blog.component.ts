@@ -9,27 +9,32 @@ import {
   FormsModule,
 } from '@angular/forms';
 import { BlogService } from './blog.service';
-
-interface BlogPost {
-  title: string;
-  category: string;
-  author: string;
-  date: string;
-  readTime: string;
-  image: string;
-  excerpt: string;
-  tags: string[];
-}
+import {
+  BlogPost,
+  HeroContent,
+} from '../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HeroComponent,
+  ],
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent {
   constructor(private blogService: BlogService) {}
+  blog: HeroContent = {
+    header: 'Blog & Insights',
+    text: 'Stay updated with the latest in technology, industry trends, and company news',
+    image: '/assets/pages/blog/blog.jpg',
+  };
   searchTerm: string = '';
   selectedCategory: string = 'all';
 

@@ -1,15 +1,9 @@
 <div class="hr-payroll-solutions">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>HR & Payroll Services</h1>
-      <p>
-        Streamline your HR operations with our comprehensive human resources
-        solutions
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="hrPayroll.image">
+    <h1 hero-header>{{ hrPayroll.header }}</h1>
+    <p hero-text>{{ hrPayroll.text }}</p>
+  </app-hero>
 
   <!-- Services Section -->
   <section class="services-section">

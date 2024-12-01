@@ -10,30 +10,12 @@ import {
 } from '@angular/forms';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { BlogService } from '../blog/blog.service';
-
-interface Office {
-  city: string;
-  address: string;
-  phone: string;
-  email: string;
-  hours: string;
-}
-
-interface Country {
-  name: string;
-  code: string;
-  dialCode: string;
-  flag: string;
-}
-
-interface FormData {
-  name: string;
-  companyName: string;
-  email: string;
-  phone: string;
-  subject: string;
-  message: string;
-}
+import {
+  Country,
+  Office,
+  HeroContent,
+} from '../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-contact',
@@ -44,12 +26,18 @@ interface FormData {
     ReactiveFormsModule,
     ClickOutsideDirective,
     FormsModule,
+    HeroComponent,
   ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
   constructor(private blogService: BlogService) {}
+  contact: HeroContent = {
+    header: 'Contact Us',
+    text: 'Get in touch with our team to discuss how we can help your business grow',
+    image: '/assets/pages/contact.jpg',
+  };
   contactEmail = 'info@cozentech.com';
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),

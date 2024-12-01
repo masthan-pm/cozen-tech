@@ -1,15 +1,9 @@
 <div class="mortgage-solutions">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Mortgage Services</h1>
-      <p>
-        Streamline your mortgage operations with our comprehensive processing
-        solutions
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="mortgage.image">
+    <h1 hero-header>{{ mortgage.header }}</h1>
+    <p hero-text>{{ mortgage.text }}</p>
+  </app-hero>
 
   <!-- Services Section -->
   <section class="services-section">

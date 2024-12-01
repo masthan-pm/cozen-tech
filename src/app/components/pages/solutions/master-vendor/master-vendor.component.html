@@ -1,15 +1,9 @@
 <div class="master-vendor">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Master Vendor Program</h1>
-      <p>
-        Optimize your vendor management with our comprehensive master vendor
-        solutions
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="masterVendor.image">
+    <h1 hero-header>{{ masterVendor.header }}</h1>
+    <p hero-text>{{ masterVendor.text }}</p>
+  </app-hero>
 
   <!-- Services Section -->
   <section class="services-section">

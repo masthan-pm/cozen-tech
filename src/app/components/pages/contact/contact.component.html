@@ -1,17 +1,9 @@
 <div class="contact-page">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="hero-container">
-        <h1 class="animate-fade-down">Contact Us</h1>
-        <p class="animate-fade-up">
-          Get in touch with our team to discuss how we can help your business
-          grow
-        </p>
-      </div>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="contact.image">
+    <h1 hero-header>{{ contact.header }}</h1>
+    <p hero-text>{{ contact.text }}</p>
+  </app-hero>
 
   <!-- Contact Form Section -->
   <section class="contact-section">
