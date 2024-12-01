@@ -1,15 +1,9 @@
 <div class="blog-page">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container hero-main">
-      <h1>Blog & Insights</h1>
-      <p>
-        Stay updated with the latest in technology, industry trends, and company
-        news
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="blog.image">
+    <h1 hero-header>{{ blog.header }}</h1>
+    <p hero-text>{{ blog.text }}</p>
+  </app-hero>
 
   <!-- Search Section -->
   <section class="search-section">

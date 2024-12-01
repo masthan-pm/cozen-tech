@@ -10,6 +10,17 @@ export interface Stat {
   label: string;
 }
 
+export interface BlogPost {
+  title: string;
+  category: string;
+  author: string;
+  date: string;
+  readTime: string;
+  image: string;
+  excerpt: string;
+  tags: string[];
+}
+
 export interface Service {
   icon: string;
   title: string;
