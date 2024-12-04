@@ -4,6 +4,11 @@ export interface HeroContent {
   image: string;
 }
 
+export interface CTAContent {
+  header: string;
+  text: string;
+}
+
 export interface Stat {
   icon: string;
   stat: string;
