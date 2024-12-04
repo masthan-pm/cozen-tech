@@ -1,8 +1,10 @@
 <div class="contact-page">
   <!-- Hero Section -->
-  <app-hero [backgroundImage]="contact.image">
-    <h1 hero-header>{{ contact.header }}</h1>
-    <p hero-text>{{ contact.text }}</p>
+  <app-hero
+    [backgroundImage]="contact.image"
+    [header]="contact.header"
+    [text]="contact.text"
+  >
   </app-hero>
 
   <!-- Contact Form Section -->

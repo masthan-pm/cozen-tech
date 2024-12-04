@@ -1,8 +1,10 @@
 <div class="mortgage-solutions">
   <!-- Hero Section -->
-  <app-hero [backgroundImage]="mortgage.image">
-    <h1 hero-header>{{ mortgage.header }}</h1>
-    <p hero-text>{{ mortgage.text }}</p>
+  <app-hero
+    [backgroundImage]="mortgage.image"
+    [header]="mortgage.header"
+    [text]="mortgage.text"
+  >
   </app-hero>
 
   <!-- Services Section -->
