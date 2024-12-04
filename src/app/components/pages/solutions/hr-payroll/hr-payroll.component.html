@@ -71,16 +71,5 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="content">
-        <h2>Ready to Optimize Your HR Operations?</h2>
-        <p>
-          Let's discuss how our HR solutions can streamline your workforce
-          management.
-        </p>
-        <a routerLink="/contact" class="cta-button">Contact Us Today</a>
-      </div>
-    </div>
-  </section>
+  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
 </div>

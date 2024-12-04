@@ -6,13 +6,15 @@ import {
   Benefit,
   Expertise,
   HeroContent,
+  CTAContent,
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
+import { CTAComponent } from '../../../shared/cta/cta.component';
 
 @Component({
   selector: 'app-finance',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './finance.component.html',
   styleUrls: ['./finance.component.scss'],
 })
@@ -22,6 +24,12 @@ export class FinanceComponent {
     text: 'Comprehensive financial solutions to drive your business growth and success',
     image: '/assets/shared/services/finance.jpg',
   };
+
+  cta: CTAContent = {
+    header: 'Ready to Optimize Your Finances?',
+    text: "Let's discuss how our financial solutions can drive your business success.",
+  };
+
   services: Service[] = [
     {
       icon: 'attach_money',

@@ -6,13 +6,15 @@ import {
   Phase,
   Feature,
   HeroContent,
+  CTAContent,
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
+import { CTAComponent } from '../../../shared/cta/cta.component';
 
 @Component({
   selector: 'app-hr-payroll',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './hr-payroll.component.html',
   styleUrls: ['./hr-payroll.component.scss'],
 })
@@ -22,6 +24,12 @@ export class HRPayrollComponent {
     text: 'Streamline your HR operations with our comprehensive human resources solutions',
     image: '/assets/shared/services/hr.jpg',
   };
+
+  cta: CTAContent = {
+    header: 'Ready to Optimize Your HR Operations?',
+    text: "Let's discuss how our HR solutions can streamline your workforce management.",
+  };
+
   services: Service[] = [
     {
       icon: 'attach_money',
