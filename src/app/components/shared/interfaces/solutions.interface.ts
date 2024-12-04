@@ -83,3 +83,24 @@ export interface CareerBenefit {
   description: string;
   image: string;
 }
+
+export interface Client {
+  name: string;
+  logo: string;
+}
+
+export interface Testimonial {
+  name: string;
+  position: string;
+  image: string;
+  quote: string;
+  rating: number;
+}
+
+export interface SuccessStory {
+  client: string;
+  title: string;
+  image: string;
+  description: string;
+  results: string[];
+}

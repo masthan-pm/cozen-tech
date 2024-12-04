@@ -1,12 +1,9 @@
 <div class="clients-page">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Our Clients</h1>
-      <p>Partnering with leading companies to drive innovation and growth</p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="clientsHero.image">
+    <h1 hero-header>{{ clientsHero.header }}</h1>
+    <p hero-text>{{ clientsHero.text }}</p>
+  </app-hero>
 
   <!-- Client Logos Section -->
   <section class="clients-section">

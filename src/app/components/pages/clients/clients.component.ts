@@ -1,36 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Client {
-  name: string;
-  logo: string;
-}
-
-interface Testimonial {
-  name: string;
-  position: string;
-  image: string;
-  quote: string;
-  rating: number;
-}
-
-interface SuccessStory {
-  client: string;
-  title: string;
-  image: string;
-  description: string;
-  results: string[];
-}
+import {
+  Client,
+  Testimonial,
+  SuccessStory,
+  HeroContent,
+} from '../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-clients',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent],
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss'],
 })
 export class ClientsComponent {
+  clientsHero: HeroContent = {
+    header: 'Our Clients',
+    text: 'Partnering with leading companies to drive innovation and growth',
+    image: '/assets/pages/clients/client.jpg',
+  };
   clients: Client[] = [
     {
       name: 'ASP.NET',
