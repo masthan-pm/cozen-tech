@@ -6,13 +6,15 @@ import {
   Service,
   Feature,
   HeroContent,
+  CTAContent,
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
+import { CTAComponent } from '../../../shared/cta/cta.component';
 
 @Component({
   selector: 'app-technologies',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './technologies.component.html',
   styleUrls: ['./technologies.component.scss'],
 })
@@ -22,6 +24,12 @@ export class TechnologiesComponent {
     text: 'Leverage cutting-edge technologies to drive innovation and digital transformation',
     image: '/assets/shared/services/technologies.jpg',
   };
+
+  cta: CTAContent = {
+    header: 'Ready to Transform Your Business?',
+    text: "Let's discuss how our technology solutions can drive innovation and digital transformation.",
+  };
+
   services: Service[] = [
     {
       icon: 'code',

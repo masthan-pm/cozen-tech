@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { CTAContent } from '../../shared/interfaces/solutions.interface';
+import { CTAComponent } from '../../shared/cta/cta.component';
 
 interface Solution {
   icon: string;
@@ -12,11 +14,16 @@ interface Solution {
 @Component({
   selector: 'app-our-solutions',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, CTAComponent],
   templateUrl: './solutions.component.html',
   styleUrls: ['./solutions.component.scss'],
 })
 export class OurSolutionsComponent {
+  cta: CTAContent = {
+    header: 'Ready to Transform Your Business?',
+    text: "Let's discuss how our solutions can help you achieve your business goals.",
+  };
+
   solutions: Solution[] = [
     {
       icon: 'public',

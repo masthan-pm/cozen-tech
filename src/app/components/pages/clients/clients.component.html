@@ -92,14 +92,9 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready to Join Our Success Stories?</h2>
-      <p>
-        Let's discuss how we can help you achieve your business goals through
-        our IT solutions and talent acquisition services.
-      </p>
-      <a routerLink="/contact" class="cta-button"> Get Started Today </a>
-    </div>
-  </section>
+  <app-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    [buttonText]="cta.buttonText"
+  ></app-cta>
 </div>

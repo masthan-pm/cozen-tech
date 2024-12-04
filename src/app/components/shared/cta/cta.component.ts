@@ -13,6 +13,6 @@ export class CTAComponent {
   @Input() header = 'Ready to Transform Your Business?';
   @Input() text =
     "Let's discuss how our solutions can help you achieve your business goals.";
-  buttonText = 'Contact Us Today';
+  @Input() buttonText = 'Contact Us Today';
   buttonLink = '/contact';
 }

@@ -6,9 +6,10 @@
   text-align: center;
 
   .container {
-    max-width: 48rem;
+    // max-width: 48rem; -remove line
     margin: 0 auto;
     padding: 0 1rem;
+    // position: relative; -need to keep with out comments
     color: $white;
 
     @media (min-width: 640px) {

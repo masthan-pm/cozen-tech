@@ -8,11 +8,12 @@ import {
   HeroContent,
 } from '../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../shared/hero/hero.component';
+import { CTAComponent } from '../../shared/cta/cta.component';
 
 @Component({
   selector: 'app-clients',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss'],
 })
@@ -22,6 +23,13 @@ export class ClientsComponent {
     text: 'Partnering with leading companies to drive innovation and growth',
     image: '/assets/pages/clients/client.jpg',
   };
+
+  cta = {
+    header: 'Ready to Join Our Success Stories?',
+    text: "Let's discuss how we can help you achieve your business goals through our IT solutions and talent acquisition services.",
+    buttonText: 'Get Started Today',
+  };
+
   clients: Client[] = [
     {
       name: 'ASP.NET',

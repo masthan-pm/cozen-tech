@@ -5,13 +5,15 @@ import {
   Expertise,
   Service,
   HeroContent,
+  CTAContent,
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
+import { CTAComponent } from '../../../shared/cta/cta.component';
 
 @Component({
   selector: 'app-mortgage',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './mortgage.component.html',
   styleUrls: ['./mortgage.component.scss'],
 })
@@ -21,6 +23,12 @@ export class MortgageComponent {
     text: 'Streamline your mortgage operations with our comprehensive processing solutions',
     image: '/assets/shared/services/mortgage.jpg',
   };
+
+  cta: CTAContent = {
+    header: 'Ready to Streamline Your Mortgage Operations?',
+    text: "Let's discuss how our mortgage services can enhance your business efficiency.",
+  };
+
   services: Service[] = [
     {
       icon: 'description',
