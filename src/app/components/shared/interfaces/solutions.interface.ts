@@ -4,6 +4,11 @@ export interface HeroContent {
   image: string;
 }
 
+export interface CTAContent {
+  header: string;
+  text: string;
+}
+
 export interface Stat {
   icon: string;
   stat: string;
@@ -82,4 +87,25 @@ export interface CareerBenefit {
   title: string;
   description: string;
   image: string;
+}
+
+export interface Client {
+  name: string;
+  logo: string;
+}
+
+export interface Testimonial {
+  name: string;
+  position: string;
+  image: string;
+  quote: string;
+  rating: number;
+}
+
+export interface SuccessStory {
+  client: string;
+  title: string;
+  image: string;
+  description: string;
+  results: string[];
 }

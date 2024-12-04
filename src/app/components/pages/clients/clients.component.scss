@@ -4,25 +4,6 @@
   width: 100%;
 }
 
-// Hero Section styles
-.hero-section {
-  height: 400px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-image: url("/assets/pages/clients/client.jpg");
-  background-size: cover;
-  background-position: center;
-  animation: fadeIn 0.6s ease-out;
-  text-align: center;
-
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-}
-
 // Container styles
 .container {
   max-width: 80rem;
@@ -37,17 +18,6 @@
 
   @media (min-width: 1024px) {
     padding: 0 2rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    animation: fadeInDown 0.8s ease-out;
-
-    @media (min-width: 768px) {
-      font-size: 3rem;
-    }
   }
 
   p {
@@ -298,43 +268,6 @@
     i {
       font-size: 1.125rem;
       margin-left: 0.25rem;
-    }
-  }
-}
-
-// CTA Section styles
-.cta-section {
-  padding: 5rem 0;
-  background-color: $accent-color;
-  text-align: center;
-
-  .container {
-    max-width: 48rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .cta-button {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    background-color: $white;
-    color: $accent-color;
-    font-weight: 500;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    transition: background-color 0.2s;
-
-    &:hover {
-      background-color: $gray-light;
     }
   }
 }

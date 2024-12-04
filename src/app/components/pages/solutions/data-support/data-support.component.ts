@@ -7,12 +7,14 @@ import {
   Phase,
   Capability,
   HeroContent,
+  CTAContent,
 } from '../../../shared/interfaces/solutions.interface';
+import { CTAComponent } from '../../../shared/cta/cta.component';
 
 @Component({
   selector: 'app-data-support',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './data-support.component.html',
   styleUrls: ['./data-support.component.scss'],
 })
@@ -22,6 +24,12 @@ export class DataSupportComponent {
     text: 'Transform your data into actionable insights with our comprehensive data management solutions',
     image: '/assets/shared/services/data.jpg',
   };
+
+  cta: CTAContent = {
+    header: 'Ready to Transform Your Data?',
+    text: "Let's discuss how our data solutions can drive your business success.",
+  };
+
   services: Service[] = [
     {
       icon: 'storage',

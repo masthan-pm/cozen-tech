@@ -5,13 +5,15 @@ import {
   Expertise,
   Service,
   HeroContent,
+  CTAContent,
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
+import { CTAComponent } from '../../../shared/cta/cta.component';
 
 @Component({
   selector: 'app-master-vendor',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './master-vendor.component.html',
   styleUrls: ['./master-vendor.component.scss'],
 })
@@ -21,6 +23,12 @@ export class MasterVendorComponent {
     text: 'Optimize your vendor management with our comprehensive master vendor solutions',
     image: '/assets/shared/services/master.jpg',
   };
+
+  cta: CTAContent = {
+    header: 'Ready to Optimize Your Vendor Management?',
+    text: "Let's discuss how our master vendor program can streamline your operations.",
+  };
+
   services: Service[] = [
     {
       icon: 'work',
