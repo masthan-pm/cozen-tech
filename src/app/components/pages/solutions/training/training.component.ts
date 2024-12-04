@@ -5,13 +5,15 @@ import {
   Service,
   Feature,
   HeroContent,
+  CTAContent,
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
+import { CTAComponent } from '../../../shared/cta/cta.component';
 
 @Component({
   selector: 'app-training',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './training.component.html',
   styleUrls: ['./training.component.scss'],
 })
@@ -20,6 +22,11 @@ export class TrainingComponent {
     header: 'Training Programs',
     text: 'Empower your workforce with comprehensive technical and professional development programs',
     image: '/assets/shared/services/training.jpg',
+  };
+
+  cta: CTAContent = {
+    header: 'Ready to Start Your Learning Journey?',
+    text: "Let's discuss how our training programs can benefit your team.",
   };
 
   programs: Service[] = [

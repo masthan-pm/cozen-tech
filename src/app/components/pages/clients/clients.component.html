@@ -1,12 +1,9 @@
 <div class="clients-page">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Our Clients</h1>
-      <p>Partnering with leading companies to drive innovation and growth</p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="clientsHero.image">
+    <h1 hero-header>{{ clientsHero.header }}</h1>
+    <p hero-text>{{ clientsHero.text }}</p>
+  </app-hero>
 
   <!-- Client Logos Section -->
   <section class="clients-section">
@@ -95,14 +92,9 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready to Join Our Success Stories?</h2>
-      <p>
-        Let's discuss how we can help you achieve your business goals through
-        our IT solutions and talent acquisition services.
-      </p>
-      <a routerLink="/contact" class="cta-button"> Get Started Today </a>
-    </div>
-  </section>
+  <app-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    [buttonText]="cta.buttonText"
+  ></app-cta>
 </div>

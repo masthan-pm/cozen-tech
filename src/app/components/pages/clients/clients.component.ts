@@ -1,36 +1,35 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-interface Client {
-  name: string;
-  logo: string;
-}
-
-interface Testimonial {
-  name: string;
-  position: string;
-  image: string;
-  quote: string;
-  rating: number;
-}
-
-interface SuccessStory {
-  client: string;
-  title: string;
-  image: string;
-  description: string;
-  results: string[];
-}
+import {
+  Client,
+  Testimonial,
+  SuccessStory,
+  HeroContent,
+} from '../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../shared/hero/hero.component';
+import { CTAComponent } from '../../shared/cta/cta.component';
 
 @Component({
   selector: 'app-clients',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss'],
 })
 export class ClientsComponent {
+  clientsHero: HeroContent = {
+    header: 'Our Clients',
+    text: 'Partnering with leading companies to drive innovation and growth',
+    image: '/assets/pages/clients/client.jpg',
+  };
+
+  cta = {
+    header: 'Ready to Join Our Success Stories?',
+    text: "Let's discuss how we can help you achieve your business goals through our IT solutions and talent acquisition services.",
+    buttonText: 'Get Started Today',
+  };
+
   clients: Client[] = [
     {
       name: 'ASP.NET',

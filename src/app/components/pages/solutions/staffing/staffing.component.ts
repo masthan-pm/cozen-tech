@@ -5,13 +5,15 @@ import {
   Service,
   Phase,
   HeroContent,
+  CTAContent,
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
+import { CTAComponent } from '../../../shared/cta/cta.component';
 
 @Component({
   selector: 'app-staffing',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './staffing.component.html',
   styleUrls: ['./staffing.component.scss'],
 })
@@ -21,6 +23,12 @@ export class StaffingComponent {
     text: 'Connect with exceptional tech talent through our comprehensive recruitment solutions',
     image: '/assets/shared/services/staffing.jpg',
   };
+
+  cta: CTAContent = {
+    header: 'Ready to Find Your Next Tech Star?',
+    text: "Let's discuss how our recruitment solutions can help build your dream team.",
+  };
+
   services: Service[] = [
     {
       icon: 'search',
