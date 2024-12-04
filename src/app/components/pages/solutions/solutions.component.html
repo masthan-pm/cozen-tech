@@ -1,15 +1,9 @@
 <div class="solutions-page">
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Our Solutions</h1>
-      <p>
-        Comprehensive technology solutions tailored to drive your business
-        forward
-      </p>
-    </div>
-  </section>
+  <app-hero [backgroundImage]="solutionsHero.image">
+    <h1 hero-header>{{ solutionsHero.header }}</h1>
+    <p hero-text>{{ solutionsHero.text }}</p>
+  </app-hero>
 
   <!-- Solutions Grid -->
   <section class="solutions-section">

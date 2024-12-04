@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { CTAContent } from '../../shared/interfaces/solutions.interface';
+import {
+  HeroContent,
+  CTAContent,
+} from '../../shared/interfaces/solutions.interface';
+import { HeroComponent } from '../../shared/hero/hero.component';
 import { CTAComponent } from '../../shared/cta/cta.component';
 
 interface Solution {
@@ -14,11 +18,17 @@ interface Solution {
 @Component({
   selector: 'app-our-solutions',
   standalone: true,
-  imports: [CommonModule, RouterModule, CTAComponent],
+  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
   templateUrl: './solutions.component.html',
   styleUrls: ['./solutions.component.scss'],
 })
 export class OurSolutionsComponent {
+  solutionsHero: HeroContent = {
+    header: 'Our Solutions',
+    text: 'Comprehensive technology solutions tailored to drive your business forward',
+    image: 'assets/shared/services/global.jpg',
+  };
+
   cta: CTAContent = {
     header: 'Ready to Transform Your Business?',
     text: "Let's discuss how our solutions can help you achieve your business goals.",
