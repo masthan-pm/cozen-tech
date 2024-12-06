@@ -1,5 +1,4 @@
 <div class="master-vendor">
-  <!-- Hero Section -->
   <app-hero
     [backgroundImage]="masterVendor.image"
     [header]="masterVendor.header"
@@ -7,27 +6,23 @@
   >
   </app-hero>
 
-  <!-- Services Section -->
   <app-assistance
     [header]="assistance.header"
     [subheader]="assistance.subheader"
     [services]="services"
   ></app-assistance>
 
-  <!-- Process Section -->
   <app-process
     [header]="process.header"
     [subheader]="process.subheader"
     [phases]="phases"
   ></app-process>
 
-  <!-- Benefits Section -->
   <app-features
     [header]="features.header"
     [subheader]="features.subheader"
     [features]="benefits"
   ></app-features>
 
-  <!-- CTA Section -->
   <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
 </div>
