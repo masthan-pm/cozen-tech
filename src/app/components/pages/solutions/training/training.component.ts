@@ -10,6 +10,7 @@ import {
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
+import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 
 @Component({
   selector: 'app-training',
@@ -20,6 +21,7 @@ import { ProcessComponent } from '../../../shared/process/process.component';
     HeroComponent,
     CTAComponent,
     ProcessComponent,
+    AssistanceComponent,
   ],
   templateUrl: './training.component.html',
   styleUrls: ['./training.component.scss'],
@@ -36,13 +38,19 @@ export class TrainingComponent {
     text: "Let's discuss how our training programs can benefit your team.",
   };
 
+  assistance = {
+    header: 'Our Training Programs',
+    subheader:
+      'Comprehensive learning solutions designed to enhance skills and accelerate careers.',
+  };
+
   process = {
     header: 'Our Training Process',
     subheader:
       'A structured approach to skill development and professional growth.',
   };
 
-  programs: Service[] = [
+  services: Service[] = [
     {
       icon: 'menu_book',
       title: 'Technical Training',

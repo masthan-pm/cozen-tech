@@ -8,29 +8,11 @@
   </app-hero>
 
   <!-- Services Section -->
-  <section class="services-section">
-    <div class="container">
-      <div class="header">
-        <h2>Our HR & Payroll Services</h2>
-        <p>
-          Comprehensive HR and payroll solutions designed to optimize your
-          workforce management.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div *ngFor="let service of services" class="service-card">
-          <div class="card-content">
-            <div class="title-wrapper">
-              <i class="material-icons">{{ service.icon }}</i>
-              <h3>{{ service.title }}</h3>
-            </div>
-            <p>{{ service.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-assistance
+    [header]="assistance.header"
+    [subheader]="assistance.subheader"
+    [services]="services"
+  ></app-assistance>
 
   <!-- Process Section -->
   <app-process

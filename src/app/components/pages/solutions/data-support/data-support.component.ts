@@ -11,6 +11,7 @@ import {
 } from '../../../shared/interfaces/solutions.interface';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
+import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 
 @Component({
   selector: 'app-data-support',
@@ -21,6 +22,7 @@ import { ProcessComponent } from '../../../shared/process/process.component';
     HeroComponent,
     CTAComponent,
     ProcessComponent,
+    AssistanceComponent,
   ],
   templateUrl: './data-support.component.html',
   styleUrls: ['./data-support.component.scss'],
@@ -35,6 +37,12 @@ export class DataSupportComponent {
   cta: CTAContent = {
     header: 'Ready to Transform Your Data?',
     text: "Let's discuss how our data solutions can drive your business success.",
+  };
+
+  assistance = {
+    header: 'Our Data Services',
+    subheader:
+      'Comprehensive data solutions to help you make informed business decisions.',
   };
 
   services: Service[] = [

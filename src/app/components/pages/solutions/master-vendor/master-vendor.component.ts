@@ -10,7 +10,7 @@ import {
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
-
+import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 @Component({
   selector: 'app-master-vendor',
   standalone: true,
@@ -20,6 +20,7 @@ import { ProcessComponent } from '../../../shared/process/process.component';
     HeroComponent,
     CTAComponent,
     ProcessComponent,
+    AssistanceComponent,
   ],
   templateUrl: './master-vendor.component.html',
   styleUrls: ['./master-vendor.component.scss'],
@@ -34,6 +35,12 @@ export class MasterVendorComponent {
   cta: CTAContent = {
     header: 'Ready to Optimize Your Vendor Management?',
     text: "Let's discuss how our master vendor program can streamline your operations.",
+  };
+
+  assistance = {
+    header: 'Our Master Vendor Services',
+    subheader:
+      'Comprehensive vendor management solutions designed to optimize your business operations.',
   };
 
   process = {

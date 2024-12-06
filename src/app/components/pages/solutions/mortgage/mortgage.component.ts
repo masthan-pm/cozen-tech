@@ -10,7 +10,7 @@ import {
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
-
+import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 @Component({
   selector: 'app-mortgage',
   standalone: true,
@@ -20,6 +20,7 @@ import { ProcessComponent } from '../../../shared/process/process.component';
     HeroComponent,
     CTAComponent,
     ProcessComponent,
+    AssistanceComponent,
   ],
   templateUrl: './mortgage.component.html',
   styleUrls: ['./mortgage.component.scss'],
@@ -34,6 +35,12 @@ export class MortgageComponent {
   cta: CTAContent = {
     header: 'Ready to Streamline Your Mortgage Operations?',
     text: "Let's discuss how our mortgage services can enhance your business efficiency.",
+  };
+
+  assistance = {
+    header: 'Our Mortgage Services',
+    subheader:
+      'Comprehensive mortgage processing solutions designed to streamline your operations.',
   };
 
   process = {

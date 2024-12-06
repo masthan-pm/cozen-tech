@@ -10,7 +10,7 @@ import {
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
-
+import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 @Component({
   selector: 'app-staffing',
   standalone: true,
@@ -20,6 +20,7 @@ import { ProcessComponent } from '../../../shared/process/process.component';
     HeroComponent,
     CTAComponent,
     ProcessComponent,
+    AssistanceComponent,
   ],
   templateUrl: './staffing.component.html',
   styleUrls: ['./staffing.component.scss'],
@@ -34,6 +35,12 @@ export class StaffingComponent {
   cta: CTAContent = {
     header: 'Ready to Find Your Next Tech Star?',
     text: "Let's discuss how our recruitment solutions can help build your dream team.",
+  };
+
+  assistance = {
+    header: 'Our Recruitment Services',
+    subheader:
+      'Comprehensive staffing solutions tailored to meet your technical talent needs.',
   };
 
   process = {

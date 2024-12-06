@@ -8,29 +8,11 @@
   </app-hero>
 
   <!-- Programs Section -->
-  <section class="services-section">
-    <div class="container">
-      <div class="header">
-        <h2>Our Training Programs</h2>
-        <p>
-          Comprehensive learning solutions designed to enhance skills and
-          accelerate careers.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div *ngFor="let program of programs" class="service-card">
-          <div class="card-content">
-            <div class="title-wrapper">
-              <i class="material-icons">{{ program.icon }}</i>
-              <h3>{{ program.title }}</h3>
-            </div>
-            <p>{{ program.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-assistance
+    [header]="assistance.header"
+    [subheader]="assistance.subheader"
+    [services]="services"
+  ></app-assistance>
 
   <!-- Process Section -->
   <app-process

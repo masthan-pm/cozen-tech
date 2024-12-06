@@ -10,11 +10,18 @@ import {
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
+import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 
 @Component({
   selector: 'app-finance',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HeroComponent,
+    CTAComponent,
+    AssistanceComponent,
+  ],
   templateUrl: './finance.component.html',
   styleUrls: ['./finance.component.scss'],
 })
@@ -28,6 +35,12 @@ export class FinanceComponent {
   cta: CTAContent = {
     header: 'Ready to Optimize Your Finances?',
     text: "Let's discuss how our financial solutions can drive your business success.",
+  };
+
+  assistance = {
+    header: 'Our Financial Services',
+    subheader:
+      'Expert financial solutions tailored to meet your business objectives and drive growth.',
   };
 
   services: Service[] = [

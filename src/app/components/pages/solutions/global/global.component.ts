@@ -10,6 +10,7 @@ import {
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
+import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 
 @Component({
   selector: 'app-global',
@@ -20,6 +21,7 @@ import { ProcessComponent } from '../../../shared/process/process.component';
     HeroComponent,
     CTAComponent,
     ProcessComponent,
+    AssistanceComponent,
   ],
   templateUrl: './global.component.html',
   styleUrls: ['./global.component.scss'],
@@ -34,6 +36,12 @@ export class GlobalComponent {
   cta: CTAContent = {
     header: 'Ready to Transform Your Business?',
     text: "Let's discuss how our solutions can help you achieve your business goals.",
+  };
+
+  assistance = {
+    header: 'Our Global Services',
+    subheader:
+      'We offer a wide range of technology solutions to help businesses thrive in the digital age.',
   };
 
   services: Service[] = [
