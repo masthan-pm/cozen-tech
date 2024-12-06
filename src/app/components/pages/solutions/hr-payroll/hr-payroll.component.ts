@@ -41,7 +41,7 @@ export class HRPayrollComponent {
   };
 
   features = {
-    header: 'Program Features',
+    header: 'Comprehensive Features',
     subheader: 'Explore our full range of HR and payroll management features.',
   };
 
