@@ -1,8 +1,10 @@
 <div class="clients-page">
   <!-- Hero Section -->
-  <app-hero [backgroundImage]="clientsHero.image">
-    <h1 hero-header>{{ clientsHero.header }}</h1>
-    <p hero-text>{{ clientsHero.text }}</p>
+  <app-hero
+    [backgroundImage]="clientsHero.image"
+    [header]="clientsHero.header"
+    [text]="clientsHero.text"
+  >
   </app-hero>
 
   <!-- Client Logos Section -->

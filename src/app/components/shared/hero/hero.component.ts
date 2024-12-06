@@ -10,6 +10,8 @@ import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
   @Input() backgroundImage: string = '';
+  @Input() header: string = '';
+  @Input() text: string = '';
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
   ngOnInit(): void {

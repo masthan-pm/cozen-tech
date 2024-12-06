@@ -9,11 +9,21 @@ import {
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
-
+import { ProcessComponent } from '../../../shared/process/process.component';
+import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
+import { FeaturesComponent } from '../../../shared/features/features.component';
 @Component({
   selector: 'app-training',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HeroComponent,
+    CTAComponent,
+    ProcessComponent,
+    AssistanceComponent,
+    FeaturesComponent,
+  ],
   templateUrl: './training.component.html',
   styleUrls: ['./training.component.scss'],
 })
@@ -29,7 +39,25 @@ export class TrainingComponent {
     text: "Let's discuss how our training programs can benefit your team.",
   };
 
-  programs: Service[] = [
+  features = {
+    header: 'Program Features',
+    subheader:
+      'Comprehensive training features designed for effective learning.',
+  };
+
+  assistance = {
+    header: 'Our Training Programs',
+    subheader:
+      'Comprehensive learning solutions designed to enhance skills and accelerate careers.',
+  };
+
+  process = {
+    header: 'Our Training Process',
+    subheader:
+      'A structured approach to skill development and professional growth.',
+  };
+
+  services: Service[] = [
     {
       icon: 'menu_book',
       title: 'Technical Training',
@@ -75,7 +103,7 @@ export class TrainingComponent {
     { step: '04', title: 'Certification', description: 'Skill validation' },
   ];
 
-  features: Feature[] = [
+  featuresContent: Feature[] = [
     {
       category: 'Learning Methods',
       items: [

@@ -1,0 +1,20 @@
+<section class="features-section">
+  <div class="container">
+    <div class="header">
+      <h2>{{ header }}</h2>
+      <p>{{ subheader }}</p>
+    </div>
+
+    <div class="features-grid">
+      <div *ngFor="let feature of features" class="feature-card">
+        <h3>{{ feature.category }}</h3>
+        <ul>
+          <li *ngFor="let item of feature.items">
+            <span class="bullet"></span>
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

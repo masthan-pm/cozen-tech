@@ -1,34 +1,18 @@
 <div class="finance-solutions">
   <!-- Hero Section -->
-  <app-hero [backgroundImage]="finance.image">
-    <h1 hero-header>{{ finance.header }}</h1>
-    <p hero-text>{{ finance.text }}</p>
+  <app-hero
+    [backgroundImage]="finance.image"
+    [header]="finance.header"
+    [text]="finance.text"
+  >
   </app-hero>
 
   <!-- Services Section -->
-  <section class="services-section">
-    <div class="container">
-      <div class="header">
-        <h2>Our Financial Services</h2>
-        <p>
-          Expert financial solutions tailored to meet your business objectives
-          and drive growth.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div *ngFor="let service of services" class="service-card">
-          <div class="card-content">
-            <div class="title-wrapper">
-              <i class="material-icons">{{ service.icon }}</i>
-              <h3>{{ service.title }}</h3>
-            </div>
-            <p>{{ service.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-assistance
+    [header]="assistance.header"
+    [subheader]="assistance.subheader"
+    [services]="services"
+  ></app-assistance>
 
   <!-- Benefits Section -->
   <section class="benefits-section">
@@ -50,26 +34,11 @@
   </section>
 
   <!-- Expertise Section -->
-  <section class="expertise-section">
-    <div class="container">
-      <div class="header">
-        <h2>Areas of Expertise</h2>
-        <p>Comprehensive financial expertise across various domains.</p>
-      </div>
-
-      <div class="features-grid">
-        <div *ngFor="let area of expertise" class="feature-card">
-          <h3>{{ area.category }}</h3>
-          <ul>
-            <li *ngFor="let item of area.items">
-              <span class="bullet"></span>
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-features
+    [header]="features.header"
+    [subheader]="features.subheader"
+    [features]="expertise"
+  ></app-features>
 
   <!-- CTA Section -->
   <app-cta [header]="cta.header" [text]="cta.text"></app-cta>

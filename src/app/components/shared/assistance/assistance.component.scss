@@ -1,16 +1,20 @@
-@use "../../../../../styles/colors" as *;
+@use "../../../../styles/colors" as *;
 
-.global-solutions {
-  width: 100%;
+.services-section {
+  padding: 5rem 0;
+  background-color: $gray-light;
+
+  .container {
+    color: inherit;
+  }
 }
 
-// Container styles following your pattern
+// Container styles
 .container {
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 1rem;
   position: relative;
-  color: $white;
 
   @media (min-width: 640px) {
     padding: 0 1.5rem;
@@ -22,16 +26,10 @@
 
   p {
     font-size: 1.25rem;
-    max-width: 42rem;
+    // max-width: 42rem;
     margin: 0 auto;
     animation: fadeInUp 0.8s ease-out;
   }
-}
-
-// Services section styles
-.services-section {
-  padding: 5rem 0;
-  background-color: $gray-light;
 }
 
 .header {
@@ -49,7 +47,7 @@
   p {
     font-size: 1.25rem;
     color: $gray-dark;
-    max-width: 48rem;
+    // max-width: 48rem;
     margin: 0 auto;
   }
 }
@@ -98,48 +96,13 @@
         font-size: 1.25rem;
         font-weight: 600;
         margin: 0;
-        color: $black-gray;
+        color: $blue-gray;
       }
     }
 
     p {
-      color: $gray-charcol;
-      margin-bottom: 1.5rem;
+      color: $gray-dark;
+      line-height: 1.5;
     }
-  }
-}
-
-// Technologies section styles
-.technologies-section {
-  padding: 5rem 0;
-  background-color: $gray-light;
-}
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 3rem;
-
-  @media (min-width: 640px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
-.tech-card {
-  background: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.6s ease-out;
-
-  span {
-    color: $blue-gray;
-    font-weight: 500;
   }
 }

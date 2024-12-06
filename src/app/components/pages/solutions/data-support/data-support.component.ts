@@ -10,11 +10,22 @@ import {
   CTAContent,
 } from '../../../shared/interfaces/solutions.interface';
 import { CTAComponent } from '../../../shared/cta/cta.component';
+import { ProcessComponent } from '../../../shared/process/process.component';
+import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
+import { FeaturesComponent } from '../../../shared/features/features.component';
 
 @Component({
   selector: 'app-data-support',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HeroComponent,
+    CTAComponent,
+    ProcessComponent,
+    AssistanceComponent,
+    FeaturesComponent,
+  ],
   templateUrl: './data-support.component.html',
   styleUrls: ['./data-support.component.scss'],
 })
@@ -28,6 +39,18 @@ export class DataSupportComponent {
   cta: CTAContent = {
     header: 'Ready to Transform Your Data?',
     text: "Let's discuss how our data solutions can drive your business success.",
+  };
+
+  features = {
+    header: 'Our Capabilities',
+    subheader:
+      'Comprehensive data management capabilities across various domains.',
+  };
+
+  assistance = {
+    header: 'Our Data Services',
+    subheader:
+      'Comprehensive data solutions to help you make informed business decisions.',
   };
 
   services: Service[] = [
@@ -67,6 +90,10 @@ export class DataSupportComponent {
     },
   ];
 
+  process = {
+    header: 'Our Data Management Process',
+    subheader: 'A systematic approach to handling your data needs effectively.',
+  };
   phases: Phase[] = [
     {
       step: '01',

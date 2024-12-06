@@ -1,8 +1,10 @@
 <div class="blog-page">
   <!-- Hero Section -->
-  <app-hero [backgroundImage]="blog.image">
-    <h1 hero-header>{{ blog.header }}</h1>
-    <p hero-text>{{ blog.text }}</p>
+  <app-hero
+    [backgroundImage]="blog.image"
+    [header]="blog.header"
+    [text]="blog.text"
+  >
   </app-hero>
 
   <!-- Search Section -->
