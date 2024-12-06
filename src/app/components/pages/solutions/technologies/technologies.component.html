@@ -1,34 +1,18 @@
 <div class="technologies-solutions">
   <!-- Hero Section -->
-  <app-hero [backgroundImage]="technologies.image">
-    <h1 hero-header>{{ technologies.header }}</h1>
-    <p hero-text>{{ technologies.text }}</p>
+  <app-hero
+    [backgroundImage]="technologies.image"
+    [header]="technologies.header"
+    [text]="technologies.text"
+  >
   </app-hero>
 
   <!-- Services Section -->
-  <section class="services-section">
-    <div class="container">
-      <div class="header">
-        <h2>Technology Solutions</h2>
-        <p>
-          Comprehensive technology solutions to power your digital
-          transformation.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div *ngFor="let service of services" class="service-card">
-          <div class="card-content">
-            <div class="title-wrapper">
-              <i class="material-icons">{{ service.icon }}</i>
-              <h3>{{ service.title }}</h3>
-            </div>
-            <p>{{ service.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-assistance
+    [header]="assistance.header"
+    [subheader]="assistance.subheader"
+    [services]="services"
+  ></app-assistance>
 
   <!-- Tech Stack Section -->
   <section class="tech-stack-section">
@@ -55,26 +39,11 @@
   </section>
 
   <!-- Features Section -->
-  <section class="features-section">
-    <div class="container">
-      <div class="header">
-        <h2>Key Features</h2>
-        <p>Essential features of our technology solutions.</p>
-      </div>
-
-      <div class="features-grid">
-        <div *ngFor="let feature of features" class="feature-card">
-          <h3>{{ feature.category }}</h3>
-          <ul>
-            <li *ngFor="let item of feature.items">
-              <span class="bullet"></span>
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-features
+    [header]="features.header"
+    [subheader]="features.subheader"
+    [features]="featuresContent"
+  ></app-features>
 
   <!-- CTA Section -->
   <app-cta [header]="cta.header" [text]="cta.text"></app-cta>

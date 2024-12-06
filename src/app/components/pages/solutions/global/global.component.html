@@ -1,55 +1,25 @@
 <div class="global-solutions">
   <!-- Hero Section -->
-  <app-hero [backgroundImage]="global.image">
-    <h1 hero-header>{{ global.header }}</h1>
-    <p hero-text>{{ global.text }}</p>
+  <app-hero
+    [backgroundImage]="global.image"
+    [header]="global.header"
+    [text]="global.text"
+  >
   </app-hero>
 
   <!-- Services Section -->
-  <section class="services-section">
-    <div class="container">
-      <div class="header">
-        <h2>Our Services</h2>
-        <p>
-          We offer a wide range of technology solutions to help businesses
-          thrive in the digital age.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div *ngFor="let service of services" class="service-card">
-          <div class="card-content">
-            <div class="title-wrapper">
-              <i class="material-icons">{{ service.icon }}</i>
-              <h3>{{ service.title }}</h3>
-            </div>
-            <p>{{ service.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-assistance
+    [header]="assistance.header"
+    [subheader]="assistance.subheader"
+    [services]="services"
+  ></app-assistance>
 
   <!-- Process Section -->
-  <section class="process-section">
-    <div class="container">
-      <div class="header">
-        <h2>Our Development Process</h2>
-        <p>
-          We follow a systematic approach to deliver high-quality solutions that
-          meet your business objectives.
-        </p>
-      </div>
-
-      <div class="process-grid">
-        <div *ngFor="let phase of phases" class="phase-card">
-          <div class="step-number">{{ phase.step }}</div>
-          <h3>{{ phase.title }}</h3>
-          <p>{{ phase.description }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-process
+    [header]="process.header"
+    [subheader]="process.subheader"
+    [phases]="phases"
+  ></app-process>
 
   <!-- Technologies Section -->
   <section class="technologies-section">

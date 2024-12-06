@@ -1,55 +1,25 @@
 <div class="staffing-solutions">
   <!-- Hero Section -->
-  <app-hero [backgroundImage]="staffing.image">
-    <h1 hero-header>{{ staffing.header }}</h1>
-    <p hero-text>{{ staffing.text }}</p>
+  <app-hero
+    [backgroundImage]="staffing.image"
+    [header]="staffing.header"
+    [text]="staffing.text"
+  >
   </app-hero>
 
   <!-- Services Section -->
-  <section class="services-section">
-    <div class="container">
-      <div class="header">
-        <h2>Our Recruitment Services</h2>
-        <p>
-          Comprehensive staffing solutions tailored to meet your technical
-          talent needs.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div *ngFor="let service of services" class="service-card">
-          <div class="card-content">
-            <div class="title-wrapper">
-              <i class="material-icons">{{ service.icon }}</i>
-              <h3>{{ service.title }}</h3>
-            </div>
-            <p>{{ service.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-assistance
+    [header]="assistance.header"
+    [subheader]="assistance.subheader"
+    [services]="services"
+  ></app-assistance>
 
   <!-- Process Section -->
-  <section class="process-section">
-    <div class="container">
-      <div class="header">
-        <h2>Our Recruitment Process</h2>
-        <p>
-          A proven methodology to identify and secure the best talent for your
-          organization.
-        </p>
-      </div>
-
-      <div class="process-grid">
-        <div *ngFor="let phase of phases" class="phase-card">
-          <div class="step-number">{{ phase.step }}</div>
-          <h3>{{ phase.title }}</h3>
-          <p>{{ phase.description }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-process
+    [header]="process.header"
+    [subheader]="process.subheader"
+    [phases]="phases"
+  ></app-process>
 
   <!-- Specializations Section -->
   <section class="specializations-section">

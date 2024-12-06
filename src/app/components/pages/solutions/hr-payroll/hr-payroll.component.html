@@ -1,75 +1,28 @@
 <div class="hr-payroll-solutions">
-  <!-- Hero Section -->
-  <app-hero [backgroundImage]="hrPayroll.image">
-    <h1 hero-header>{{ hrPayroll.header }}</h1>
-    <p hero-text>{{ hrPayroll.text }}</p>
+  <app-hero
+    [backgroundImage]="hrPayroll.image"
+    [header]="hrPayroll.header"
+    [text]="hrPayroll.text"
+  >
   </app-hero>
 
-  <!-- Services Section -->
-  <section class="services-section">
-    <div class="container">
-      <div class="header">
-        <h2>Our HR & Payroll Services</h2>
-        <p>
-          Comprehensive HR and payroll solutions designed to optimize your
-          workforce management.
-        </p>
-      </div>
+  <app-assistance
+    [header]="assistance.header"
+    [subheader]="assistance.subheader"
+    [services]="services"
+  ></app-assistance>
 
-      <div class="services-grid">
-        <div *ngFor="let service of services" class="service-card">
-          <div class="card-content">
-            <div class="title-wrapper">
-              <i class="material-icons">{{ service.icon }}</i>
-              <h3>{{ service.title }}</h3>
-            </div>
-            <p>{{ service.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-process
+    [header]="process.header"
+    [subheader]="process.subheader"
+    [phases]="phases"
+  ></app-process>
 
-  <!-- Process Section -->
-  <section class="process-section">
-    <div class="container">
-      <div class="header">
-        <h2>Our Process</h2>
-        <p>A streamlined approach to HR and payroll management.</p>
-      </div>
+  <app-features
+    [header]="features.header"
+    [subheader]="features.subheader"
+    [features]="featuresContent"
+  ></app-features>
 
-      <div class="process-grid">
-        <div *ngFor="let phase of phases" class="phase-card">
-          <div class="step-number">{{ phase.step }}</div>
-          <h3>{{ phase.title }}</h3>
-          <p>{{ phase.description }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features-section">
-    <div class="container">
-      <div class="header">
-        <h2>Comprehensive Features</h2>
-        <p>Explore our full range of HR and payroll management features.</p>
-      </div>
-
-      <div class="features-grid">
-        <div *ngFor="let feature of features" class="feature-card">
-          <h3>{{ feature.category }}</h3>
-          <ul>
-            <li *ngFor="let item of feature.items">
-              <span class="bullet"></span>
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
   <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
 </div>

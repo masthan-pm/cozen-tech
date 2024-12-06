@@ -1,0 +1,16 @@
+<section class="process-section">
+  <div class="container">
+    <div class="header">
+      <h2>{{ header }}</h2>
+      <p>{{ subheader }}</p>
+    </div>
+
+    <div class="process-grid">
+      <div *ngFor="let phase of phases" class="phase-card">
+        <div class="step-number">{{ phase.step }}</div>
+        <h3>{{ phase.title }}</h3>
+        <p>{{ phase.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
