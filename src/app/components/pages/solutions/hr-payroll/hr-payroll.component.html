@@ -22,26 +22,11 @@
   ></app-process>
 
   <!-- Features Section -->
-  <section class="features-section">
-    <div class="container">
-      <div class="header">
-        <h2>Comprehensive Features</h2>
-        <p>Explore our full range of HR and payroll management features.</p>
-      </div>
-
-      <div class="features-grid">
-        <div *ngFor="let feature of features" class="feature-card">
-          <h3>{{ feature.category }}</h3>
-          <ul>
-            <li *ngFor="let item of feature.items">
-              <span class="bullet"></span>
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-features
+    [header]="features.header"
+    [subheader]="features.subheader"
+    [features]="featuresContent"
+  ></app-features>
 
   <!-- CTA Section -->
   <app-cta [header]="cta.header" [text]="cta.text"></app-cta>

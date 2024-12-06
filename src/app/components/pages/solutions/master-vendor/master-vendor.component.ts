@@ -11,6 +11,7 @@ import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
+import { FeaturesComponent } from '../../../shared/features/features.component';
 @Component({
   selector: 'app-master-vendor',
   standalone: true,
@@ -21,6 +22,7 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
     CTAComponent,
     ProcessComponent,
     AssistanceComponent,
+    FeaturesComponent,
   ],
   templateUrl: './master-vendor.component.html',
   styleUrls: ['./master-vendor.component.scss'],
@@ -46,6 +48,11 @@ export class MasterVendorComponent {
   process = {
     header: 'Our Management Process',
     subheader: 'A systematic approach to vendor management and optimization.',
+  };
+
+  features = {
+    header: 'Program Benefits',
+    subheader: 'Key advantages of our master vendor program.',
   };
 
   services: Service[] = [

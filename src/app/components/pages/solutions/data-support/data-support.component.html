@@ -20,28 +20,11 @@
   ></app-process>
 
   <!-- Capabilities Section -->
-  <section class="capabilities-section">
-    <div class="container">
-      <div class="header">
-        <h2>Our Capabilities</h2>
-        <p>
-          Comprehensive data management capabilities across various domains.
-        </p>
-      </div>
-
-      <div class="features-grid">
-        <div *ngFor="let capability of capabilities" class="feature-card">
-          <h3>{{ capability.category }}</h3>
-          <ul>
-            <li *ngFor="let item of capability.items">
-              <span class="bullet"></span>
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-features
+    [header]="features.header"
+    [subheader]="features.subheader"
+    [features]="capabilities"
+  ></app-features>
 
   <!-- CTA Section -->
   <app-cta [header]="cta.header" [text]="cta.text"></app-cta>

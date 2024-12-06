@@ -11,6 +11,7 @@ import {
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
+import { FeaturesComponent } from '../../../shared/features/features.component';
 
 @Component({
   selector: 'app-technologies',
@@ -21,6 +22,7 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
     HeroComponent,
     CTAComponent,
     AssistanceComponent,
+    FeaturesComponent,
   ],
   templateUrl: './technologies.component.html',
   styleUrls: ['./technologies.component.scss'],
@@ -35,6 +37,11 @@ export class TechnologiesComponent {
   cta: CTAContent = {
     header: 'Ready to Transform Your Business?',
     text: "Let's discuss how our technology solutions can drive innovation and digital transformation.",
+  };
+
+  features = {
+    header: 'Key Features',
+    subheader: 'Essential features of our technology solutions.',
   };
 
   assistance = {
@@ -117,7 +124,7 @@ export class TechnologiesComponent {
     },
   ];
 
-  features: Feature[] = [
+  featuresContent: Feature[] = [
     {
       category: 'Development',
       items: [

@@ -12,7 +12,7 @@ import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
-
+import { FeaturesComponent } from '../../../shared/features/features.component';
 @Component({
   selector: 'app-hr-payroll',
   standalone: true,
@@ -23,6 +23,7 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
     CTAComponent,
     ProcessComponent,
     AssistanceComponent,
+    FeaturesComponent,
   ],
   templateUrl: './hr-payroll.component.html',
   styleUrls: ['./hr-payroll.component.scss'],
@@ -37,6 +38,11 @@ export class HRPayrollComponent {
   cta: CTAContent = {
     header: 'Ready to Optimize Your HR Operations?',
     text: "Let's discuss how our HR solutions can streamline your workforce management.",
+  };
+
+  features = {
+    header: 'Program Features',
+    subheader: 'Explore our full range of HR and payroll management features.',
   };
 
   assistance = {
@@ -111,7 +117,7 @@ export class HRPayrollComponent {
     },
   ];
 
-  features: Feature[] = [
+  featuresContent: Feature[] = [
     {
       category: 'Payroll Services',
       items: [

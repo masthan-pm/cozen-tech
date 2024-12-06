@@ -11,6 +11,7 @@ import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
+import { FeaturesComponent } from '../../../shared/features/features.component';
 @Component({
   selector: 'app-mortgage',
   standalone: true,
@@ -21,6 +22,7 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
     CTAComponent,
     ProcessComponent,
     AssistanceComponent,
+    FeaturesComponent,
   ],
   templateUrl: './mortgage.component.html',
   styleUrls: ['./mortgage.component.scss'],
@@ -47,6 +49,12 @@ export class MortgageComponent {
     header: 'Our Mortgage Process',
     subheader:
       'A streamlined approach to mortgage processing and underwriting.',
+  };
+
+  features = {
+    header: 'Service Features',
+    subheader:
+      'Comprehensive mortgage processing features to ensure efficiency and accuracy.',
   };
 
   services: Service[] = [
@@ -95,7 +103,7 @@ export class MortgageComponent {
     { step: '04', title: 'Closing', description: 'Final approval and closing' },
   ];
 
-  features: Expertise[] = [
+  featuresContent: Expertise[] = [
     {
       category: 'Processing Services',
       items: [

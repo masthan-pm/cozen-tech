@@ -11,7 +11,7 @@ import {
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
-
+import { FeaturesComponent } from '../../../shared/features/features.component';
 @Component({
   selector: 'app-finance',
   standalone: true,
@@ -21,6 +21,7 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
     HeroComponent,
     CTAComponent,
     AssistanceComponent,
+    FeaturesComponent,
   ],
   templateUrl: './finance.component.html',
   styleUrls: ['./finance.component.scss'],
@@ -35,6 +36,11 @@ export class FinanceComponent {
   cta: CTAContent = {
     header: 'Ready to Optimize Your Finances?',
     text: "Let's discuss how our financial solutions can drive your business success.",
+  };
+
+  features = {
+    header: 'Areas of Expertise',
+    subheader: 'Comprehensive financial expertise across various domains.',
   };
 
   assistance = {
