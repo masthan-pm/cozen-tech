@@ -9,11 +9,18 @@ import {
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
+import { ProcessComponent } from '../../../shared/process/process.component';
 
 @Component({
   selector: 'app-global',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HeroComponent,
+    CTAComponent,
+    ProcessComponent,
+  ],
   templateUrl: './global.component.html',
   styleUrls: ['./global.component.scss'],
 })
@@ -67,6 +74,12 @@ export class GlobalComponent {
         'Streamlined development and operations with modern DevOps practices.',
     },
   ];
+
+  process = {
+    header: 'Our Development Process',
+    subheader:
+      'We follow a systematic approach to deliver high-quality solutions that meet your business objectives.',
+  };
 
   phases: Phase[] = [
     {

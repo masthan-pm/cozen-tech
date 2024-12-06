@@ -9,11 +9,18 @@ import {
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
+import { ProcessComponent } from '../../../shared/process/process.component';
 
 @Component({
   selector: 'app-mortgage',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HeroComponent,
+    CTAComponent,
+    ProcessComponent,
+  ],
   templateUrl: './mortgage.component.html',
   styleUrls: ['./mortgage.component.scss'],
 })
@@ -27,6 +34,12 @@ export class MortgageComponent {
   cta: CTAContent = {
     header: 'Ready to Streamline Your Mortgage Operations?',
     text: "Let's discuss how our mortgage services can enhance your business efficiency.",
+  };
+
+  process = {
+    header: 'Our Mortgage Process',
+    subheader:
+      'A streamlined approach to mortgage processing and underwriting.',
   };
 
   services: Service[] = [
@@ -64,7 +77,7 @@ export class MortgageComponent {
     },
   ];
 
-  process = [
+  phases = [
     {
       step: '01',
       title: 'Application',

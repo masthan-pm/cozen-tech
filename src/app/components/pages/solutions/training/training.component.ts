@@ -9,11 +9,18 @@ import {
 } from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
+import { ProcessComponent } from '../../../shared/process/process.component';
 
 @Component({
   selector: 'app-training',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HeroComponent,
+    CTAComponent,
+    ProcessComponent,
+  ],
   templateUrl: './training.component.html',
   styleUrls: ['./training.component.scss'],
 })
@@ -27,6 +34,12 @@ export class TrainingComponent {
   cta: CTAContent = {
     header: 'Ready to Start Your Learning Journey?',
     text: "Let's discuss how our training programs can benefit your team.",
+  };
+
+  process = {
+    header: 'Our Training Process',
+    subheader:
+      'A structured approach to skill development and professional growth.',
   };
 
   programs: Service[] = [

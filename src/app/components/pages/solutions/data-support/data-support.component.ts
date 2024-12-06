@@ -10,11 +10,18 @@ import {
   CTAContent,
 } from '../../../shared/interfaces/solutions.interface';
 import { CTAComponent } from '../../../shared/cta/cta.component';
+import { ProcessComponent } from '../../../shared/process/process.component';
 
 @Component({
   selector: 'app-data-support',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HeroComponent,
+    CTAComponent,
+    ProcessComponent,
+  ],
   templateUrl: './data-support.component.html',
   styleUrls: ['./data-support.component.scss'],
 })
@@ -67,6 +74,10 @@ export class DataSupportComponent {
     },
   ];
 
+  process = {
+    header: 'Our Data Management Process',
+    subheader: 'A systematic approach to handling your data needs effectively.',
+  };
   phases: Phase[] = [
     {
       step: '01',
