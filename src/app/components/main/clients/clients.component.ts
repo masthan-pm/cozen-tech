@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CLIENTS_CONSTANTS } from '../../../constants/home/clients.constants';
 
 interface Client {
   name: string;
@@ -14,30 +15,8 @@ interface Client {
   styleUrls: ['./clients.component.scss'],
 })
 export class ClientsComponent {
-  clients: Client[] = [
-    {
-      name: 'AWS',
-      logo: 'assets/shared/clients/trusted/home/aws.jpg',
-    },
-    {
-      name: 'Azure',
-      logo: 'assets/shared/clients/trusted/home/azure.jpg',
-    },
-    {
-      name: 'DigitalOcean',
-      logo: 'assets/shared/clients/trusted/home/digital.jpg',
-    },
-    {
-      name: 'iOS',
-      logo: 'assets/shared/clients/trusted/home/ios.jpg',
-    },
-    {
-      name: 'Redis',
-      logo: 'assets/shared/clients/trusted/home/redis.jpg',
-    },
-    {
-      name: 'SQL',
-      logo: 'assets/shared/clients/trusted/home/sql.jpg',
-    },
-  ];
+  @Input() header: string = CLIENTS_CONSTANTS.HEADER;
+  @Input() content: string = CLIENTS_CONSTANTS.CONTENT;
+
+  clients: Client[] = CLIENTS_CONSTANTS.CLIENTS;
 }

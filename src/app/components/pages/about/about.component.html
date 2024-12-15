@@ -1,3 +1,27 @@
-<app-main></app-main>
+<app-hero
+  [backgroundImage]="about.image"
+  [header]="about.header"
+  [text]="about.text"
+></app-hero>
+
+<section class="mission-section">
+  <div class="container">
+    <div class="header">
+      <h2>{{ mission.title }}</h2>
+      <p>{{ mission.content }}</p>
+    </div>
+
+    <div class="stats-grid">
+      @for (item of stats; track $index) {
+      <div class="stat-card">
+        <i class="material-icons">{{ item.icon }}</i>
+        <h3>{{ item.stat }}</h3>
+        <p>{{ item.label }}</p>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
 <app-values></app-values>
 <app-teams></app-teams>

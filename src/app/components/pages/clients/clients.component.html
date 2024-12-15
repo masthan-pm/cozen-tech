@@ -8,60 +8,16 @@
   </app-hero>
 
   <!-- Client Logos Section -->
-  <section class="clients-section">
-    <div class="container">
-      <div class="header">
-        <h2>Trusted by Industry Leaders</h2>
-        <p>
-          We work with companies of all sizes, from startups to enterprises,
-          helping them build exceptional teams.
-        </p>
-      </div>
-
-      <div class="clients-grid">
-        <div *ngFor="let client of clients" class="client-card">
-          <img [src]="client.logo" [alt]="client.name" class="client-logo" />
-          <span class="sr-only">{{ client.name }}</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-clients
+    [header]="trustedBy.header"
+    [content]="trustedBy.text"
+  ></app-clients>
 
   <!-- Testimonials Section -->
-  <section class="testimonials-section">
-    <div class="container">
-      <div class="header">
-        <h2>What Our Clients Say</h2>
-        <p>
-          Don't just take our word for it - hear from some of our satisfied
-          clients.
-        </p>
-      </div>
-
-      <div class="testimonials-grid">
-        <div *ngFor="let testimonial of testimonials" class="testimonial-card">
-          <div class="quote-icon">
-            <i class="material-icons">format_quote</i>
-          </div>
-          <div class="profile">
-            <img
-              [src]="testimonial.image"
-              [alt]="testimonial.name"
-              class="profile-image"
-            />
-            <div class="profile-info">
-              <h3>{{ testimonial.name }}</h3>
-              <p>{{ testimonial.position }}</p>
-            </div>
-          </div>
-          <p class="quote">{{ testimonial.quote }}</p>
-          <div class="stars">
-            <i *ngFor="let star of stars" class="material-icons">star</i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-testimonials
+    [header]="testimonials.header"
+    [content]="testimonials.content"
+  ></app-testimonials>
 
   <!-- Success Stories Section -->
   <section class="success-stories-section">
@@ -73,7 +29,12 @@
 
       <div class="stories-grid">
         <div *ngFor="let story of successStories" class="story-card">
-          <img [src]="story.image" [alt]="story.title" class="story-image" />
+          <img
+            [src]="story.image"
+            [alt]="story.title"
+            class="story-image"
+            loading="lazy"
+          />
           <div class="card-content">
             <h3>{{ story.title }}</h3>
             <p>{{ story.description }}</p>

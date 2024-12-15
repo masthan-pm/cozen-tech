@@ -1,23 +1,13 @@
 @use "../../../../styles/colors" as *;
+@use "../../../../styles/shared" as *;
 
 .blog-page {
   width: 100%;
 }
 
 .content {
-  position: relative;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1rem;
+  @extend %container;
   color: $white;
-
-  @media (min-width: 640px) {
-    padding: 0 1.5rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 0 2rem;
-  }
 
   p {
     font-size: 1.25rem;
