@@ -3,7 +3,24 @@
     <div class="content">
       <h2>{{ header }}</h2>
       <p>{{ text }}</p>
-      <a [routerLink]="buttonLink" class="cta-button">{{ buttonText }}</a>
+
+      @if (showContactInfo) {
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="material-icons">mail</i>
+          <span>{{ email }}</span>
+        </div>
+        <div class="info-item">
+          <i class="material-icons">phone</i>
+          <span>{{ phone }}</span>
+        </div>
+      </div>
+      }
+
+      <a [routerLink]="buttonLink" class="cta-button"
+        >{{ buttonText }}
+        <i class="material-icons">arrow_forward</i>
+      </a>
     </div>
   </div>
 </section>

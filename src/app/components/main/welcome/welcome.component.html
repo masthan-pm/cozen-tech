@@ -22,10 +22,14 @@
   </section>
   <app-company-overview></app-company-overview>
   <app-services></app-services>
-  <!-- <app-solutions></app-solutions> -->
   <app-clients></app-clients>
   <app-testimonials></app-testimonials>
-  <app-contact></app-contact>
+  <app-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    [buttonText]="cta.buttonText"
+    [showContactInfo]="true"
+  ></app-cta>
 
   <!-- Stats Section -->
   <!-- <section class="stats-section">
