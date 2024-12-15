@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface Testimonial {
@@ -16,6 +16,9 @@ interface Testimonial {
   styleUrls: ['./testimonials.component.scss'],
 })
 export class TestimonialsComponent {
+  @Input() header: string = 'What Our Clients Say';
+  @Input() content: string =
+    "Don't just take our word for it - hear from some of our satisfied clients about their experience working with Cozen Tech.";
   testimonials: Testimonial[] = [
     {
       name: 'John Smith',
@@ -40,5 +43,6 @@ export class TestimonialsComponent {
     },
   ];
 
-  stars = new Array(5);
+  // stars = new Array(5);
+  stars = Array(5).fill(0);
 }

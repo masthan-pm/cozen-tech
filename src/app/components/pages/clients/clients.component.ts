@@ -10,6 +10,7 @@ import {
 import { HeroComponent } from '../../shared/hero/hero.component';
 import { ClientsComponent } from '../../main/clients/clients.component';
 import { CTAComponent } from '../../shared/cta/cta.component';
+import { TestimonialsComponent } from '../../main/testimonials/testimonials.component';
 
 @Component({
   selector: 'app-clients-page',
@@ -20,15 +21,27 @@ import { CTAComponent } from '../../shared/cta/cta.component';
     HeroComponent,
     ClientsComponent,
     CTAComponent,
+    TestimonialsComponent,
   ],
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss'],
 })
 export class ClientsPageComponent {
   clientsHero: HeroContent = {
+    header: 'Our Clients',
+    text: 'Partnering with leading companies to drive innovation and growth',
+    image: '/assets/pages/clients/client.jpg',
+  };
+
+  trustedBy = {
     header: 'Trusted by Industry Leaders',
     text: 'We work with companies of all sizes, from startups to enterprises, helping them build exceptional teams.',
-    image: '/assets/pages/clients/client.jpg',
+  };
+
+  testimonials = {
+    header: 'What Our Clients Say',
+    content:
+      "Don't just take our word for it - hear from some of our satisfied clients.",
   };
 
   cta = {
@@ -36,60 +49,6 @@ export class ClientsPageComponent {
     text: "Let's discuss how we can help you achieve your business goals through our IT solutions and talent acquisition services.",
     buttonText: 'Get Started Today',
   };
-
-  clients: Client[] = [
-    {
-      name: 'ASP.NET',
-      logo: 'assets/shared/clients/trusted/dedicated/asp.jpg',
-    },
-    {
-      name: 'Entity Framework',
-      logo: 'assets/shared/clients/trusted/dedicated/entity.jpg',
-    },
-    {
-      name: 'Flutter',
-      logo: 'assets/shared/clients/trusted/dedicated/flutter.jpg',
-    },
-    {
-      name: 'Net',
-      logo: 'assets/shared/clients/trusted/dedicated/net.jpg',
-    },
-    {
-      name: 'NHibernate',
-      logo: 'assets/shared/clients/trusted/dedicated/nhibernate.jpg',
-    },
-    {
-      name: 'TechCorp',
-      logo: 'assets/shared/clients/trusted/dedicated/tech_corp.jpg',
-    },
-  ];
-
-  testimonials: Testimonial[] = [
-    {
-      name: 'John Smith',
-      position: 'CTO, TechCorp',
-      image: 'assets/shared/clients/testimonials/testimonial3.jpg',
-      quote:
-        'Cozen Tech has been instrumental in helping us build our engineering team. Their understanding of our technical requirements and company culture is exceptional.',
-      rating: 5,
-    },
-    {
-      name: 'Sarah Chen',
-      position: 'HR Director, InnovateSoft',
-      image: 'assets/shared/clients/testimonials/testimonial2.jpg',
-      quote:
-        'The quality of candidates and the speed of recruitment have exceeded our expectations. Their team is professional and thorough in their approach.',
-      rating: 5,
-    },
-    {
-      name: 'Michael Rodriguez',
-      position: 'CEO, DataFlow',
-      image: 'assets/shared/clients/testimonials/testimonial1.jpg',
-      quote:
-        'Working with Cozen Tech has transformed our hiring process. They understand our needs and consistently deliver top talent.',
-      rating: 5,
-    },
-  ];
 
   successStories: SuccessStory[] = [
     {
@@ -129,6 +88,4 @@ export class ClientsPageComponent {
       ],
     },
   ];
-
-  stars = Array(5).fill(0);
 }

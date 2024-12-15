@@ -3,6 +3,7 @@
 .testimonials-section {
   padding: 5rem 0;
   background-color: $white;
+  // background-color: $gray-light;
 }
 
 .container {
@@ -27,13 +28,13 @@
   h2 {
     font-size: 1.875rem;
     font-weight: 700;
-    color: #111827;
+    color: $blue-gray;
     margin-bottom: 1rem;
   }
 
   p {
     font-size: 1.25rem;
-    color: #4b5563;
+    color: $gray-dark;
     max-width: 48rem;
     margin: 0 auto;
   }
@@ -50,11 +51,23 @@
 }
 
 .testimonial-card {
-  background-color: white;
+  background-color: $white;
   padding: 1.5rem;
   border-radius: 0.5rem;
+  position: relative;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 0.6s ease-out;
+
+  .quote-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: $lavender-gray;
+
+    i {
+      font-size: 2rem;
+    }
+  }
 
   .profile {
     display: flex;
@@ -64,7 +77,7 @@
     .profile-image {
       width: 3.5rem;
       height: 3.5rem;
-      border-radius: 9999px;
+      border-radius: 50%;
       object-fit: cover;
       margin-right: 1rem;
     }
@@ -72,25 +85,26 @@
     .profile-info {
       h3 {
         font-weight: 600;
-        color: #111827;
+        color: $blue-gray;
+        margin-bottom: 0.25rem;
       }
 
       p {
         font-size: 0.875rem;
-        color: #6b7280;
+        color: $gray-charcol;
       }
     }
   }
 
   .quote {
-    color: #4b5563;
-    margin-bottom: 1rem;
+    color: $gray-dark;
+    margin-bottom: 1.5rem;
     line-height: 1.5;
   }
 
   .stars {
     display: flex;
-    color: #fbbf24;
+    color: $amber-500;
 
     i {
       font-size: 1.25rem;
