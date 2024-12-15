@@ -1,0 +1,92 @@
+@use "./colors" as *;
+
+// Common section styling
+%section-base {
+  padding: 5rem 0;
+  background-color: $gray-light;
+}
+
+// Common container styling
+%container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 640px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
+}
+
+// Common header styling
+%section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInDown 0.6s ease-out;
+
+  h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: $blue-gray;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: $gray-dark;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+}
+
+// Common card base styles
+%card-base {
+  background-color: $white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@mixin responsive-grid(
+  $columns-mobile: 1,
+  $columns-tablet: 2,
+  $columns-desktop: 3,
+  $gap: 2rem
+) {
+  display: grid;
+  grid-template-columns: repeat($columns-mobile, 1fr);
+  gap: $gap;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat($columns-tablet, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat($columns-desktop, 1fr);
+  }
+}
+
+@mixin animated-link {
+  display: inline-flex;
+  align-items: center;
+  color: $accent-color;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+  gap: 0.5rem;
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  i {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover i {
+    transform: translateX(5px);
+  }
+}

@@ -1,0 +1,157 @@
+solutions: Solution[] = [
+    {
+      icon: 'public',
+      title: 'Global Technology Solutions',
+      description:
+        'End-to-end software development and IT consulting services tailored to your business needs.',
+      features: [
+        'Custom Software Development',
+        'Cloud Solutions',
+        'Digital Transformation',
+        'System Integration',
+        ],
+    },
+    {
+      icon: 'group',
+      title: 'Staffing and Recruitment',
+      description:
+        'Connect with top tech talent through our extensive network and proven recruitment process.',
+      features: [
+        'IT Staffing',
+        'Executive Search',
+        'Contract Staffing',
+        'Direct Hire',
+        ],
+    },
+    {
+      icon: 'storage',
+      title: 'Data Support',
+      description:
+        'Comprehensive data management and analytics solutions to drive informed decision-making.',
+      features: [
+        'Data Analytics',
+        'Database Management',
+        'Business Intelligence',
+        'Data Migration',
+        ],
+    },
+    {
+      icon: 'trending_up',
+      title: 'Finance and Accounting',
+      description:
+        'Expert financial services and accounting solutions for business growth and compliance.',
+      features: [
+        'Financial Analysis',
+        'Accounting Services',
+        'Risk Management',
+        'Compliance',
+        ],
+    },
+    {
+      icon: 'security',
+      title: 'HR and Payroll Services',
+      description:
+        'Streamline your HR operations with our comprehensive human resources solutions.',
+      features: [
+        'Payroll Processing',
+        'Benefits Administration',
+        'HR Consulting',
+        'Employee Management',
+        ],
+    },
+    {
+      icon: 'business_center',
+      title: 'Master Vendor Program',
+      description:
+        'Simplified vendor management and procurement processes for enhanced efficiency.',
+      features: [
+        'Vendor Management',
+        'Cost Optimization',
+        'Quality Control',
+        'Performance Tracking',
+        ],
+    },
+    {
+      icon: 'school',
+      title: 'Training Programs',
+      description:
+        'Comprehensive training solutions to upskill your workforce and stay competitive.',
+      features: [
+        'Technical Training',
+        'Soft Skills Development',
+        'Leadership Programs',
+        'Certification Courses',
+        ],
+    },
+    {
+      icon: 'code',
+      title: 'Technologies',
+      description:
+        'Cutting-edge technology solutions across various domains and platforms.',
+      features: [
+        'Cloud Computing',
+        'AI & Machine Learning',
+        'Blockchain',
+        'IoT Solutions',
+        ],
+    },
+    {
+      icon: 'home',
+      title: 'Mortgage Services',
+      description:
+        'Comprehensive mortgage processing and underwriting solutions for financial institutions.',
+      features: [
+        'Loan Processing',
+        'Underwriting Services',
+        'Document Verification',
+        'Compliance Review',
+        ],
+    },
+];
+
+// For the Clients Component, use the following:
+{
+      name: 'ASP.NET',
+      logo: 'assets/shared/clients/trusted/dedicated/asp.jpg',
+    },
+    {
+      name: 'Entity Framework',
+      logo: 'assets/shared/clients/trusted/dedicated/entity.jpg',
+    },
+    {
+      name: 'Flutter',
+      logo: 'assets/shared/clients/trusted/dedicated/flutter.jpg',
+    },
+    {
+      name: 'Net',
+      logo: 'assets/shared/clients/trusted/dedicated/net.jpg',
+    },
+    {
+      name: 'NHibernate',
+      logo: 'assets/shared/clients/trusted/dedicated/nhibernate.jpg',
+    },
+    {
+      name: 'TechCorp',
+      logo: 'assets/shared/clients/trusted/dedicated/tech_corp.jpg',
+    },
+
+// stats section
+ <section class="stats-section">
+    <div class="stats-container">
+      <div class="stat-card">
+        <i class="material-icons">group</i>
+        <h3>500+</h3>
+        <p>Clients Served</p>
+      </div>
+      <div class="stat-card">
+        <i class="material-icons">work</i>
+        <h3>1000+</h3>
+        <p>Successful Placements</p>
+      </div>
+      <div class="stat-card">
+        <i class="material-icons">star</i>
+        <h3>98%</h3>
+        <p>Client Satisfaction</p>
+      </div>
+    </div>
+  </section>

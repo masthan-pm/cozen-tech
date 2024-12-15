@@ -1,0 +1,63 @@
+@use "../../../../styles/colors" as *;
+@use "../../../../styles/shared" as *;
+
+.container {
+  @extend %container;
+  position: relative;
+  color: $white;
+
+  p {
+    font-size: 1.25rem;
+    max-width: 32rem;
+    margin: 0 auto;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+}
+
+.mission-section {
+  @extend %section-base;
+  background-color: $white;
+
+  .header {
+    @extend %section-header;
+    animation: fadeInUp 0.6s ease-out;
+  }
+}
+
+.stats-grid {
+  @include responsive-grid(1, 4, 4);
+  margin-bottom: 4rem;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: $gray-light;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  i {
+    font-size: 2.5rem;
+    color: $accent-color;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: $blue-gray;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: $gray-dark;
+    text-align: center;
+  }
+}

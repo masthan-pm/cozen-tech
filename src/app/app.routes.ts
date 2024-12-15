@@ -8,7 +8,7 @@ import { FinanceComponent } from './components/pages/solutions/finance/finance.c
 import { DataSupportComponent } from './components/pages/solutions/data-support/data-support.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { CareersComponent } from './components/pages/careers/careers.component';
-import { ClientsComponent } from './components/pages/clients/clients.component';
+import { ClientsPageComponent } from './components/pages/clients/clients.component';
 import { MortgageComponent } from './components/pages/solutions/mortgage/mortgage.component';
 import { MasterVendorComponent } from './components/pages/solutions/master-vendor/master-vendor.component';
 import { TrainingComponent } from './components/pages/solutions/training/training.component';
@@ -28,7 +28,7 @@ export const routes: Routes = [
   { path: 'solutions/data-support', component: DataSupportComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'careers', component: CareersComponent },
-  { path: 'clients', component: ClientsComponent },
+  { path: 'clients', component: ClientsPageComponent },
   { path: 'solutions/mortgage', component: MortgageComponent },
   { path: 'solutions/master-vendor', component: MasterVendorComponent },
   { path: 'solutions/training', component: TrainingComponent },

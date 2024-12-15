@@ -104,7 +104,7 @@
 
       <div class="benefits-grid">
         <div *ngFor="let benefit of benefits" class="benefit-card">
-          <img [src]="benefit.image" [alt]="benefit.title" />
+          <img [src]="benefit.image" [alt]="benefit.title" loading="lazy" />
           <div class="card-content">
             <h3>{{ benefit.title }}</h3>
             <p>{{ benefit.description }}</p>

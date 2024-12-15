@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { CompanyOverviewComponent } from '../company-overview/company-overview.component';
 import { ServicesComponent } from '../services/services.component';
-// import { SolutionsComponent } from '../solutions/solutions.component';
 import { ClientsComponent } from '../clients/clients.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
-import { ContactComponent } from '../contact/contact.component';
+import { CTAComponent } from '../../shared/cta/cta.component';
+import { WELCOME_CONSTANT } from '../../../constants/home/welcome.constants';
 
 @Component({
   selector: 'app-welcome',
@@ -14,13 +13,18 @@ import { ContactComponent } from '../contact/contact.component';
   imports: [
     CommonModule,
     RouterModule,
-    CompanyOverviewComponent,
     ServicesComponent,
     ClientsComponent,
     TestimonialsComponent,
-    ContactComponent,
+    CTAComponent,
   ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss',
 })
-export class WelcomeComponent {}
+export class WelcomeComponent {
+  welcome = WELCOME_CONSTANT.WELCOME;
+
+  about = WELCOME_CONSTANT.ABOUT;
+
+  cta = WELCOME_CONSTANT.CTA;
+}
