@@ -1,5 +1,6 @@
 <section id="services" class="services-section">
   <div class="container">
+    @if (showServicesHeader) {
     <div class="header">
       <h2>Our Services</h2>
       <p>
@@ -7,6 +8,7 @@
         business forward and ensure lasting success in the digital age.
       </p>
     </div>
+    }
 
     <div class="services-grid">
       <div *ngFor="let service of services; let i = index" class="service-card">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -18,6 +18,7 @@ interface Service {
   styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent {
+  @Input() showServicesHeader = true;
   services: Service[] = [
     {
       icon: 'public',
