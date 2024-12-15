@@ -1,42 +1,17 @@
 @use "../../../../styles/colors" as *;
+@use "../../../../styles/shared" as *;
 
 .clients-section {
-  padding: 5rem 0;
+  @extend %section-base;
   background-color: $white;
 }
 
 .container {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-
-  @media (min-width: 640px) {
-    padding: 0 1.5rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 0 2rem;
-  }
+  @extend %container;
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 3rem;
-  animation: fadeInDown 0.6s ease-out;
-
-  h2 {
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: $blue-gray;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    font-size: 1.25rem;
-    color: $gray-dark;
-    max-width: 48rem;
-    margin: 0 auto;
-  }
+  @extend %section-header;
 }
 
 .clients-grid {

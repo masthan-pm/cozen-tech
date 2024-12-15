@@ -1,0 +1,51 @@
+@use "./colors" as *;
+
+// Common section styling
+%section-base {
+  padding: 5rem 0;
+  background-color: $gray-light;
+}
+
+// Common container styling
+%container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 640px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
+}
+
+// Common header styling
+%section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInDown 0.6s ease-out;
+
+  h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: $blue-gray;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: $gray-dark;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+}
+
+// Common card base styles
+%card-base {
+  background-color: $white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease-out;
+}
