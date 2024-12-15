@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface Client {
@@ -14,6 +14,10 @@ interface Client {
   styleUrls: ['./clients.component.scss'],
 })
 export class ClientsComponent {
+  @Input() header: string = 'Trusted by Industry Leaders';
+  @Input() content: string =
+    'We work with forward-thinking companies across various industries, helping them achieve their technology and talent goals.';
+
   clients: Client[] = [
     {
       name: 'AWS',

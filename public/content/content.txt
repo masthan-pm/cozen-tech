@@ -108,3 +108,29 @@ solutions: Solution[] = [
         ],
     },
 ];
+
+// For the Clients Component, use the following:
+{
+      name: 'ASP.NET',
+      logo: 'assets/shared/clients/trusted/dedicated/asp.jpg',
+    },
+    {
+      name: 'Entity Framework',
+      logo: 'assets/shared/clients/trusted/dedicated/entity.jpg',
+    },
+    {
+      name: 'Flutter',
+      logo: 'assets/shared/clients/trusted/dedicated/flutter.jpg',
+    },
+    {
+      name: 'Net',
+      logo: 'assets/shared/clients/trusted/dedicated/net.jpg',
+    },
+    {
+      name: 'NHibernate',
+      logo: 'assets/shared/clients/trusted/dedicated/nhibernate.jpg',
+    },
+    {
+      name: 'TechCorp',
+      logo: 'assets/shared/clients/trusted/dedicated/tech_corp.jpg',
+    },

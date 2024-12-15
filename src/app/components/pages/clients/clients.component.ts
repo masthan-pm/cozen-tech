@@ -8,19 +8,26 @@ import {
   HeroContent,
 } from '../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../shared/hero/hero.component';
+import { ClientsComponent } from '../../main/clients/clients.component';
 import { CTAComponent } from '../../shared/cta/cta.component';
 
 @Component({
-  selector: 'app-clients',
+  selector: 'app-clients-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeroComponent, CTAComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HeroComponent,
+    ClientsComponent,
+    CTAComponent,
+  ],
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss'],
 })
-export class ClientsComponent {
+export class ClientsPageComponent {
   clientsHero: HeroContent = {
-    header: 'Our Clients',
-    text: 'Partnering with leading companies to drive innovation and growth',
+    header: 'Trusted by Industry Leaders',
+    text: 'We work with companies of all sizes, from startups to enterprises, helping them build exceptional teams.',
     image: '/assets/pages/clients/client.jpg',
   };
 
