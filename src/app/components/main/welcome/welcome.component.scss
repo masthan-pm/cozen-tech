@@ -83,6 +83,7 @@
 
     &.btn-primary {
       background-color: $accent-color;
+      border-color: $accent-color;
       color: $white;
 
       &:hover {
@@ -92,6 +93,7 @@
 
     &.btn-secondary {
       background-color: $white;
+      border-color: $white;
       color: $blue-gray;
 
       &:hover {

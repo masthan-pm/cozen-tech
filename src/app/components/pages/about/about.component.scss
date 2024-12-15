@@ -1,19 +1,10 @@
 @use "../../../../styles/colors" as *;
+@use "../../../../styles/shared" as *;
 
 .container {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1rem;
+  @extend %container;
   position: relative;
   color: $white;
-
-  @media (min-width: 640px) {
-    padding: 0 1.5rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 0 2rem;
-  }
 
   p {
     font-size: 1.25rem;
@@ -24,40 +15,18 @@
 }
 
 .mission-section {
-  padding: 4rem 0;
+  @extend %section-base;
   background-color: $white;
 
   .header {
-    text-align: center;
-    margin-bottom: 4rem;
+    @extend %section-header;
     animation: fadeInUp 0.6s ease-out;
-
-    h2 {
-      font-size: 1.875rem;
-      font-weight: 700;
-      color: $blue-gray;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      font-size: 1.25rem;
-      color: $gray-dark;
-      max-width: 48rem;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
   }
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
+  @include responsive-grid(1, 4, 4);
   margin-bottom: 4rem;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .stat-card {
