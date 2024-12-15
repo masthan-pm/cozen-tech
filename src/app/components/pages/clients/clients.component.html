@@ -29,7 +29,12 @@
 
       <div class="stories-grid">
         <div *ngFor="let story of successStories" class="story-card">
-          <img [src]="story.image" [alt]="story.title" class="story-image" />
+          <img
+            [src]="story.image"
+            [alt]="story.title"
+            class="story-image"
+            loading="lazy"
+          />
           <div class="card-content">
             <h3>{{ story.title }}</h3>
             <p>{{ story.description }}</p>

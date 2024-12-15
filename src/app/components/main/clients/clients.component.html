@@ -8,7 +8,12 @@
     <div class="clients-grid">
       @for (client of clients; track $index) {
       <div class="client-card">
-        <img [src]="client.logo" [alt]="client.name" class="client-logo" />
+        <img
+          [src]="client.logo"
+          [alt]="client.name"
+          class="client-logo"
+          loading="lazy"
+        />
         <span class="sr-only">{{ client.name }}</span>
       </div>
       }
