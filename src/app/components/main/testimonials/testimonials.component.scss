@@ -14,13 +14,7 @@
 }
 
 .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  @include responsive-grid(1, 2, 3);
 }
 
 .testimonial-card {
