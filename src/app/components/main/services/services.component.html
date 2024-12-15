@@ -2,16 +2,14 @@
   <div class="container">
     @if (showServicesHeader) {
     <div class="header">
-      <h2>Our Services</h2>
-      <p>
-        Comprehensive technology solutions and services designed to drive your
-        business forward and ensure lasting success in the digital age.
-      </p>
+      <h2>{{ header.title }}</h2>
+      <p>{{ header.content }}</p>
     </div>
     }
 
     <div class="services-grid">
-      <div *ngFor="let service of services; let i = index" class="service-card">
+      @for (service of services; track $index) {
+      <div class="service-card">
         <div class="image-container">
           <img
             [src]="service.image"
@@ -26,11 +24,12 @@
         <div class="card-content">
           <p>{{ service.description }}</p>
           <a [routerLink]="service.destinatedLink" class="learn-more">
-            Read More
+            {{ header.linkText }}
             <i class="material-icons">arrow_forward</i>
           </a>
         </div>
       </div>
+      }
     </div>
   </div>
 </section>

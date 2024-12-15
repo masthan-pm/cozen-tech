@@ -6,10 +6,8 @@
     </div>
 
     <div class="testimonials-grid">
-      <div
-        *ngFor="let testimonial of testimonials; let i = index"
-        class="testimonial-card"
-      >
+      @for (testimonial of testimonials; track $index) {
+      <div class="testimonial-card">
         <div class="quote-icon">
           <i class="material-icons">format_quote</i>
         </div>
@@ -26,9 +24,12 @@
         </div>
         <p class="quote">{{ testimonial.quote }}</p>
         <div class="stars">
-          <i *ngFor="let star of stars" class="material-icons">star</i>
+          @for (star of stars; track $index) {
+          <i class="material-icons">star</i>
+          }
         </div>
       </div>
+      }
     </div>
   </div>
 </section>

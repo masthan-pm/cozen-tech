@@ -23,6 +23,16 @@ import { CTAComponent } from '../../shared/cta/cta.component';
   styleUrl: './welcome.component.scss',
 })
 export class WelcomeComponent {
+  welcome = {
+    title: {
+      main: 'Empowering Businesses with',
+      sub: 'Cutting-Edge IT Solutions',
+    },
+    content:
+      ' Partner with us to transform your business through innovative technology solutions and exceptional talent acquisition services.',
+    explore: 'Explore Our Solutions',
+    contact: 'Contact Us',
+  };
   cta = {
     header: 'Ready to Transform Your Business?',
     text: "Let's discuss how we can help you achieve your business goals through our IT solutions and talent acquisition services.",

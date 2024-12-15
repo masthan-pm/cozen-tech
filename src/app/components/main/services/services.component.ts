@@ -19,6 +19,14 @@ interface Service {
 })
 export class ServicesComponent {
   @Input() showServicesHeader = true;
+
+  header = {
+    title: 'Our Services',
+    content:
+      'Comprehensive technology solutions and services designed to drive your business forward and ensure lasting success in the digital age.',
+    linkText: 'Read More',
+  };
+
   services: Service[] = [
     {
       icon: 'public',

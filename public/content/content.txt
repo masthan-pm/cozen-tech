@@ -134,3 +134,24 @@ solutions: Solution[] = [
       name: 'TechCorp',
       logo: 'assets/shared/clients/trusted/dedicated/tech_corp.jpg',
     },
+
+// stats section
+ <section class="stats-section">
+    <div class="stats-container">
+      <div class="stat-card">
+        <i class="material-icons">group</i>
+        <h3>500+</h3>
+        <p>Clients Served</p>
+      </div>
+      <div class="stat-card">
+        <i class="material-icons">work</i>
+        <h3>1000+</h3>
+        <p>Successful Placements</p>
+      </div>
+      <div class="stat-card">
+        <i class="material-icons">star</i>
+        <h3>98%</h3>
+        <p>Client Satisfaction</p>
+      </div>
+    </div>
+  </section>
