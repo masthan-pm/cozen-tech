@@ -3,6 +3,7 @@ import { ValuesComponent } from './values/values.component';
 import { TeamsComponent } from './teams/teams.component';
 import { HeroContent, Stat } from '../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../shared/hero/hero.component';
+import { ABOUT_CONSTANTS } from '../../../constants/about/about.constants';
 
 @Component({
   selector: 'app-about',
@@ -11,22 +12,9 @@ import { HeroComponent } from '../../shared/hero/hero.component';
   styleUrl: './about.component.scss',
 })
 export class AboutComponent {
-  about: HeroContent = {
-    header: 'About Cozen Tech',
-    text: 'Building the future of technology through innovation and exceptional talent since 2010',
-    image: '/assets/pages/about/about.jpg',
-  };
+  about: HeroContent = ABOUT_CONSTANTS.ABOUT;
 
-  mission = {
-    title: 'Our Mission',
-    content:
-      'To bridge the gap between exceptional talent and innovative companies, fostering growth and success in the ever-evolving technology landscape. We strive to be the catalyst that transforms businesses through cutting-edge technology solutions and unparalleled talent acquisition services.',
-  };
+  mission = ABOUT_CONSTANTS.MISSION;
 
-  stats: Stat[] = [
-    { icon: 'public', stat: '15+', label: 'Countries Served' },
-    { icon: 'work', stat: '1000+', label: 'Projects Completed' },
-    { icon: 'group', stat: '500+', label: 'Happy Clients' },
-    { icon: 'star', stat: '50+', label: 'Industry Awards' },
-  ];
+  stats: Stat[] = ABOUT_CONSTANTS.STATS;
 }
