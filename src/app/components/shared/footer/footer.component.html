@@ -4,12 +4,11 @@
       <!-- Company Info -->
       <div class="company-info">
         <div class="company-title">
-          <span class="material-icons">business</span>
-          <span class="company-name">Cozen Tech</span>
+          <span class="material-icons">{{ companyInfo.icon }}</span>
+          <span class="company-name">{{ companyInfo.name }}</span>
         </div>
         <p class="company-description">
-          Empowering businesses through innovative IT solutions and talent
-          acquisition.
+          {{ companyInfo.description }}
         </p>
       </div>
 
@@ -30,18 +29,19 @@
         <h3>Contact Us</h3>
         <ul>
           <li>
-            <span class="material-icons">email</span>
-            <a href="mailto:info@cozentech.com">{{ email }}</a>
+            <span class="material-icons">{{ contactInfo.email.icon }}</span>
+            <a [href]="contactInfo.email.href">{{ contactInfo.email.value }}</a>
           </li>
           <li>
-            <span class="material-icons">phone</span>
-            <a href="tel:+1234567890">(123) 456-7890</a>
+            <span class="material-icons">{{ contactInfo.phone.icon }}</span>
+            <a [href]="contactInfo.phone.href">{{ contactInfo.phone.value }}</a>
           </li>
           <li>
-            <span class="material-icons">location_on</span>
+            <span class="material-icons">{{ contactInfo.address.icon }}</span>
             <span>
-              123 Tech Street,<br />
-              Silicon Valley, CA 94025
+              <ng-container *ngFor="let line of contactInfo.address.lines">
+                {{ line }}<br />
+              </ng-container>
             </span>
           </li>
         </ul>
@@ -51,26 +51,20 @@
       <div class="social-media">
         <h3>Follow Us</h3>
         <div class="social-links">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <span class="material-icons">facebook</span>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <span class="material-icons">facebook</span>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <span class="material-icons">facebook</span>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <span class="material-icons">facebook</span>
+          <a
+            *ngFor="let social of socialLinks"
+            [href]="social.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="material-icons">{{ social.icon }}</span>
           </a>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>
-        © {{ currentYear }} Cozen Technology Solutions. All rights reserved.
-      </p>
+      <p>© {{ currentYear }} {{ footerCopyright }}</p>
     </div>
   </div>
 </footer>

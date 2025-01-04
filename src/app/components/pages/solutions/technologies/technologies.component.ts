@@ -1,17 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {
-  Capability,
-  Service,
-  Feature,
-  HeroContent,
-  CTAContent,
-} from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 import { FeaturesComponent } from '../../../shared/features/features.component';
+import { TECHNOLOGIES_CONSTANTS } from '../../../../constants/solutions/technologies.constants';
 
 @Component({
   selector: 'app-technologies',
@@ -28,133 +22,12 @@ import { FeaturesComponent } from '../../../shared/features/features.component';
   styleUrls: ['./technologies.component.scss'],
 })
 export class TechnologiesComponent {
-  technologies: HeroContent = {
-    header: 'Technologies',
-    text: 'Leverage cutting-edge technologies to drive innovation and digital transformation',
-    image: '/assets/shared/services/technologies.jpg',
-  };
-
-  cta: CTAContent = {
-    header: 'Ready to Transform Your Business?',
-    text: "Let's discuss how our technology solutions can drive innovation and digital transformation.",
-  };
-
-  features = {
-    header: 'Key Features',
-    subheader: 'Essential features of our technology solutions.',
-  };
-
-  assistance = {
-    header: 'Our Technology Solutions',
-    subheader:
-      'Comprehensive technology solutions to power your digital transformation.',
-  };
-
-  services: Service[] = [
-    {
-      icon: 'code',
-      title: 'Application Development',
-      description:
-        'Custom software solutions using cutting-edge technologies and frameworks.',
-    },
-    {
-      icon: 'cloud',
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and migration services.',
-    },
-    {
-      icon: 'storage',
-      title: 'Data Management',
-      description: 'Advanced data storage and analytics solutions.',
-    },
-    {
-      icon: 'security',
-      title: 'Cybersecurity',
-      description: 'Comprehensive security solutions for digital assets.',
-    },
-    {
-      icon: 'memory',
-      title: 'AI & Machine Learning',
-      description: 'Intelligent solutions powered by advanced algorithms.',
-    },
-    {
-      icon: 'wifi',
-      title: 'IoT Solutions',
-      description: 'Connected device solutions for smart applications.',
-    },
-  ];
-
-  techStack: Capability[] = [
-    {
-      category: 'Frontend',
-      items: [
-        'React',
-        'Angular',
-        'Vue.js',
-        'Next.js',
-        'TypeScript',
-        'Tailwind CSS',
-      ],
-    },
-    {
-      category: 'Backend',
-      items: ['Node.js', 'Python', 'Java', '.NET', 'Go', 'Ruby on Rails'],
-    },
-    {
-      category: 'Cloud & DevOps',
-      items: [
-        'AWS',
-        'Azure',
-        'Google Cloud',
-        'Docker',
-        'Kubernetes',
-        'Jenkins',
-      ],
-    },
-    {
-      category: 'Data & AI',
-      items: [
-        'TensorFlow',
-        'PyTorch',
-        'MongoDB',
-        'PostgreSQL',
-        'Elasticsearch',
-        'Apache Kafka',
-      ],
-    },
-  ];
-
-  featuresContent: Feature[] = [
-    {
-      category: 'Development',
-      items: [
-        'Agile Methodology',
-        'CI/CD Integration',
-        'Code Quality',
-        'Performance Optimization',
-      ],
-    },
-    {
-      category: 'Security',
-      items: [
-        'Penetration Testing',
-        'Security Audits',
-        'Compliance',
-        'Authentication',
-      ],
-    },
-    {
-      category: 'Support',
-      items: ['24/7 Monitoring', 'Technical Support', 'Maintenance', 'Updates'],
-    },
-    {
-      category: 'Integration',
-      items: [
-        'API Development',
-        'Third-party Integration',
-        'Legacy Systems',
-        'Microservices',
-      ],
-    },
-  ];
+  technologies = TECHNOLOGIES_CONSTANTS.HERO;
+  cta = TECHNOLOGIES_CONSTANTS.CTA;
+  features = TECHNOLOGIES_CONSTANTS.FEATURES;
+  assistance = TECHNOLOGIES_CONSTANTS.ASSISTANCE;
+  services = TECHNOLOGIES_CONSTANTS.SERVICES;
+  techStack = TECHNOLOGIES_CONSTANTS.TECH_STACK;
+  featuresContent = TECHNOLOGIES_CONSTANTS.FEATURES_CONTENT;
+  techStackSection = TECHNOLOGIES_CONSTANTS.TECH_STACK_SECTION;
 }

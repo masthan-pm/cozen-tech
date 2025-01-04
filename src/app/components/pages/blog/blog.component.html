@@ -77,11 +77,8 @@
   <section class="newsletter-section">
     <div class="container">
       <div class="content">
-        <h2>Stay Updated with Our Newsletter</h2>
-        <p>
-          Subscribe to receive the latest insights, industry trends, and company
-          updates directly in your inbox.
-        </p>
+        <h2>{{ newsletter.title }}</h2>
+        <p>{{ newsletter.description }}</p>
 
         <div class="form">
           <form [formGroup]="emailForm">

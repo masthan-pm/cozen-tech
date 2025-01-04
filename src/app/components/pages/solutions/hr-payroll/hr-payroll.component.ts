@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {
-  Service,
-  Phase,
-  Feature,
-  HeroContent,
-  CTAContent,
-} from '../../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 import { FeaturesComponent } from '../../../shared/features/features.component';
+import { HR_PAYROLL_CONSTANTS } from '../../../../constants/solutions/hr-payroll.constants';
+
 @Component({
   selector: 'app-hr-payroll',
   standalone: true,
@@ -29,130 +24,12 @@ import { FeaturesComponent } from '../../../shared/features/features.component';
   styleUrls: ['./hr-payroll.component.scss'],
 })
 export class HRPayrollComponent {
-  hrPayroll: HeroContent = {
-    header: 'HR & Payroll Services',
-    text: 'Streamline your HR operations with our comprehensive human resources solutions',
-    image: '/assets/shared/services/hr.jpg',
-  };
-
-  cta: CTAContent = {
-    header: 'Ready to Optimize Your HR Operations?',
-    text: "Let's discuss how our HR solutions can streamline your workforce management.",
-  };
-
-  features = {
-    header: 'Comprehensive Features',
-    subheader: 'Explore our full range of HR and payroll management features.',
-  };
-
-  assistance = {
-    header: 'Our HR & Payroll Services',
-    subheader:
-      'Comprehensive HR and payroll solutions designed to optimize your workforce management.',
-  };
-
-  process = {
-    header: 'Our Process',
-    subheader: 'A streamlined approach to HR and payroll management.',
-  };
-
-  services: Service[] = [
-    {
-      icon: 'attach_money',
-      title: 'Payroll Processing',
-      description:
-        'Accurate and timely payroll processing with tax compliance and reporting.',
-    },
-    {
-      icon: 'group',
-      title: 'HR Management',
-      description:
-        'Comprehensive HR services including employee onboarding and benefits administration.',
-    },
-    {
-      icon: 'description',
-      title: 'Compliance Management',
-      description:
-        'Ensuring compliance with labor laws and regulatory requirements.',
-    },
-    {
-      icon: 'security',
-      title: 'Benefits Administration',
-      description:
-        'Management of employee benefits programs and related services.',
-    },
-    {
-      icon: 'schedule',
-      title: 'Time & Attendance',
-      description:
-        'Advanced time tracking and attendance management solutions.',
-    },
-    {
-      icon: 'star',
-      title: 'Performance Management',
-      description: 'Employee performance tracking and development programs.',
-    },
-  ];
-
-  phases: Phase[] = [
-    {
-      step: '01',
-      title: 'Data Collection',
-      description: 'Gathering employee information',
-    },
-    {
-      step: '02',
-      title: 'Processing',
-      description: 'Calculating payroll and benefits',
-    },
-    {
-      step: '03',
-      title: 'Verification',
-      description: 'Quality checks and compliance',
-    },
-    {
-      step: '04',
-      title: 'Distribution',
-      description: 'Payroll and reports delivery',
-    },
-  ];
-
-  featuresContent: Feature[] = [
-    {
-      category: 'Payroll Services',
-      items: [
-        'Salary Processing',
-        'Tax Calculations',
-        'Deductions Management',
-        'Payslip Generation',
-      ],
-    },
-    {
-      category: 'HR Administration',
-      items: [
-        'Employee Onboarding',
-        'Personnel Records',
-        'Leave Management',
-        'Policy Administration',
-      ],
-    },
-    {
-      category: 'Benefits Management',
-      items: [
-        'Health Insurance',
-        'Retirement Plans',
-        'Wellness Programs',
-        'Compensation Planning',
-      ],
-    },
-    {
-      category: 'Compliance & Reporting',
-      items: [
-        'Regulatory Compliance',
-        'Statutory Reports',
-        'Audit Support',
-        'Documentation',
-      ],
-    },
-  ];
+  hrPayroll = HR_PAYROLL_CONSTANTS.HERO;
+  cta = HR_PAYROLL_CONSTANTS.CTA;
+  features = HR_PAYROLL_CONSTANTS.FEATURES;
+  assistance = HR_PAYROLL_CONSTANTS.ASSISTANCE;
+  process = HR_PAYROLL_CONSTANTS.PROCESS;
+  services = HR_PAYROLL_CONSTANTS.SERVICES;
+  phases = HR_PAYROLL_CONSTANTS.PHASES;
+  featuresContent = HR_PAYROLL_CONSTANTS.FEATURES_CONTENT;
 }

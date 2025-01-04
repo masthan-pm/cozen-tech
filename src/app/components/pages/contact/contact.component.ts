@@ -10,12 +10,9 @@ import {
 } from '@angular/forms';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { BlogService } from '../blog/blog.service';
-import {
-  Country,
-  Office,
-  HeroContent,
-} from '../../shared/interfaces/solutions.interface';
+import { Country } from '../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../shared/hero/hero.component';
+import { CONTACT_CONSTANTS } from '../../../constants/contact.constants';
 
 @Component({
   selector: 'app-contact',
@@ -33,12 +30,17 @@ import { HeroComponent } from '../../shared/hero/hero.component';
 })
 export class ContactComponent {
   constructor(private blogService: BlogService) {}
-  contact: HeroContent = {
-    header: 'Contact Us',
-    text: 'Get in touch with our team to discuss how we can help your business grow',
-    image: '/assets/pages/contact.jpg',
-  };
-  contactEmail = 'info@cozentech.com';
+
+  constants = CONTACT_CONSTANTS;
+  contact = this.constants.HERO;
+  contactEmail = this.constants.CONTACT_EMAIL;
+  countries = this.constants.COUNTRIES;
+  offices = this.constants.OFFICES;
+  selectedCountry = this.constants.DEFAULT_COUNTRY;
+
+  isCountryDropdownOpen = false;
+  formSubjects = CONTACT_CONSTANTS.FORM_SUBJECTS;
+
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
     companyName: new FormControl('', Validators.required),
@@ -47,57 +49,6 @@ export class ContactComponent {
     subject: new FormControl('', Validators.required),
     message: new FormControl('', Validators.required),
   });
-
-  isCountryDropdownOpen = false;
-
-  selectedCountry: Country = {
-    name: 'United States',
-    code: 'US',
-    dialCode: '+1',
-    flag: 'US',
-  };
-
-  offices: Office[] = [
-    {
-      city: 'San Francisco',
-      address: '123 Tech Street, San Francisco, CA 94105',
-      phone: '+1 (415) 555-0123',
-      email: 'sf@cozentech.com',
-      hours: 'Mon-Fri: 9:00 AM - 6:00 PM PST',
-    },
-    {
-      city: 'New York',
-      address: '456 Madison Avenue, New York, NY 10022',
-      phone: '+1 (212) 555-0123',
-      email: 'ny@cozentech.com',
-      hours: 'Mon-Fri: 9:00 AM - 6:00 PM EST',
-    },
-    {
-      city: 'London',
-      address: '789 Tech Hub, London EC2A 4NE, UK',
-      phone: '+44 20 7123 4567',
-      email: 'uk@cozentech.com',
-      hours: 'Mon-Fri: 9:00 AM - 6:00 PM GMT',
-    },
-  ];
-
-  countries: Country[] = [
-    { name: 'United States', code: 'US', dialCode: '+1', flag: 'US' },
-    { name: 'United Kingdom', code: 'GB', dialCode: '+44', flag: 'GB' },
-    { name: 'Canada', code: 'CA', dialCode: '+1', flag: 'CA' },
-    { name: 'Australia', code: 'AU', dialCode: '+61', flag: 'AU' },
-    { name: 'Germany', code: 'DE', dialCode: '+49', flag: 'DE' },
-    { name: 'France', code: 'FR', dialCode: '+33', flag: 'FR' },
-    { name: 'India', code: 'IN', dialCode: '+91', flag: 'IN' },
-    { name: 'Japan', code: 'JP', dialCode: '+81', flag: 'JP' },
-    { name: 'China', code: 'CN', dialCode: '+86', flag: 'CN' },
-    { name: 'Brazil', code: 'BR', dialCode: '+55', flag: 'BR' },
-    { name: 'Mexico', code: 'MX', dialCode: '+52', flag: 'MX' },
-    { name: 'Spain', code: 'ES', dialCode: '+34', flag: 'ES' },
-    { name: 'Italy', code: 'IT', dialCode: '+39', flag: 'IT' },
-    { name: 'Netherlands', code: 'NL', dialCode: '+31', flag: 'NL' },
-    { name: 'Singapore', code: 'SG', dialCode: '+65', flag: 'SG' },
-  ];
 
   toggleCountryDropdown() {
     this.isCountryDropdownOpen = !this.isCountryDropdownOpen;
