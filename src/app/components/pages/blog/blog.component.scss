@@ -222,12 +222,12 @@
 // Newsletter section styles
 .newsletter-section {
   padding: 5rem 0;
-  background-color: #00b2b2;
+  background-color: $accent-color;
 
   .container {
     max-width: 48rem;
     text-align: center;
-    color: white;
+    color: $white;
     margin: 0 auto;
 
     h2 {
@@ -239,7 +239,7 @@
 
     p {
       font-size: 1.25rem;
-      color: #e5e7eb;
+      color: $lavender-gray;
       margin-bottom: 2rem;
       animation: fadeInUp 0.6s ease-out;
     }

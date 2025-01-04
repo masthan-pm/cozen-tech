@@ -26,7 +26,10 @@
 
 .stats-grid {
   @include responsive-grid(1, 4, 4);
-  margin-bottom: 4rem;
+
+  & {
+    margin-bottom: 4rem;
+  }
 }
 
 .stat-card {
