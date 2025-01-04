@@ -13,35 +13,31 @@
       <div class="contact-grid">
         <!-- Contact Information -->
         <div class="contact-info animate-fade-right">
-          <h2>Let's Connect</h2>
-          <p>
-            Whether you're looking for IT solutions, talent acquisition
-            services, or just want to learn more about what we do, we'd love to
-            hear from you.
-          </p>
+          <h2>{{ constants.CONTACT_INFO.header }}</h2>
+          <p>{{ constants.CONTACT_INFO.description }}</p>
 
           <div class="contact-methods">
             <div class="contact-method">
               <i class="material-icons">mail</i>
               <div>
-                <h3>Email</h3>
-                <p>{{ contactEmail }}</p>
+                <h3>{{ constants.CONTACT_INFO.methods.email.title }}</h3>
+                <p>{{ constants.CONTACT_INFO.methods.email.value }}</p>
               </div>
             </div>
 
             <div class="contact-method">
               <i class="material-icons">phone</i>
               <div>
-                <h3>Phone</h3>
-                <p>+1 (888) 555-0123</p>
+                <h3>{{ constants.CONTACT_INFO.methods.phone.title }}</h3>
+                <p>{{ constants.CONTACT_INFO.methods.phone.value }}</p>
               </div>
             </div>
 
             <div class="contact-method">
               <i class="material-icons">message</i>
               <div>
-                <h3>Live Chat</h3>
-                <p>Available Monday to Friday, 9:00 AM - 6:00 PM PST</p>
+                <h3>{{ constants.CONTACT_INFO.methods.chat.title }}</h3>
+                <p>{{ constants.CONTACT_INFO.methods.chat.value }}</p>
               </div>
             </div>
           </div>
@@ -56,21 +52,25 @@
           >
             <div class="form-grid">
               <div class="form-group">
-                <label for="name">Full Name</label>
+                <label for="name">{{ constants.FORM.labels.name }}</label>
                 <input
                   type="text"
                   id="name"
                   formControlName="name"
+                  [placeholder]="constants.FORM.placeholders.name"
                   class="form-control"
                 />
               </div>
 
               <div class="form-group">
-                <label for="companyName">Company Name</label>
+                <label for="companyName">{{
+                  constants.FORM.labels.companyName
+                }}</label>
                 <input
                   type="text"
                   id="companyName"
                   formControlName="companyName"
+                  [placeholder]="constants.FORM.placeholders.companyName"
                   class="form-control"
                 />
               </div>
@@ -78,17 +78,18 @@
 
             <div class="form-grid">
               <div class="form-group">
-                <label for="email">Email Address</label>
+                <label for="email">{{ constants.FORM.labels.email }}</label>
                 <input
                   type="email"
                   id="email"
                   formControlName="email"
+                  [placeholder]="constants.FORM.placeholders.email"
                   class="form-control"
                 />
               </div>
 
               <div class="form-group">
-                <label for="phone">Phone Number</label>
+                <label for="phone">{{ constants.FORM.labels.phone }}</label>
                 <div class="phone-input">
                   <div
                     class="country-selector"
@@ -121,6 +122,7 @@
                     type="tel"
                     id="phone"
                     formControlName="phone"
+                    [placeholder]="constants.FORM.placeholders.phone"
                     class="form-control"
                   />
                 </div>
@@ -128,36 +130,43 @@
             </div>
 
             <div class="form-group">
-              <label for="subject">Subject</label>
+              <label for="subject">{{ constants.FORM.labels.subject }}</label>
               <div class="select-wrapper">
                 <select
                   id="subject"
                   formControlName="subject"
                   class="form-control"
                 >
-                  <option value="">Select a subject</option>
-                  <option value="IT Solutions">IT Solutions</option>
-                  <option value="Talent Acquisition">Talent Acquisition</option>
-                  <option value="Partnership">Partnership</option>
-                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="">
+                    {{ constants.FORM.placeholders.subject }}
+                  </option>
+                  <option
+                    *ngFor="let subject of constants.FORM_SUBJECTS"
+                    [value]="subject"
+                  >
+                    {{ subject }}
+                  </option>
                 </select>
                 <i class="material-icons select-arrow">expand_more</i>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="message">Message</label>
+              <label for="message">{{ constants.FORM.labels.message }}</label>
               <textarea
                 id="message"
                 formControlName="message"
+                [placeholder]="constants.FORM.placeholders.message"
                 rows="4"
                 class="form-control"
               ></textarea>
             </div>
 
             <button type="submit" class="submit-button">
-              Send Message
-              <i class="material-icons">send</i>
+              {{ constants.FORM.submitButton.text }}
+              <i class="material-icons">{{
+                constants.FORM.submitButton.icon
+              }}</i>
             </button>
           </form>
         </div>
@@ -169,11 +178,8 @@
   <section class="offices-section">
     <div class="container">
       <div class="section-header animate-fade-down">
-        <h2>Our Offices</h2>
-        <p>
-          Visit us at one of our global offices or reach out to the location
-          nearest to you.
-        </p>
+        <h2>{{ constants.OFFICES_SECTION.header }}</h2>
+        <p>{{ constants.OFFICES_SECTION.description }}</p>
       </div>
 
       <div class="offices-grid">

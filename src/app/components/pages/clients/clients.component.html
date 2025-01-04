@@ -23,8 +23,8 @@
   <section class="success-stories-section">
     <div class="container">
       <div class="header">
-        <h2>Success Stories</h2>
-        <p>Real results from our partnerships with leading companies.</p>
+        <h2>{{ header.header }}</h2>
+        <p>{{ header.content }}</p>
       </div>
 
       <div class="stories-grid">
@@ -45,7 +45,7 @@
               </li>
             </ul>
             <a routerLink="/contact" class="read-more">
-              Read Full Story
+              {{ readMore }}
               <i class="material-icons">arrow_forward</i>
             </a>
           </div>
