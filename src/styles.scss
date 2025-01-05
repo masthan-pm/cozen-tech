@@ -14,6 +14,14 @@ body {
   font-size: 1rem;
 }
 
+.mat-mdc-menu-trigger {
+  .mdc-button__ripple,
+  .mat-mdc-button-persistent-ripple,
+  .mat-mdc-button-ripple {
+    display: none;
+  }
+}
+
 // Animations
 @keyframes pulse {
   0% {
