@@ -23,17 +23,19 @@
     <button
       mat-button
       [matMenuTriggerFor]="solutionsMenu"
-      (mouseenter)="menuTrigger.openMenu()"
+      (mouseenter)="openMenu()"
+      (mouseleave)="startCloseTimer()"
       #menuTrigger="matMenuTrigger"
-      (menuOpened)="toggleArrow()"
-      (menuClosed)="toggleArrow()"
     >
       {{ item.label }}
       <span class="icon-{{ !isOpen ? 'up-arrow' : 'down-arrow' }}"></span>
     </button>
 
     <mat-menu #solutionsMenu="matMenu" yPosition="below" [hasBackdrop]="false">
-      <div (mouseleave)="menuTrigger.closeMenu()">
+      <div
+        (mouseenter)="cancelCloseTimer()"
+        (mouseleave)="menuTrigger.closeMenu(); isOpen = false"
+      >
         @for (subItem of item.submenu; track $index) {
         <div class="dropdown-item">
           <a [routerLink]="subItem.route">

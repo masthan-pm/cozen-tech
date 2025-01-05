@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -34,8 +34,11 @@ interface NavItem {
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  @ViewChild('menuTrigger') menuTrigger!: MatMenuTrigger;
+
   isOpen: boolean = false;
   isMobileMenuOpen: boolean = false;
+  menuCloseTimer: any;
 
   toggleArrow() {
     this.isOpen = !this.isOpen;
@@ -43,6 +46,27 @@ export class HeaderComponent {
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  openMenu() {
+    this.menuTrigger.openMenu();
+    this.isOpen = true;
+    if (this.menuCloseTimer) {
+      clearTimeout(this.menuCloseTimer);
+    }
+  }
+
+  startCloseTimer() {
+    this.menuCloseTimer = setTimeout(() => {
+      this.menuTrigger.closeMenu();
+      this.isOpen = false;
+    }, 100);
+  }
+
+  cancelCloseTimer() {
+    if (this.menuCloseTimer) {
+      clearTimeout(this.menuCloseTimer);
+    }
   }
 
   navItems: NavItem[] = [
