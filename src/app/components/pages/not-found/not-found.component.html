@@ -1,0 +1,17 @@
+<div class="not-found-container">
+  <div class="content">
+    <h1>{{ notFound.HEADER }}</h1>
+    <h2>{{ notFound.HEADER2 }}</h2>
+    <p>{{ notFound.CONTENT }}</p>
+    <div class="buttons">
+      <button (click)="goBack()" class="back-button">
+        <i class="material-icons">arrow_back</i>
+        {{ notFound.BUTTONS.button1 }}
+      </button>
+      <a routerLink="/" class="home-button">
+        <i class="material-icons">home</i>
+        {{ notFound.BUTTONS.button2 }}
+      </a>
+    </div>
+  </div>
+</div>
