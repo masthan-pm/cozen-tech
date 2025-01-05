@@ -16,6 +16,6 @@ export class CTAComponent {
   @Input() buttonText = 'Contact Us Today';
   @Input() showContactInfo = false;
   email = 'info@cozentech.com';
-  phone = '+1 (888) 555-0123';
+  phone = '+1 (629) 274-2295';
   buttonLink = '/contact';
 }

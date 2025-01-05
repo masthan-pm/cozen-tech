@@ -35,8 +35,8 @@ export class FooterComponent {
     },
     phone: {
       icon: 'phone',
-      value: '(123) 456-7890',
-      href: 'tel:+1234567890',
+      value: '(629) 274-2295',
+      href: 'tel:+16292742295',
     },
     address: {
       icon: 'location_on',
@@ -45,10 +45,26 @@ export class FooterComponent {
   };
 
   socialLinks = [
-    { name: 'LinkedIn', icon: 'facebook', href: '#' },
-    { name: 'Twitter', icon: 'facebook', href: '#' },
-    { name: 'Facebook', icon: 'facebook', href: '#' },
-    { name: 'Instagram', icon: 'facebook', href: '#' },
+    {
+      name: 'LinkedIn',
+      icon: 'linkedin',
+      href: 'https://www.linkedin.com/company/cozentech/',
+    },
+    {
+      name: 'Youtube',
+      icon: 'youtube',
+      href: 'https://www.youtube.com/@Cozentech',
+    },
+    {
+      name: 'Facebook',
+      icon: 'facebook',
+      href: 'https://www.facebook.com/cozentech',
+    },
+    {
+      name: 'Instagram',
+      icon: 'instagram',
+      href: 'https://www.instagram.com/cozentechinc/',
+    },
   ];
 
   footerCopyright = 'Cozen Technology Solutions. All rights reserved.';
