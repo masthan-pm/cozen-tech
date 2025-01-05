@@ -22,7 +22,7 @@ export const CONTACT_CONSTANTS = {
       },
       phone: {
         title: 'Phone',
-        value: '+1 (888) 555-0123',
+        value: '+1 (629) 274-2295',
       },
       chat: {
         title: 'Live Chat',
@@ -99,14 +99,14 @@ export const CONTACT_CONSTANTS = {
     {
       city: 'San Francisco',
       address: '123 Tech Street, San Francisco, CA 94105',
-      phone: '+1 (415) 555-0123',
+      phone: '+1 (629) 274-2295',
       email: 'sf@cozentech.com',
       hours: 'Mon-Fri: 9:00 AM - 6:00 PM PST',
     },
     {
       city: 'New York',
       address: '456 Madison Avenue, New York, NY 10022',
-      phone: '+1 (212) 555-0123',
+      phone: '+1 (629) 274-2295',
       email: 'ny@cozentech.com',
       hours: 'Mon-Fri: 9:00 AM - 6:00 PM EST',
     },

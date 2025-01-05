@@ -137,7 +137,8 @@
     justify-content: center;
     transition: all 0.3s ease;
 
-    .material-icons {
+    .material-icons,
+    .fa-brands {
       font-size: 1.25rem;
       color: $accent-color;
     }
@@ -146,7 +147,8 @@
       background-color: $accent-color;
       transform: translateY(-3px);
 
-      .material-icons {
+      .material-icons,
+      .fa-brands {
         color: $white;
       }
     }
