@@ -104,8 +104,6 @@ export class ContactComponent {
   }
 
   onSubmit() {
-    this.contactForm.markAllAsTouched();
-
     if (this.contactForm.valid) {
       const data = {
         ...this.contactForm.value,
@@ -117,6 +115,8 @@ export class ContactComponent {
         },
       });
       this.contactForm.reset();
+    } else {
+      this.contactForm.markAllAsTouched();
     }
   }
 }
