@@ -43,12 +43,56 @@ export class ContactComponent {
 
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
-    companyName: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    phone: new FormControl('', Validators.required),
+    companyName: new FormControl(''),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email,
+      Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
+    ]),
+    phone: new FormControl(''),
     subject: new FormControl('', Validators.required),
-    message: new FormControl('', Validators.required),
+    message: new FormControl(''),
   });
+
+  get nameControl() {
+    return this.contactForm.get('name');
+  }
+
+  get emailControl() {
+    return this.contactForm.get('email');
+  }
+
+  get subjectControl() {
+    return this.contactForm.get('subject');
+  }
+
+  getErrorMessage(controlName: string): string {
+    const control = this.contactForm.get(controlName);
+    if (!control) return '';
+
+    if (control.hasError('required')) {
+      return `${
+        controlName.charAt(0).toUpperCase() + controlName.slice(1)
+      } is required`;
+    }
+
+    if (control.hasError('email')) {
+      return 'Please enter a valid email address';
+    }
+
+    if (control.hasError('pattern')) {
+      if (controlName === 'email') {
+        return 'Please enter a valid email address';
+      }
+    }
+
+    return '';
+  }
+
+  shouldShowError(controlName: string): boolean {
+    const control = this.contactForm.get(controlName);
+    return !!control && control.invalid && (control.dirty || control.touched);
+  }
 
   toggleCountryDropdown() {
     this.isCountryDropdownOpen = !this.isCountryDropdownOpen;
@@ -71,6 +115,8 @@ export class ContactComponent {
         },
       });
       this.contactForm.reset();
+    } else {
+      this.contactForm.markAllAsTouched();
     }
   }
 }

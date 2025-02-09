@@ -52,14 +52,20 @@
           >
             <div class="form-grid">
               <div class="form-group">
-                <label for="name">{{ constants.FORM.labels.name }}</label>
+                <label for="name">{{ constants.FORM.labels.name }} *</label>
                 <input
                   type="text"
                   id="name"
                   formControlName="name"
                   [placeholder]="constants.FORM.placeholders.name"
                   class="form-control"
+                  [ngClass]="{ error: shouldShowError('name') }"
                 />
+                @if (shouldShowError('name')) {
+                <div class="error-message">
+                  {{ getErrorMessage("name") }}
+                </div>
+                }
               </div>
 
               <div class="form-group">
@@ -78,14 +84,20 @@
 
             <div class="form-grid">
               <div class="form-group">
-                <label for="email">{{ constants.FORM.labels.email }}</label>
+                <label for="email">{{ constants.FORM.labels.email }} *</label>
                 <input
                   type="email"
                   id="email"
                   formControlName="email"
                   [placeholder]="constants.FORM.placeholders.email"
                   class="form-control"
+                  [ngClass]="{ error: shouldShowError('email') }"
                 />
+                @if(shouldShowError('email')){
+                <div class="error-message">
+                  {{ getErrorMessage("email") }}
+                </div>
+                }
               </div>
 
               <div class="form-group">
@@ -130,12 +142,13 @@
             </div>
 
             <div class="form-group">
-              <label for="subject">{{ constants.FORM.labels.subject }}</label>
+              <label for="subject">{{ constants.FORM.labels.subject }} *</label>
               <div class="select-wrapper">
                 <select
                   id="subject"
                   formControlName="subject"
                   class="form-control"
+                  [ngClass]="{ error: shouldShowError('subject') }"
                 >
                   <option value="">
                     {{ constants.FORM.placeholders.subject }}
@@ -149,6 +162,11 @@
                 </select>
                 <i class="material-icons select-arrow">expand_more</i>
               </div>
+              @if (shouldShowError('subject')) {
+              <div class="error-message">
+                {{ getErrorMessage("subject") }}
+              </div>
+              }
             </div>
 
             <div class="form-group">
