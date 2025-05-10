@@ -1,0 +1,64 @@
+<div class="hero-carousel">
+    <div class="carousel-container">
+      <ng-container *ngFor="let slide of slides; let i = index">
+        <div
+          *ngIf="i === currentSlideIndex"
+          class="carousel-slide"
+          [ngStyle]="getBackgroundStyle(slide)"
+          @fadeAnimation
+        >
+          <div class="hero-overlay" [class.gradient-overlay]="true"></div>
+
+          <div class="hero-content" @slideAnimation>
+            <h1 class="slide-title">
+              {{ slide.title }}<br />
+              <span class="highlight">{{ slide.subtitle }}</span>
+            </h1>
+            <p class="hero-description">{{ slide.description }}</p>
+
+            <div class="hero-buttons">
+              <a routerLink="/solutions" class="btn btn-primary">
+                Explore Solutions
+                <i class="material-icons">arrow_forward</i>
+              </a>
+              <a routerLink="/contact" class="btn btn-secondary">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <!-- Navigation Arrows -->
+      <div *ngIf="showArrows && slides.length > 1" class="carousel-arrows">
+        <button
+          class="arrow-btn prev"
+          (click)="prevSlide()"
+          aria-label="Previous slide"
+        >
+          <i class="material-icons">chevron_left</i>
+        </button>
+        <button
+          class="arrow-btn next"
+          (click)="nextSlide()"
+          aria-label="Next slide"
+        >
+          <i class="material-icons">chevron_right</i>
+        </button>
+      </div>
+
+      <!-- Carousel Indicators -->
+      <div *ngIf="showIndicators && slides.length > 1" class="carousel-indicators">
+        <button
+          *ngFor="let slide of slides; let i = index"
+          class="indicator"
+          [class.active]="i === currentSlideIndex"
+          (click)="goToSlide(i)"
+        >
+          <div *ngIf="showProgressBar && i === currentSlideIndex" class="progress-container">
+            <div #progressBar class="progress-bar"></div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
