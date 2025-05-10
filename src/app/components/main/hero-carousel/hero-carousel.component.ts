@@ -2,13 +2,7 @@ import { Component, OnInit, OnDestroy, Input, ElementRef, ViewChild, NgZone, Vie
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 import { interval, Subscription } from 'rxjs';
-
-export interface CarouselSlide {
-  backgroundImage: string;
-  title: string;
-  subtitle: string;
-  description: string;
-}
+import { CarouselSlide } from '../../../constants/home/welcome.constants';
 
 @Component({
   selector: 'app-hero-carousel',

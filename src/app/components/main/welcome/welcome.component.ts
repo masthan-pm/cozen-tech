@@ -5,8 +5,8 @@ import { ServicesComponent } from '../services/services.component';
 import { ClientsComponent } from '../clients/clients.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
 import { CTAComponent } from '../../shared/cta/cta.component';
-import { HeroCarouselComponent, CarouselSlide } from '../hero-carousel/hero-carousel.component';
-import { WELCOME_CONSTANT } from '../../../constants/home/welcome.constants';
+import { HeroCarouselComponent } from '../hero-carousel/hero-carousel.component';
+import { WELCOME_CONSTANT, CAROUSEL_SLIDES } from '../../../constants/home/welcome.constants';
 
 @Component({
   selector: 'app-welcome',
@@ -27,38 +27,5 @@ export class WelcomeComponent {
   welcome = WELCOME_CONSTANT.WELCOME;
   about = WELCOME_CONSTANT.ABOUT;
   cta = WELCOME_CONSTANT.CTA;
-
-  // Define carousel slides
-  carouselSlides: CarouselSlide[] = [
-    {
-      backgroundImage: '/assets/pages/home/hero.jpg',
-      title: this.welcome.title.main,
-      subtitle: this.welcome.title.sub,
-      description: this.welcome.content
-    },
-    {
-      backgroundImage: '/assets/pages/home/about-company.jpg',
-      title: 'Innovative Solutions',
-      subtitle: 'For Modern Business',
-      description: 'Deploy cutting-edge technology to transform your operations and drive exceptional business outcomes.'
-    },
-    {
-      backgroundImage: '/assets/pages/home/hero.jpg',
-      title: 'Expert Consultation',
-      subtitle: 'Strategic Partnership',
-      description: 'Our team of industry experts works alongside you to understand your unique challenges and implement effective solutions.'
-    },
-    {
-      backgroundImage: '/assets/pages/home/about-company.jpg',
-      title: 'Global Reach',
-      subtitle: 'Local Expertise',
-      description: 'With presence in over 20 countries, we combine international experience with deep local market knowledge.'
-    },
-    {
-      backgroundImage: '/assets/pages/home/hero.jpg',
-      title: 'Award-Winning',
-      subtitle: 'Digital Solutions',
-      description: 'Recognized for excellence in innovation, design, and technical implementation across industries.'
-    }
-  ];
+  carouselSlides = CAROUSEL_SLIDES;
 }
