@@ -10,10 +10,9 @@
       <div
         *ngIf="i === currentSlideIndex"
         class="carousel-slide"
-        [ngStyle]="getBackgroundStyle(slide)"
-        [style.backgroundPosition]="backgroundPosition.x + 'px ' + backgroundPosition.y + 'px'"
         @fadeAnimation
       >
+        <div class="background-image" [ngStyle]="getBackgroundStyle(slide)"></div>
         <div class="hero-overlay" [class.gradient-overlay]="true"></div>
 
         <div class="hero-content">
@@ -24,8 +23,8 @@
           <p class="hero-description" @slideUpAnimation>{{ slide.description }}</p>
 
           <div class="hero-buttons" @slideUpAnimation>
-            <a routerLink="/solutions" class="btn btn-primary">
-              Explore Solutions
+            <a [routerLink]="slide.cta?.link || '/solutions'" class="btn btn-primary">
+              {{slide.cta?.text}}
               <i class="material-icons">arrow_forward</i>
             </a>
             <a routerLink="/contact" class="btn btn-secondary">

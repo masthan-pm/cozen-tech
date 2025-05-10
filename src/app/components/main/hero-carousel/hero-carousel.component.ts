@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, Input, ElementRef, ViewChild, NgZone, ViewChildren, QueryList, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 import { interval, Subscription } from 'rxjs';
 import { CarouselSlide } from '../../../constants/home/welcome.constants';
@@ -7,7 +8,7 @@ import { CarouselSlide } from '../../../constants/home/welcome.constants';
 @Component({
   selector: 'app-hero-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './hero-carousel.component.html',
   styleUrl: './hero-carousel.component.scss',
   animations: [
