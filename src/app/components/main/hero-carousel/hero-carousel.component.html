@@ -62,8 +62,8 @@
         [class.active]="i === currentSlideIndex"
         (click)="goToSlide(i)"
       >
-        <div *ngIf="showProgressBar && i === currentSlideIndex" class="progress-container">
-          <div #progressBar class="progress-bar"></div>
+        <div *ngIf="showProgressBar" class="progress-container">
+          <div #progressBars class="progress-bar"></div>
         </div>
       </button>
     </div>

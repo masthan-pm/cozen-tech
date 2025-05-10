@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, ElementRef, ViewChild, NgZone } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ElementRef, ViewChild, NgZone, ViewChildren, QueryList, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 import { interval, Subscription } from 'rxjs';
@@ -44,29 +44,35 @@ export interface CarouselSlide {
     ]),
   ],
 })
-export class HeroCarouselComponent implements OnInit, OnDestroy {
+export class HeroCarouselComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() slides: CarouselSlide[] = [];
   @Input() autoplayInterval: number = 5000; // milliseconds
   @Input() showIndicators: boolean = true;
   @Input() showArrows: boolean = true;
   @Input() showProgressBar: boolean = true;
 
-  @ViewChild('progressBar') progressBarRef?: ElementRef;
+  @ViewChildren('progressBars') progressBarRefs!: QueryList<ElementRef>;
 
   currentSlideIndex: number = 0;
-  progressValue: number = 0;
   private autoplaySubscription?: Subscription;
-  private progressAnimationId?: number;
   private interactionTimeout: any;
   isUserInteracting: boolean = false;
-  private lastTimestamp: number = 0;
+  private animationFrameId?: number;
+  private progressStartTime: number = 0;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.startAutoplay();
-    this.startProgressAnimation();
     this.setupKeyboardNavigation();
+  }
+
+  ngAfterViewInit(): void {
+    // Start autoplay and progress bar animation after view initialization
+    setTimeout(() => {
+      this.resetAllProgressBars();
+      this.startProgressBarAnimation();
+      this.startAutoplay();
+    }, 100);
   }
 
   setupKeyboardNavigation(): void {
@@ -96,7 +102,9 @@ export class HeroCarouselComponent implements OnInit, OnDestroy {
 
     this.autoplaySubscription = interval(this.autoplayInterval).subscribe(() => {
       if (!this.isUserInteracting) {
-        this.nextSlide();
+        this.ngZone.run(() => {
+          this.nextSlide();
+        });
       }
     });
   }
@@ -107,65 +115,112 @@ export class HeroCarouselComponent implements OnInit, OnDestroy {
     }
   }
 
-  startProgressAnimation(): void {
-    if (this.slides.length <= 1 || !this.showProgressBar) return;
+  resetAllProgressBars(): void {
+    if (!this.showProgressBar || this.slides.length <= 1) return;
 
-    this.progressValue = 0;
-    this.lastTimestamp = performance.now();
+    const progressBars = this.progressBarRefs?.toArray() || [];
+    progressBars.forEach((bar, index) => {
+      // Remove transition temporarily for immediate reset
+      bar.nativeElement.style.transition = 'none';
+      bar.nativeElement.style.width = '0%';
 
-    this.ngZone.runOutsideAngular(() => {
-      this.animateProgress();
+      // Force reflow to apply the immediate change
+      void bar.nativeElement.offsetWidth;
     });
-  }
 
-  stopProgressAnimation(): void {
-    if (this.progressAnimationId) {
-      cancelAnimationFrame(this.progressAnimationId);
+    // Restore the transition for the current slide's progress bar
+    if (progressBars[this.currentSlideIndex]) {
+      progressBars[this.currentSlideIndex].nativeElement.style.transition = `width ${this.autoplayInterval}ms linear`;
     }
   }
 
-  animateProgress(): void {
-    const currentTime = performance.now();
-    const delta = currentTime - this.lastTimestamp;
-    this.lastTimestamp = currentTime;
+  startProgressBarAnimation(): void {
+    if (!this.showProgressBar || this.slides.length <= 1) return;
 
-    if (!this.isUserInteracting) {
-      // Calculate progress based on elapsed time
-      const increment = (delta / this.autoplayInterval) * 100;
-      this.progressValue = Math.min(this.progressValue + increment, 100);
+    // Stop any existing animation
+    this.stopProgressAnimation();
 
-      if (this.progressBarRef?.nativeElement) {
-        this.progressBarRef.nativeElement.style.width = `${this.progressValue}%`;
+    // Reset all progress bars first
+    this.resetAllProgressBars();
+
+    // Get the progress bar element for the current slide
+    const progressBars = this.progressBarRefs?.toArray() || [];
+    const currentProgressBar = progressBars[this.currentSlideIndex];
+
+    if (currentProgressBar) {
+      // Record start time for animation
+      this.progressStartTime = performance.now();
+
+      // Set transition and start animation for current progress bar
+      currentProgressBar.nativeElement.style.transition = `width ${this.autoplayInterval}ms linear`;
+
+      // Run outside Angular zone for better performance
+      this.ngZone.runOutsideAngular(() => {
+        // Start smooth animation to 100%
+        setTimeout(() => {
+          if (currentProgressBar && currentProgressBar.nativeElement) {
+            currentProgressBar.nativeElement.style.width = '100%';
+          }
+        }, 20);
+
+        // Also start frame-based monitoring to ensure animation continues
+        this.animationFrameId = requestAnimationFrame(() => this.monitorProgressBarAnimation());
+      });
+    }
+  }
+
+  monitorProgressBarAnimation(): void {
+    if (this.isUserInteracting) {
+      this.animationFrameId = requestAnimationFrame(() => this.monitorProgressBarAnimation());
+      return;
+    }
+
+    const elapsed = performance.now() - this.progressStartTime;
+    const progress = Math.min(100, (elapsed / this.autoplayInterval) * 100);
+
+    // Get the current progress bar
+    const progressBars = this.progressBarRefs?.toArray() || [];
+    const currentProgressBar = progressBars[this.currentSlideIndex];
+
+    // Update progress in case CSS transition is interrupted
+    if (currentProgressBar && currentProgressBar.nativeElement) {
+      // Only update if not already at 100% (avoid unnecessary DOM operations)
+      if (parseFloat(currentProgressBar.nativeElement.style.width) < 100) {
+        currentProgressBar.nativeElement.style.width = `${progress}%`;
       }
     }
 
-    this.progressAnimationId = requestAnimationFrame(() => this.animateProgress());
+    // Continue animation loop
+    this.animationFrameId = requestAnimationFrame(() => this.monitorProgressBarAnimation());
+  }
+
+  stopProgressAnimation(): void {
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+      this.animationFrameId = undefined;
+    }
   }
 
   nextSlide(): void {
+    this.stopProgressAnimation();
     this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
-    this.resetProgress();
+    this.startProgressBarAnimation();
     this.handleUserInteraction();
   }
 
   prevSlide(): void {
+    this.stopProgressAnimation();
     this.currentSlideIndex = (this.currentSlideIndex - 1 + this.slides.length) % this.slides.length;
-    this.resetProgress();
+    this.startProgressBarAnimation();
     this.handleUserInteraction();
   }
 
   goToSlide(index: number): void {
     if (index !== this.currentSlideIndex) {
+      this.stopProgressAnimation();
       this.currentSlideIndex = index;
-      this.resetProgress();
+      this.startProgressBarAnimation();
       this.handleUserInteraction();
-    }
-  }
-
-  resetProgress(): void {
-    this.progressValue = 0;
-    if (this.progressBarRef?.nativeElement) {
-      this.progressBarRef.nativeElement.style.width = '0%';
     }
   }
 
