@@ -30,6 +30,18 @@ export interface CarouselSlide {
         animate('800ms ease-in', style({ transform: 'translateX(-100%)', opacity: 0 })),
       ]),
     ]),
+    trigger('scaleAnimation', [
+      transition(':enter', [
+        style({ transform: 'scale(0.8)', opacity: 0 }),
+        animate('600ms 300ms ease-out', style({ transform: 'scale(1)', opacity: 1 })),
+      ]),
+    ]),
+    trigger('slideUpAnimation', [
+      transition(':enter', [
+        style({ transform: 'translateY(30px)', opacity: 0 }),
+        animate('600ms 500ms ease-out', style({ transform: 'translateY(0)', opacity: 1 })),
+      ]),
+    ]),
   ],
 })
 export class HeroCarouselComponent implements OnInit, OnDestroy {
@@ -54,12 +66,29 @@ export class HeroCarouselComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.startAutoplay();
     this.startProgressAnimation();
+    this.setupKeyboardNavigation();
+  }
+
+  setupKeyboardNavigation(): void {
+    document.addEventListener('keydown', this.handleKeydown.bind(this));
+  }
+
+  handleKeydown(event: KeyboardEvent): void {
+    switch (event.key) {
+      case 'ArrowLeft':
+        this.prevSlide();
+        break;
+      case 'ArrowRight':
+        this.nextSlide();
+        break;
+    }
   }
 
   ngOnDestroy(): void {
     this.stopAutoplay();
     this.stopProgressAnimation();
     clearTimeout(this.interactionTimeout);
+    document.removeEventListener('keydown', this.handleKeydown.bind(this));
   }
 
   startAutoplay(): void {
@@ -154,5 +183,54 @@ export class HeroCarouselComponent implements OnInit, OnDestroy {
     return {
       'background-image': `url(${slide.backgroundImage})`,
     };
+  }
+
+  // Parallax effect for mouse movement
+  backgroundPosition = { x: 0, y: 0 };
+
+  onMouseMove(event: MouseEvent): void {
+    if (this.slides.length <= 0) return;
+
+    const { clientX, clientY } = event;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    // Calculate position percentage (from center)
+    const xPercent = (clientX - windowWidth / 2) / (windowWidth / 2) * 3;
+    const yPercent = (clientY - windowHeight / 2) / (windowHeight / 2) * 3;
+
+    // Update background position for parallax effect
+    this.backgroundPosition = {
+      x: xPercent,
+      y: yPercent
+    };
+  }
+
+  // Touch events for swipe functionality
+  touchStartX: number = 0;
+  touchEndX: number = 0;
+
+  onTouchStart(event: TouchEvent): void {
+    this.touchStartX = event.touches[0].clientX;
+  }
+
+  onTouchEnd(event: TouchEvent): void {
+    this.touchEndX = event.changedTouches[0].clientX;
+    this.handleSwipe();
+  }
+
+  handleSwipe(): void {
+    const swipeThreshold = 50; // Minimum distance to be considered a swipe
+    const swipeDistance = this.touchEndX - this.touchStartX;
+
+    if (Math.abs(swipeDistance) < swipeThreshold) return;
+
+    if (swipeDistance > 0) {
+      // Swipe right - go to previous slide
+      this.prevSlide();
+    } else {
+      // Swipe left - go to next slide
+      this.nextSlide();
+    }
   }
 }
