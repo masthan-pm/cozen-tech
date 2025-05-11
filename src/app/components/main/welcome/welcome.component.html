@@ -1,26 +1,12 @@
 <div class="welcome-container">
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-overlay gradient-overlay"></div>
-    <div class="hero-content">
-      <h1>
-        {{ welcome.title.main }}<br />
-        <span class="highlight">{{ welcome.title.sub }}</span>
-      </h1>
-      <p class="hero-description">
-        {{ welcome.content }}
-      </p>
-      <div class="hero-buttons">
-        <a routerLink="/solutions" class="btn btn-primary">
-          {{ welcome.explore }}
-          <i class="material-icons">arrow_forward</i>
-        </a>
-        <a routerLink="/contact" class="btn btn-secondary"
-          >{{ welcome.contact }}
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- Hero Carousel Section -->
+  <app-hero-carousel
+    [slides]="carouselSlides"
+    [autoplayInterval]="6000"
+    [showIndicators]="true"
+    [showArrows]="true"
+    [showProgressBar]="true"
+  ></app-hero-carousel>
 
   <!-- Company Overview -->
   <section class="company-overview">
@@ -41,7 +27,7 @@
           <p>{{ about.content.p2 }}</p>
           <a routerLink="/about" class="read-more">
             {{ about.linkText }}
-            <i class="material-icons">arrow_forward</i>
+            <i class="material-icons arrow-right">arrow_forward</i>
           </a>
         </div>
       </div>
