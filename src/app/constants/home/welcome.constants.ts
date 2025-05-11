@@ -35,9 +35,15 @@ export interface CtaContent {
   buttonText: string;
 }
 
+export interface key_highlights {
+  icon: string;
+  text: string;
+}
+
 export interface WelcomeConstants {
   WELCOME: WelcomeContent;
   ABOUT: AboutContent;
+  KEY_HIGHLIGHTS: key_highlights[];
   CTA: CtaContent;
 }
 
@@ -61,6 +67,20 @@ export const WELCOME_CONSTANT: WelcomeConstants = {
     linkText: 'Read More',
     image: '/assets/pages/home/about-company.jpg',
   },
+  KEY_HIGHLIGHTS: [
+    {
+      icon: 'lightbulb',
+      text: 'Innovative Approach'
+    },
+    {
+      icon: 'lightbulb',
+      text: 'Quality Solutions'
+    },
+    {
+      icon: 'support_agent',
+      text: 'Dedicated Support'
+    },
+  ],
   CTA: {
     header: 'Ready to Transform Your Business?',
     text: "Let's discuss how we can help you achieve your business goals through our IT solutions and talent acquisition services.",
