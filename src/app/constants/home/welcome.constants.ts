@@ -1,4 +1,47 @@
-export const WELCOME_CONSTANT = {
+export interface CarouselSlide {
+  backgroundImage: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  cta?: {
+    text: string;
+    link: string;
+  };
+}
+
+export interface WelcomeContent {
+  title: {
+    main: string;
+    sub: string;
+  };
+  content: string;
+  explore: string;
+  contact: string;
+}
+
+export interface AboutContent {
+  header: string;
+  content: {
+    p1: string;
+    p2: string;
+  };
+  linkText: string;
+  image: string;
+}
+
+export interface CtaContent {
+  header: string;
+  text: string;
+  buttonText: string;
+}
+
+export interface WelcomeConstants {
+  WELCOME: WelcomeContent;
+  ABOUT: AboutContent;
+  CTA: CtaContent;
+}
+
+export const WELCOME_CONSTANT: WelcomeConstants = {
   WELCOME: {
     title: {
       main: 'Empowering Businesses with',
@@ -24,3 +67,56 @@ export const WELCOME_CONSTANT = {
     buttonText: 'Get in Touch',
   },
 };
+
+export const CAROUSEL_SLIDES: CarouselSlide[] = [
+  {
+    backgroundImage: '/assets/pages/home/innovation.jpg',
+    title: 'Innovative Solutions',
+    subtitle: 'For Modern Business',
+    description: 'Deploy cutting-edge technology to transform your operations and drive exceptional business outcomes.',
+    cta: {
+      text: 'Learn More',
+      link: '/solutions'
+    }
+  },
+  {
+    backgroundImage: '/assets/pages/home/global.jpg',
+    title: 'Global Reach',
+    subtitle: 'Local Expertise',
+    description: 'With presence in over 20 countries, we combine international experience with deep local market knowledge.',
+    cta: {
+      text: 'Our Global Presence',
+      link: '/global-presence'
+    }
+  },
+  {
+    backgroundImage: '/assets/pages/home/digital-solutions.jpeg',
+    title: 'Award-Winning',
+    subtitle: 'Digital Solutions',
+    description: 'Recognized for excellence in innovation, design, and technical implementation across industries.',
+    cta: {
+      text: 'View Awards',
+      link: '/awards'
+    }
+  },
+  {
+    backgroundImage: '/assets/pages/home/partnership.jpg',
+    title: 'Expert Consultation',
+    subtitle: 'Strategic Partnership',
+    description: 'Our team of industry experts works alongside you to understand your unique challenges and implement effective solutions.',
+    cta: {
+      text: 'Consult with Us',
+      link: '/consultation'
+    }
+  },
+  {
+    backgroundImage: '/assets/pages/home/hero.jpg',
+    title: WELCOME_CONSTANT.WELCOME.title.main,
+    subtitle: WELCOME_CONSTANT.WELCOME.title.sub,
+    description: WELCOME_CONSTANT.WELCOME.content,
+    cta: {
+      text: WELCOME_CONSTANT.WELCOME.explore,
+      link: '/solutions'
+    }
+  },
+];
