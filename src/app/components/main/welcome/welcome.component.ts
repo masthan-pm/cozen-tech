@@ -26,6 +26,7 @@ import { WELCOME_CONSTANT, CAROUSEL_SLIDES } from '../../../constants/home/welco
 export class WelcomeComponent {
   welcome = WELCOME_CONSTANT.WELCOME;
   about = WELCOME_CONSTANT.ABOUT;
+  key_highlights = WELCOME_CONSTANT.KEY_HIGHLIGHTS;
   cta = WELCOME_CONSTANT.CTA;
   carouselSlides = CAROUSEL_SLIDES;
 }
