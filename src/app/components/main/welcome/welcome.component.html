@@ -25,6 +25,16 @@
           <h2>{{ about.header }}</h2>
           <p>{{ about.content.p1 }}</p>
           <p>{{ about.content.p2 }}</p>
+          <div class="key-highlights">
+            @for (item of key_highlights; track $index) {
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <i class="material-icons">{{item?.icon}}</i>
+              </div>
+              <span>{{item?.text}}</span>
+            </div>
+            }
+          </div>
           <a routerLink="/about" class="read-more">
             {{ about.linkText }}
             <i class="material-icons arrow-right">arrow_forward</i>
