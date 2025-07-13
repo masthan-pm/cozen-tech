@@ -39,8 +39,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: $white;
-  box-shadow: 0 2px 8px rgba(0, 11, 61, 0.1);
+  background: rgba(255, 255, 255, 0.25); // glassmorphism: semi-transparent
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   animation: slideDown 0.5s ease-out;
   padding: 0 2rem;
   height: auto;
@@ -206,11 +209,14 @@ nav {
 }
 
 .mat-menu-panel {
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   overflow: hidden;
   margin-top: 0.5rem;
-  box-shadow: 0 4px 20px rgba(0, 11, 61, 0.15);
-  background: $white;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.35); // glassmorphism: semi-transparent
+  border: 1px solid rgba(255, 255, 255, 0.18);
 
   // Menu panel adjustments for mobile
   @media (max-width: 1024px) {
@@ -361,7 +367,12 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  background: $white;
+  background: rgba(255, 255, 255, 0.35); // glassmorphism: semi-transparent
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   flex-direction: column;
