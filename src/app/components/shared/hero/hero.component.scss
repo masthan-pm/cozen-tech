@@ -2,7 +2,7 @@
 
 // Hero Section styles
 .hero-section {
-  height: 400px;
+  height: 330px;
   position: relative;
   display: flex;
   align-items: center;
@@ -10,6 +10,7 @@
   background-position: center;
   animation: fadeIn 0.6s ease-out;
   text-align: center;
+  margin: 5rem 0 0;
 
   .overlay {
     position: absolute;

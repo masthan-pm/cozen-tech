@@ -3,15 +3,12 @@
 
 .welcome-container {
   width: 100%;
+  padding: 2rem 0;
+  margin: 3rem 0;
 }
 
 .about-section {
   @extend %section-base;
-  background: linear-gradient(
-    135deg,
-    rgba($accent-color, 0.02) 0%,
-    rgba($primary-color, 0.02) 100%
-  );
   position: relative;
   overflow: hidden;
 
