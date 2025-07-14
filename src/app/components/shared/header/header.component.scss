@@ -1,13 +1,9 @@
+@use "../../../../styles/glassmorphism" as *;
 @use "../../../../styles/colors" as *;
 
-// Variables
-$menu-up-arrow: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%23000000'%3E%3Cpath d='M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z'/%3E%3C/svg%3E";
-$menu-up-arrow-hovered: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%23FFFFFF'%3E%3Cpath d='M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z'/%3E%3C/svg%3E";
-$menu-down-arrow: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%23000000'%3E%3Cpath d='M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z'/%3E%3C/svg%3E";
-$menu-down-arrow-hovered: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%23FFFFFF'%3E%3Cpath d='M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z'/%3E%3C/svg%3E";
-
-// Light gray for subtle effects
-$hover-transition: 0.3s ease;
+// Variables for menu icons
+$menu-up-arrow: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%23ffffff'%3E%3Cpath d='M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z'/%3E%3C/svg%3E";
+$menu-down-arrow: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%23ffffff'%3E%3Cpath d='M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z'/%3E%3C/svg%3E";
 
 // Mixins
 @mixin menu-icon {
@@ -15,7 +11,7 @@ $hover-transition: 0.3s ease;
   height: 1.5rem;
   display: inline-block;
   vertical-align: middle;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 .mat-toolbar-row,
@@ -39,11 +35,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  @include glass-navigation;
   animation: slideDown 0.5s ease-out;
   padding: 0 2rem;
   height: auto;
@@ -60,11 +52,12 @@ nav {
     .logo-img {
       width: 10rem;
       margin-right: 0.625rem;
-      transition: all $hover-transition;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) brightness(1.1);
 
       &:hover {
         transform: scale(1.05);
-        filter: brightness(1.1);
+        filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4)) brightness(1.2);
       }
 
       @media (max-width: 768px) {
@@ -77,11 +70,13 @@ nav {
 .icon-down-arrow {
   @include menu-icon;
   background-image: url($menu-down-arrow);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .icon-up-arrow {
   @include menu-icon;
   background-image: url($menu-up-arrow);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .dropdown-item {
@@ -91,9 +86,11 @@ nav {
     align-items: center;
     padding: 1rem;
     text-decoration: none;
-    color: $primary-color;
-    transition: all $hover-transition;
+    color: #2d3748;
+    transition: all 0.3s ease;
     overflow: hidden;
+    border-radius: 8px;
+    margin: 0 0.5rem;
 
     &::before {
       content: "";
@@ -102,15 +99,20 @@ nav {
       left: 0;
       width: 100%;
       height: 100%;
-      background: $accent-color;
+      background: linear-gradient(
+        135deg,
+        rgba(102, 126, 234, 0.1),
+        rgba(0, 178, 178, 0.1)
+      );
       transform: scaleX(0);
       transform-origin: right;
       transition: transform 0.3s ease;
       z-index: -1;
+      border-radius: 8px;
     }
 
     &:hover {
-      color: $white;
+      color: white;
 
       &::before {
         transform: scaleX(1);
@@ -131,7 +133,7 @@ nav {
     .dropdown-description {
       display: block;
       font-size: 0.875rem;
-      color: rgba($primary-color, 0.7);
+      color: rgba(45, 55, 72, 0.7);
     }
   }
 
@@ -141,93 +143,46 @@ nav {
   }
 }
 
+// Enhanced Navigation Button Styles with better visibility
 .mat-mdc-button-base {
   position: relative;
   overflow: hidden;
-  padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
-  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: $primary-color;
+  background: transparent !important;
+  border: none;
+  transition: all 0.3s ease;
 
+  // Remove default background
   &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: $primary-color;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-    z-index: -1;
+    display: none;
   }
 
   &:hover {
-    color: $white;
-
-    &::before {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    .icon-down-arrow {
-      background-image: url($menu-down-arrow-hovered);
-    }
-
-    .icon-up-arrow {
-      background-image: url($menu-up-arrow-hovered);
-    }
-  }
-
-  &.active-link {
-    position: relative;
-    color: $accent-color;
-
     &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: $accent-color;
+      opacity: 1;
     }
-
-    &:hover {
-      color: $white;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    font-size: 1rem;
-    line-height: 1.5;
   }
 }
 
 .mat-menu-panel {
-  border-radius: 0.75rem;
+  border-radius: 16px;
   overflow: hidden;
   margin-top: 0.5rem;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.35); // glassmorphism: semi-transparent
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  @include glass-base(rgba(255, 255, 255, 0.15), 15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
-  // Menu panel adjustments for mobile
   @media (max-width: 1024px) {
     width: 100%;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: $white;
+    @include glass-base(rgba(255, 255, 255, 0.2), 12px);
     padding: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     gap: 0.5rem;
 
@@ -242,7 +197,9 @@ nav {
       padding: 0.75rem 1rem;
 
       &:hover {
-        background-color: rgba($primary-color, 0.05);
+        &::after {
+          background: rgba(102, 126, 234, 0.2);
+        }
       }
     }
 
@@ -255,27 +212,34 @@ nav {
 .mat-menu-item {
   position: relative;
   padding: 0.75rem 1rem;
-  transition: all $hover-transition;
-  color: $primary-color;
+  transition: all 0.3s ease;
+  color: #2d3748;
+  border-radius: 8px;
+  margin: 0 0.5rem;
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: $accent-color;
-    transition: width 0.3s ease, left 0.3s ease;
+    background: linear-gradient(
+      135deg,
+      rgba(102, 126, 234, 0.1),
+      rgba(0, 178, 178, 0.1)
+    );
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   &:hover {
-    background-color: rgba($primary-color, 0.05);
-    color: $accent-color;
+    background-color: transparent;
+    color: white;
 
-    &::after {
-      width: 100%;
-      left: 0;
+    &::before {
+      opacity: 1;
     }
   }
 }
@@ -290,52 +254,13 @@ nav {
   }
 
   .mat-mdc-button-base {
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
   }
 
   nav {
     gap: 0.5rem;
   }
 }
-
-// Dark mode support
-// @media (prefers-color-scheme: dark) {
-//   .header {
-//     background: $primary-color;
-//     box-shadow: 0 2px 8px rgba(0, 11, 61, 0.3);
-//   }
-
-//   .mat-mdc-button-base {
-//     color: white;
-
-//     &:hover {
-//       background-color: $accent-color;
-
-//       &::before {
-//         background: rgba(255, 255, 255, 0.1);
-//       }
-//     }
-//   }
-
-//   .mat-menu-panel {
-//     background: $primary-color;
-//     border: 1px solid rgba($accent-color, 0.1);
-//   }
-
-//   .mat-menu-item {
-//     color: white;
-
-//     &:hover {
-//       background-color: rgba($accent-color, 0.2);
-//       color: $accent-color;
-//     }
-//   }
-
-//   .notification-badge {
-//     background-color: $accent-color;
-//     color: $primary-color;
-//   }
-// }
 
 body {
   padding-top: 6.25rem;
@@ -353,6 +278,9 @@ body {
 
 .mobile-menu-btn {
   display: none;
+  background: transparent !important;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 
   @media (max-width: 1024px) {
     display: flex;
@@ -367,14 +295,8 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.35); // glassmorphism: semi-transparent
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  @include glass-base(rgba(255, 255, 255, 0.15), 12px);
   padding: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   gap: 0.5rem;
 
@@ -391,7 +313,9 @@ body {
     padding: 0.75rem 1rem;
 
     &:hover {
-      background-color: rgba($primary-color, 0.05);
+      &::after {
+        background: rgba(102, 126, 234, 0.2);
+      }
     }
   }
 

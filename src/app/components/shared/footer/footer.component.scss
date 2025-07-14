@@ -1,17 +1,45 @@
+@use "../../../../styles/glassmorphism" as *;
 @use "../../../../styles/colors" as *;
 
 .footer {
-  background-color: $blue-gray;
+  background: linear-gradient(135deg, rgba(45, 55, 72, 0.95) 0%, rgba(26, 32, 44, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: $white;
   padding: 4rem 1rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
   animation: fadeIn 0.6s ease-out;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(79, 172, 254, 0.05));
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
+  }
 }
 
 .footer-container {
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-grid {
@@ -36,18 +64,26 @@
 
     .material-icons {
       font-size: 2rem;
-      color: $accent-color;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(79, 172, 254, 0.3));
     }
 
     .company-name {
       font-weight: 700;
       font-size: 1.5rem;
       letter-spacing: -0.025em;
+      background: linear-gradient(135deg, #ffffff, #e2e8f0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 
   .company-description {
-    color: $light-slate-gray;
+    color: #cbd5e0;
     line-height: 1.6;
     font-size: 0.95rem;
     animation: fadeInUp 1s ease-out;
@@ -66,6 +102,10 @@
     position: relative;
     padding-bottom: 0.75rem;
     animation: fadeInDown 0.8s ease-out;
+    background: linear-gradient(135deg, #ffffff, #e2e8f0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     &:after {
       content: "";
@@ -74,7 +114,8 @@
       bottom: 0;
       width: 2.5rem;
       height: 2px;
-      background-color: $accent-color;
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      border-radius: 1px;
     }
   }
 
@@ -89,16 +130,32 @@
   }
 
   a {
-    color: $light-slate-gray;
+    color: #cbd5e0;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      transition: width 0.3s ease;
+    }
 
     &:hover {
-      color: $accent-color;
+      color: #4facfe;
       transform: translateX(5px);
+
+      &::before {
+        width: 100%;
+      }
     }
   }
 }
@@ -111,12 +168,15 @@
     margin-bottom: 1.25rem;
 
     .material-icons {
-      color: $accent-color;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       font-size: 1.25rem;
     }
 
     span:not(.material-icons) {
-      color: $light-slate-gray;
+      color: #cbd5e0;
       line-height: 1.6;
     }
   }
@@ -128,28 +188,56 @@
   animation: fadeInRight 0.8s ease-out;
 
   a {
-    background-color: rgba(96, 165, 250, 0.1);
-    width: 40px;
-    height: 40px;
+    @include glass-base(rgba(79, 172, 254, 0.15), 8px);
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    border: 1px solid rgba(79, 172, 254, 0.2);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 50%;
+    }
 
     .material-icons,
     .fa-brands {
       font-size: 1.25rem;
-      color: $accent-color;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
     }
 
     &:hover {
-      background-color: $accent-color;
       transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(79, 172, 254, 0.3);
+      border-color: rgba(79, 172, 254, 0.5);
+
+      &::before {
+        opacity: 0.1;
+      }
 
       .material-icons,
       .fa-brands {
-        color: $white;
+        -webkit-text-fill-color: white;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
       }
     }
   }
@@ -158,28 +246,27 @@
 .footer-bottom {
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(156, 163, 175, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
-  color: $light-slate-gray;
-  font-size: 0.9rem;
   animation: fadeInUp 1s ease-out;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(79, 172, 254, 0.5), transparent);
+  }
 
   p {
-    opacity: 0.8;
-  }
-}
-
-// Hover animations
-.quick-links {
-  a {
-    .material-icons {
-      font-size: 1.25rem;
-      transition: transform 0.3s ease;
-    }
-
-    &:hover .material-icons {
-      transform: translateX(3px);
-    }
+    color: #a0aec0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+    margin-top: 1rem;
   }
 }
 
