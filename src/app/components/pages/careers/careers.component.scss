@@ -1,5 +1,6 @@
 @use "../../../../styles/colors" as *;
 @use "../../../../styles/shared" as *;
+@use "../../../../styles/glassmorphism" as *;
 
 .careers-page {
   width: 100%;
@@ -19,8 +20,19 @@
 
 .search-section {
   padding: 2rem 0;
-  background-color: $white;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpolygon points='15,0 30,15 15,30 0,15'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
 
   .container {
     color: inherit;
@@ -30,6 +42,9 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    @include glass-base(rgba(255, 255, 255, 0.15), 12px);
+    padding: 2rem;
+    border-radius: 16px;
 
     @media (min-width: 768px) {
       flex-direction: row;
@@ -45,34 +60,33 @@
         top: 50%;
         transform: translateY(-50%);
         color: $gray-charcol;
+        z-index: 2;
       }
 
       input {
         width: 100%;
         padding: 0.75rem 1rem 0.75rem 3rem;
-        border: 1px solid $lavender-gray;
-        border-radius: 0.5rem;
-        font-size: 1rem;
+        @include glass-input;
+        color: $blue-charcol;
 
         &:focus {
           outline: none;
-          border-color: $accent-color;
-          box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
+          border-color: rgba(102, 126, 234, 0.5);
+          box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
         }
       }
     }
 
     select {
       padding: 0.75rem 1rem;
-      border: 1px solid $lavender-gray;
-      border-radius: 0.5rem;
-      font-size: 1rem;
+      @include glass-input;
       min-width: 200px;
+      color: $blue-charcol;
 
       &:focus {
         outline: none;
-        border-color: $accent-color;
-        box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
+        border-color: rgba(102, 126, 234, 0.5);
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
       }
     }
   }
@@ -80,7 +94,19 @@
 
 .jobs-section {
   padding: 5rem 0;
-  background-color: $gray-light;
+  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpolygon points='17.5,0 35,17.5 17.5,35 0,17.5'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
 
   .container {
     color: inherit;
@@ -94,16 +120,32 @@
 }
 
 .job-card {
-  background: $white;
-  border-radius: 12px;
+  @include glass-card(rgba(255, 255, 255, 0.15));
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   animation: fadeInUp 0.6s ease-out;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #4facfe);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 40px rgba(31, 38, 135, 0.3);
+
+    &::before {
+      transform: scaleX(1);
+    }
   }
 
   .card-content {
@@ -137,33 +179,37 @@
 
             i {
               font-size: 1.125rem;
+              color: #667eea;
             }
           }
         }
       }
 
       .toggle-btn {
-        background: none;
-        border: none;
-        color: $accent-color;
-        cursor: pointer;
-        padding: 0.25rem;
-        transition: color 0.2s;
+        @include glass-button(rgba(102, 126, 234, 0.2));
+        padding: 0.5rem;
+        border-radius: 50%;
+        border: 1px solid rgba(102, 126, 234, 0.3);
 
         &:hover {
-          color: $primary-color;
+          background: rgba(102, 126, 234, 0.3);
+          transform: scale(1.1);
         }
 
         i {
           font-size: 1.5rem;
+          color: #667eea;
         }
       }
     }
 
     .job-details {
-      border-top: 1px solid $lavender-gray;
+      border-top: 1px solid rgba(102, 126, 234, 0.2);
       margin-top: 1rem;
       padding-top: 1rem;
+      @include glass-base(rgba(255, 255, 255, 0.1), 8px);
+      border-radius: 12px;
+      padding: 1.5rem;
 
       p,
       h4,
@@ -201,19 +247,18 @@
       }
 
       .apply-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
+        @include glass-button(rgba(102, 126, 234, 0.3));
         padding: 0.75rem 1.5rem;
-        background-color: $accent-color;
         color: $white;
-        border-radius: 0.5rem;
-        font-weight: 500;
         text-decoration: none;
-        transition: background-color 0.2s;
+        font-weight: 600;
+        border: 2px solid rgba(102, 126, 234, 0.4);
+        border-radius: 50px;
 
         &:hover {
-          background-color: $primary-color;
+          background: rgba(102, 126, 234, 0.4);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
         }
 
         i {
@@ -226,7 +271,19 @@
 
 .benefits-section {
   padding: 5rem 0;
-  background-color: $white;
+  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
 
   .container {
     color: inherit;
@@ -264,25 +321,48 @@
 }
 
 .benefit-card {
-  background: $white;
-  border-radius: 12px;
+  @include glass-card(rgba(255, 255, 255, 0.15));
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
   animation: fadeInUp 0.6s ease-out;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #4facfe);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 40px rgba(31, 38, 135, 0.3);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    img {
+      transform: scale(1.1);
+    }
   }
 
   img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.4s ease;
   }
 
   .card-content {
     padding: 1.5rem;
+    @include glass-base(rgba(255, 255, 255, 0.05), 5px);
 
     h3 {
       font-size: 1.25rem;
@@ -294,6 +374,7 @@
     p {
       color: $gray-dark;
       line-height: 1.5;
+      margin: 0;
     }
   }
 }

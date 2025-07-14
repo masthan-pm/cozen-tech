@@ -3,7 +3,7 @@
 
 .cta-section {
   padding: 5rem 0;
-  background: linear-gradient(135deg, rgba(0, 178, 178, 0.9), rgba(102, 126, 234, 0.8));
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4facfe 100%);
   position: relative;
   text-align: center;
   
@@ -14,7 +14,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
     pointer-events: none;
   }
 
@@ -36,39 +47,64 @@
 
   .content {
     animation: fadeInUp 0.6s ease-out;
-    @include glass-base(rgba(255, 255, 255, 0.1), 15px);
+    @include glass-base(rgba(255, 255, 255, 0.12), 20px);
     padding: 3rem 2rem;
-    border-radius: 20px;
+    border-radius: 24px;
     max-width: 800px;
     margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    }
 
     h2 {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff, #f7fafc);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
     }
 
     p {
       font-size: 1.25rem;
       margin-bottom: 2rem;
-      color: $lavender-gray;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .cta-button {
       display: inline-flex;
-      @include glass-button(rgba(255, 255, 255, 0.2));
+      @include glass-button(rgba(255, 255, 255, 0.25));
       color: white;
-      padding: 0.75rem 2rem;
-      font-weight: 500;
+      padding: 1rem 2.5rem;
+      font-weight: 600;
       align-items: center;
       text-decoration: none;
-      gap: 0.5rem;
+      gap: 0.75rem;
       position: relative;
       overflow: hidden;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      @include glass-shimmer;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      font-size: 1.1rem;
+      border-radius: 50px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
       &::before {
         content: "";
@@ -77,28 +113,53 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
         transition: left 0.6s ease;
       }
 
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease, height 0.3s ease;
+        border-radius: 50%;
+      }
+
       &:hover {
-        background: rgba(255, 255, 255, 0.3);
-        transform: translateY(-2px) scale(1.05);
-        box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
-        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.35);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.6);
 
         &::before {
           left: 100%;
+        }
+
+        &::after {
+          width: 300px;
+          height: 300px;
         }
       }
 
       i {
         transition: all 0.3s ease;
-        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+        font-size: 1.25rem;
+        position: relative;
+        z-index: 1;
       }
 
       &:hover i {
         transform: translateX(8px) scale(1.2);
+      }
+
+      span {
+        position: relative;
+        z-index: 1;
       }
     }
   }
@@ -119,18 +180,30 @@
   .info-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    @include glass-base(rgba(255, 255, 255, 0.1), 8px);
-    padding: 0.75rem 1rem;
-    border-radius: 12px;
+    gap: 0.75rem;
+    @include glass-base(rgba(255, 255, 255, 0.15), 10px);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+    }
 
     i {
       font-size: 1.5rem;
-      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+      background: linear-gradient(135deg, #ffffff, #f7fafc);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     
     span {
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 500;
     }
   }
 }

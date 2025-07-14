@@ -241,16 +241,18 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    @include glass-button(rgba(0, 178, 178, 0.2));
+    padding: 1rem 2rem;
+    @include glass-button(rgba(102, 126, 234, 0.3));
     color: $white;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.875rem;
+    font-weight: 600;
+    font-size: 1rem;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(0, 178, 178, 0.3);
+    border: 2px solid rgba(102, 126, 234, 0.4);
+    border-radius: 50px;
     @include glass-shimmer;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
     &::before {
       content: "";
@@ -269,9 +271,10 @@
     }
 
     &:hover {
-      transform: translateY(-2px);
-      background: rgba(0, 178, 178, 0.3);
-      box-shadow: 0 8px 25px rgba(0, 178, 178, 0.3);
+      transform: translateY(-3px);
+      background: rgba(102, 126, 234, 0.4);
+      box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+      border-color: rgba(102, 126, 234, 0.6);
 
       &::before {
         left: 100%;

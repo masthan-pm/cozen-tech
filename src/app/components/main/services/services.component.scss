@@ -4,7 +4,7 @@
 
 .services-section {
   @extend %section-base;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(79, 172, 254, 0.1));
+  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
   position: relative;
   
   &::before {
@@ -14,7 +14,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300b2b2' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
     pointer-events: none;
   }
 }
@@ -29,11 +29,14 @@
   @extend %section-header;
   
   h2 {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #2d3748, #4a5568);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   p {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: #4a5568;
   }
 }
 
@@ -46,7 +49,7 @@
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  @include glass-shimmer;
+  transition: all 0.4s ease;
 
   &::before {
     content: "";
@@ -54,36 +57,19 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, rgba(0, 178, 178, 0.8), rgba(0, 11, 61, 0.8));
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #4facfe);
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 178, 178, 0.1), rgba(0, 11, 61, 0.1));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 20px 40px rgba(31, 38, 135, 0.4);
+    box-shadow: 0 25px 50px rgba(31, 38, 135, 0.4);
 
     &::before {
       transform: scaleX(1);
-    }
-    
-    &::after {
-      opacity: 1;
     }
 
     .service-image {
@@ -92,14 +78,22 @@
 
     .overlay {
       .icon {
-        color: $accent-color;
-        filter: drop-shadow(0 2px 4px rgba(0, 178, 178, 0.5));
+        color: #4facfe;
+        transform: scale(1.2);
+      }
+
+      h3 {
+        color: #4facfe;
       }
     }
 
     .learn-more {
-      color: $accent-color;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      color: #667eea;
+      transform: translateX(5px);
+
+      i {
+        transform: translateX(5px);
+      }
     }
   }
 
@@ -149,29 +143,42 @@
 
   .card-content {
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
+    @include glass-base(rgba(255, 255, 255, 0.05), 5px);
 
     p {
       color: $gray-dark;
       margin-bottom: 1rem;
       line-height: 1.5;
       transition: color 0.3s ease;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
     .learn-more {
       display: inline-flex;
       align-items: center;
-      color: $primary-color;
+      color: #667eea;
       font-weight: 500;
       text-decoration: none;
       transition: all 0.3s ease;
-      gap: 0.25rem;
+      gap: 0.5rem;
       position: relative;
       
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #667eea, #4facfe);
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+      
       i {
-        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+        transition: transform 0.3s ease;
       }
     }
   }
