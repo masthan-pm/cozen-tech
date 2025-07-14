@@ -1,0 +1,166 @@
+// Glassmorphism Design System
+@use "./colors" as *;
+
+// Glassmorphism Variables
+$glass-blur: 20px;
+$glass-border-radius: 16px;
+$glass-border: 1px solid rgba(255, 255, 255, 0.2);
+$glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+// Glass Background Variants
+$glass-primary: rgba(255, 255, 255, 0.15);
+$glass-secondary: rgba(255, 255, 255, 0.1);
+$glass-accent: rgba(0, 178, 178, 0.15);
+$glass-dark: rgba(0, 0, 0, 0.2);
+$glass-light: rgba(255, 255, 255, 0.25);
+
+// Glassmorphism Mixins
+@mixin glass-base($background: $glass-primary, $blur: $glass-blur) {
+  background: $background;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border-radius: $glass-border-radius;
+  border: $glass-border;
+  box-shadow: $glass-shadow;
+}
+
+@mixin glass-card($background: $glass-primary) {
+  @include glass-base($background);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+  }
+}
+
+@mixin glass-button($background: $glass-accent) {
+  @include glass-base($background, 10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-weight: 500;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(0, 178, 178, 0.25);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(0, 178, 178, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin glass-input {
+  @include glass-base(rgba(255, 255, 255, 0.1), 8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 16px;
+  
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: rgba(0, 178, 178, 0.5);
+    box-shadow: 0 0 0 2px rgba(0, 178, 178, 0.2);
+  }
+}
+
+@mixin glass-navigation {
+  @include glass-base(rgba(255, 255, 255, 0.1), 15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+// Animated Glass Effects
+@mixin glass-shimmer {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+// Glass Morphism Utilities
+.glass-primary { @include glass-base($glass-primary); }
+.glass-secondary { @include glass-base($glass-secondary); }
+.glass-accent { @include glass-base($glass-accent); }
+.glass-dark { @include glass-base($glass-dark); }
+.glass-light { @include glass-base($glass-light); }
+
+.glass-card { @include glass-card(); }
+.glass-button { @include glass-button(); }
+.glass-input { @include glass-input(); }
+.glass-shimmer { @include glass-shimmer(); }
+
+// Gradient Backgrounds for Glass Effect
+.gradient-bg-1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg-2 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gradient-bg-3 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.gradient-bg-4 {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.gradient-bg-5 {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+// Floating Animation
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.glass-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+// Pulse Animation for Glass Elements
+@keyframes glassPulse {
+  0%, 100% { 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+  50% { 
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.6);
+  }
+}
+
+.glass-pulse {
+  animation: glassPulse 2s ease-in-out infinite;
+}

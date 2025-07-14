@@ -1,3 +1,4 @@
+@use "../../../../styles/glassmorphism" as *;
 @use "../../../../styles/colors" as *;
 
 // Variables
@@ -39,11 +40,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  @include glass-navigation;
   animation: slideDown 0.5s ease-out;
   padding: 0 2rem;
   height: auto;
@@ -61,10 +58,11 @@ nav {
       width: 10rem;
       margin-right: 0.625rem;
       transition: all $hover-transition;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 
       &:hover {
         transform: scale(1.05);
-        filter: brightness(1.1);
+        filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4)) brightness(1.1);
       }
 
       @media (max-width: 768px) {
@@ -145,12 +143,13 @@ nav {
   position: relative;
   overflow: hidden;
   padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
+  @include glass-button(rgba(255, 255, 255, 0.1));
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: $primary-color;
+  color: white;
+  font-weight: 500;
 
   &::before {
     content: "";
@@ -159,7 +158,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: $primary-color;
+    background: linear-gradient(135deg, rgba(0, 178, 178, 0.3), rgba(255, 255, 255, 0.2));
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
@@ -167,7 +166,9 @@ nav {
   }
 
   &:hover {
-    color: $white;
+    color: white;
+    background: rgba(0, 178, 178, 0.2);
+    transform: translateY(-2px);
 
     &::before {
       transform: scaleX(1);
@@ -186,6 +187,7 @@ nav {
   &.active-link {
     position: relative;
     color: $accent-color;
+    background: rgba(0, 178, 178, 0.15);
 
     &::after {
       content: "";
@@ -194,11 +196,11 @@ nav {
       left: 0;
       width: 100%;
       height: 2px;
-      background-color: $accent-color;
+      background: linear-gradient(90deg, $accent-color, rgba(0, 178, 178, 0.5));
     }
 
     &:hover {
-      color: $white;
+      color: white;
     }
   }
 
@@ -212,11 +214,8 @@ nav {
   border-radius: 0.75rem;
   overflow: hidden;
   margin-top: 0.5rem;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.35); // glassmorphism: semi-transparent
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  @include glass-base(rgba(255, 255, 255, 0.15), 15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
   // Menu panel adjustments for mobile
   @media (max-width: 1024px) {
@@ -225,9 +224,8 @@ nav {
     top: 100%;
     left: 0;
     right: 0;
-    background: $white;
+    @include glass-base(rgba(255, 255, 255, 0.2), 12px);
     padding: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     gap: 0.5rem;
 
@@ -242,7 +240,7 @@ nav {
       padding: 0.75rem 1rem;
 
       &:hover {
-        background-color: rgba($primary-color, 0.05);
+        background: rgba(0, 178, 178, 0.2);
       }
     }
 
@@ -367,14 +365,8 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.35); // glassmorphism: semi-transparent
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  @include glass-base(rgba(255, 255, 255, 0.15), 12px);
   padding: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   gap: 0.5rem;
 
@@ -391,7 +383,7 @@ body {
     padding: 0.75rem 1rem;
 
     &:hover {
-      background-color: rgba($primary-color, 0.05);
+      background: rgba(0, 178, 178, 0.2);
     }
   }
 

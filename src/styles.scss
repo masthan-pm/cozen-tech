@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 @use "./styles/colors" as *;
+@use "./styles/glassmorphism" as *;
 
 html,
 body {
   height: 100%;
   overscroll-behavior: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4facfe 100%);
+  background-attachment: fixed;
 }
 body {
   margin: 0;

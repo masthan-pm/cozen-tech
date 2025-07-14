@@ -1,16 +1,40 @@
+@use "../../../../styles/glassmorphism" as *;
 @use "../../../../styles/colors" as *;
 @use "../../../../styles/shared" as *;
 
 .testimonials-section {
   @extend %section-base;
+  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300b2b2' fill-opacity='0.03'%3E%3Cpolygon points='15,0 30,15 15,30 0,15'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
 }
 
 .container {
   @extend %container;
+  position: relative;
+  z-index: 2;
 }
 
 .header {
   @extend %section-header;
+  
+  h2 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .testimonials-grid {
@@ -18,12 +42,12 @@
 }
 
 .testimonial-card {
-  @extend %card-base;
+  @include glass-card(rgba(255, 255, 255, 0.2));
   padding: 1.5rem;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   overflow: hidden;
+  @include glass-shimmer;
 
   &::before {
     content: "";
@@ -32,14 +56,15 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, $accent-color, $primary-color);
+    background: linear-gradient(90deg, rgba(0, 178, 178, 0.8), rgba(0, 11, 61, 0.8));
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
 
   &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(31, 38, 135, 0.4);
 
     &::before {
       transform: scaleX(1);
@@ -51,10 +76,12 @@
 
     .quote-icon i {
       color: $accent-color;
+      filter: drop-shadow(0 2px 4px rgba(0, 178, 178, 0.5));
     }
 
     .profile-image {
       transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 178, 178, 0.3);
     }
 
     .stars i {
@@ -71,7 +98,8 @@
 
     i {
       font-size: 2rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
     }
   }
 
@@ -86,8 +114,9 @@
       border-radius: 50%;
       object-fit: cover;
       margin-right: 1rem;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 2px solid transparent;
+      transition: all 0.4s ease;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     }
 
     .profile-info {
@@ -96,12 +125,14 @@
         color: $blue-gray;
         margin-bottom: 0.25rem;
         transition: color 0.3s ease;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       }
 
       p {
         font-size: 0.875rem;
         color: $gray-charcol;
         transition: color 0.3s ease;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       }
     }
   }
@@ -111,6 +142,7 @@
     margin-bottom: 1.5rem;
     line-height: 1.5;
     transition: color 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 
   .stars {
@@ -120,6 +152,7 @@
     i {
       font-size: 1.25rem;
       transition: all 0.3s ease;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 
       &:nth-child(1) {
         animation-delay: 0.1s;
