@@ -42,7 +42,7 @@
   text-align: center;
   position: relative;
   @include glass-base(rgba(255, 255, 255, 0.1), 15px);
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   border-radius: 20px;
 }
 
@@ -201,7 +201,6 @@
 .stats-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
   margin-bottom: 3rem;
   padding: 2rem;
   @include glass-card(rgba(255, 255, 255, 0.2));

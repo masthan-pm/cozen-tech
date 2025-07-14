@@ -35,7 +35,7 @@ export const SERVICES_CONSTANTS = {
       icon: 'attach_money',
       title: 'Finance and Accounting',
       description:
-        'Comprehensive financial services and solutions to drive business growth and success.',
+        'All-inclusive financial services and solutions to promote the expansion and prosperity of businesses.',
       image: 'assets/shared/services/finance.jpg',
       destinatedLink: '/solutions/finance',
     },

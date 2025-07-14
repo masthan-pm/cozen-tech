@@ -40,12 +40,6 @@ nav {
   padding: 0 2rem;
   height: auto;
   min-height: 5.25rem;
-  // Enhanced backdrop for better text visibility
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
 
   @media (max-width: 1024px) {
     padding: 0 1rem;
@@ -105,7 +99,11 @@ nav {
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(0, 178, 178, 0.1));
+      background: linear-gradient(
+        135deg,
+        rgba(102, 126, 234, 0.1),
+        rgba(0, 178, 178, 0.1)
+      );
       transform: scaleX(0);
       transform-origin: right;
       transition: transform 0.3s ease;
@@ -114,7 +112,7 @@ nav {
     }
 
     &:hover {
-      color: #667eea;
+      color: white;
 
       &::before {
         transform: scaleX(1);
@@ -154,76 +152,19 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: white;
-  font-weight: 600;
   background: transparent !important;
   border: none;
   transition: all 0.3s ease;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-  font-size: 0.95rem;
 
   // Remove default background
   &::before {
     display: none;
   }
 
-  // Custom hover effect with better visibility
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-
   &:hover {
-    color: white;
-    transform: translateY(-2px);
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
-
     &::after {
       opacity: 1;
     }
-
-    .icon-down-arrow,
-    .icon-up-arrow {
-      transform: scale(1.1);
-      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6));
-    }
-  }
-
-  &.active-link {
-    position: relative;
-    color: white;
-    background: rgba(255, 255, 255, 0.25) !important;
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-    
-    &::after {
-      opacity: 1;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    &:hover {
-      color: white;
-      background: rgba(255, 255, 255, 0.35) !important;
-      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
-    }
-  }
-
-  @media (max-width: 1024px) {
-    font-size: 1rem;
-    line-height: 1.5;
   }
 }
 
@@ -283,7 +224,11 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(0, 178, 178, 0.1));
+    background: linear-gradient(
+      135deg,
+      rgba(102, 126, 234, 0.1),
+      rgba(0, 178, 178, 0.1)
+    );
     border-radius: 8px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -291,7 +236,7 @@ nav {
 
   &:hover {
     background-color: transparent;
-    color: #667eea;
+    color: white;
 
     &::before {
       opacity: 1;
