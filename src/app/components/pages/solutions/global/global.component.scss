@@ -1,5 +1,6 @@
 @use "../../../../../styles/colors" as *;
 @use "../../../../../styles/shared" as *;
+@use "../../../../../styles/glassmorphism" as *;
 
 .global-solutions {
   width: 100%;
@@ -21,7 +22,23 @@
 // Technologies section styles
 .technologies-section {
   @extend %section-base;
-  background-color: $gray-light;
+  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .container {
+    color: inherit;
+  }
 }
 
 .header {
@@ -33,12 +50,64 @@
 }
 
 .tech-card {
-  @extend %card-base;
-  padding: 1rem;
+  @include glass-card(rgba(255, 255, 255, 0.15));
+  padding: 1.5rem 1rem;
   text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #4facfe);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #4facfe);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 40px rgba(31, 38, 135, 0.3);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    &::after {
+      width: 80%;
+    }
+
+    span {
+      background: linear-gradient(135deg, #667eea, #4facfe);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: scale(1.05);
+    }
+  }
 
   span {
     color: $blue-gray;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: block;
   }
 }

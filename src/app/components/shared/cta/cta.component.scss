@@ -3,7 +3,7 @@
 
 .cta-section {
   padding: 5rem 0;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(79, 172, 254, 0.9) 50%, rgba(0, 242, 254, 0.9) 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4facfe 100%);
   position: relative;
   text-align: center;
   
@@ -75,6 +75,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1.2;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
       @media (max-width: 768px) {
         font-size: 2rem;
@@ -86,11 +87,12 @@
       margin-bottom: 2rem;
       color: rgba(255, 255, 255, 0.9);
       line-height: 1.6;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .cta-button {
       display: inline-flex;
-      @include glass-button(rgba(255, 255, 255, 0.2));
+      @include glass-button(rgba(255, 255, 255, 0.25));
       color: white;
       padding: 1rem 2.5rem;
       font-weight: 600;
@@ -99,9 +101,10 @@
       gap: 0.75rem;
       position: relative;
       overflow: hidden;
-      border: 2px solid rgba(255, 255, 255, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.4);
       font-size: 1.1rem;
       border-radius: 50px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
       &::before {
         content: "";
@@ -128,10 +131,10 @@
       }
 
       &:hover {
-        background: rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.35);
         transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
-        border-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.6);
 
         &::before {
           left: 100%;
