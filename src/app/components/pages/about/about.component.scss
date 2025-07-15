@@ -17,11 +17,15 @@
 
 .mission-section {
   @extend %section-base;
-  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
+  background: linear-gradient(
+    135deg,
+    rgba(249, 250, 251, 0.8),
+    rgba(243, 244, 246, 0.9)
+  );
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -39,7 +43,6 @@
 
 .stats-grid {
   @include responsive-grid(1, 4, 4);
-  margin-bottom: 4rem;
 }
 
 .stat-card {
@@ -54,7 +57,7 @@
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
