@@ -4,12 +4,16 @@
 
 .clients-section {
   @extend %section-base;
-  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
+  background: linear-gradient(
+    135deg,
+    rgba(249, 250, 251, 0.8),
+    rgba(243, 244, 246, 0.9)
+  );
   position: relative;
   overflow: hidden;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -28,14 +32,14 @@
 
 .header {
   @extend %section-header;
-  
+
   h2 {
     background: linear-gradient(135deg, #2d3748, #4a5568);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
+
   p {
     color: #4a5568;
   }
@@ -53,7 +57,7 @@
   gap: 2rem;
   animation: infiniteScroll 30s linear infinite;
   width: fit-content;
-  
+
   &:hover {
     animation-play-state: paused;
   }
@@ -76,7 +80,7 @@
   filter: grayscale(0.3);
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -88,47 +92,31 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, rgba(102, 126, 234, 0.05), transparent);
+    background: radial-gradient(
+      circle at center,
+      rgba(102, 126, 234, 0.05),
+      transparent
+    );
     opacity: 0;
     transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  // Center card styling (active state)
-  &.center-card {
+  &:hover {
     transform: scale(1.15);
     opacity: 1;
-    filter: grayscale(0);
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 30px 60px rgba(31, 38, 135, 0.5), 0 0 0 1px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 30px 60px rgba(31, 38, 135, 0.5),
+      0 0 0 1px rgba(102, 126, 234, 0.2);
     z-index: 5;
-
-    &::before {
-      transform: scaleX(1);
-    }
-
-    &::after {
-      opacity: 1;
-    }
 
     .client-logo {
       transform: scale(1.2);
       filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15)) brightness(1.1);
-    }
-  }
-
-  &:hover:not(.center-card) {
-    transform: scale(0.95);
-    opacity: 0.8;
-    background: rgba(255, 255, 255, 0.18);
-    
-    .client-logo {
-      transform: scale(1.05);
     }
   }
 
@@ -169,26 +157,18 @@
     gap: 1.5rem;
     animation-duration: 25s;
   }
-  
+
   .client-card {
     min-width: 160px;
     height: 100px;
     padding: 1.5rem 1rem;
-    
+
     .client-logo {
       height: 2.5rem;
       max-width: 100px;
     }
-    
-    &.center-card {
-      transform: scale(1.05);
-      
-      .client-logo {
-        transform: scale(1.1);
-      }
-    }
   }
-  
+
   .clients-carousel-wrapper {
     &::before,
     &::after {
@@ -201,11 +181,11 @@
   .clients-carousel {
     animation-duration: 20s;
   }
-  
+
   .client-card {
     min-width: 140px;
     height: 90px;
-    
+
     .client-logo {
       height: 2rem;
       max-width: 80px;
