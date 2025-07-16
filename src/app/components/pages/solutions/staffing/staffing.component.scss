@@ -1,5 +1,6 @@
 @use "../../../../../styles/colors" as *;
 @use "../../../../../styles/shared" as *;
+@use "../../../../../styles/glassmorphism" as *;
 
 .staffing-solutions {
   width: 100%;
@@ -8,18 +9,27 @@
 // Container styles
 .container {
   @extend %container;
-
-  p {
-    font-size: 1.25rem;
-    max-width: 42rem;
-    margin: 0 auto;
-    animation: fadeInUp 0.8s ease-out;
-  }
+  position: relative;
+  z-index: 2;
 }
 
 // Specializations section styles
 .specializations-section {
   @extend %section-base;
+  background: linear-gradient(
+    135deg,
+    rgba(249, 250, 251, 0.8),
+    rgba(243, 244, 246, 0.9)
+  );
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
 
   .container {
     color: inherit;
@@ -28,28 +38,104 @@
 
 .header {
   @extend %section-header;
+  animation: fadeInDown 0.6s ease-out;
+
+  h2 {
+    background: linear-gradient(135deg, #667eea, #4facfe);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .tech-grid {
   @include responsive-grid(2, 3, 4);
-
-  & {
-    gap: 1rem;
-  }
+  gap: 1.5rem;
 }
 
 .tech-card {
-  @extend %card-base;
-  padding: 1rem;
+  @include glass-card(rgba(255, 255, 255, 0.15));
+  padding: 2rem 1.5rem;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #4facfe);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #4facfe);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 40px rgba(31, 38, 135, 0.3);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    &::after {
+      width: 80%;
+    }
+
+    span {
+      background: linear-gradient(135deg, #667eea, #4facfe);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: scale(1.05);
+    }
   }
 
   span {
     color: $blue-gray;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: block;
+    line-height: 1.4;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .tech-card {
+    padding: 1.5rem 1rem;
+
+    span {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
   }
 }
