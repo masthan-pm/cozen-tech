@@ -24,7 +24,7 @@ export class ClientsComponent implements OnInit, OnDestroy, AfterViewInit {
   centerCardIndex: number = 0;
   private animationFrameId?: number;
   private lastUpdateTime: number = 0;
-  private updateInterval: number = 100; // Update center card every 100ms
+  private updateInterval: number = 50; // Update center card every 50ms for smoother transitions
 
   ngOnInit(): void {
     // Create triple array for seamless infinite scroll
@@ -80,8 +80,9 @@ export class ClientsComponent implements OnInit, OnDestroy, AfterViewInit {
       }
     });
 
-    // Update center card index with smooth transition
-    if (this.centerCardIndex !== closestCard) {
+    // Update center card index with smoother transition detection
+    const threshold = 50; // Pixels threshold for center detection
+    if (this.centerCardIndex !== closestCard && minDistance < threshold) {
       this.centerCardIndex = closestCard;
     }
   }

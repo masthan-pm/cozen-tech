@@ -46,28 +46,6 @@
   width: 100%;
   overflow: hidden;
   padding: 2rem 0;
-  
-  // Subtle gradient masks for smooth edge fade
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    z-index: 10;
-    pointer-events: none;
-  }
-  
-  &::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(249, 250, 251, 0.9), transparent);
-  }
-  
-  &::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(249, 250, 251, 0.9), transparent);
-  }
 }
 
 .clients-carousel {
@@ -89,7 +67,7 @@
   min-width: 200px;
   height: 120px;
   @include glass-card(rgba(255, 255, 255, 0.12));
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
@@ -106,7 +84,7 @@
     height: 2px;
     background: linear-gradient(90deg, #667eea, #4facfe);
     transform: scaleX(0);
-    transition: transform 0.6s ease;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   &::after {
@@ -118,16 +96,16 @@
     bottom: 0;
     background: radial-gradient(circle at center, rgba(102, 126, 234, 0.05), transparent);
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   // Center card styling (active state)
   &.center-card {
-    transform: scale(1.1);
+    transform: scale(1.15);
     opacity: 1;
     filter: grayscale(0);
     background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 25px 50px rgba(31, 38, 135, 0.4);
+    box-shadow: 0 30px 60px rgba(31, 38, 135, 0.5), 0 0 0 1px rgba(102, 126, 234, 0.2);
     z-index: 5;
 
     &::before {
@@ -139,7 +117,7 @@
     }
 
     .client-logo {
-      transform: scale(1.15);
+      transform: scale(1.2);
       filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15)) brightness(1.1);
     }
   }
@@ -158,7 +136,7 @@
     height: 3rem;
     max-width: 120px;
     object-fit: contain;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
   }
 }
