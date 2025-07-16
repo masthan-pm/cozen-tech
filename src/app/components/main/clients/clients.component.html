@@ -5,18 +5,25 @@
       <p>{{ content }}</p>
     </div>
 
-    <div class="clients-grid">
-      @for (client of clients; track $index) {
-      <div class="client-card">
-        <img
-          [src]="client.logo"
-          [alt]="client.name"
-          class="client-logo"
-          loading="lazy"
-        />
-        <span class="sr-only">{{ client.name }}</span>
+    <div class="clients-carousel-wrapper">
+      <div class="clients-carousel" #carousel>
+        <!-- Triple the clients array for seamless infinite scroll -->
+        @for (client of tripleClients; track $index) {
+        <div 
+          class="client-card"
+          [class.center-card]="isCenterCard($index)"
+          [attr.data-index]="$index"
+        >
+          <img
+            [src]="client.logo"
+            [alt]="client.name"
+            class="client-logo"
+            loading="lazy"
+          />
+          <span class="sr-only">{{ client.name }}</span>
+        </div>
+        }
       </div>
-      }
     </div>
   </div>
 </section>
