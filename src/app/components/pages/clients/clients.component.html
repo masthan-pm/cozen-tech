@@ -29,21 +29,29 @@
 
       <div class="stories-grid">
         <div *ngFor="let story of successStories" class="story-card">
-          <img
-            [src]="story.image"
-            [alt]="story.title"
-            class="story-image"
-            loading="lazy"
-          />
+          <div class="image-container">
+            <img
+              [src]="story.image"
+              [alt]="story.title"
+              class="story-image"
+              loading="lazy"
+            />
+            <div class="client-badge">{{ story.client }}</div>
+          </div>
           <div class="card-content">
             <h3>{{ story.title }}</h3>
             <p>{{ story.description }}</p>
-            <ul class="results-list">
-              <li *ngFor="let result of story.results">
-                <span class="bullet"></span>
-                {{ result }}
-              </li>
-            </ul>
+            
+            <div class="results-section">
+              <h4>Key Results</h4>
+              <ul class="results-list">
+                <li *ngFor="let result of story.results">
+                  <span class="bullet"></span>
+                  {{ result }}
+                </li>
+              </ul>
+            </div>
+
             <a routerLink="/contact" class="read-more">
               {{ readMore }}
               <i class="material-icons">arrow_forward</i>
