@@ -10,7 +10,7 @@
         <!-- Triple the clients array for seamless infinite scroll -->
         @for (client of tripleClients; track $index) {
         <div 
-          class="client-card magnetic-element"
+          class="client-card"
           [class.center-card]="isCenterCard($index)"
           [attr.data-index]="$index"
         >

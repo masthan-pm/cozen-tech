@@ -8,6 +8,7 @@ import { CTAComponent } from '../../shared/cta/cta.component';
 import { HeroCarouselComponent } from '../hero-carousel/hero-carousel.component';
 import { ScrollAnimationDirective } from '../../../directives/scroll-animation.directive';
 import { ScrollRevealDirective } from '../../../directives/scroll-reveal.directive';
+import { StaggerAnimationDirective } from '../../../directives/stagger-animation.directive';
 import { WELCOME_CONSTANT, CAROUSEL_SLIDES } from '../../../constants/home/welcome.constants';
 
 @Component({
@@ -23,6 +24,7 @@ import { WELCOME_CONSTANT, CAROUSEL_SLIDES } from '../../../constants/home/welco
     HeroCarouselComponent,
     ScrollAnimationDirective,
     ScrollRevealDirective,
+    StaggerAnimationDirective,
   ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss',

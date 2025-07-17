@@ -8,87 +8,152 @@
   </app-hero>
 
   <!-- Search Section -->
-  <section class="search-section">
+  <section class="search-section" scrollAnimation animationType="fadeInUp">
     <div class="container">
-      <div class="search-wrapper">
+      <div class="search-wrapper" scrollReveal [revealDelay]="100">
         <div class="search-input">
-          <i class="material-icons">search</i>
+          <i class="material-icons search-icon">search</i>
           <input
             type="text"
             [(ngModel)]="searchTerm"
             placeholder="Search articles..."
+            class="search-field"
           />
+          <div class="search-ripple"></div>
         </div>
-        <select [(ngModel)]="selectedCategory">
-          <option
-            *ngFor="let category of categories"
-            [value]="category.toLowerCase()"
-          >
-            {{ category }}
-          </option>
-        </select>
+        <div class="filter-select">
+          <select [(ngModel)]="selectedCategory" class="category-select">
+            <option
+              *ngFor="let category of categories"
+              [value]="category.toLowerCase()"
+            >
+              {{ category }}
+            </option>
+          </select>
+          <i class="material-icons select-arrow">expand_more</i>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Blog Posts Grid -->
-  <section class="posts-section">
+  <section class="posts-section" scrollAnimation animationType="fadeInUp" [animationDelay]="200">
     <div class="container">
-      <div class="posts-grid">
-        <article *ngFor="let post of filteredPosts" class="post-card">
-          <img [src]="post.image" [alt]="post.title" loading="lazy" />
+      <div class="posts-grid stagger-animation">
+        <article 
+          *ngFor="let post of filteredPosts; let i = index" 
+          class="post-card stagger-item"
+          scrollAnimation 
+          animationType="fadeInUp" 
+          [animationDelay]="i * 100"
+          (mouseenter)="onCardHover(i, true)"
+          (mouseleave)="onCardHover(i, false)"
+          [class.hovered]="hoveredCard === i"
+          [class.dimmed]="hoveredCard !== null && hoveredCard !== i"
+        >
+          <!-- Card Background with Image -->
+          <div class="card-background">
+            <img [src]="post.image" [alt]="post.title" class="post-image" loading="lazy" />
+            <div class="image-overlay"></div>
+            <div class="gradient-overlay"></div>
+          </div>
+
+          <!-- Floating Elements -->
+          <div class="floating-elements">
+            <div class="floating-dot dot-1"></div>
+            <div class="floating-dot dot-2"></div>
+            <div class="floating-dot dot-3"></div>
+          </div>
+
+          <!-- Card Content -->
           <div class="card-content">
-            <div class="meta">
-              <span class="category">{{ post.category }}</span>
-              <span class="divider">•</span>
-              <span class="read-time">
-                <i class="material-icons">schedule</i>
-                {{ post.readTime }}
-              </span>
-            </div>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.excerpt }}</p>
-            <div class="footer">
-              <div class="author">
-                <i class="material-icons">person</i>
-                {{ post.author }}
-                <span class="divider">•</span>
-                <i class="material-icons">event</i>
-                {{ post.date }}
+            <!-- Meta Information -->
+            <div class="post-meta">
+              <div class="category-badge">
+                <i class="material-icons category-icon">label</i>
+                <span class="category-text">{{ post.category }}</span>
               </div>
-              <a routerLink="/blog/post" class="read-more">
-                Read More
-                <i class="material-icons">chevron_right</i>
+              <div class="read-time">
+                <i class="material-icons time-icon">schedule</i>
+                <span class="time-text">{{ post.readTime }}</span>
+              </div>
+            </div>
+
+            <!-- Post Title -->
+            <h2 class="post-title">{{ post.title }}</h2>
+
+            <!-- Post Excerpt -->
+            <p class="post-excerpt">{{ post.excerpt }}</p>
+
+            <!-- Author and Date -->
+            <div class="post-author">
+              <div class="author-info">
+                <div class="author-avatar">
+                  <i class="material-icons">person</i>
+                </div>
+                <div class="author-details">
+                  <span class="author-name">{{ post.author }}</span>
+                  <span class="post-date">{{ post.date }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="post-tags">
+              <div class="tag" *ngFor="let tag of post.tags">
+                <i class="material-icons tag-icon">local_offer</i>
+                <span class="tag-text">{{ tag }}</span>
+              </div>
+            </div>
+
+            <!-- Read More Button -->
+            <div class="card-footer">
+              <a routerLink="/blog/post" class="read-more-btn">
+                <span class="btn-text">Read Article</span>
+                <div class="btn-icon">
+                  <i class="material-icons">arrow_forward</i>
+                </div>
+                <div class="btn-ripple"></div>
               </a>
             </div>
-            <div class="tags">
-              <span *ngFor="let tag of post.tags" class="tag">
-                <i class="material-icons">local_offer</i>
-                {{ tag }}
-              </span>
-            </div>
           </div>
+
+          <!-- Card Glow Effect -->
+          <div class="card-glow"></div>
+          
+          <!-- Interactive Border -->
+          <div class="interactive-border"></div>
         </article>
       </div>
     </div>
   </section>
 
   <!-- Newsletter Section -->
-  <section class="newsletter-section">
+  <section class="newsletter-section" scrollAnimation animationType="fadeInUp" [animationDelay]="400">
     <div class="container">
-      <div class="content">
-        <h2>{{ newsletter.title }}</h2>
-        <p>{{ newsletter.description }}</p>
+      <div class="newsletter-content">
+        <div class="newsletter-header">
+          <h2>{{ newsletter.title }}</h2>
+          <p>{{ newsletter.description }}</p>
+        </div>
 
-        <div class="form">
-          <form [formGroup]="emailForm">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              formControlName="email"
-            />
+        <div class="newsletter-form">
+          <form [formGroup]="emailForm" class="form-container">
+            <div class="input-wrapper">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                formControlName="email"
+                class="email-input"
+              />
+              <div class="input-glow"></div>
+            </div>
+            <button type="button" (click)="submitForm()" class="subscribe-btn">
+              <span class="btn-text">Subscribe</span>
+              <i class="material-icons btn-icon">send</i>
+              <div class="btn-ripple"></div>
+            </button>
           </form>
-          <button (click)="submitForm()">Subscribe</button>
         </div>
       </div>
     </div>
