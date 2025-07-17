@@ -2,6 +2,7 @@ import { Component, Input, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewIn
 import { CommonModule } from '@angular/common';
 import { ScrollAnimationDirective } from '../../../directives/scroll-animation.directive';
 import { ScrollRevealDirective } from '../../../directives/scroll-reveal.directive';
+import { MagneticHoverDirective } from '../../../directives/magnetic-hover.directive';
 import { CLIENTS_CONSTANTS } from '../../../constants/home/clients.constants';
 
 interface Client {
@@ -12,7 +13,7 @@ interface Client {
 @Component({
   selector: 'app-clients',
   standalone: true,
-  imports: [CommonModule, ScrollAnimationDirective, ScrollRevealDirective],
+  imports: [CommonModule, ScrollAnimationDirective, ScrollRevealDirective, MagneticHoverDirective],
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss'],
 })

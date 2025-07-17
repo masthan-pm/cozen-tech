@@ -20,4 +20,9 @@ export class ServicesComponent {
 
   header = SERVICES_CONSTANTS.HEADER;
   services: Service[] = SERVICES_CONSTANTS.SERVICES_LIST;
+  hoveredCard: number | null = null;
+
+  onCardHover(index: number, isHovered: boolean): void {
+    this.hoveredCard = isHovered ? index : null;
+  }
 }

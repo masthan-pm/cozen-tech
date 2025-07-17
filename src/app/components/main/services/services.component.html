@@ -1,4 +1,4 @@
-<section id="services" class="services-section" scrollAnimation animationType="fadeInUp">
+<section class="services-section" scrollAnimation animationType="fadeInUp">
   <div class="container">
     @if (showServicesHeader) {
     <div class="header" scrollReveal [revealDelay]="100">
@@ -9,25 +9,59 @@
 
     <div class="services-grid stagger-animation">
       @for (service of services; track $index) {
-      <div class="service-card stagger-item scroll-enhanced-card" scrollAnimation animationType="fadeInUp" [animationDelay]="$index * 100">
-        <div class="image-container">
+      <div 
+        class="service-card stagger-item scroll-enhanced-card" 
+        scrollAnimation 
+        animationType="fadeInUp" 
+        [animationDelay]="$index * 150"
+        (mouseenter)="onCardHover($index, true)"
+        (mouseleave)="onCardHover($index, false)"
+        [class.hovered]="hoveredCard === $index"
+        [class.dimmed]="hoveredCard !== null && hoveredCard !== $index"
+      >
+        <div class="card-background">
           <img
             [src]="service.image"
             [alt]="service.title"
-            class="service-image"
+            class="background-image"
             loading="lazy"
           />
-          <div class="overlay">
-            <i class="material-icons icon">{{ service.icon }}</i>
-            <h3>{{ service.title }}</h3>
+          <div class="gradient-overlay"></div>
+          <div class="pattern-overlay"></div>
+        </div>
+
+        <div class="card-content">
+          <div class="icon-container">
+            <div class="icon-background"></div>
+            <i class="material-icons service-icon">{{ service.icon }}</i>
+            <div class="icon-ripple"></div>
+          </div>
+
+          <div class="text-content">
+            <h3 class="service-title">{{ service.title }}</h3>
+            <p class="service-description">{{ service.description }}</p>
+          </div>
+
+          <div class="card-footer">
+            <a [routerLink]="service.destinatedLink" class="learn-more-btn">
+              <span class="btn-text">{{ header.linkText }}</span>
+              <div class="btn-icon">
+                <i class="material-icons">arrow_forward</i>
+              </div>
+              <div class="btn-ripple"></div>
+            </a>
           </div>
         </div>
-        <div class="card-content">
-          <p>{{ service.description }}</p>
-          <a [routerLink]="service.destinatedLink" class="learn-more">
-            {{ header.linkText }}
-            <i class="material-icons">arrow_forward</i>
-          </a>
+
+        <div class="card-glow"></div>
+        <div class="card-border-animation"></div>
+        
+        <!-- Floating particles -->
+        <div class="particles">
+          <div class="particle" [style.animation-delay]="'0s'"></div>
+          <div class="particle" [style.animation-delay]="'0.5s'"></div>
+          <div class="particle" [style.animation-delay]="'1s'"></div>
+          <div class="particle" [style.animation-delay]="'1.5s'"></div>
         </div>
       </div>
       }

@@ -13,6 +13,8 @@
           class="client-card magnetic-element"
           [class.center-card]="isCenterCard($index)"
           [attr.data-index]="$index"
+          magneticHover
+          [magneticStrength]="0.2"
         >
           <img
             [src]="client.logo"

@@ -7,7 +7,7 @@
 
     <div class="testimonials-grid stagger-animation">
       @for (testimonial of testimonials; track $index) {
-      <div class="testimonial-card stagger-item scroll-enhanced-card" scrollAnimation animationType="fadeInUp" [animationDelay]="$index * 150">
+      <div class="testimonial-card stagger-item scroll-enhanced-card" scrollAnimation animationType="fadeInUp" [animationDelay]="$index * 150" magneticHover>
         <div class="quote-icon">
           <i class="material-icons">format_quote</i>
         </div>
