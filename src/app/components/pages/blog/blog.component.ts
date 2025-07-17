@@ -8,6 +8,9 @@ import {
   ReactiveFormsModule,
   FormsModule,
 } from '@angular/forms';
+import { ScrollAnimationDirective } from '../../../directives/scroll-animation.directive';
+import { ScrollRevealDirective } from '../../../directives/scroll-reveal.directive';
+import { StaggerAnimationDirective } from '../../../directives/stagger-animation.directive';
 import { BlogService } from './blog.service';
 import { BlogPost } from '../../shared/interfaces/solutions.interface';
 import { HeroComponent } from '../../shared/hero/hero.component';
@@ -22,6 +25,9 @@ import { BLOG_CONSTANTS } from '../../../constants/blog.constants';
     FormsModule,
     ReactiveFormsModule,
     HeroComponent,
+    ScrollAnimationDirective,
+    ScrollRevealDirective,
+    StaggerAnimationDirective,
   ],
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
@@ -36,6 +42,7 @@ export class BlogComponent {
 
   searchTerm: string = '';
   selectedCategory: string = 'all';
+  hoveredCard: number | null = null;
 
   emailForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -53,6 +60,9 @@ export class BlogComponent {
     });
   }
 
+  onCardHover(index: number, isHovered: boolean): void {
+    this.hoveredCard = isHovered ? index : null;
+  }
   submitForm() {
     console.log(this.emailForm.value.email);
     const data = {

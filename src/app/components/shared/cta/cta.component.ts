@@ -2,13 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ScrollAnimationDirective } from '../../../directives/scroll-animation.directive';
-import { MagneticHoverDirective } from '../../../directives/magnetic-hover.directive';
 import { StaggerAnimationDirective } from '../../../directives/stagger-animation.directive';
 
 @Component({
   selector: 'app-cta',
   standalone: true,
-  imports: [CommonModule, RouterModule, ScrollAnimationDirective, MagneticHoverDirective, StaggerAnimationDirective],
+  imports: [CommonModule, RouterModule, ScrollAnimationDirective, StaggerAnimationDirective],
   templateUrl: './cta.component.html',
   styleUrls: ['./cta.component.scss'],
 })

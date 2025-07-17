@@ -1,23 +1,23 @@
 <section class="cta-section" scrollAnimation animationType="fadeInUp">
   <div class="container">
-    <div class="content" magneticHover [magneticStrength]="0.1">
+    <div class="content">
       <h2 scrollAnimation animationType="fadeInDown">{{ header }}</h2>
       <p scrollAnimation animationType="fadeInUp" [animationDelay]="200">{{ text }}</p>
 
       @if (showContactInfo) {
       <div class="contact-info stagger-animation">
-        <div class="info-item stagger-item" magneticHover>
+        <div class="info-item stagger-item">
           <i class="material-icons">mail</i>
           <span>{{ email }}</span>
         </div>
-        <div class="info-item stagger-item" magneticHover>
+        <div class="info-item stagger-item">
           <i class="material-icons">phone</i>
           <span>{{ phone }}</span>
         </div>
       </div>
       }
 
-      <a [routerLink]="buttonLink" class="cta-button" scrollAnimation animationType="scaleIn" [animationDelay]="400" magneticHover>
+      <a [routerLink]="buttonLink" class="cta-button" scrollAnimation animationType="scaleIn" [animationDelay]="400">
         {{ buttonText }}
         <i class="material-icons">arrow_forward</i>
       </a>

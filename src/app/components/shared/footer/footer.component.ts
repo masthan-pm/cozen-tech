@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { ScrollAnimationDirective } from '../../../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, ScrollAnimationDirective],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
@@ -15,7 +16,7 @@ export class FooterComponent {
   companyInfo = {
     name: 'Cozen Tech',
     description:
-      'Empowering businesses through innovative IT solutions and talent acquisition.',
+      'Empowering businesses through innovative IT solutions and talent acquisition. We bridge the gap between exceptional talent and cutting-edge technology.',
     icon: 'business',
   };
 
@@ -27,6 +28,13 @@ export class FooterComponent {
     { title: 'Contact', path: '/contact' },
   ];
 
+  serviceLinks = [
+    { title: 'Global Technology', path: '/solutions/global', icon: 'public' },
+    { title: 'Staffing Solutions', path: '/solutions/staffing', icon: 'group' },
+    { title: 'Data Support', path: '/solutions/data-support', icon: 'storage' },
+    { title: 'HR & Payroll', path: '/solutions/hr-payroll', icon: 'security' },
+    { title: 'Training Programs', path: '/solutions/training', icon: 'school' },
+  ];
   contactInfo = {
     email: {
       icon: 'email',
@@ -69,3 +77,9 @@ export class FooterComponent {
 
   footerCopyright = 'Cozen Technology Solutions. All rights reserved.';
 }
+  subscribeNewsletter(email: string) {
+    if (email && email.includes('@')) {
+      console.log('Newsletter subscription:', email);
+      // Add newsletter subscription logic here
+    }
+  }
