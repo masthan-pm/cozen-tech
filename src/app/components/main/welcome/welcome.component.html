@@ -9,9 +9,9 @@
   ></app-hero-carousel>
 
   <!-- About Us Section -->
-  <section class="about-section">
+  <section class="about-section" scrollAnimation animationType="fadeInUp">
     <div class="container">
-      <div class="about-content">
+      <div class="about-content" scrollReveal [revealDelay]="200">
         <div class="section-header">
           <span class="section-label">About Cozen Tech</span>
           <h2 class="section-title">
@@ -25,27 +25,27 @@
           </p>
         </div>
 
-        <div class="stats-section">
-          <div class="stat-item">
+        <div class="stats-section stagger-animation">
+          <div class="stat-item stagger-item" scrollAnimation animationType="scaleIn" [animationDelay]="100">
             <div class="stat-number">50+</div>
             <div class="stat-label">Projects Delivered</div>
           </div>
-          <div class="stat-item">
+          <div class="stat-item stagger-item" scrollAnimation animationType="scaleIn" [animationDelay]="200">
             <div class="stat-number">25+</div>
             <div class="stat-label">Happy Clients</div>
           </div>
-          <div class="stat-item">
+          <div class="stat-item stagger-item" scrollAnimation animationType="scaleIn" [animationDelay]="300">
             <div class="stat-number">5+</div>
             <div class="stat-label">Years Experience</div>
           </div>
-          <div class="stat-item">
+          <div class="stat-item stagger-item" scrollAnimation animationType="scaleIn" [animationDelay]="400">
             <div class="stat-number">100%</div>
             <div class="stat-label">Success Rate</div>
           </div>
         </div>
 
         <div class="features-grid">
-          <div class="feature-card">
+          <div class="feature-card scroll-enhanced-card" scrollAnimation animationType="fadeInLeft" [animationDelay]="100">
             <div class="feature-icon">
               <i class="material-icons">rocket_launch</i>
             </div>
@@ -56,7 +56,7 @@
             </p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card scroll-enhanced-card" scrollAnimation animationType="fadeInUp" [animationDelay]="200">
             <div class="feature-icon">
               <i class="material-icons">groups</i>
             </div>
@@ -67,7 +67,7 @@
             </p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card scroll-enhanced-card" scrollAnimation animationType="fadeInRight" [animationDelay]="300">
             <div class="feature-icon">
               <i class="material-icons">verified</i>
             </div>

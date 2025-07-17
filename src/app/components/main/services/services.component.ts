@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ScrollAnimationDirective } from '../../../directives/scroll-animation.directive';
+import { ScrollRevealDirective } from '../../../directives/scroll-reveal.directive';
 import {
   SERVICES_CONSTANTS,
   Service,
@@ -9,7 +11,7 @@ import {
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ScrollAnimationDirective, ScrollRevealDirective],
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss'],
 })

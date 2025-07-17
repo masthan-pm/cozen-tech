@@ -1,16 +1,16 @@
-<section class="clients-section">
+<section class="clients-section" scrollAnimation animationType="fadeInUp">
   <div class="container">
-    <div class="header">
+    <div class="header" scrollReveal [revealDelay]="100">
       <h2>{{ header }}</h2>
       <p>{{ content }}</p>
     </div>
 
-    <div class="clients-carousel-wrapper">
+    <div class="clients-carousel-wrapper parallax-container" scrollAnimation animationType="slideInUp" [animationDelay]="300">
       <div class="clients-carousel" #carousel>
         <!-- Triple the clients array for seamless infinite scroll -->
         @for (client of tripleClients; track $index) {
         <div 
-          class="client-card"
+          class="client-card magnetic-element"
           [class.center-card]="isCenterCard($index)"
           [attr.data-index]="$index"
         >

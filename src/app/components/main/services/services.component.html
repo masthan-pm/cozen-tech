@@ -1,15 +1,15 @@
-<section id="services" class="services-section">
+<section id="services" class="services-section" scrollAnimation animationType="fadeInUp">
   <div class="container">
     @if (showServicesHeader) {
-    <div class="header">
+    <div class="header" scrollReveal [revealDelay]="100">
       <h2>{{ header.title }}</h2>
       <p>{{ header.content }}</p>
     </div>
     }
 
-    <div class="services-grid">
+    <div class="services-grid stagger-animation">
       @for (service of services; track $index) {
-      <div class="service-card">
+      <div class="service-card stagger-item scroll-enhanced-card" scrollAnimation animationType="fadeInUp" [animationDelay]="$index * 100">
         <div class="image-container">
           <img
             [src]="service.image"

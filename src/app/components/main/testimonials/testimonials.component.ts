@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollAnimationDirective } from '../../../directives/scroll-animation.directive';
+import { ScrollRevealDirective } from '../../../directives/scroll-reveal.directive';
 import { TESTIMONIAL_CONST } from '../../../constants/home/testimonials.constants';
 
 interface Testimonial {
@@ -12,7 +14,7 @@ interface Testimonial {
 @Component({
   selector: 'app-testimonials',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollAnimationDirective, ScrollRevealDirective],
   templateUrl: './testimonials.component.html',
   styleUrls: ['./testimonials.component.scss'],
 })
