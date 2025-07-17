@@ -76,10 +76,11 @@ export class FooterComponent {
   ];
 
   footerCopyright = 'Cozen Technology Solutions. All rights reserved.';
-}
+
   subscribeNewsletter(email: string) {
     if (email && email.includes('@')) {
       console.log('Newsletter subscription:', email);
       // Add newsletter subscription logic here
     }
   }
+}
