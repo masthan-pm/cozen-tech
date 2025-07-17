@@ -56,7 +56,7 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
   private setupIntersectionObserver() {
     const options = {
       threshold: this.threshold,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -10px 0px'
     };
 
     this.observer = new IntersectionObserver((entries) => {

@@ -35,7 +35,7 @@ export class ParallaxDirective implements OnInit, OnDestroy {
     const element = this.el.nativeElement;
     const rect = element.getBoundingClientRect();
     const scrolled = window.pageYOffset;
-    const rate = scrolled * -this.parallaxSpeed;
+    const rate = scrolled * -this.parallaxSpeed * 0.5; // Reduced intensity
 
     let transform = '';
     switch (this.parallaxDirection) {
@@ -53,6 +53,9 @@ export class ParallaxDirective implements OnInit, OnDestroy {
         break;
     }
 
-    this.renderer.setStyle(element, 'transform', transform);
+    // Use requestAnimationFrame for smoother updates
+    requestAnimationFrame(() => {
+      this.renderer.setStyle(element, 'transform', transform);
+    });
   }
 }
