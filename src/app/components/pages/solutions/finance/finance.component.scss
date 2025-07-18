@@ -49,8 +49,8 @@
 }
 
 .benefits-grid {
-  @include responsive-grid(1, 2, 3);
   gap: 2rem;
+  @include responsive-grid(1, 2, 3);
 }
 
 .benefit-card {

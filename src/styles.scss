@@ -9,10 +9,20 @@
 html,
 body {
   height: 100%;
-  overscroll-behavior: auto;
+  overscroll-behavior: none;
   background: #f8fafc;
   margin: 0;
   padding: 0;
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 25%,
+    #4facfe 75%,
+    #00f2fe 100%
+  );
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
 }
 
 body {
@@ -102,6 +112,8 @@ body {
   }
 }
 
+// Core animations (moved to shared.scss)
+
 // Selection Styling
 ::selection {
   background: rgba(102, 126, 234, 0.3);
@@ -114,7 +126,8 @@ body {
 }
 
 // Fix for extra spacing at bottom
-#root, app-root {
+#root,
+app-root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;

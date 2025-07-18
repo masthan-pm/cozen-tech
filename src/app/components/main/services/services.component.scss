@@ -4,12 +4,16 @@
 
 .services-section {
   @extend %section-base;
-  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
+  background: linear-gradient(
+    135deg,
+    rgba(249, 250, 251, 0.8),
+    rgba(243, 244, 246, 0.9)
+  );
   position: relative;
   overflow: hidden;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -21,14 +25,22 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(79, 172, 254, 0.1) 0%, transparent 50%);
+    background: radial-gradient(
+        circle at 20% 80%,
+        rgba(102, 126, 234, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(79, 172, 254, 0.1) 0%,
+        transparent 50%
+      );
     pointer-events: none;
     animation: gradientShift 15s ease infinite;
   }
@@ -42,7 +54,7 @@
 
 .header {
   @extend %section-header;
-  
+
   h2 {
     background: linear-gradient(135deg, #2d3748, #4a5568, #667eea);
     background-clip: text;
@@ -51,9 +63,9 @@
     background-size: 200% 200%;
     animation: gradientText 3s ease infinite;
     position: relative;
-    
+
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -10px;
       left: 50%;
@@ -65,13 +77,13 @@
       animation: underlineGlow 2s ease-in-out infinite;
     }
   }
-  
+
   p {
     color: #4a5568;
     position: relative;
-    
+
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: -20px;
       top: 50%;
@@ -82,9 +94,9 @@
       border-radius: 2px;
       animation: lineGrow 1s ease-out 0.5s forwards;
     }
-    
+
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       right: -20px;
       top: 50%;
@@ -99,9 +111,9 @@
 }
 
 .services-grid {
-  @include responsive-grid(1, 2, 3);
   gap: 2.5rem;
   perspective: 1000px;
+  @include responsive-grid(1, 2, 3);
 }
 
 .service-card {
@@ -112,15 +124,19 @@
   cursor: pointer;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   transform-style: preserve-3d;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.05)
+    );
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
@@ -131,9 +147,13 @@
 
   &.hovered {
     transform: translateY(-20px) rotateX(5deg) rotateY(2deg) scale(1.02);
-    
+
     &::before {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.1)
+      );
       border-color: rgba(102, 126, 234, 0.4);
       box-shadow: 0 30px 60px rgba(31, 38, 135, 0.3);
     }
@@ -145,10 +165,12 @@
       }
 
       .gradient-overlay {
-        background: linear-gradient(135deg, 
-          rgba(102, 126, 234, 0.7) 0%, 
-          rgba(79, 172, 254, 0.6) 50%, 
-          rgba(0, 178, 178, 0.7) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.7) 0%,
+          rgba(79, 172, 254, 0.6) 50%,
+          rgba(0, 178, 178, 0.7) 100%
+        );
       }
 
       .pattern-overlay {
@@ -159,7 +181,7 @@
 
     .icon-container {
       transform: scale(1.2) translateY(-5px);
-      
+
       .icon-background {
         background: linear-gradient(135deg, #667eea, #4facfe);
         box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
@@ -248,10 +270,12 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, 
-        rgba(0, 0, 0, 0.6) 0%, 
-        rgba(0, 0, 0, 0.4) 50%, 
-        rgba(0, 0, 0, 0.7) 100%);
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+      );
       transition: all 0.6s ease;
     }
 
@@ -392,7 +416,11 @@
         left: 50%;
         width: 0;
         height: 0;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.3) 0%,
+          transparent 70%
+        );
         border-radius: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
@@ -420,7 +448,14 @@
     left: -1px;
     right: -1px;
     bottom: -1px;
-    background: conic-gradient(from 0deg, transparent, #667eea, transparent, #4facfe, transparent);
+    background: conic-gradient(
+      from 0deg,
+      transparent,
+      #667eea,
+      transparent,
+      #4facfe,
+      transparent
+    );
     border-radius: 25px;
     opacity: 0;
     z-index: -1;
@@ -475,46 +510,80 @@
 
 // Animations
 @keyframes backgroundFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(1deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
 }
 
 @keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes gradientText {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes underlineGlow {
-  0%, 100% { 
+  0%,
+  100% {
     box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
     transform: translateX(-50%) scaleX(1);
   }
-  50% { 
+  50% {
     box-shadow: 0 0 20px rgba(102, 126, 234, 0.8);
     transform: translateX(-50%) scaleX(1.2);
   }
 }
 
 @keyframes lineGrow {
-  0% { height: 0; }
-  100% { height: 20px; }
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 20px;
+  }
 }
 
 @keyframes patternMove {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  25% { transform: translateX(10px) translateY(-5px); }
-  50% { transform: translateX(-5px) translateY(10px); }
-  75% { transform: translateX(5px) translateY(5px); }
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(10px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(-5px) translateY(10px);
+  }
+  75% {
+    transform: translateX(5px) translateY(5px);
+  }
 }
 
 @keyframes iconPulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.1); }
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
 }
 
 @keyframes rippleEffect {
@@ -542,27 +611,34 @@
 }
 
 @keyframes glowPulse {
-  0%, 100% { 
+  0%,
+  100% {
     background-position: 0% 50%;
     opacity: 0.6;
   }
-  50% { 
+  50% {
     background-position: 100% 50%;
     opacity: 1;
   }
 }
 
 @keyframes borderRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes particleFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) translateX(0px);
     opacity: 0;
   }
-  10%, 90% {
+  10%,
+  90% {
     opacity: 1;
   }
   50% {
