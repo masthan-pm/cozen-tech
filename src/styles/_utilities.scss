@@ -20,35 +20,51 @@
 
 // Container Utilities
 .container-standard {
-  @extend %container;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
   position: relative;
   z-index: 2;
 }
 
 // Header Utilities
 .section-header-standard {
-  @extend %section-header;
+  text-align: center;
+  margin-bottom: 3rem;
   @include fade-in-animation;
 
   h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
     @include gradient-text(linear-gradient(135deg, #2d3748, #4a5568));
   }
 
   p {
+    font-size: 1.125rem;
     color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
 
 .section-header-light {
-  @extend %section-header;
+  text-align: center;
+  margin-bottom: 3rem;
   @include fade-in-animation;
 
   h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
     @include gradient-text(linear-gradient(135deg, #667eea, #4facfe));
   }
 
   p {
+    font-size: 1.125rem;
     color: $gray-dark;
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
 
@@ -104,11 +120,11 @@
 
 // Grid Utilities
 .grid-responsive-1-2-3 {
-  @include responsive-grid(1, 2, 3);
+  @include responsive-grid-standard(1, 2, 3);
 }
 
 .grid-responsive-1-2-4 {
-  @include responsive-grid(1, 2, 4);
+  @include responsive-grid-standard(1, 2, 4);
 }
 
 .grid-responsive-auto {
