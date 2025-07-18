@@ -1,0 +1,11 @@
+.content {
+  min-height: calc(100vh - 5.25rem);
+  display: flex;
+  flex-direction: column;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
