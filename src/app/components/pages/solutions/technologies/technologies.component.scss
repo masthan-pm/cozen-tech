@@ -49,8 +49,8 @@
 }
 
 .features-grid {
-  @include responsive-grid(1, 2, 4);
   gap: 2rem;
+  @include responsive-grid(1, 2, 4);
 }
 
 .feature-card {

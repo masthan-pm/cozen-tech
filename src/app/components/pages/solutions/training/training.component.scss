@@ -49,8 +49,8 @@
 }
 
 .tech-grid {
-  @include responsive-grid(2, 3, 6);
   gap: 1.5rem;
+  @include responsive-grid(2, 3, 6);
 }
 
 .tech-card {
