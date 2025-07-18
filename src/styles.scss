@@ -8,42 +8,16 @@ html,
 body {
   height: 100%;
   overscroll-behavior: auto;
-  background: linear-gradient(
-    135deg,
-    #667eea 0%,
-    #764ba2 25%,
-    #4facfe 75%,
-    #00f2fe 100%
-  );
-  background-attachment: fixed;
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  background: #f8fafc;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   color: #2d3748;
   scroll-behavior: smooth;
-}
-
-// Enhanced gradient animation
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 100% 50%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  75% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  overflow-x: hidden;
 }
 
 .mat-mdc-button .mdc-button__label {
@@ -138,4 +112,15 @@ body {
 ::-moz-selection {
   background: rgba(102, 126, 234, 0.3);
   color: white;
+}
+
+// Fix for extra spacing at bottom
+#root, app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
 }

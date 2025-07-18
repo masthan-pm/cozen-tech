@@ -7,16 +7,20 @@ import { Directive, ElementRef, OnInit, OnDestroy, Input } from '@angular/core';
 export class ScrollAnimationDirective implements OnInit, OnDestroy {
   @Input() animationType: 'fadeInUp' | 'fadeInDown' | 'fadeInLeft' | 'fadeInRight' | 'scaleIn' | 'slideInUp' = 'fadeInUp';
   @Input() animationDelay: number = 0;
-  @Input() animationDuration: number = 800;
+  @Input() animationDuration: number = 600;
   @Input() threshold: number = 0.1;
 
   private observer!: IntersectionObserver;
+  private hasAnimated = false;
 
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
-    this.setupIntersectionObserver();
-    this.setupInitialState();
+    // Delay setup to improve initial load performance
+    requestAnimationFrame(() => {
+      this.setupInitialState();
+      this.setupIntersectionObserver();
+    });
   }
 
   ngOnDestroy() {
@@ -28,27 +32,27 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
   private setupInitialState() {
     const element = this.el.nativeElement;
     element.style.opacity = '0';
-    element.style.transition = `all ${this.animationDuration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+    element.style.transition = `opacity ${this.animationDuration}ms ease-out, transform ${this.animationDuration}ms ease-out`;
     element.style.transitionDelay = `${this.animationDelay}ms`;
 
     switch (this.animationType) {
       case 'fadeInUp':
-        element.style.transform = 'translateY(50px)';
+        element.style.transform = 'translateY(30px)';
         break;
       case 'fadeInDown':
-        element.style.transform = 'translateY(-50px)';
+        element.style.transform = 'translateY(-30px)';
         break;
       case 'fadeInLeft':
-        element.style.transform = 'translateX(-50px)';
+        element.style.transform = 'translateX(-30px)';
         break;
       case 'fadeInRight':
-        element.style.transform = 'translateX(50px)';
+        element.style.transform = 'translateX(30px)';
         break;
       case 'scaleIn':
-        element.style.transform = 'scale(0.8)';
+        element.style.transform = 'scale(0.9)';
         break;
       case 'slideInUp':
-        element.style.transform = 'translateY(100px)';
+        element.style.transform = 'translateY(50px)';
         break;
     }
   }
@@ -56,13 +60,14 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
   private setupIntersectionObserver() {
     const options = {
       threshold: this.threshold,
-      rootMargin: '0px 0px -10px 0px'
+      rootMargin: '0px 0px -50px 0px'
     };
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !this.hasAnimated) {
           this.animateIn(entry.target as HTMLElement);
+          this.hasAnimated = true;
         }
       });
     }, options);

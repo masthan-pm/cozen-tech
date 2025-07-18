@@ -3,8 +3,8 @@
 
 .scroll-to-top {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
   width: 3.5rem;
   height: 3.5rem;
   @include glass-button(rgba(102, 126, 234, 0.3));
@@ -19,6 +19,7 @@
   transform: translateY(20px);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: 2px solid rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
   &.visible {
     opacity: 1;
@@ -72,13 +73,21 @@
 // Mobile responsiveness
 @media (max-width: 768px) {
   .scroll-to-top {
-    bottom: 1.5rem;
-    right: 1.5rem;
+    bottom: 1rem;
+    right: 1rem;
     width: 3rem;
     height: 3rem;
 
     i {
       font-size: 1.25rem;
     }
+  }
+}
+
+// Ensure proper stacking above footer
+@media (min-width: 769px) {
+  .scroll-to-top {
+    bottom: 2rem;
+    right: 2rem;
   }
 }
