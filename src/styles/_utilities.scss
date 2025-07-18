@@ -1,0 +1,258 @@
+// Utility Classes for Common Patterns
+@use "./colors" as *;
+@use "./glassmorphism" as *;
+@use "./mixins" as *;
+
+// Layout Utilities
+.section-standard {
+  @include section-layout(linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9)));
+}
+
+.section-dark {
+  @include section-layout(linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%));
+  color: $white;
+}
+
+.section-gradient {
+  @include section-layout(linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4facfe 100%));
+  color: $white;
+}
+
+// Container Utilities
+.container-standard {
+  @extend %container;
+  position: relative;
+  z-index: 2;
+}
+
+// Header Utilities
+.section-header-standard {
+  @extend %section-header;
+  @include fade-in-animation;
+
+  h2 {
+    @include gradient-text(linear-gradient(135deg, #2d3748, #4a5568));
+  }
+
+  p {
+    color: #4a5568;
+  }
+}
+
+.section-header-light {
+  @extend %section-header;
+  @include fade-in-animation;
+
+  h2 {
+    @include gradient-text(linear-gradient(135deg, #667eea, #4facfe));
+  }
+
+  p {
+    color: $gray-dark;
+  }
+}
+
+// Card Utilities
+.card-enhanced {
+  @include glass-card(rgba(255, 255, 255, 0.15));
+  @include enhanced-card-hover;
+  @include fade-in-animation;
+}
+
+.card-service {
+  @include service-card-base;
+}
+
+.card-tech {
+  @include tech-card;
+}
+
+// Button Utilities
+.btn-primary-glass {
+  @include button-primary;
+}
+
+.btn-secondary-glass {
+  @include button-secondary;
+}
+
+// Form Utilities
+.form-input-standard {
+  @include form-input-base;
+}
+
+.form-group-standard {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $blue-charcol;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .error-message {
+    color: $error;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    min-height: 1.25rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Grid Utilities
+.grid-responsive-1-2-3 {
+  @include responsive-grid(1, 2, 3);
+}
+
+.grid-responsive-1-2-4 {
+  @include responsive-grid(1, 2, 4);
+}
+
+.grid-responsive-auto {
+  @include responsive-grid-auto;
+}
+
+// Icon Utilities
+.icon-container-sm {
+  @include icon-container(2.5rem);
+}
+
+.icon-container-md {
+  @include icon-container(3rem);
+}
+
+.icon-container-lg {
+  @include icon-container(4rem);
+}
+
+// Contact Utilities
+.contact-method {
+  @include contact-method-item;
+}
+
+// Feature List Utilities
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    @include feature-list-item;
+  }
+}
+
+// Animation Utilities
+.animate-fade-in {
+  @include fade-in-animation;
+}
+
+.animate-fade-in-delayed {
+  @include fade-in-animation(0.2s);
+}
+
+.animate-hover-lift {
+  @include hover-lift;
+}
+
+.animate-hover-lift-sm {
+  @include hover-lift(-5px);
+}
+
+.animate-hover-lift-lg {
+  @include hover-lift(-12px);
+}
+
+// Text Utilities
+.text-gradient-primary {
+  @include gradient-text;
+}
+
+.text-gradient-secondary {
+  @include gradient-text(linear-gradient(135deg, #2d3748, #4a5568));
+}
+
+// Spacing Utilities
+.spacing-section {
+  padding: 4rem 0;
+}
+
+.spacing-section-sm {
+  padding: 2rem 0;
+}
+
+.spacing-section-lg {
+  padding: 6rem 0;
+}
+
+// Background Pattern Utilities
+.bg-pattern-dots {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+}
+
+.bg-pattern-diamonds {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpolygon points='17.5,0 35,17.5 17.5,35 0,17.5'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+}
+
+// Responsive Utilities
+.hide-mobile {
+  @include respond-to(mobile) {
+    display: none !important;
+  }
+}
+
+.hide-tablet {
+  @include respond-to(tablet) {
+    display: none !important;
+  }
+}
+
+.hide-desktop {
+  @include respond-to(desktop) {
+    display: none !important;
+  }
+}
+
+.show-mobile-only {
+  display: none !important;
+  
+  @include respond-to(mobile) {
+    display: block !important;
+  }
+}
+
+// Accessibility Utilities
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Focus Utilities
+.focus-visible {
+  &:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}

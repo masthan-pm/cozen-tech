@@ -1,107 +1,26 @@
-@use "../../../../../styles/colors" as *;
-@use "../../../../../styles/shared" as *;
-@use "../../../../../styles/glassmorphism" as *;
+@use "../../../../../styles/utilities" as *;
 
 .teams-section {
-  @extend %section-base;
-  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpath d='M22.5 22.5c0-6.2-5-11.25-11.25-11.25S0 16.3 0 22.5s5 11.25 11.25 11.25S22.5 28.7 22.5 22.5zm22.5 0c0-6.2-5-11.25-11.25-11.25S22.5 16.3 22.5 22.5s5 11.25 11.25 11.25S45 28.7 45 22.5z'/%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-  }
+  @extend .section-standard;
+  @extend .bg-pattern-dots;
 }
 
 .container {
-  @extend %container;
+  @extend .container-standard;
 }
 
 .header {
-  @extend %section-header;
+  @extend .section-header-standard;
 }
 
 .team-grid {
-  @include responsive-grid(1, 2, 4);
+  @extend .grid-responsive-1-2-4;
 }
 
 .team-card {
-  @include glass-card(rgba(255, 255, 255, 0.15));
+  @extend .card-enhanced;
+  @extend .animate-fade-in;
   overflow: hidden;
-  transition: all 0.4s ease;
-  animation: fadeInUp 0.6s ease-out;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2, #4facfe);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    z-index: 2;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #667eea, #4facfe);
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
-    z-index: 2;
-  }
-
-  &:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 25px 50px rgba(31, 38, 135, 0.4);
-
-    &::before {
-      transform: scaleX(1);
-    }
-
-    &::after {
-      width: 80%;
-    }
-
-    .member-image {
-      transform: scale(1.1);
-    }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      opacity: 1;
-
-      .social-links {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .content h3 {
-      background: linear-gradient(135deg, #667eea, #4facfe);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .content .role {
-      color: #4facfe;
-    }
-  }
 
   .image-container {
     position: relative;
@@ -189,6 +108,30 @@
       font-size: 0.875rem;
       line-height: 1.5;
       margin: 0;
+    }
+  }
+
+  &:hover {
+    .member-image {
+      transform: scale(1.1);
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      opacity: 1;
+
+      .social-links {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .content h3 {
+      @extend .text-gradient-primary;
+    }
+
+    .content .role {
+      color: #4facfe;
     }
   }
 }

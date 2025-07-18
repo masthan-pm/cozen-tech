@@ -3,6 +3,8 @@
 @use "./styles/colors" as *;
 @use "./styles/glassmorphism" as *;
 @use "./styles/scroll-effects" as *;
+@use "./styles/mixins" as *;
+@use "./styles/utilities" as *;
 
 html,
 body {
@@ -99,9 +101,6 @@ body {
     }
   }
 }
-
-// Core animations (moved to shared.scss)
-
 
 // Selection Styling
 ::selection {
