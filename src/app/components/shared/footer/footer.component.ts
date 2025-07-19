@@ -48,7 +48,8 @@ export class FooterComponent {
     },
     address: {
       icon: 'location_on',
-      lines: ['123 Tech Street,', 'Silicon Valley, CA 94025'],
+      lines: ['2615 Medical Center Parkway, Suite 1560, Murfreesboro, Tennessee, 37129, United States of America'],
+      href: 'https://www.google.com/maps/place/60+E+65th+St,+New+York,+NY+10065,+USA/@40.7668404,-73.967226,634m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c258ee9543e153:0x7033d7ee09ded9c9!8m2!3d40.7668404!4d-73.967226!16s%2Fg%2F11q84vqb3z?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D'
     },
   };
 

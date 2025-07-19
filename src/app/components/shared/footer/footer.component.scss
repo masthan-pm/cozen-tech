@@ -436,6 +436,7 @@
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease;
+      text-decoration: none;
 
       &:hover {
         background: rgba(255, 255, 255, 0.08);
@@ -501,7 +502,6 @@
         .contact-value {
           color: rgba(255, 255, 255, 0.9);
           font-size: 0.95rem;
-          text-decoration: none;
           transition: color 0.3s ease;
 
           &:hover {
