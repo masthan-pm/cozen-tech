@@ -31,9 +31,9 @@
   }
 
   .contact-grid {
-    @include responsive-grid-standard(1, 2, 2);
     align-items: start;
     gap: 3rem;
+    @include responsive-grid-standard(1, 2, 2);
   }
 }
 
