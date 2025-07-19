@@ -44,8 +44,8 @@
 
           <!-- Social Media Links -->
           <div class="social-links">
+            @for (social of socialLinks; track $index) {
             <a
-              *ngFor="let social of socialLinks"
               [href]="social.href"
               target="_blank"
               rel="noopener noreferrer"
@@ -57,7 +57,7 @@
                 <div class="social-ripple"></div>
               </div>
               <span class="social-tooltip">{{ social.name }}</span>
-            </a>
+            </a>}
           </div>
         </div>
       </div>
@@ -74,8 +74,8 @@
           <div class="title-underline"></div>
         </h4>
         <nav class="footer-nav">
+          @for (item of quickLinks; track $index) {
           <a
-            *ngFor="let item of quickLinks"
             [routerLink]="item.path"
             class="nav-link"
           >
@@ -84,7 +84,7 @@
               <span class="link-text">{{ item.title }}</span>
             </div>
             <div class="link-hover-effect"></div>
-          </a>
+          </a>}
         </nav>
       </div>
 
@@ -100,8 +100,8 @@
           <div class="title-underline"></div>
         </h4>
         <nav class="footer-nav">
+          @for (service of serviceLinks; track $index) {
           <a
-            *ngFor="let service of serviceLinks"
             [routerLink]="service.path"
             class="nav-link"
           >
@@ -110,7 +110,7 @@
               <span class="link-text">{{ service.title }}</span>
             </div>
             <div class="link-hover-effect"></div>
-          </a>
+          </a>}
         </nav>
       </div>
 
@@ -126,33 +126,29 @@
           <div class="title-underline"></div>
         </h4>
         <div class="contact-info">
-          <div class="contact-item">
+          <a class="contact-item" [href]="contactInfo.email.href" role="button" target="_blank">
             <div class="contact-icon">
               <i class="material-icons">{{ contactInfo.email.icon }}</i>
               <div class="icon-pulse"></div>
             </div>
             <div class="contact-details">
               <span class="contact-label">Email</span>
-              <a [href]="contactInfo.email.href" class="contact-value">
-                {{ contactInfo.email.value }}
-              </a>
+              <span class="contact-value">{{ contactInfo.email.value }}</span>
             </div>
-          </div>
+          </a>
 
-          <div class="contact-item">
+          <a class="contact-item" [href]="contactInfo.phone.href"  role="button" target="_blank">
             <div class="contact-icon">
               <i class="material-icons">{{ contactInfo.phone.icon }}</i>
               <div class="icon-pulse"></div>
             </div>
             <div class="contact-details">
               <span class="contact-label">Phone</span>
-              <a [href]="contactInfo.phone.href" class="contact-value">
-                {{ contactInfo.phone.value }}
-              </a>
+              <span class="contact-value">{{ contactInfo.phone.value }}</span>
             </div>
-          </div>
+          </a>
 
-          <div class="contact-item">
+          <a class="contact-item" [href]="contactInfo.address.href" role="button" target="_blank">
             <div class="contact-icon">
               <i class="material-icons">{{ contactInfo.address.icon }}</i>
               <div class="icon-pulse"></div>
@@ -160,23 +156,19 @@
             <div class="contact-details">
               <span class="contact-label">Address</span>
               <div class="contact-value">
-                <ng-container *ngFor="let line of contactInfo.address.lines">
-                  {{ line }}<br />
-                </ng-container>
+                  @for (line of contactInfo.address.lines; track $index) {
+                    {{ line }}<br />
+                  }
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
 
     <!-- Footer Bottom -->
-    <div
-      class="footer-bottom"
-      scrollAnimation
-      animationType="fadeInUp"
-      [animationDelay]="600"
-    >
+    <!-- <div class="footer-bottom" scrollAnimation animationType="fadeInUp" [animationDelay]="600"> -->
+    <div class="footer-bottom">
       <div class="footer-bottom-content">
         <div class="copyright">
           <p>© {{ currentYear }} {{ footerCopyright }}</p>

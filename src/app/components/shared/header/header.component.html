@@ -40,7 +40,7 @@
         <div class="dropdown-item">
           <a [routerLink]="subItem.route">
             <div class="dropdown-content">
-              <span class="dropdown-label">{{ subItem.label }}</span>
+              <span class="dropdown-label" (click)="toggleArrow()">{{ subItem.label }}</span>
             </div>
           </a>
         </div>

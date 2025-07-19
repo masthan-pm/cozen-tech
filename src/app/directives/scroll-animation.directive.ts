@@ -60,7 +60,7 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
   private setupIntersectionObserver() {
     const options = {
       threshold: this.threshold,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -10px 0px'
     };
 
     this.observer = new IntersectionObserver((entries) => {
@@ -78,7 +78,7 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
   private animateIn(element: HTMLElement) {
     element.style.opacity = '1';
     element.style.transform = 'translateY(0) translateX(0) scale(1)';
-    
+
     // Disconnect observer after animation to prevent re-triggering
     this.observer.unobserve(element);
   }
