@@ -1,16 +1,11 @@
-@use "../../../../styles/glassmorphism" as *;
 @use "../../../../styles/colors" as *;
 @use "../../../../styles/shared" as *;
+@use "../../../../styles/mixins" as *;
+@use "../../../../styles/glassmorphism" as *;
 
 .contact-page {
   width: 100%;
   min-height: 100vh;
-}
-
-.container {
-  @extend %container;
-  position: relative;
-  z-index: 2;
 }
 
 .contact-section {
@@ -27,23 +22,25 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300b2b2' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
     pointer-events: none;
   }
 
+  .container {
+    @extend %container;
+  }
+
   .contact-grid {
+    @include responsive-grid-standard(1, 2, 2);
     align-items: start;
     gap: 3rem;
-    @include responsive-grid(1, 2, 2);
   }
 }
 
 .contact-info {
-  @include glass-base(rgba(255, 255, 255, 0.15), 12px);
+  @extend %card-base;
   padding: 2.5rem 2rem;
-  border-radius: 16px;
   height: fit-content;
-  border: 1px solid rgba(255, 255, 255, 0.2);
 
   h2 {
     font-size: 1.875rem;
@@ -109,8 +106,6 @@
 .form-container {
   @extend %card-base;
   padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .contact-form {
@@ -135,6 +130,14 @@
       margin-bottom: 0.5rem;
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
+
+    .error-message {
+      color: $error;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      min-height: 1.25rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
   }
 
   .form-control {
@@ -144,14 +147,7 @@
     color: $blue-charcol;
     font-size: 1rem;
     border-radius: 8px;
-
-    &.error {
-      border-color: $error;
-
-      &:focus {
-        box-shadow: 0 0 0 3px rgba($error, 0.1);
-      }
-    }
+    transition: all 0.3s ease;
 
     &::placeholder {
       color: rgba(75, 85, 99, 0.6);
@@ -163,14 +159,14 @@
       box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
       background: rgba(255, 255, 255, 0.25);
     }
-  }
 
-  .error-message {
-    color: $error;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-    min-height: 1.25rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    &.error {
+      border-color: $error;
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba($error, 0.1);
+      }
+    }
   }
 
   .phone-input {
@@ -237,22 +233,16 @@
 }
 
 .submit-button {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1.25rem 1.5rem;
   @include glass-button(rgba(102, 126, 234, 0.3));
   color: $white;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
   border: 2px solid rgba(102, 126, 234, 0.4);
-  border-radius: 50px;
+  width: 100%;
+  justify-content: center;
+  padding: 1.25rem 1.5rem;
   font-size: 1.1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 
   &:hover {
     background: rgba(102, 126, 234, 0.4);
@@ -280,56 +270,25 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300b2b2' fill-opacity='0.02'%3E%3Cpolygon points='15,0 30,15 15,30 0,15'/%3E%3C/g%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpolygon points='17.5,0 35,17.5 17.5,35 0,17.5'/%3E%3C/g%3E%3C/svg%3E");
     pointer-events: none;
   }
 
   .section-header {
     @extend %section-header;
+  }
 
-    h2 {
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    p {
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    }
+  .container {
+    @extend %container;
   }
 
   .offices-grid {
-    @include responsive-grid(1, 2, 3);
+    @include responsive-grid-standard(1, 2, 3);
   }
 
   .office-card {
     @extend %card-base;
     padding: 2rem 1.5rem;
-    @include glass-shimmer;
-    position: relative;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #667eea, #764ba2, #4facfe);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    &:hover {
-      transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 20px 40px rgba(31, 38, 135, 0.3);
-
-      &::before {
-        transform: scaleX(1);
-      }
-    }
 
     h3 {
       font-size: 1.25rem;
@@ -348,20 +307,37 @@
     .detail {
       display: flex;
       align-items: flex-start;
-      gap: 0.75rem;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      background: transparent;
+      border: none;
+
+      &:hover {
+        background: transparent;
+        transform: none;
+        box-shadow: none;
+      }
 
       i {
         color: #667eea;
-        font-size: 1.25rem;
-        filter: drop-shadow(0 1px 2px rgba(102, 126, 234, 0.3));
-        margin-top: 0.125rem;
+        font-size: 1.5rem;
+        filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.3));
+        margin-top: 0.25rem;
+      }
+
+      h3 {
+        font-weight: 600;
+        color: $blue-gray;
+        margin-bottom: 0.25rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        font-size: 1.1rem;
       }
 
       p {
         color: $gray-dark;
         margin: 0;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        line-height: 1.5;
+        font-size: 0.95rem;
       }
     }
   }

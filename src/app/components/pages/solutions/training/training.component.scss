@@ -1,6 +1,7 @@
 @use "../../../../../styles/colors" as *;
 @use "../../../../../styles/shared" as *;
 @use "../../../../../styles/glassmorphism" as *;
+@use "../../../../../styles/mixins" as *;
 
 .training-solutions {
   width: 100%;
@@ -50,7 +51,7 @@
 
 .tech-grid {
   gap: 1.5rem;
-  @include responsive-grid(2, 3, 6);
+  @include responsive-grid-standard(2, 3, 6);
 }
 
 .tech-card {

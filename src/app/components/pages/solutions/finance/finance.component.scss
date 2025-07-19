@@ -1,6 +1,7 @@
 @use "../../../../../styles/colors" as *;
 @use "../../../../../styles/shared" as *;
 @use "../../../../../styles/glassmorphism" as *;
+@use "../../../../../styles/mixins" as *;
 
 .finance-solutions {
   width: 100%;
@@ -50,7 +51,7 @@
 
 .benefits-grid {
   gap: 2rem;
-  @include responsive-grid(1, 2, 3);
+  @include responsive-grid-standard(1, 2, 3);
 }
 
 .benefit-card {

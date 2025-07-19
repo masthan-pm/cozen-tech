@@ -1,3 +1,4 @@
+@use "../../../../../styles/mixins" as *;
 @use "../../../../../styles/colors" as *;
 @use "../../../../../styles/shared" as *;
 @use "../../../../../styles/glassmorphism" as *;
@@ -22,11 +23,15 @@
 // Technologies section styles
 .technologies-section {
   @extend %section-base;
-  background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.9));
+  background: linear-gradient(
+    135deg,
+    rgba(249, 250, 251, 0.8),
+    rgba(243, 244, 246, 0.9)
+  );
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -46,7 +51,7 @@
 }
 
 .tech-grid {
-  @include responsive-grid(2, 3, 6);
+  @include responsive-grid-standard(2, 3, 6);
 }
 
 .tech-card {
@@ -58,7 +63,7 @@
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -70,7 +75,7 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
