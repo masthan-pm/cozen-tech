@@ -6,7 +6,7 @@
 @mixin section-layout($background: null, $padding: 4rem 0) {
   padding: $padding;
   position: relative;
-  
+
   @if $background {
     background: $background;
   }
@@ -68,7 +68,9 @@
 }
 
 // Gradient Text Effect
-@mixin gradient-text-mixin($gradient: linear-gradient(135deg, #667eea, #4facfe)) {
+@mixin gradient-text-mixin(
+  $gradient: linear-gradient(135deg, #667eea, #4facfe)
+) {
   background: $gradient;
   background-clip: text;
   -webkit-background-clip: text;
@@ -252,7 +254,7 @@
     display: block;
 
     &:hover {
-      @include gradient-text;
+      @include gradient-text-mixin;
       transform: scale(1.05);
     }
   }
@@ -305,7 +307,7 @@
     }
 
     .title-wrapper h3 {
-      @include gradient-text;
+      @include gradient-text-mixin;
     }
   }
 }
@@ -355,16 +357,24 @@
 // Responsive Breakpoints Mixin
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile {
-    @media (max-width: 767px) { @content; }
+    @media (max-width: 767px) {
+      @content;
+    }
   }
   @if $breakpoint == tablet {
-    @media (min-width: 768px) and (max-width: 1023px) { @content; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      @content;
+    }
   }
   @if $breakpoint == desktop {
-    @media (min-width: 1024px) { @content; }
+    @media (min-width: 1024px) {
+      @content;
+    }
   }
   @if $breakpoint == large {
-    @media (min-width: 1200px) { @content; }
+    @media (min-width: 1200px) {
+      @content;
+    }
   }
 }
 
@@ -385,8 +395,12 @@
 
 // Common Animations
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {

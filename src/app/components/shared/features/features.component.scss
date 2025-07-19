@@ -1,6 +1,7 @@
 @use "../../../../styles/colors" as *;
 @use "../../../../styles/shared" as *;
 @use "../../../../styles/glassmorphism" as *;
+@use "../../../../styles/mixins" as *;
 
 .features-section {
   @extend %section-base;
@@ -29,7 +30,7 @@
 }
 
 .features-grid {
-  @include responsive-grid(1, 2, 4);
+  @include responsive-grid-standard(1, 2, 4);
 }
 
 .feature-card {

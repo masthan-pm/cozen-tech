@@ -1,6 +1,7 @@
 @use "../../../../../styles/colors" as *;
 @use "../../../../../styles/shared" as *;
 @use "../../../../../styles/glassmorphism" as *;
+@use "../../../../../styles/mixins" as *;
 
 .values-section {
   @extend %section-base;
@@ -29,7 +30,7 @@
 }
 
 .values-grid {
-  @include responsive-grid(1, 2, 3);
+  @include responsive-grid-standard(1, 2, 3);
 }
 
 .value-card {

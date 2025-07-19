@@ -1,5 +1,6 @@
 @use "../../../../styles/colors" as *;
 @use "../../../../styles/shared" as *;
+@use "../../../../styles/mixins" as *;
 @use "../../../../styles/glassmorphism" as *;
 
 .contact-page {
@@ -30,7 +31,7 @@
   }
 
   .contact-grid {
-    @include responsive-grid(1, 2, 2);
+    @include responsive-grid-standard(1, 2, 2);
     align-items: start;
     gap: 3rem;
   }
@@ -282,7 +283,7 @@
   }
 
   .offices-grid {
-    @include responsive-grid(1, 2, 3);
+    @include responsive-grid-standard(1, 2, 3);
   }
 
   .office-card {
