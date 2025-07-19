@@ -262,23 +262,6 @@ $glass-nav: rgba(255, 255, 255, 0.1);
 }
 
 // Gradient Text Effect
-@mixin gradient-text($gradient: $gradient-primary) {
-  background: $gradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
-}
-
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-.gradient-text {
-  @include gradient-text();
-}
 
 // Glass Border Animation
 @keyframes borderGlow {

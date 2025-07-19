@@ -37,7 +37,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    @include gradient-text(linear-gradient(135deg, #2d3748, #4a5568));
+    @include gradient-text-mixin(linear-gradient(135deg, #2d3748, #4a5568));
   }
 
   p {
@@ -57,7 +57,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    @include gradient-text(linear-gradient(135deg, #667eea, #4facfe));
+    @include gradient-text-mixin(linear-gradient(135deg, #667eea, #4facfe));
   }
 
   p {
@@ -183,11 +183,11 @@
 
 // Text Utilities
 .text-gradient-primary {
-  @include gradient-text;
+  @include gradient-text-mixin;
 }
 
 .text-gradient-secondary {
-  @include gradient-text(linear-gradient(135deg, #2d3748, #4a5568));
+  @include gradient-text-mixin(linear-gradient(135deg, #2d3748, #4a5568));
 }
 
 // Spacing Utilities

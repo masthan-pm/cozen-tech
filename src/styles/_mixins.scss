@@ -68,7 +68,7 @@
 }
 
 // Gradient Text Effect
-@mixin gradient-text($gradient: linear-gradient(135deg, #667eea, #4facfe)) {
+@mixin gradient-text-mixin($gradient: linear-gradient(135deg, #667eea, #4facfe)) {
   background: $gradient;
   background-clip: text;
   -webkit-background-clip: text;

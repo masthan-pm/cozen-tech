@@ -1,13 +1,27 @@
 // Shared Styles and Utilities
 @use "./colors" as *;
 @use "./glassmorphism" as *;
-@use "./mixins" as *;
 
 // Common container styles
 %container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1rem;
+
+// Responsive Grid Mixin
+@mixin responsive-grid($mobile: 1, $tablet: 2, $desktop: 3) {
+  display: grid;
+  grid-template-columns: repeat($mobile, 1fr);
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat($tablet, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat($desktop, 1fr);
+  }
+}
 }
 
 %section-base {
