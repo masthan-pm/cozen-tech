@@ -13,8 +13,6 @@
 %section-base {
   padding: 4rem 0;
   position: relative;
-  
-  // Remove individual background patterns - use utility classes instead
 }
 
 %section-header {
@@ -37,11 +35,6 @@
     max-width: 600px;
     margin: 0 auto;
   }
-}
-
-// Move responsive-grid to mixins.scss - keeping here for backward compatibility
-@mixin responsive-grid($mobile: 1, $tablet: 2, $desktop: 3) {
-  @include responsive-grid-standard($mobile, $tablet, $desktop);
 }
 
 // Legacy placeholders - use utility classes instead
