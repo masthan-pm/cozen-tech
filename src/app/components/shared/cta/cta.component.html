@@ -5,19 +5,19 @@
       <p scrollAnimation animationType="fadeInUp" [animationDelay]="200">{{ text }}</p>
 
       @if (showContactInfo) {
-      <div class="contact-info stagger-animation">
-        <div class="info-item stagger-item">
-          <i class="material-icons">mail</i>
-          <span>{{ email }}</span>
-        </div>
-        <div class="info-item stagger-item">
-          <i class="material-icons">phone</i>
-          <span>{{ phone }}</span>
-        </div>
+      <div class="contact-info stagger-animation" staggerAnimation>
+        <a class="info-item stagger-item" [href]="contactInfo.email.href" target="_blank">
+          <i class="material-icons">{{ contactInfo.email.icon }}</i>
+          <span>{{ contactInfo.email.value }}</span>
+        </a>
+        <a class="info-item stagger-item" [href]="contactInfo.phone.href" target="_blank">
+          <i class="material-icons">{{ contactInfo.phone.icon }}</i>
+          <span>{{ contactInfo.phone.value }}</span>
+        </a>
       </div>
       }
 
-      <a [routerLink]="buttonLink" class="cta-button" scrollAnimation animationType="scaleIn" [animationDelay]="400">
+      <a [routerLink]="buttonLink" class="cta-button" scrollAnimation animationType="fadeInDown" [animationDelay]="600">
         {{ buttonText }}
         <i class="material-icons">arrow_forward</i>
       </a>
