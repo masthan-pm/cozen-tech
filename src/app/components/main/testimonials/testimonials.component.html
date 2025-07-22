@@ -8,6 +8,8 @@
     <div class="testimonials-grid stagger-animation" staggerAnimation>
       @for (testimonial of testimonials; track $index) {
       <div class="testimonial-card stagger-item scroll-enhanced-card" scrollAnimation animationType="fadeInUp" [animationDelay]="$index * 150">
+        <div class="inner-glow"></div>
+        <!-- <div class="particles"></div> -->
         <div class="quote-icon">
           <i class="material-icons">format_quote</i>
         </div>
