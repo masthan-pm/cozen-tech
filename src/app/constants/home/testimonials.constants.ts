@@ -23,27 +23,6 @@ export const TESTIMONIAL_CONST = {
       quote: 'Working with Cozen Tech has transformed our hiring process. They understand our needs and consistently deliver top talent. Their insights into the tech market are invaluable for strategic planning.',
       rating: 5
     },
-    {
-      name: 'Emily Watson',
-      position: 'VP of Engineering, CloudNine',
-      image: 'assets/shared/clients/testimonials/testimonial3.jpg',
-      quote: 'Outstanding service and remarkable attention to detail. Cozen Tech helped us scale our development team efficiently while maintaining the high standards we require. Highly recommended!',
-      rating: 5
-    },
-    {
-      name: 'David Kim',
-      position: 'Lead Developer, NextGen Solutions',
-      image: 'assets/shared/clients/testimonials/testimonial2.jpg',
-      quote: 'The expertise and dedication of the Cozen Tech team is unmatched. They provided us with developers who seamlessly integrated into our workflow and contributed immediately to our projects.',
-      rating: 5
-    },
-    {
-      name: 'Lisa Anderson',
-      position: 'Product Manager, InnovateTech',
-      image: 'assets/shared/clients/testimonials/testimonial1.jpg',
-      quote: 'Incredible results in record time! Their recruitment process is thorough yet efficient. We found the perfect candidates who have become key contributors to our success story.',
-      rating: 5
-    }
   ],
 
   // Additional configuration for enhanced features
