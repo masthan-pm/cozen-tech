@@ -1,4 +1,12 @@
-import { Component, Input, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScrollAnimationDirective } from '../../../directives/scroll-animation.directive';
 import { ScrollRevealDirective } from '../../../directives/scroll-reveal.directive';
@@ -24,6 +32,7 @@ export class ClientsComponent implements OnInit, OnDestroy, AfterViewInit {
   clients: Client[] = CLIENTS_CONSTANTS.CLIENTS;
   tripleClients: Client[] = [];
   centerCardIndex: number = 0;
+  isAnimationPaused: boolean = false;
   private animationFrameId?: number;
   private lastUpdateTime: number = 0;
   private updateInterval: number = 50; // Update center card every 50ms for smoother transitions
@@ -32,7 +41,8 @@ export class ClientsComponent implements OnInit, OnDestroy, AfterViewInit {
     // Create triple array for seamless infinite scroll
     this.tripleClients = [...this.clients, ...this.clients, ...this.clients];
     // Start with center card in the middle section
-    this.centerCardIndex = this.clients.length + Math.floor(this.clients.length / 2);
+    this.centerCardIndex =
+      this.clients.length + Math.floor(this.clients.length / 2);
   }
 
   ngAfterViewInit(): void {
@@ -53,7 +63,7 @@ export class ClientsComponent implements OnInit, OnDestroy, AfterViewInit {
       }
       this.animationFrameId = requestAnimationFrame(updateCenterCard);
     };
-    
+
     this.animationFrameId = requestAnimationFrame(updateCenterCard);
   }
 
@@ -63,8 +73,9 @@ export class ClientsComponent implements OnInit, OnDestroy, AfterViewInit {
     const carouselElement = this.carousel.nativeElement;
     const cards = carouselElement.querySelectorAll('.client-card');
     const carouselRect = carouselElement.getBoundingClientRect();
-    const containerRect = carouselElement.parentElement?.getBoundingClientRect();
-    
+    const containerRect =
+      carouselElement.parentElement?.getBoundingClientRect();
+
     if (!containerRect) return;
 
     const containerCenter = containerRect.left + containerRect.width / 2;
@@ -75,7 +86,7 @@ export class ClientsComponent implements OnInit, OnDestroy, AfterViewInit {
       const cardRect = card.getBoundingClientRect();
       const cardCenter = cardRect.left + cardRect.width / 2;
       const distance = Math.abs(cardCenter - containerCenter);
-      
+
       if (distance < minDistance) {
         minDistance = distance;
         closestCard = index;
@@ -91,5 +102,13 @@ export class ClientsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   isCenterCard(index: number): boolean {
     return index === this.centerCardIndex;
+  }
+
+  pauseAnimation(): void {
+    this.isAnimationPaused = true;
+  }
+
+  resumeAnimation(): void {
+    this.isAnimationPaused = false;
   }
 }

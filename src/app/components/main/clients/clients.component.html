@@ -6,13 +6,19 @@
     </div>
 
     <div class="clients-carousel-wrapper parallax-container" scrollAnimation animationType="slideInUp" [animationDelay]="300">
-      <div class="clients-carousel" #carousel>
+      <div
+        class="clients-carousel"
+        #carousel
+        [class.paused]="isAnimationPaused"
+      >
         <!-- Triple the clients array for seamless infinite scroll -->
         @for (client of tripleClients; track $index) {
-        <div 
+        <div
           class="client-card"
           [class.center-card]="isCenterCard($index)"
           [attr.data-index]="$index"
+          (mouseenter)="pauseAnimation()"
+          (mouseleave)="resumeAnimation()"
         >
           <img
             [src]="client.logo"
