@@ -7,12 +7,12 @@
     </div>
     }
 
-    <div class="services-grid stagger-animation">
+    <div class="services-grid stagger-animation" staggerAnimation>
       @for (service of services; track $index) {
-      <div 
-        class="service-card stagger-item scroll-enhanced-card" 
-        scrollAnimation 
-        animationType="fadeInUp" 
+      <a [routerLink]="service.destinatedLink"
+        class="service-card stagger-item scroll-enhanced-card"
+        scrollAnimation
+        animationType="fadeInUp"
         [animationDelay]="$index * 150"
         (mouseenter)="onCardHover($index, true)"
         (mouseleave)="onCardHover($index, false)"
@@ -43,19 +43,19 @@
           </div>
 
           <div class="card-footer">
-            <a [routerLink]="service.destinatedLink" class="learn-more-btn">
+            <div class="learn-more-btn">
               <span class="btn-text">{{ header.linkText }}</span>
               <div class="btn-icon">
                 <i class="material-icons">arrow_forward</i>
               </div>
               <div class="btn-ripple"></div>
-            </a>
+            </div>
           </div>
         </div>
 
         <div class="card-glow"></div>
         <div class="card-border-animation"></div>
-        
+
         <!-- Floating particles -->
         <div class="particles">
           <div class="particle" [style.animation-delay]="'0s'"></div>
@@ -63,7 +63,7 @@
           <div class="particle" [style.animation-delay]="'1s'"></div>
           <div class="particle" [style.animation-delay]="'1.5s'"></div>
         </div>
-      </div>
+      </a>
       }
     </div>
   </div>
