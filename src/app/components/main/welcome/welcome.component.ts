@@ -9,6 +9,7 @@ import { HeroCarouselComponent } from '../hero-carousel/hero-carousel.component'
 import { ScrollAnimationDirective } from '../../../directives/scroll-animation.directive';
 import { ScrollRevealDirective } from '../../../directives/scroll-reveal.directive';
 import { WELCOME_CONSTANT, CAROUSEL_SLIDES } from '../../../constants/home/welcome.constants';
+import { StaggerAnimationDirective } from '../../../directives/stagger-animation.directive';
 
 @Component({
   selector: 'app-welcome',
@@ -23,6 +24,7 @@ import { WELCOME_CONSTANT, CAROUSEL_SLIDES } from '../../../constants/home/welco
     HeroCarouselComponent,
     ScrollAnimationDirective,
     ScrollRevealDirective,
+    StaggerAnimationDirective
   ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss',
