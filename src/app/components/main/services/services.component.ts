@@ -7,11 +7,12 @@ import {
   SERVICES_CONSTANTS,
   Service,
 } from '../../../constants/home/services.constants';
+import { StaggerAnimationDirective } from '../../../directives/stagger-animation.directive';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, RouterModule, ScrollAnimationDirective, ScrollRevealDirective],
+  imports: [CommonModule, RouterModule, ScrollAnimationDirective, ScrollRevealDirective, StaggerAnimationDirective],
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss'],
 })
