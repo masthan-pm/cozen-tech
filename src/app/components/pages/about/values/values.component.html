@@ -1,18 +1,31 @@
-<section class="values-section">
+<section class="values-section" scrollAnimation animationType="fadeInUp">
   <div class="container">
-    <div class="header">
+    <div class="header" scrollReveal [revealDelay]="100">
       <h2>{{ header }}</h2>
       <p>{{ content }}</p>
     </div>
 
-    <div class="values-grid">
-      <div *ngFor="let value of values" class="value-card">
+    <div class="values-grid stagger-animation" staggerAnimation>
+      @for (value of values; track $index) {
+      <div class="value-card stagger-item scroll-enhanced-card" 
+           scrollAnimation animationType="fadeInUp" [animationDelay]="$index * 150">
         <div class="icon-container">
           <i class="material-icons">{{ value.icon }}</i>
+          <div class="icon-ripple"></div>
+          <div class="icon-glow"></div>
         </div>
         <h3>{{ value.title }}</h3>
         <p>{{ value.description }}</p>
+        <div class="value-accent"></div>
+        
+        <!-- Floating particles -->
+        <div class="floating-elements">
+          <div class="floating-dot"></div>
+          <div class="floating-dot"></div>
+          <div class="floating-dot"></div>
+        </div>
       </div>
+      }
     </div>
   </div>
 </section>
