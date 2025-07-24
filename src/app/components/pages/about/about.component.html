@@ -1,27 +1,292 @@
-<app-hero
-  [backgroundImage]="about.image"
-  [header]="about.header"
-  [text]="about.text"
-></app-hero>
+<div class="about-page">
+  <!-- Hero Section -->
+  <app-hero
+    [backgroundImage]="about.image"
+    [header]="about.header"
+    [text]="about.text"
+  ></app-hero>
 
-<section class="mission-section">
-  <div class="container">
-    <div class="header">
-      <h2>{{ mission.title }}</h2>
-      <p>{{ mission.content }}</p>
-    </div>
-
-    <div class="stats-grid">
-      @for (item of stats; track $index) {
-      <div class="stat-card">
-        <i class="material-icons">{{ item.icon }}</i>
-        <h3>{{ item.stat }}</h3>
-        <p>{{ item.label }}</p>
+  <!-- Company Story Section -->
+  <section class="story-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="story-content">
+        <div class="story-text" scrollReveal [revealDelay]="100">
+          <div class="section-label">Our Journey</div>
+          <h2 class="story-title">{{ story.title }}</h2>
+          <div class="story-paragraphs">
+            <p class="story-paragraph" scrollAnimation animationType="fadeInLeft" [animationDelay]="200">
+              {{ story.paragraph1 }}
+            </p>
+            <p class="story-paragraph" scrollAnimation animationType="fadeInRight" [animationDelay]="400">
+              {{ story.paragraph2 }}
+            </p>
+          </div>
+        </div>
+        
+        <div class="story-visual" scrollAnimation animationType="scaleIn" [animationDelay]="300">
+          <div class="timeline-container">
+            <div class="timeline-line"></div>
+            <div class="milestone" *ngFor="let milestone of milestones; let i = index" 
+                 scrollAnimation animationType="fadeInUp" [animationDelay]="i * 150 + 500">
+              <div class="milestone-year">{{ milestone.year }}</div>
+              <div class="milestone-content">
+                <h4>{{ milestone.title }}</h4>
+                <p>{{ milestone.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      }
     </div>
-  </div>
-</section>
+  </section>
 
-<app-values></app-values>
-<app-teams></app-teams>
+  <!-- Mission & Vision Section -->
+  <section class="mission-vision-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="mission-vision-grid">
+        <div class="mission-card scroll-enhanced-card" scrollAnimation animationType="fadeInLeft" [animationDelay]="100">
+          <div class="card-icon">
+            <i class="material-icons">rocket_launch</i>
+            <div class="icon-glow"></div>
+          </div>
+          <div class="card-content">
+            <h3>{{ mission.title }}</h3>
+            <p>{{ mission.content }}</p>
+          </div>
+          <div class="card-particles">
+            <div class="particle" *ngFor="let p of particles"></div>
+          </div>
+        </div>
+
+        <div class="vision-card scroll-enhanced-card" scrollAnimation animationType="fadeInRight" [animationDelay]="200">
+          <div class="card-icon">
+            <i class="material-icons">visibility</i>
+            <div class="icon-glow"></div>
+          </div>
+          <div class="card-content">
+            <h3>{{ vision.title }}</h3>
+            <p>{{ vision.content }}</p>
+          </div>
+          <div class="card-particles">
+            <div class="particle" *ngFor="let p of particles"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="stats-header" scrollReveal [revealDelay]="100">
+        <h2>{{ statsSection.title }}</h2>
+        <p>{{ statsSection.subtitle }}</p>
+      </div>
+      
+      <div class="stats-grid stagger-animation" staggerAnimation>
+        <div class="stat-card stagger-item scroll-enhanced-card" 
+             *ngFor="let stat of stats; let i = index"
+             scrollAnimation animationType="scaleIn" [animationDelay]="i * 100 + 200">
+          <div class="stat-icon">
+            <i class="material-icons">{{ stat.icon }}</i>
+            <div class="stat-ripple"></div>
+          </div>
+          <div class="stat-number" [attr.data-target]="stat.stat">{{ stat.stat }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+          <div class="stat-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Values Section -->
+  <app-values></app-values>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="section-header" scrollReveal [revealDelay]="100">
+        <div class="section-label">Why Choose Us</div>
+        <h2>{{ whyChoose.title }}</h2>
+        <p>{{ whyChoose.subtitle }}</p>
+      </div>
+
+      <div class="features-showcase">
+        <div class="features-grid stagger-animation" staggerAnimation>
+          <div class="feature-item stagger-item" 
+               *ngFor="let feature of whyChoose.features; let i = index"
+               scrollAnimation animationType="fadeInUp" [animationDelay]="i * 150">
+            <div class="feature-visual">
+              <div class="feature-icon-container">
+                <i class="material-icons">{{ feature.icon }}</i>
+                <div class="icon-orbit"></div>
+                <div class="icon-pulse"></div>
+              </div>
+            </div>
+            <div class="feature-content">
+              <h3>{{ feature.title }}</h3>
+              <p>{{ feature.description }}</p>
+              <div class="feature-metrics" *ngIf="feature.metrics">
+                <div class="metric" *ngFor="let metric of feature.metrics">
+                  <span class="metric-value">{{ metric.value }}</span>
+                  <span class="metric-label">{{ metric.label }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Team Section -->
+  <app-teams></app-teams>
+
+  <!-- Company Culture Section -->
+  <section class="culture-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="culture-content">
+        <div class="culture-header" scrollReveal [revealDelay]="100">
+          <div class="section-label">Our Culture</div>
+          <h2>{{ culture.title }}</h2>
+          <p>{{ culture.subtitle }}</p>
+        </div>
+
+        <div class="culture-grid stagger-animation" staggerAnimation>
+          <div class="culture-card stagger-item scroll-enhanced-card"
+               *ngFor="let item of culture.items; let i = index"
+               scrollAnimation animationType="fadeInUp" [animationDelay]="i * 150">
+            <div class="culture-image">
+              <img [src]="item.image" [alt]="item.title" loading="lazy">
+              <div class="image-overlay"></div>
+            </div>
+            <div class="culture-content-inner">
+              <div class="culture-icon">
+                <i class="material-icons">{{ item.icon }}</i>
+              </div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+            <div class="culture-glow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovation & Technology Section -->
+  <section class="innovation-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="innovation-content">
+        <div class="innovation-header" scrollReveal [revealDelay]="100">
+          <div class="section-label">Innovation</div>
+          <h2>{{ innovation.title }}</h2>
+          <p>{{ innovation.subtitle }}</p>
+        </div>
+
+        <div class="innovation-showcase">
+          <div class="tech-stack-visual" scrollAnimation animationType="scaleIn" [animationDelay]="200">
+            <div class="tech-orbit">
+              <div class="tech-center">
+                <i class="material-icons">psychology</i>
+              </div>
+              <div class="tech-ring ring-1">
+                <div class="tech-node" *ngFor="let tech of innovation.primaryTech; let i = index" 
+                     [style.--rotation]="(360 / innovation.primaryTech.length * i) + 'deg'">
+                  <span>{{ tech }}</span>
+                </div>
+              </div>
+              <div class="tech-ring ring-2">
+                <div class="tech-node" *ngFor="let tech of innovation.secondaryTech; let i = index"
+                     [style.--rotation]="(360 / innovation.secondaryTech.length * i) + 'deg'">
+                  <span>{{ tech }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="innovation-features" scrollAnimation animationType="fadeInRight" [animationDelay]="400">
+            <div class="innovation-feature" *ngFor="let feature of innovation.features; let i = index"
+                 scrollAnimation animationType="fadeInUp" [animationDelay]="i * 100 + 500">
+              <div class="feature-number">{{ i + 1 }}</div>
+              <div class="feature-details">
+                <h4>{{ feature.title }}</h4>
+                <p>{{ feature.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards & Recognition Section -->
+  <section class="awards-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="awards-header" scrollReveal [revealDelay]="100">
+        <div class="section-label">Recognition</div>
+        <h2>{{ awards.title }}</h2>
+        <p>{{ awards.subtitle }}</p>
+      </div>
+
+      <div class="awards-grid stagger-animation" staggerAnimation>
+        <div class="award-card stagger-item scroll-enhanced-card"
+             *ngFor="let award of awards.list; let i = index"
+             scrollAnimation animationType="fadeInUp" [animationDelay]="i * 150">
+          <div class="award-icon">
+            <i class="material-icons">{{ award.icon }}</i>
+            <div class="award-shine"></div>
+          </div>
+          <div class="award-content">
+            <h3>{{ award.title }}</h3>
+            <p class="award-organization">{{ award.organization }}</p>
+            <p class="award-year">{{ award.year }}</p>
+            <p class="award-description">{{ award.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Presence Section -->
+  <section class="global-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="global-header" scrollReveal [revealDelay]="100">
+        <div class="section-label">Global Reach</div>
+        <h2>{{ globalPresence.title }}</h2>
+        <p>{{ globalPresence.subtitle }}</p>
+      </div>
+
+      <div class="global-map-container" scrollAnimation animationType="scaleIn" [animationDelay]="200">
+        <div class="world-map">
+          <div class="location-pin" *ngFor="let location of globalPresence.locations; let i = index"
+               [style.left]="location.x + '%'" [style.top]="location.y + '%'"
+               scrollAnimation animationType="scaleIn" [animationDelay]="i * 200 + 400">
+            <div class="pin-dot"></div>
+            <div class="pin-pulse"></div>
+            <div class="location-tooltip">
+              <h4>{{ location.city }}</h4>
+              <p>{{ location.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="global-stats" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
+        <div class="global-stat" *ngFor="let stat of globalPresence.stats; let i = index"
+             scrollAnimation animationType="scaleIn" [animationDelay]="i * 100 + 700">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-description">{{ stat.description }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <app-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    [buttonText]="cta.buttonText"
+    [showContactInfo]="true"
+  ></app-cta>
+</div>

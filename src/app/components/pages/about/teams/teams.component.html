@@ -1,12 +1,14 @@
-<section class="teams-section">
+<section class="teams-section" scrollAnimation animationType="fadeInUp">
   <div class="container">
-    <div class="header">
+    <div class="header" scrollReveal [revealDelay]="100">
       <h2>{{ header }}</h2>
       <p>{{ content }}</p>
     </div>
 
-    <div class="team-grid">
-      <div *ngFor="let member of team" class="team-card">
+    <div class="team-grid stagger-animation" staggerAnimation>
+      @for (member of team; track $index) {
+      <div class="team-card stagger-item scroll-enhanced-card" 
+           scrollAnimation animationType="fadeInUp" [animationDelay]="$index * 150">
         <div class="image-container">
           <img
             [src]="member.image"
@@ -14,6 +16,7 @@
             class="member-image"
             loading="lazy"
           />
+          <div class="image-overlay"></div>
           <div class="overlay">
             <div class="social-links">
               <a
@@ -21,21 +24,29 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="social-link"
+                aria-label="LinkedIn Profile"
               >
                 <i class="material-icons">link</i>
               </a>
-              <a [href]="'mailto:' + member.email" class="social-link">
+              <a 
+                [href]="'mailto:' + member.email" 
+                class="social-link"
+                aria-label="Send Email"
+              >
                 <i class="material-icons">mail</i>
               </a>
             </div>
           </div>
+          <div class="member-glow"></div>
         </div>
         <div class="content">
           <h3>{{ member.name }}</h3>
           <p class="role">{{ member.role }}</p>
           <p class="bio">{{ member.bio }}</p>
         </div>
+        <div class="team-accent"></div>
       </div>
+      }
     </div>
   </div>
 </section>
