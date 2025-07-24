@@ -16,12 +16,12 @@ export const ABOUT_CONSTANTS = {
   },
 
   STATS: [
-    { icon: 'public', stat: '15+', label: 'Countries Served' },
-    { icon: 'work', stat: '1000+', label: 'Projects Completed' },
-    { icon: 'group', stat: '500+', label: 'Happy Clients' },
+    // { icon: 'public', stat: '15+', label: 'Countries Served' },
+    { icon: 'work', stat: '50+', label: 'Projects Completed' },
+    { icon: 'group', stat: '25+', label: 'Happy Clients' },
     { icon: 'star', stat: '98%', label: 'Client Satisfaction' },
     { icon: 'trending_up', stat: '250%', label: 'Growth Rate' },
-    { icon: 'emoji_events', stat: '50+', label: 'Industry Awards' },
+    // { icon: 'emoji_events', stat: '50+', label: 'Industry Awards' },
   ],
 
   CTA: {

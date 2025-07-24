@@ -160,26 +160,20 @@ export class AboutComponent {
         icon: 'diversity_3',
         title: 'Diversity & Inclusion',
         description: 'We celebrate diverse perspectives and create an inclusive environment where everyone can thrive.',
-        image: 'assets/pages/about/culture1.jpg'
+        image: 'assets/pages/blog/blog.jpg'
       },
       {
         icon: 'school',
         title: 'Continuous Learning',
         description: 'We invest in our team\'s growth through training, conferences, and skill development programs.',
-        image: 'assets/pages/about/culture2.jpg'
+        image: 'assets/pages/blog/blog-img2.jpg'
       },
       {
         icon: 'balance',
         title: 'Work-Life Balance',
         description: 'We believe in maintaining a healthy balance between professional growth and personal well-being.',
-        image: 'assets/pages/about/culture3.jpg'
+        image: 'assets/pages/blog/blog-img1.jpg'
       },
-      {
-        icon: 'celebration',
-        title: 'Team Spirit',
-        description: 'Regular team events, celebrations, and collaborative projects that strengthen our bonds.',
-        image: 'assets/pages/about/culture4.jpg'
-      }
     ] as CultureItem[]
   };
 
@@ -254,8 +248,8 @@ export class AboutComponent {
       { city: 'Sydney', description: 'Australia Operations', x: 85, y: 70 }
     ] as GlobalLocation[],
     stats: [
-      { value: '15+', description: 'Countries Served' },
-      { value: '500+', description: 'Global Clients' },
+      { value: '2+', description: 'Countries Served' },
+      { value: '25+', description: 'Global Clients' },
       { value: '24/7', description: 'Support Coverage' },
       { value: '50+', description: 'Local Partners' }
     ]

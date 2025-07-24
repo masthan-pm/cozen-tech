@@ -27,13 +27,5 @@ export const TEAMS_CONSTANTS = {
       linkedin: '#',
       email: 'emily@cozentech.com',
     },
-    {
-      name: 'David Kim',
-      role: 'Director of Client Relations',
-      image: 'assets/pages/about/leadership2.jpg',
-      bio: 'David excels in building and maintaining strong client relationships across various industries.',
-      linkedin: '#',
-      email: 'david@cozentech.com',
-    },
   ],
 };
