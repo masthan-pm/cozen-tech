@@ -1,37 +1,322 @@
 <div class="staffing-solutions">
-  <app-hero
-    [backgroundImage]="staffing.image"
-    [header]="staffing.header"
-    [text]="staffing.text"
-  >
-  </app-hero>
+  <!-- Enhanced Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="animated-network">
+        <div class="network-node" *ngFor="let node of networkNodes; let i = index" 
+             [style.left]="node.x + '%'" 
+             [style.top]="node.y + '%'"
+             [style.animation-delay]="i * 0.2 + 's'">
+          <div class="node-pulse"></div>
+        </div>
+        <svg class="network-connections" viewBox="0 0 100 100">
+          <path *ngFor="let connection of networkConnections" 
+                [attr.d]="connection.path" 
+                class="connection-line"
+                [style.animation-delay]="connection.delay + 's'">
+          </path>
+        </svg>
+      </div>
+      <div class="gradient-overlay"></div>
+    </div>
+    
+    <div class="hero-content">
+      <div class="hero-badge" scrollAnimation animationType="fadeInDown">
+        <i class="material-icons">group</i>
+        <span>Staffing & Recruitment</span>
+      </div>
+      
+      <h1 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
+        {{ staffing.header }}
+      </h1>
+      
+      <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
+        {{ staffing.text }}
+      </p>
+      
+      <div class="hero-metrics" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="material-icons">people</i>
+          </div>
+          <div class="metric-info">
+            <div class="metric-number">1000+</div>
+            <div class="metric-label">Successful Placements</div>
+          </div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="material-icons">schedule</i>
+          </div>
+          <div class="metric-info">
+            <div class="metric-number">14</div>
+            <div class="metric-label">Days Avg. Placement</div>
+          </div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="material-icons">star</i>
+          </div>
+          <div class="metric-info">
+            <div class="metric-number">95%</div>
+            <div class="metric-label">Retention Rate</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="800">
+        <a routerLink="/contact" class="cta-button primary">
+          <span>Find Talent</span>
+          <i class="material-icons">search</i>
+          <div class="button-ripple"></div>
+        </a>
+        <a href="#services" class="cta-button secondary">
+          <span>Our Services</span>
+          <i class="material-icons">expand_more</i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <app-assistance
-    [header]="assistance.header"
-    [subheader]="assistance.subheader"
-    [services]="services"
-  ></app-assistance>
-
-  <app-process
-    [header]="process.header"
-    [subheader]="process.subheader"
-    [phases]="phases"
-  ></app-process>
-
-  <section class="specializations-section">
+  <!-- Interactive Services Grid -->
+  <section id="services" class="services-section" scrollAnimation animationType="fadeInUp">
     <div class="container">
-      <div class="header">
-        <h2>{{ specializationsSection.header }}</h2>
-        <p>{{ specializationsSection.subheader }}</p>
+      <div class="section-header" scrollReveal [revealDelay]="100">
+        <div class="section-badge">
+          <i class="material-icons">work</i>
+          <span>Our Services</span>
+        </div>
+        <h2>{{ assistance.header }}</h2>
+        <p>{{ assistance.subheader }}</p>
       </div>
 
-      <div class="tech-grid">
-        <div *ngFor="let specialization of specializations" class="tech-card">
-          <span>{{ specialization }}</span>
+      <div class="services-masonry stagger-animation" staggerAnimation>
+        <div 
+          *ngFor="let service of services; let i = index" 
+          class="service-card-modern stagger-item"
+          scrollAnimation 
+          animationType="fadeInUp" 
+          [animationDelay]="i * 150"
+          (click)="selectService(i)"
+          [class.selected]="selectedService === i"
+        >
+          <div class="card-background">
+            <div class="background-pattern"></div>
+          </div>
+          
+          <div class="card-content">
+            <div class="service-header">
+              <div class="service-icon">
+                <i class="material-icons">{{ service.icon }}</i>
+                <div class="icon-glow"></div>
+              </div>
+              
+              <div class="service-badge">
+                <span>{{ getServiceCategory(i) }}</span>
+              </div>
+            </div>
+            
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+            
+            <div class="service-stats">
+              <div class="stat">
+                <span class="stat-number">{{ getServiceStat(i).number }}</span>
+                <span class="stat-label">{{ getServiceStat(i).label }}</span>
+              </div>
+            </div>
+            
+            <div class="card-footer">
+              <div class="explore-btn">
+                <span>Explore</span>
+                <i class="material-icons">arrow_forward</i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="selection-indicator">
+            <div class="indicator-dot"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
+  <!-- Enhanced Process Flow -->
+  <section class="process-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="section-header" scrollReveal [revealDelay]="100">
+        <div class="section-badge">
+          <i class="material-icons">timeline</i>
+          <span>Our Process</span>
+        </div>
+        <h2>{{ process.header }}</h2>
+        <p>{{ process.subheader }}</p>
+      </div>
+
+      <div class="process-flow">
+        <div 
+          *ngFor="let phase of phases; let i = index" 
+          class="process-step"
+          scrollAnimation 
+          animationType="fadeInUp" 
+          [animationDelay]="i * 200"
+          (mouseenter)="highlightStep(i)"
+          (mouseleave)="highlightStep(-1)"
+          [class.highlighted]="highlightedStep === i"
+        >
+          <div class="step-connector" *ngIf="i < phases.length - 1">
+            <div class="connector-line"></div>
+            <div class="connector-arrow">
+              <i class="material-icons">arrow_forward</i>
+            </div>
+          </div>
+          
+          <div class="step-card">
+            <div class="step-number">
+              <span>{{ phase.step }}</span>
+              <div class="number-glow"></div>
+            </div>
+            
+            <div class="step-content">
+              <h3>{{ phase.title }}</h3>
+              <p>{{ phase.description }}</p>
+              
+              <div class="step-features">
+                <div class="feature-item" *ngFor="let feature of getStepFeatures(i)">
+                  <i class="material-icons">check_circle</i>
+                  <span>{{ feature }}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="step-progress">
+              <div class="progress-circle">
+                <svg viewBox="0 0 36 36">
+                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                  <path class="circle" [style.stroke-dasharray]="getStepProgress(i) + ', 100'" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                </svg>
+                <div class="progress-text">{{ getStepProgress(i) }}%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specializations Showcase -->
+  <section class="specializations-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="section-header" scrollReveal [revealDelay]="100">
+        <div class="section-badge">
+          <i class="material-icons">psychology</i>
+          <span>Specializations</span>
+        </div>
+        <h2>{{ specializationsSection.header }}</h2>
+        <p>{{ specializationsSection.subheader }}</p>
+      </div>
+
+      <div class="specializations-grid">
+        <div 
+          *ngFor="let specialization of specializations; let i = index" 
+          class="specialization-card"
+          scrollAnimation 
+          animationType="scaleIn" 
+          [animationDelay]="i * 100"
+          (mouseenter)="onSpecializationHover(i, true)"
+          (mouseleave)="onSpecializationHover(i, false)"
+          [class.hovered]="hoveredSpecialization === i"
+        >
+          <div class="card-glow"></div>
+          
+          <div class="specialization-icon">
+            <i class="material-icons">{{ getSpecializationIcon(i) }}</i>
+            <div class="icon-particles">
+              <div class="particle" *ngFor="let p of [1,2,3,4,5]"></div>
+            </div>
+          </div>
+          
+          <h3>{{ specialization }}</h3>
+          
+          <div class="demand-indicator">
+            <div class="demand-bar">
+              <div class="demand-fill" [style.width]="getSpecializationDemand(i) + '%'"></div>
+            </div>
+            <span class="demand-text">{{ getSpecializationDemand(i) }}% Demand</span>
+          </div>
+          
+          <div class="specialization-stats">
+            <div class="stat-item">
+              <i class="material-icons">trending_up</i>
+              <span>High Growth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced CTA Section -->
+  <section class="cta-section" scrollAnimation animationType="fadeInUp">
+    <div class="cta-background">
+      <div class="talent-network">
+        <div class="network-grid">
+          <div *ngFor="let dot of talentDots; let i = index" 
+               class="talent-dot"
+               [style.left]="dot.x + '%'"
+               [style.top]="dot.y + '%'"
+               [style.animation-delay]="i * 0.1 + 's'">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-icon" scrollAnimation animationType="scaleIn">
+          <i class="material-icons">groups</i>
+          <div class="icon-orbit">
+            <div class="orbit-dot" *ngFor="let dot of [1,2,3,4]"></div>
+          </div>
+        </div>
+        
+        <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
+          {{ cta.header }}
+        </h2>
+        
+        <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
+          {{ cta.text }}
+        </p>
+        
+        <div class="cta-options" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="material-icons">business</i>
+            </div>
+            <h4>For Employers</h4>
+            <p>Find exceptional talent for your team</p>
+            <a routerLink="/contact" class="option-btn">
+              <span>Hire Talent</span>
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+          
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="material-icons">person</i>
+            </div>
+            <h4>For Candidates</h4>
+            <p>Discover your next career opportunity</p>
+            <a routerLink="/careers" class="option-btn">
+              <span>Find Jobs</span>
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
