@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TEAMS_CONSTANTS } from '../../../../constants/about/teams.constants';
+import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.directive';
+import { ScrollAnimationDirective } from '../../../../directives/scroll-animation.directive';
 
 interface TeamMember {
   name: string;
@@ -14,7 +16,7 @@ interface TeamMember {
 @Component({
   selector: 'app-teams',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollRevealDirective, ScrollAnimationDirective],
   templateUrl: './teams.component.html',
   styleUrls: ['./teams.component.scss'],
 })
