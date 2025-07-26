@@ -1,0 +1,31 @@
+<section class="awards-section" scrollAnimation animationType="fadeInUp">
+  <div class="container">
+    <div class="awards-header" scrollReveal [revealDelay]="100">
+      <div class="section-label">Recognition</div>
+      <h2>{{ awards.title }}</h2>
+      <p>{{ awards.subtitle }}</p>
+    </div>
+
+    <div class="awards-grid stagger-animation" staggerAnimation>
+      @for (award of awards.list; track $index) {
+      <div
+        class="award-card stagger-item scroll-enhanced-card"
+        scrollAnimation
+        animationType="fadeInUp"
+        [animationDelay]="$index * 150"
+      >
+        <div class="award-icon">
+          <i class="material-icons">{{ award.icon }}</i>
+          <div class="award-shine"></div>
+        </div>
+        <div class="award-content">
+          <h3>{{ award.title }}</h3>
+          <p class="award-organization">{{ award.organization }}</p>
+          <p class="award-year">{{ award.year }}</p>
+          <p class="award-description">{{ award.description }}</p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

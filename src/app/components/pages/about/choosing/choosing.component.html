@@ -1,0 +1,44 @@
+<section class="why-choose-section" scrollAnimation animationType="fadeInUp">
+  <div class="container">
+    <div class="section-header" scrollReveal [revealDelay]="100">
+      <div class="section-label">Why Choose Us</div>
+      <h2>{{ whyChoose.title }}</h2>
+      <p>{{ whyChoose.subtitle }}</p>
+    </div>
+
+    <div class="features-showcase">
+      <div class="features-grid stagger-animation" staggerAnimation>
+        @for (feature of whyChoose.features; track $index) {
+        <div
+          class="feature-item stagger-item"
+          scrollAnimation
+          animationType="fadeInUp"
+          [animationDelay]="$index * 150"
+        >
+          <div class="feature-visual">
+            <div class="feature-icon-container">
+              <i class="material-icons">{{ feature.icon }}</i>
+              <div class="icon-orbit"></div>
+              <div class="icon-pulse"></div>
+            </div>
+          </div>
+          <div class="feature-content">
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+            @if (feature.metrics) {
+            <div class="feature-metrics">
+              @for (metric of feature.metrics; track $index) {
+              <div class="metric">
+                <span class="metric-value">{{ metric.value }}</span>
+                <span class="metric-label">{{ metric.label }}</span>
+              </div>
+              }
+            </div>
+            }
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

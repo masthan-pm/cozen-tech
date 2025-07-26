@@ -1,0 +1,219 @@
+@use "../../../../../styles/glassmorphism" as *;
+@use "../../../../../styles/colors" as *;
+@use "../../../../../styles/shared" as *;
+@use "../../../../../styles/mixins" as *;
+
+.innovation-section {
+  @extend %section-base;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  color: $white;
+  position: relative;
+  overflow: hidden;
+
+  .innovation-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .section-label {
+      display: inline-block;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff, #e2e8f0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .innovation-showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .tech-stack-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      position: relative;
+
+      .tech-orbit {
+        position: relative;
+        width: 400px;
+        height: 400px;
+
+        .tech-center {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 80px;
+          height: 80px;
+          @include glass-base(rgba(79, 172, 254, 0.3), 15px);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid rgba(79, 172, 254, 0.5);
+          z-index: 3;
+
+          i {
+            font-size: 2.5rem;
+            color: #4facfe;
+            animation: centerPulse 3s ease-in-out infinite;
+          }
+        }
+
+        .tech-ring {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          border-radius: 50%;
+          border: 1px solid rgba(79, 172, 254, 0.2);
+
+          &.ring-1 {
+            width: 250px;
+            height: 250px;
+            transform: translate(-50%, -50%);
+            animation: ringRotate 20s linear infinite;
+          }
+
+          &.ring-2 {
+            width: 350px;
+            height: 350px;
+            transform: translate(-50%, -50%);
+            animation: ringRotate 30s linear infinite reverse;
+          }
+
+          .tech-node {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(var(--rotation))
+              translateY(-125px) rotate(calc(-1 * var(--rotation)));
+            @include glass-base(rgba(255, 255, 255, 0.15), 8px);
+            padding: 0.75rem 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: rgba(79, 172, 254, 0.3);
+              transform: translateX(-50%) rotate(var(--rotation))
+                translateY(-135px) rotate(calc(-1 * var(--rotation))) scale(1.1);
+            }
+
+            span {
+              font-size: 0.8rem;
+              font-weight: 600;
+              color: $white;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+
+    .innovation-features {
+      .innovation-feature {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        @include glass-base(rgba(255, 255, 255, 0.1), 10px);
+        padding: 2rem;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.6s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.15);
+          transform: translateX(10px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-number {
+          width: 50px;
+          height: 50px;
+          @include glass-base(rgba(79, 172, 254, 0.3), 8px);
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 700;
+          color: #4facfe;
+          border: 1px solid rgba(79, 172, 254, 0.5);
+          flex-shrink: 0;
+        }
+
+        .feature-details {
+          h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: $white;
+          }
+
+          p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .innovation-section .innovation-showcase {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    .tech-stack-visual .tech-orbit {
+      width: 300px;
+      height: 300px;
+
+      .tech-ring {
+        &.ring-1 {
+          width: 200px;
+          height: 200px;
+        }
+
+        &.ring-2 {
+          width: 280px;
+          height: 280px;
+        }
+
+        .tech-node {
+          transform: translateX(-50%) rotate(var(--rotation)) translateY(-100px)
+            rotate(calc(-1 * var(--rotation)));
+        }
+      }
+    }
+  }
+}
