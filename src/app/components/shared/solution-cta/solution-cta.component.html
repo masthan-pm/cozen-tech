@@ -1,0 +1,69 @@
+<section class="solution-cta">
+  <div class="cta-background">
+    <div class="floating-elements">
+      <div class="element element-1">
+        <i class="material-icons">{{ getSolutionIcon() }}</i>
+      </div>
+      <div class="element element-2">
+        <i class="material-icons">trending_up</i>
+      </div>
+      <div class="element element-3">
+        <i class="material-icons">lightbulb</i>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cta-content">
+      <!-- Main CTA Content -->
+      <div class="cta-main">
+        <div class="cta-icon">
+          <i class="material-icons">{{ getSolutionIcon() }}</i>
+        </div>
+        
+        <h2>{{ header }}</h2>
+        <p>{{ text }}</p>
+
+        <div class="cta-buttons">
+          <a routerLink="/contact" class="btn btn-primary">
+            {{ primaryButtonText }}
+            <i class="material-icons">arrow_forward</i>
+          </a>
+          <a routerLink="/contact" class="btn btn-secondary">
+            {{ secondaryButtonText }}
+            <i class="material-icons">schedule</i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="contact-grid" *ngIf="showContactInfo">
+        <div class="contact-item" *ngFor="let item of [contactInfo.email, contactInfo.phone, contactInfo.chat]">
+          <div class="contact-icon">
+            <i class="material-icons">{{ item.icon }}</i>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">{{ item.icon === 'email' ? 'Email' : item.icon === 'phone' ? 'Phone' : 'Support' }}</span>
+            <a [href]="item.href" class="contact-value">{{ item.value }}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="trust-indicators">
+        <div class="indicator">
+          <i class="material-icons">verified</i>
+          <span>Trusted by 500+ Companies</span>
+        </div>
+        <div class="indicator">
+          <i class="material-icons">schedule</i>
+          <span>24/7 Support Available</span>
+        </div>
+        <div class="indicator">
+          <i class="material-icons">security</i>
+          <span>Enterprise-Grade Security</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

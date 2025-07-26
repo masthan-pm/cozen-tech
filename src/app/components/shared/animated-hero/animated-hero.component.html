@@ -1,0 +1,66 @@
+<section class="animated-hero" [ngStyle]="getGradientStyle()" #heroContainer>
+  <!-- Animated Background Icons -->
+  <div class="floating-icons">
+    <div 
+      *ngFor="let floatingIcon of floatingIcons; trackBy: trackByIndex"
+      class="floating-icon"
+      [style.left.%]="floatingIcon.x"
+      [style.top.%]="floatingIcon.y"
+      [style.font-size.px]="floatingIcon.size"
+    >
+      <i class="material-icons">{{ floatingIcon.icon }}</i>
+    </div>
+  </div>
+
+  <!-- Gradient Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <div class="container">
+      <!-- Category Badge -->
+      <div class="category-badge" *ngIf="subtitle">
+        <span>{{ subtitle }}</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="hero-title">{{ title }}</h1>
+
+      <!-- Description -->
+      <p class="hero-description">{{ description }}</p>
+
+      <!-- Stats Section -->
+      <div class="stats-section" *ngIf="stats.length > 0">
+        <div class="stat-card" *ngFor="let stat of stats; let i = index" 
+             [style.animation-delay]="(i * 150) + 'ms'">
+          <div class="stat-icon">
+            <i class="material-icons">{{ stat.icon }}</i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-value">{{ stat.value }}</div>
+            <div class="stat-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hero-actions">
+        <a [routerLink]="primaryButtonLink" class="btn btn-primary">
+          {{ primaryButtonText }}
+          <i class="material-icons">arrow_forward</i>
+        </a>
+        <a [routerLink]="secondaryButtonLink" class="btn btn-secondary">
+          {{ secondaryButtonText }}
+          <i class="material-icons">expand_more</i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative Elements -->
+  <div class="decorative-elements">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+</section>

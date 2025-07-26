@@ -1,0 +1,89 @@
+<section class="tech-showcase">
+  <div class="container">
+    <div class="header">
+      <h2>{{ header }}</h2>
+      <p>{{ subheader }}</p>
+    </div>
+
+    <!-- Technology Orbit Visualization -->
+    <div class="tech-orbit-container" *ngIf="categories.length > 0">
+      <div class="orbit-visualization">
+        <!-- Central Hub -->
+        <div class="central-hub">
+          <div class="hub-icon">
+            <i class="material-icons">psychology</i>
+          </div>
+          <div class="hub-pulse"></div>
+        </div>
+
+        <!-- Category Orbits -->
+        <div class="category-orbit" *ngFor="let category of categories; let i = index">
+          <div 
+            class="category-node"
+            [class.active]="selectedCategory === i"
+            [style.transform]="'rotate(' + getOrbitPosition(i, categories.length).angle + 'deg) translateY(-150px) rotate(-' + getOrbitPosition(i, categories.length).angle + 'deg)'"
+            (click)="selectCategory(i)"
+          >
+            <div class="node-icon" [style.background]="category.color">
+              <i class="material-icons">{{ category.icon }}</i>
+            </div>
+            <span class="node-label">{{ category.name }}</span>
+          </div>
+        </div>
+
+        <!-- Connection Lines -->
+        <div class="connection-lines">
+          <div 
+            *ngFor="let category of categories; let i = index"
+            class="connection-line"
+            [class.active]="selectedCategory === i"
+            [style.transform]="'rotate(' + getOrbitPosition(i, categories.length).angle + 'deg)'"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Technology Details Panel -->
+      <div class="tech-details-panel">
+        <div class="panel-content" *ngIf="categories[selectedCategory]">
+          <h3>{{ categories[selectedCategory].name }}</h3>
+          <div class="tech-grid">
+            <div 
+              *ngFor="let tech of categories[selectedCategory].technologies; let i = index"
+              class="tech-item"
+              [style.animation-delay]="(i * 100) + 'ms'"
+            >
+              <span>{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Simple Technology Grid (fallback) -->
+    <div class="simple-tech-grid" *ngIf="technologies.length > 0 && categories.length === 0">
+      <div 
+        *ngFor="let tech of technologies; let i = index"
+        class="tech-card"
+        [style.animation-delay]="(i * 50) + 'ms'"
+      >
+        <div class="tech-icon">
+          <i class="material-icons">code</i>
+        </div>
+        <span>{{ tech }}</span>
+      </div>
+    </div>
+
+    <!-- Interactive Technology Cloud -->
+    <div class="tech-cloud" *ngIf="technologies.length > 0">
+      <div 
+        *ngFor="let tech of technologies; let i = index"
+        class="cloud-item"
+        [style.left.%]="getRandomPosition().x"
+        [style.top.%]="getRandomPosition().y"
+        [style.animation-delay]="(i * 200) + 'ms'"
+      >
+        {{ tech }}
+      </div>
+    </div>
+  </div>
+</section>
