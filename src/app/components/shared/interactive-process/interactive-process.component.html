@@ -8,7 +8,7 @@
     <div class="process-container">
       <!-- Process Steps -->
       <div class="process-steps">
-        <div 
+        <div
           *ngFor="let step of steps; let i = index"
           class="process-step"
           [class.active]="isStepActive(i)"
@@ -56,7 +56,7 @@
           <div class="step-content">
             <h3>{{ step.title }}</h3>
             <p>{{ step.description }}</p>
-            
+
             <!-- Step Details (shown when active) -->
             <div class="step-details" *ngIf="isStepActive(i) && step.details">
               <ul>
@@ -82,14 +82,14 @@
             <div class="step-icon">
               <i class="material-icons">{{ getStepIcon(activeStep) }}</i>
             </div>
-            <h3>{{ steps[activeStep]?.title }}</h3>
-            <p>{{ steps[activeStep]?.description }}</p>
-            
+            <h3>{{ steps[activeStep].title }}</h3>
+            <p>{{ steps[activeStep].description }}</p>
+
             <div class="progress-indicator">
               <div class="progress-text">{{ getStepProgress(activeStep) }}% Complete</div>
               <div class="progress-bar-container">
-                <div 
-                  class="progress-fill" 
+                <div
+                  class="progress-fill"
                   [style.width.%]="getStepProgress(activeStep)"
                 ></div>
               </div>

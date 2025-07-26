@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 interface ProcessStep {
   step: string;
@@ -13,6 +14,7 @@ interface ProcessStep {
   selector: 'app-interactive-process',
   standalone: true,
   imports: [CommonModule],
+  schemas: [NO_ERRORS_SCHEMA],
   templateUrl: './interactive-process.component.html',
   styleUrls: ['./interactive-process.component.scss']
 })
@@ -50,7 +52,7 @@ export class InteractiveProcessComponent implements OnInit, OnDestroy {
   setActiveStep(index: number) {
     this.activeStep = index;
     this.stopAutoProgress();
-    
+
     // Restart auto progress after user interaction
     setTimeout(() => {
       if (this.autoProgress) {
@@ -71,5 +73,10 @@ export class InteractiveProcessComponent implements OnInit, OnDestroy {
 
   isStepCompleted(index: number): boolean {
     return index < this.activeStep;
+  }
+
+  getStepIcon(index: number): string {
+    const icons = ['search', 'build', 'analytics', 'rocket_launch', 'check_circle'];
+    return icons[index] || 'star';
   }
 }

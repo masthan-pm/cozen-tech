@@ -54,7 +54,7 @@ export class AnimatedHeroComponent implements OnInit, OnDestroy {
 
   private initializeFloatingIcons() {
     const iconCount = Math.min(this.animatedIcons.length * 3, 15);
-    
+
     for (let i = 0; i < iconCount; i++) {
       const iconIndex = i % this.animatedIcons.length;
       this.floatingIcons.push({
@@ -99,5 +99,9 @@ export class AnimatedHeroComponent implements OnInit, OnDestroy {
     return {
       background: `linear-gradient(135deg, ${this.gradientColors.join(', ')})`
     };
+  }
+
+  trackByIndex(index: number): number {
+    return index;
   }
 }

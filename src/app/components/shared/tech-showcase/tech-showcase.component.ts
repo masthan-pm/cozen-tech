@@ -49,7 +49,7 @@ export class TechShowcaseComponent implements OnInit, OnDestroy {
   selectCategory(index: number) {
     this.selectedCategory = index;
     this.stopAutoRotation();
-    
+
     // Restart auto rotation after user interaction
     setTimeout(() => {
       this.startAutoRotation();
@@ -62,5 +62,12 @@ export class TechShowcaseComponent implements OnInit, OnDestroy {
     const x = Math.cos((angle * Math.PI) / 180) * radius;
     const y = Math.sin((angle * Math.PI) / 180) * radius;
     return { x, y, angle };
+  }
+
+  getRandomPosition() {
+    return {
+      x: Math.random() * 80 + 10,
+      y: Math.random() * 80 + 10
+    };
   }
 }
