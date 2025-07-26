@@ -12,17 +12,17 @@
             <div class="icon-pulse"></div>
           </div>
         </div>
-        
+
         <div class="connection-lines">
           <svg class="connections-svg" viewBox="0 0 100 100">
-            <path *ngFor="let connection of connectionPaths" 
-                  [attr.d]="connection.path" 
+            <path *ngFor="let connection of connectionPaths"
+                  [attr.d]="connection.path"
                   class="connection-path"
                   [style.animation-delay]="connection.delay + 's'">
             </path>
           </svg>
         </div>
-        
+
         <div class="payroll-data">
           <div class="data-stream" *ngFor="let stream of dataStreams; let i = index"
                [style.left]="stream.x + '%'"
@@ -32,24 +32,24 @@
           </div>
         </div>
       </div>
-      
+
       <div class="gradient-overlay"></div>
     </div>
-    
+
     <div class="hero-content">
       <div class="hero-badge" scrollAnimation animationType="fadeInDown">
         <i class="material-icons">groups</i>
         <span>HR & Payroll Services</span>
       </div>
-      
+
       <h1 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
         {{ hrPayroll.header }}
       </h1>
-      
+
       <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
         {{ hrPayroll.text }}
       </p>
-      
+
       <div class="hr-stats" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
         <div class="stat-card">
           <div class="stat-visual">
@@ -68,7 +68,7 @@
             <div class="stat-label">Employees Managed</div>
           </div>
         </div>
-        
+
         <div class="stat-card">
           <div class="stat-visual">
             <div class="stat-icon">
@@ -89,7 +89,7 @@
             <div class="stat-label">Accuracy Rate</div>
           </div>
         </div>
-        
+
         <div class="stat-card">
           <div class="stat-visual">
             <div class="stat-icon">
@@ -110,7 +110,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="hero-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="800">
         <a routerLink="/contact" class="cta-button primary">
           <span>Streamline HR Operations</span>
@@ -138,11 +138,11 @@
       </div>
 
       <div class="services-hexagon-grid stagger-animation" staggerAnimation>
-        <div 
-          *ngFor="let service of services; let i = index" 
+        <div
+          *ngFor="let service of services; let i = index"
           class="service-hexagon stagger-item"
-          scrollAnimation 
-          animationType="scaleIn" 
+          scrollAnimation
+          animationType="scaleIn"
           [animationDelay]="i * 150"
           (mouseenter)="onServiceHover(i, true)"
           (mouseleave)="onServiceHover(i, false)"
@@ -159,10 +159,10 @@
                     <div class="orbit-dot" *ngFor="let dot of [1,2,3]"></div>
                   </div>
                 </div>
-                
+
                 <h3>{{ service.title }}</h3>
                 <p>{{ service.description }}</p>
-                
+
                 <div class="service-metrics">
                   <div class="metric">
                     <span class="metric-value">{{ getServiceMetric(i).value }}</span>
@@ -170,11 +170,11 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="hexagon-glow"></div>
             </div>
           </div>
-          
+
           <div class="service-details" [class.visible]="selectedService === i">
             <div class="details-content">
               <h4>Key Features</h4>
@@ -205,11 +205,11 @@
 
       <div class="process-workflow">
         <div class="workflow-container">
-          <div 
-            *ngFor="let phase of phases; let i = index" 
+          <div
+            *ngFor="let phase of phases; let i = index"
             class="workflow-step"
-            scrollAnimation 
-            animationType="fadeInUp" 
+            scrollAnimation
+            animationType="fadeInUp"
             [animationDelay]="i * 200"
             (mouseenter)="highlightWorkflowStep(i)"
             (mouseleave)="highlightWorkflowStep(-1)"
@@ -220,7 +220,7 @@
                 <div class="flow-particle" *ngFor="let p of [1,2,3]"></div>
               </div>
             </div>
-            
+
             <div class="step-container">
               <div class="step-icon">
                 <div class="icon-background">
@@ -229,18 +229,18 @@
                 <div class="step-number">{{ phase.step }}</div>
                 <div class="icon-pulse-ring"></div>
               </div>
-              
+
               <div class="step-content">
                 <h3>{{ phase.title }}</h3>
                 <p>{{ phase.description }}</p>
-                
+
                 <div class="step-timeline">
                   <div class="timeline-bar">
                     <div class="timeline-progress" [style.width]="getStepProgress(i) + '%'"></div>
                   </div>
                   <span class="timeline-text">{{ getStepDuration(i) }}</span>
                 </div>
-                
+
                 <div class="step-tools">
                   <div class="tool-item" *ngFor="let tool of getStepTools(i)">
                     <i class="material-icons">{{ tool.icon }}</i>
@@ -269,11 +269,11 @@
 
       <div class="features-interactive-showcase">
         <div class="feature-categories">
-          <div 
+          <div
             *ngFor="let feature of featuresContent; let i = index"
             class="category-card"
-            scrollAnimation 
-            animationType="fadeInLeft" 
+            scrollAnimation
+            animationType="fadeInLeft"
             [animationDelay]="i * 200"
             (click)="selectFeatureCategory(i)"
             [class.active]="activeFeatureCategory === i"
@@ -284,7 +284,7 @@
               </div>
               <h3>{{ feature.category }}</h3>
             </div>
-            
+
             <div class="category-preview">
               <div class="preview-items">
                 <div class="preview-item" *ngFor="let item of feature.items.slice(0, 3)">
@@ -293,7 +293,7 @@
               </div>
               <div class="items-count">+{{ feature.items.length - 3 }} more</div>
             </div>
-            
+
             <div class="category-progress">
               <div class="progress-indicator">
                 <div class="progress-fill" [style.width]="getFeatureCategoryProgress(i) + '%'"></div>
@@ -301,13 +301,13 @@
             </div>
           </div>
         </div>
-        
+
         <div class="feature-details">
-          <div 
+          <div
             *ngFor="let feature of featuresContent; let i = index"
             class="feature-detail-panel"
             [class.active]="activeFeatureCategory === i">
-            
+
             <div class="detail-header">
               <div class="detail-icon">
                 <i class="material-icons">{{ getFeatureCategoryIcon(i) }}</i>
@@ -317,24 +317,24 @@
                 <p>Comprehensive {{ feature.category.toLowerCase() }} solutions</p>
               </div>
             </div>
-            
+
             <div class="detail-grid">
-              <div 
+              <div
                 *ngFor="let item of feature.items; let j = index"
                 class="detail-item"
-                scrollAnimation 
-                animationType="fadeInUp" 
+                scrollAnimation
+                animationType="fadeInUp"
                 [animationDelay]="j * 50">
-                
+
                 <div class="item-icon">
                   <i class="material-icons">{{ getFeatureItemIcon(i, j) }}</i>
                 </div>
-                
+
                 <div class="item-content">
                   <h4>{{ item }}</h4>
                   <p>{{ getFeatureItemDescription(i, j) }}</p>
                 </div>
-                
+
                 <div class="item-status">
                   <div class="status-indicator active"></div>
                 </div>
@@ -353,13 +353,13 @@
         <div class="network-nodes">
           <div *ngFor="let node of hrNetworkNodes; let i = index"
                class="hr-node"
-               [style.left]="node.x + '%"
-               [style.top]="node.y + '%"
+               [style.left]="(node?.x ?? 0) + '%'"
+               [style.top]="(node?.y ?? 0) + '%'"
                [style.animation-delay]="i * 0.1 + 's'">
-            <i class="material-icons">{{ node.icon }}</i>
+            <i class="material-icons">{{ node?.icon }}</i>
           </div>
         </div>
-        
+
         <div class="network-connections">
           <svg class="hr-connections" viewBox="0 0 100 100">
             <path *ngFor="let connection of hrConnections"
@@ -371,7 +371,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="container">
       <div class="cta-content">
         <div class="cta-visual" scrollAnimation animationType="scaleIn">
@@ -388,7 +388,7 @@
                   <span>+12%</span>
                 </div>
               </div>
-              
+
               <div class="widget payroll-widget">
                 <div class="widget-header">
                   <i class="material-icons">attach_money</i>
@@ -400,7 +400,7 @@
                   <span>+8%</span>
                 </div>
               </div>
-              
+
               <div class="widget efficiency-widget">
                 <div class="widget-header">
                   <i class="material-icons">speed</i>
@@ -416,16 +416,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="cta-text">
           <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
             {{ cta.header }}
           </h2>
-          
+
           <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
             {{ cta.text }}
           </p>
-          
+
           <div class="cta-benefits" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
             <div class="benefit-highlight" *ngFor="let benefit of ctaBenefits">
               <i class="material-icons">{{ benefit.icon }}</i>
@@ -435,18 +435,18 @@
               </div>
             </div>
           </div>
-          
+
           <div class="cta-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="800">
             <a routerLink="/contact" class="cta-button primary">
               <span>Transform Your HR Operations</span>
               <i class="material-icons">rocket_launch</i>
               <div class="button-ripple"></div>
             </a>
-            
+
             <div class="contact-info">
               <a href="mailto:hr@cozentech.com" class="contact-link">
                 <i class="material-icons">email</i>
-                <span>hr@cozentech.com</span>
+                <span>hr&#64;cozentech.com</span>
               </a>
               <a href="tel:+16292742295" class="contact-link">
                 <i class="material-icons">phone</i>
