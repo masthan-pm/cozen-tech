@@ -1,37 +1,48 @@
 <div class="global-solutions">
-  <app-hero
-    [backgroundImage]="global.image"
-    [header]="global.header"
-    [text]="global.text"
-  >
-  </app-hero>
+  <!-- Animated Hero Section -->
+  <app-animated-hero
+    [title]="'Global Technology Solutions'"
+    [subtitle]="'GLOBAL TECHNOLOGY'"
+    [description]="'End-to-end software development and IT consulting services tailored to your business needs'"
+    [primaryButtonText]="'Get Consultation'"
+    [secondaryButtonText]="'Our Services'"
+    [secondaryButtonLink]="'#services'"
+    [stats]="heroStats"
+    [animatedIcons]="heroIcons"
+    [gradientColors]="['#667eea', '#764ba2', '#4facfe']"
+  ></app-animated-hero>
 
-  <app-assistance
-    [header]="assistance.header"
-    [subheader]="assistance.subheader"
-    [services]="services"
-  ></app-assistance>
-
-  <app-process
-    [header]="process.header"
-    [subheader]="process.subheader"
-    [phases]="phases"
-  ></app-process>
-
-  <section class="technologies-section">
-    <div class="container">
-      <div class="header">
-        <h2>{{ technologiesSection.header }}</h2>
-        <p>{{ technologiesSection.subheader }}</p>
-      </div>
-
-      <div class="tech-grid">
-        <div *ngFor="let tech of technologies" class="tech-card">
-          <span>{{ tech }}</span>
-        </div>
-      </div>
-    </div>
+  <!-- Services Section -->
+  <section id="services">
+    <app-assistance
+      [header]="assistance.header"
+      [subheader]="assistance.subheader"
+      [services]="services"
+    ></app-assistance>
   </section>
 
-  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
+  <!-- Interactive Process Section -->
+  <app-interactive-process
+    [header]="process.header"
+    [subheader]="process.subheader"
+    [steps]="processSteps"
+    [autoProgress]="true"
+  ></app-interactive-process>
+
+  <!-- Technology Showcase -->
+  <app-tech-showcase
+    [header]="technologiesSection.header"
+    [subheader]="technologiesSection.subheader"
+    [categories]="techCategories"
+  ></app-tech-showcase>
+
+  <!-- Solution-specific CTA -->
+  <app-solution-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    [primaryButtonText]="'Start Your Project'"
+    [secondaryButtonText]="'Schedule Consultation'"
+    [solutionType]="'global'"
+    [showContactInfo]="true"
+  ></app-solution-cta>
 </div>

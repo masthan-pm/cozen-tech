@@ -1,0 +1,102 @@
+<section class="interactive-process">
+  <div class="container">
+    <div class="header">
+      <h2>{{ header }}</h2>
+      <p>{{ subheader }}</p>
+    </div>
+
+    <div class="process-container">
+      <!-- Process Steps -->
+      <div class="process-steps">
+        <div 
+          *ngFor="let step of steps; let i = index"
+          class="process-step"
+          [class.active]="isStepActive(i)"
+          [class.completed]="isStepCompleted(i)"
+          (click)="setActiveStep(i)"
+        >
+          <!-- Step Number Circle -->
+          <div class="step-circle">
+            <div class="step-number" *ngIf="!isStepCompleted(i)">{{ step.step }}</div>
+            <i class="material-icons check-icon" *ngIf="isStepCompleted(i)">check</i>
+            <div class="progress-ring">
+              <svg class="progress-svg" width="80" height="80">
+                <circle
+                  class="progress-background"
+                  cx="40"
+                  cy="40"
+                  r="35"
+                  fill="none"
+                  stroke="rgba(255, 255, 255, 0.1)"
+                  stroke-width="3"
+                />
+                <circle
+                  class="progress-bar"
+                  cx="40"
+                  cy="40"
+                  r="35"
+                  fill="none"
+                  stroke="url(#gradient)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  [style.stroke-dasharray]="220"
+                  [style.stroke-dashoffset]="220 - (220 * getStepProgress(i) / 100)"
+                />
+              </svg>
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#4facfe;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+            </div>
+          </div>
+
+          <!-- Step Content -->
+          <div class="step-content">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+            
+            <!-- Step Details (shown when active) -->
+            <div class="step-details" *ngIf="isStepActive(i) && step.details">
+              <ul>
+                <li *ngFor="let detail of step.details">
+                  <i class="material-icons">check_circle</i>
+                  {{ detail }}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Connection Line -->
+          <div class="connection-line" *ngIf="i < steps.length - 1">
+            <div class="line-progress" [class.active]="isStepCompleted(i)"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process Visualization -->
+      <div class="process-visualization">
+        <div class="visualization-content">
+          <div class="active-step-display">
+            <div class="step-icon">
+              <i class="material-icons">{{ getStepIcon(activeStep) }}</i>
+            </div>
+            <h3>{{ steps[activeStep]?.title }}</h3>
+            <p>{{ steps[activeStep]?.description }}</p>
+            
+            <div class="progress-indicator">
+              <div class="progress-text">{{ getStepProgress(activeStep) }}% Complete</div>
+              <div class="progress-bar-container">
+                <div 
+                  class="progress-fill" 
+                  [style.width.%]="getStepProgress(activeStep)"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
