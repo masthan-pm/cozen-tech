@@ -1,0 +1,83 @@
+<!-- Mission & Vision Section -->
+<section
+  class="mission-vision-section"
+  scrollAnimation
+  animationType="fadeInUp"
+>
+  <div class="container">
+    <div class="mission-vision-grid">
+      <div
+        class="mission-card scroll-enhanced-card"
+        scrollAnimation
+        animationType="fadeInLeft"
+        [animationDelay]="100"
+      >
+        <div class="card-icon">
+          <i class="material-icons">rocket_launch</i>
+          <div class="icon-glow"></div>
+        </div>
+        <div class="card-content">
+          <h3>{{ mission.title }}</h3>
+          <p>{{ mission.content }}</p>
+        </div>
+        <div class="card-particles">
+          @for (p of particles; track $index) {
+          <div class="particle"></div>
+          }
+        </div>
+      </div>
+
+      <div
+        class="vision-card scroll-enhanced-card"
+        scrollAnimation
+        animationType="fadeInRight"
+        [animationDelay]="200"
+      >
+        <div class="card-icon">
+          <i class="material-icons">visibility</i>
+          <div class="icon-glow"></div>
+        </div>
+        <div class="card-content">
+          <h3>{{ vision.title }}</h3>
+          <p>{{ vision.content }}</p>
+        </div>
+        <div class="card-particles">
+          @for (p of particles; track $index) {
+          <div class="particle"></div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section" scrollAnimation animationType="fadeInUp">
+  <div class="container">
+    <div class="stats-header" scrollReveal [revealDelay]="100">
+      <h2>{{ statsSection.title }}</h2>
+      <p>{{ statsSection.subtitle }}</p>
+    </div>
+
+    <div class="stats-grid stagger-animation" staggerAnimation>
+      @for (stat of stats; track $index) {
+      <div
+        class="stat-card stagger-item scroll-enhanced-card"
+        scrollAnimation
+        animationType="scaleIn"
+        [animationDelay]="$index * 100 + 200"
+      >
+        <div class="stat-icon">
+          <i class="material-icons">{{ stat.icon }}</i>
+          <div class="stat-ripple"></div>
+        </div>
+        <div class="stat-number" [attr.data-target]="stat.stat">
+          {{ stat.stat }}
+        </div>
+        <div class="stat-label">{{ stat.label }}</div>
+        <div class="stat-glow"></div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

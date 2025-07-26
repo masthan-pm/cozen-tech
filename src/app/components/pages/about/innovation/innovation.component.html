@@ -1,0 +1,72 @@
+<section class="innovation-section" scrollAnimation animationType="fadeInUp">
+  <div class="container">
+    <div class="innovation-content">
+      <div class="innovation-header" scrollReveal [revealDelay]="100">
+        <div class="section-label">Innovation</div>
+        <h2>{{ innovation.title }}</h2>
+        <p>{{ innovation.subtitle }}</p>
+      </div>
+
+      <div class="innovation-showcase">
+        <div
+          class="tech-stack-visual"
+          scrollAnimation
+          animationType="scaleIn"
+          [animationDelay]="200"
+        >
+          <div class="tech-orbit">
+            <div class="tech-center">
+              <i class="material-icons">psychology</i>
+            </div>
+            <div class="tech-ring ring-1">
+              @for (tech of innovation.primaryTech; track $index) {
+              <div
+                class="tech-node"
+                [style.--rotation]="
+                  (360 / innovation.primaryTech.length) * $index + 'deg'
+                "
+              >
+                <span>{{ tech }}</span>
+              </div>
+              }
+            </div>
+            <div class="tech-ring ring-2">
+              @for (tech of innovation.secondaryTech; track $index) {
+              <div
+                class="tech-node"
+                [style.--rotation]="
+                  (360 / innovation.secondaryTech.length) * $index + 'deg'
+                "
+              >
+                <span>{{ tech }}</span>
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="innovation-features"
+          scrollAnimation
+          animationType="fadeInRight"
+          [animationDelay]="400"
+        >
+          @for (feature of innovation.features; track $index) {
+          <div
+            class="innovation-feature"
+            scrollAnimation
+            animationType="fadeInUp"
+            [animationDelay]="$index * 100 + 500"
+          >
+            <div class="feature-number">{{ $index + 1 }}</div>
+            <div class="feature-details">
+              <h4>{{ feature.title }}</h4>
+              <p>{{ feature.description }}</p>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -109,3 +109,9 @@ export interface SuccessStory {
   description: string;
   results: string[];
 }
+
+export interface Milestone {
+  year: string;
+  title: string;
+  description: string;
+}
