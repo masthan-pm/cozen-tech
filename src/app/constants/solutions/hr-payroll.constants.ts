@@ -133,4 +133,11 @@ export const HR_PAYROLL_CONSTANTS = {
       ],
     },
   ] as Feature[],
+
+  STEP_FEATURES: [
+    ['Employee Data Collection', 'Information Verification', 'System Setup'],
+    ['Payroll Calculation', 'Benefits Processing', 'Tax Computations'],
+    ['Quality Assurance', 'Compliance Checks', 'Error Resolution'],
+    ['Payroll Distribution', 'Report Generation', 'Document Delivery'],
+  ],
 };

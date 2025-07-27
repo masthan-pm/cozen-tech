@@ -107,4 +107,11 @@ export const STAFFING_CONSTANTS = {
     'QA & Testing',
     'Technical Leadership',
   ],
+
+  STEP_FEATURES: [
+    ['Requirement Analysis', 'Culture Assessment', 'Role Definition'],
+    ['Talent Pool Access', 'Active Sourcing', 'Referral Network'],
+    ['Technical Screening', 'Cultural Fit', 'Reference Checks'],
+    ['Offer Negotiation', 'Onboarding Support', 'Follow-up'],
+  ],
 };

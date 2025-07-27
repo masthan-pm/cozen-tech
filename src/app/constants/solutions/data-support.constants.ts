@@ -133,4 +133,11 @@ export const DATA_SUPPORT_CONSTANTS = {
       ],
     },
   ] as Capability[],
+
+  STEP_FEATURES: [
+    ['Data Source Identification', 'Requirements Gathering', 'Scope Definition'],
+    ['Data Extraction', 'Cleaning & Validation', 'Transformation'],
+    ['Statistical Analysis', 'Pattern Recognition', 'Insight Generation'],
+    ['Report Creation', 'Dashboard Development', 'Implementation Support'],
+  ],
 };
