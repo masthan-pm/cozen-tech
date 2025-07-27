@@ -1,107 +1,13 @@
 <div class="finance-solutions">
-  <!-- Enhanced Hero Section -->
-  <section class="hero-section">
-    <div class="hero-background">
-      <div class="financial-charts">
-        <div class="chart-element chart-1">
-          <div class="chart-bars">
-            <div class="bar" *ngFor="let bar of chartBars; let i = index"
-                 [style.height]="bar + '%'"
-                 [style.animation-delay]="i * 0.1 + 's'">
-            </div>
-          </div>
-        </div>
-
-        <div class="chart-element chart-2">
-          <div class="pie-chart">
-            <svg viewBox="0 0 42 42">
-              <circle class="pie-bg" cx="21" cy="21" r="15.915"></circle>
-              <circle class="pie-segment" cx="21" cy="21" r="15.915"
-                      stroke-dasharray="60, 40" stroke-dashoffset="25"></circle>
-            </svg>
-          </div>
-        </div>
-
-        <div class="chart-element chart-3">
-          <div class="line-chart">
-            <svg viewBox="0 0 100 50">
-              <polyline class="chart-line" points="0,40 20,30 40,35 60,20 80,25 100,15"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <div class="floating-coins">
-        <div class="coin" *ngFor="let coin of floatingCoins; let i = index"
-             [style.left]="coin.x + '%'"
-             [style.top]="coin.y + '%'"
-             [style.animation-delay]="i * 0.3 + 's'">
-          <i class="material-icons">{{ coin.icon }}</i>
-        </div>
-      </div>
-
-      <div class="gradient-overlay"></div>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-badge" scrollAnimation animationType="fadeInDown">
-        <i class="material-icons">attach_money</i>
-        <span>Finance & Accounting</span>
-      </div>
-
-      <h1 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
-        {{ finance.header }}
-      </h1>
-
-      <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
-        {{ finance.text }}
-      </p>
-
-      <div class="financial-metrics" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
-        <div class="metric-card">
-          <div class="metric-icon">
-            <i class="material-icons">trending_up</i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-number">$2.5B+</div>
-            <div class="metric-label">Managed Assets</div>
-          </div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-icon">
-            <i class="material-icons">account_balance</i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-number">500+</div>
-            <div class="metric-label">Clients Served</div>
-          </div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-icon">
-            <i class="material-icons">verified</i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-number">99.9%</div>
-            <div class="metric-label">Accuracy Rate</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="800">
-        <a routerLink="/contact" class="cta-button primary">
-          <span>Get Financial Consultation</span>
-          <i class="material-icons">arrow_forward</i>
-          <div class="button-ripple"></div>
-        </a>
-        <a href="#services" class="cta-button secondary">
-          <span>Our Services</span>
-          <i class="material-icons">expand_more</i>
-        </a>
-      </div>
-    </div>
-  </section>
+  <app-hero
+    variant="enhanced"
+    [header]="finance.header"
+    [text]="finance.text"
+    [floatingIcons]="floatingIcons"
+    [heroStats]="heroStats"
+    primaryColor="#fbbf24"
+    accentColor="#f59e0b"
+  ></app-hero>
 
   <!-- Interactive Services Section -->
   <section id="services" class="services-section" scrollAnimation animationType="fadeInUp">

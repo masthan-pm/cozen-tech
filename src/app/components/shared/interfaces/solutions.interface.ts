@@ -4,6 +4,19 @@ export interface HeroContent {
   image: string;
 }
 
+export interface FloatingIcon {
+  x: number;
+  y: number;
+  icon: string;
+  delay: number;
+}
+
+export interface HeroStat {
+  icon: string;
+  number: string;
+  label: string;
+}
+
 export interface CTAContent {
   header: string;
   text: string;

@@ -1,84 +1,13 @@
 <div class="staffing-solutions">
-  <!-- Enhanced Hero Section -->
-  <section class="hero-section">
-    <div class="hero-background">
-      <div class="animated-network">
-        <div class="network-node" *ngFor="let node of networkNodes; let i = index"
-             [style.left]="node.x + '%'"
-             [style.top]="node.y + '%'"
-             [style.animation-delay]="i * 0.2 + 's'">
-          <div class="node-pulse"></div>
-        </div>
-        <svg class="network-connections" viewBox="0 0 100 100">
-          <path *ngFor="let connection of networkConnections"
-                [attr.d]="connection.path"
-                class="connection-line"
-                [style.animation-delay]="connection.delay + 's'">
-          </path>
-        </svg>
-      </div>
-      <div class="gradient-overlay"></div>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-badge" scrollAnimation animationType="fadeInDown">
-        <i class="material-icons">group</i>
-        <span>Staffing & Recruitment</span>
-      </div>
-
-      <h1 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
-        {{ staffing.header }}
-      </h1>
-
-      <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
-        {{ staffing.text }}
-      </p>
-
-      <div class="hero-metrics" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
-        <div class="metric-card">
-          <div class="metric-icon">
-            <i class="material-icons">people</i>
-          </div>
-          <div class="metric-info">
-            <div class="metric-number">1000+</div>
-            <div class="metric-label">Successful Placements</div>
-          </div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-icon">
-            <i class="material-icons">schedule</i>
-          </div>
-          <div class="metric-info">
-            <div class="metric-number">14</div>
-            <div class="metric-label">Days Avg. Placement</div>
-          </div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-icon">
-            <i class="material-icons">star</i>
-          </div>
-          <div class="metric-info">
-            <div class="metric-number">95%</div>
-            <div class="metric-label">Retention Rate</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="800">
-        <a routerLink="/contact" class="cta-button primary">
-          <span>Find Talent</span>
-          <i class="material-icons">search</i>
-          <div class="button-ripple"></div>
-        </a>
-        <a href="#services" class="cta-button secondary">
-          <span>Our Services</span>
-          <i class="material-icons">expand_more</i>
-        </a>
-      </div>
-    </div>
-  </section>
+  <app-hero
+    variant="enhanced"
+    [header]="staffing.header"
+    [text]="staffing.text"
+    [floatingIcons]="floatingIcons"
+    [heroStats]="heroStats"
+    primaryColor="#667eea"
+    accentColor="#4facfe"
+  ></app-hero>
 
   <!-- Interactive Services Grid -->
   <section id="services" class="services-section" scrollAnimation animationType="fadeInUp">

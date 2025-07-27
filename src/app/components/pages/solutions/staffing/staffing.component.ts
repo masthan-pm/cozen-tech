@@ -6,6 +6,7 @@ import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.dire
 import { StaggerAnimationDirective } from '../../../../directives/stagger-animation.directive';
 import { STAFFING_CONSTANTS } from '../../../../constants/solutions/staffing.constants';
 import { ProcessComponent } from '../../../shared/process/process.component';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-staffing',
@@ -16,7 +17,8 @@ import { ProcessComponent } from '../../../shared/process/process.component';
     ScrollAnimationDirective,
     ScrollRevealDirective,
     StaggerAnimationDirective,
-    ProcessComponent
+    ProcessComponent,
+    HeroComponent
   ],
   templateUrl: './staffing.component.html',
   styleUrls: ['./staffing.component.scss'],
@@ -31,6 +33,8 @@ export class StaffingComponent {
   stepFeatures = STAFFING_CONSTANTS.STEP_FEATURES;
   specializations = STAFFING_CONSTANTS.SPECIALIZATIONS;
   specializationsSection = STAFFING_CONSTANTS.SPECIALIZATIONS_SECTION;
+  floatingIcons = STAFFING_CONSTANTS.HERO_FLOATING_ICONS;
+  heroStats = STAFFING_CONSTANTS.HERO_STATS;
 
   selectedService: number | null = null;
   highlightedStep: number = -1;

@@ -1,10 +1,13 @@
 <div class="mortgage-solutions">
   <app-hero
-    [backgroundImage]="mortgage.image"
+    variant="enhanced"
     [header]="mortgage.header"
     [text]="mortgage.text"
-  >
-  </app-hero>
+    [floatingIcons]="floatingIcons"
+    [heroStats]="heroStats"
+    primaryColor="#8b5cf6"
+    accentColor="#7c3aed"
+  ></app-hero>
 
   <app-assistance
     [header]="assistance.header"

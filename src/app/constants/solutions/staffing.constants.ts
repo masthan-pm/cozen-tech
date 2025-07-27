@@ -3,6 +3,8 @@ import {
   Phase,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const STAFFING_CONSTANTS = {
@@ -16,6 +18,23 @@ export const STAFFING_CONSTANTS = {
     header: 'Ready to Find Your Next Tech Star?',
     text: "Let's discuss how our recruitment solutions can help build your dream team.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 20, y: 30, icon: 'group', delay: 0 },
+    { x: 70, y: 25, icon: 'person', delay: 0.5 },
+    { x: 30, y: 60, icon: 'work', delay: 1 },
+    { x: 80, y: 70, icon: 'business', delay: 1.5 },
+    { x: 15, y: 75, icon: 'handshake', delay: 2 },
+    { x: 85, y: 15, icon: 'star', delay: 2.5 },
+    { x: 50, y: 80, icon: 'search', delay: 3 },
+    { x: 60, y: 20, icon: 'check_circle', delay: 3.5 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'people', number: '1000+', label: 'Successful Placements' },
+    { icon: 'schedule', number: '14', label: 'Days Avg. Placement' },
+    { icon: 'star', number: '95%', label: 'Retention Rate' }
+  ] as HeroStat[],
 
   ASSISTANCE: {
     header: 'Our Recruitment Services',

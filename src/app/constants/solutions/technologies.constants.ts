@@ -4,6 +4,8 @@ import {
   Feature,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const TECHNOLOGIES_CONSTANTS = {
@@ -17,6 +19,23 @@ export const TECHNOLOGIES_CONSTANTS = {
     header: 'Ready to Transform Your Business?',
     text: "Let's discuss how our technology solutions can drive innovation and digital transformation.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 20, y: 25, icon: 'code', delay: 0 },
+    { x: 70, y: 30, icon: 'cloud', delay: 0.5 },
+    { x: 30, y: 65, icon: 'memory', delay: 1 },
+    { x: 80, y: 70, icon: 'security', delay: 1.5 },
+    { x: 15, y: 80, icon: 'wifi', delay: 2 },
+    { x: 85, y: 20, icon: 'psychology', delay: 2.5 },
+    { x: 50, y: 15, icon: 'rocket_launch', delay: 3 },
+    { x: 60, y: 85, icon: 'integration_instructions', delay: 3.5 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'code', number: '100+', label: 'Technologies' },
+    { icon: 'cloud', number: '99.9%', label: 'Uptime' },
+    { icon: 'security', number: '100%', label: 'Secure' }
+  ] as HeroStat[],
 
   FEATURES: {
     header: 'Key Features',

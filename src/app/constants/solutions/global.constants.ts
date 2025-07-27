@@ -3,6 +3,8 @@ import {
   Phase,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const GLOBAL_CONSTANTS = {
@@ -16,6 +18,23 @@ export const GLOBAL_CONSTANTS = {
     header: 'Ready to Transform Your Business?',
     text: "Let's discuss how our solutions can help you achieve your business goals.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 15, y: 25, icon: 'public', delay: 0 },
+    { x: 75, y: 35, icon: 'code', delay: 0.5 },
+    { x: 25, y: 65, icon: 'cloud', delay: 1 },
+    { x: 85, y: 75, icon: 'security', delay: 1.5 },
+    { x: 45, y: 15, icon: 'integration_instructions', delay: 2 },
+    { x: 65, y: 85, icon: 'settings', delay: 2.5 },
+    { x: 10, y: 80, icon: 'devices', delay: 3 },
+    { x: 90, y: 20, icon: 'language', delay: 3.5 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'trending_up', number: '500+', label: 'Projects Delivered' },
+    { icon: 'code', number: '50+', label: 'Technologies' },
+    { icon: 'verified', number: '98%', label: 'Success Rate' }
+  ] as HeroStat[],
 
   ASSISTANCE: {
     header: 'Our Global Services',

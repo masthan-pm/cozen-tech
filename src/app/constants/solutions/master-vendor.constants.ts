@@ -3,6 +3,8 @@ import {
   Service,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const MASTER_VENDOR_CONSTANTS = {
@@ -16,6 +18,23 @@ export const MASTER_VENDOR_CONSTANTS = {
     header: 'Ready to Optimize Your Vendor Management?',
     text: "Let's discuss how our master vendor program can streamline your operations.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 20, y: 30, icon: 'work', delay: 0 },
+    { x: 70, y: 25, icon: 'group', delay: 0.5 },
+    { x: 30, y: 60, icon: 'trending_up', delay: 1 },
+    { x: 80, y: 70, icon: 'security', delay: 1.5 },
+    { x: 15, y: 75, icon: 'settings', delay: 2 },
+    { x: 85, y: 15, icon: 'handshake', delay: 2.5 },
+    { x: 50, y: 80, icon: 'analytics', delay: 3 },
+    { x: 60, y: 20, icon: 'verified', delay: 3.5 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'work', number: '200+', label: 'Vendors Managed' },
+    { icon: 'trending_down', number: '30%', label: 'Cost Reduction' },
+    { icon: 'verified', number: '99%', label: 'Quality Score' }
+  ] as HeroStat[],
 
   ASSISTANCE: {
     header: 'Our Master Vendor Services',

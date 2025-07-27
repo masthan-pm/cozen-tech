@@ -1,129 +1,13 @@
 <div class="hr-payroll-solutions">
-  <!-- Enhanced Hero Section -->
-  <section class="hero-section">
-    <div class="hero-background">
-      <div class="hr-elements">
-        <div class="employee-icons">
-          <div class="employee-icon" *ngFor="let employee of employeeIcons; let i = index"
-               [style.left]="employee.x + '%'"
-               [style.top]="employee.y + '%'"
-               [style.animation-delay]="i * 0.2 + 's'">
-            <i class="material-icons">{{ employee.icon }}</i>
-            <div class="icon-pulse"></div>
-          </div>
-        </div>
-
-        <div class="connection-lines">
-          <svg class="connections-svg" viewBox="0 0 100 100">
-            <path *ngFor="let connection of connectionPaths"
-                  [attr.d]="connection.path"
-                  class="connection-path"
-                  [style.animation-delay]="connection.delay + 's'">
-            </path>
-          </svg>
-        </div>
-
-        <div class="payroll-data">
-          <div class="data-stream" *ngFor="let stream of dataStreams; let i = index"
-               [style.left]="stream.x + '%'"
-               [style.top]="stream.y + '%'"
-               [style.animation-delay]="i * 0.3 + 's'">
-            <div class="data-bit" *ngFor="let bit of stream.bits">{{ bit }}</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="gradient-overlay"></div>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-badge" scrollAnimation animationType="fadeInDown">
-        <i class="material-icons">groups</i>
-        <span>HR & Payroll Services</span>
-      </div>
-
-      <h1 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
-        {{ hrPayroll.header }}
-      </h1>
-
-      <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
-        {{ hrPayroll.text }}
-      </p>
-
-      <div class="hr-stats" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
-        <div class="stat-card">
-          <div class="stat-visual">
-            <div class="stat-icon">
-              <i class="material-icons">people</i>
-            </div>
-            <div class="stat-chart">
-              <div class="chart-bar" *ngFor="let bar of hrChartData; let i = index"
-                   [style.height]="bar + '%'"
-                   [style.animation-delay]="i * 0.1 + 's'">
-              </div>
-            </div>
-          </div>
-          <div class="stat-info">
-            <div class="stat-number">10,000+</div>
-            <div class="stat-label">Employees Managed</div>
-          </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-visual">
-            <div class="stat-icon">
-              <i class="material-icons">schedule</i>
-            </div>
-            <div class="stat-progress">
-              <div class="progress-ring">
-                <svg viewBox="0 0 36 36">
-                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                  <path class="circle-progress" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                </svg>
-                <div class="progress-text">95%</div>
-              </div>
-            </div>
-          </div>
-          <div class="stat-info">
-            <div class="stat-number">99.9%</div>
-            <div class="stat-label">Accuracy Rate</div>
-          </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-visual">
-            <div class="stat-icon">
-              <i class="material-icons">speed</i>
-            </div>
-            <div class="stat-speedometer">
-              <div class="speedometer">
-                <div class="needle"></div>
-                <div class="speed-marks">
-                  <div class="mark" *ngFor="let mark of speedMarks"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="stat-info">
-            <div class="stat-number">24hrs</div>
-            <div class="stat-label">Processing Time</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="800">
-        <a routerLink="/contact" class="cta-button primary">
-          <span>Streamline HR Operations</span>
-          <i class="material-icons">arrow_forward</i>
-          <div class="button-ripple"></div>
-        </a>
-        <a href="#services" class="cta-button secondary">
-          <span>Explore Services</span>
-          <i class="material-icons">expand_more</i>
-        </a>
-      </div>
-    </div>
-  </section>
+  <app-hero
+    variant="enhanced"
+    [header]="hrPayroll.header"
+    [text]="hrPayroll.text"
+    [floatingIcons]="floatingIcons"
+    [heroStats]="heroStats"
+    primaryColor="#4facfe"
+    accentColor="#00f2fe"
+  ></app-hero>
 
   <!-- Interactive Services Grid -->
   <section id="services" class="services-section" scrollAnimation animationType="fadeInUp">
@@ -191,7 +75,6 @@
     </div>
   </section>
 
-  <!-- Enhanced Process Flow -->
   <app-process
     [process]="process"
     [phases]="phases"

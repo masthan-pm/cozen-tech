@@ -5,6 +5,7 @@ import { ScrollAnimationDirective } from '../../../../directives/scroll-animatio
 import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.directive';
 import { StaggerAnimationDirective } from '../../../../directives/stagger-animation.directive';
 import { FINANCE_CONSTANTS } from '../../../../constants/solutions/finance.constants';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-finance',
@@ -15,6 +16,7 @@ import { FINANCE_CONSTANTS } from '../../../../constants/solutions/finance.const
     ScrollAnimationDirective,
     ScrollRevealDirective,
     StaggerAnimationDirective,
+    HeroComponent
   ],
   templateUrl: './finance.component.html',
   styleUrls: ['./finance.component.scss'],
@@ -28,6 +30,8 @@ export class FinanceComponent {
   services = FINANCE_CONSTANTS.SERVICES;
   benefits = FINANCE_CONSTANTS.BENEFITS;
   expertise = FINANCE_CONSTANTS.EXPERTISE;
+  floatingIcons = FINANCE_CONSTANTS.HERO_FLOATING_ICONS;
+  heroStats = FINANCE_CONSTANTS.HERO_STATS;
 
   activeSlide: number = 0;
   hoveredBenefit: number | null = null;
@@ -35,7 +39,7 @@ export class FinanceComponent {
 
   // Chart data for hero section
   chartBars = [60, 80, 45, 90, 70, 85, 55];
-  
+
   // Floating coins data
   floatingCoins = [
     { x: 15, y: 25, icon: 'attach_money' },

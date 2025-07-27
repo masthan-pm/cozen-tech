@@ -4,6 +4,8 @@ import {
   Feature,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const HR_PAYROLL_CONSTANTS = {
@@ -17,6 +19,23 @@ export const HR_PAYROLL_CONSTANTS = {
     header: 'Ready to Optimize Your HR Operations?',
     text: "Let's discuss how our HR solutions can streamline your workforce management.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 15, y: 20, icon: 'groups', delay: 0 },
+    { x: 35, y: 15, icon: 'person', delay: 0.3 },
+    { x: 55, y: 25, icon: 'schedule', delay: 0.6 },
+    { x: 75, y: 18, icon: 'attach_money', delay: 0.9 },
+    { x: 25, y: 45, icon: 'security', delay: 1.2 },
+    { x: 65, y: 40, icon: 'favorite', delay: 1.5 },
+    { x: 85, y: 50, icon: 'business_center', delay: 1.8 },
+    { x: 45, y: 70, icon: 'verified', delay: 2.1 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'people', number: '10,000+', label: 'Employees Managed' },
+    { icon: 'schedule', number: '99.9%', label: 'Accuracy Rate' },
+    { icon: 'speed', number: '24hrs', label: 'Processing Time' }
+  ] as HeroStat[],
 
   FEATURES: {
     header: 'Comprehensive Features',

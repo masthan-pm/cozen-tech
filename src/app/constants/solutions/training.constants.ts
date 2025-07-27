@@ -3,6 +3,8 @@ import {
   Feature,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const TRAINING_CONSTANTS = {
@@ -16,6 +18,23 @@ export const TRAINING_CONSTANTS = {
     header: 'Ready to Start Your Learning Journey?',
     text: "Let's discuss how our training programs can benefit your team.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 20, y: 25, icon: 'school', delay: 0 },
+    { x: 70, y: 30, icon: 'menu_book', delay: 0.5 },
+    { x: 30, y: 65, icon: 'computer', delay: 1 },
+    { x: 80, y: 70, icon: 'track_changes', delay: 1.5 },
+    { x: 15, y: 80, icon: 'military_tech', delay: 2 },
+    { x: 85, y: 20, icon: 'psychology', delay: 2.5 },
+    { x: 50, y: 15, icon: 'emoji_events', delay: 3 },
+    { x: 60, y: 85, icon: 'trending_up', delay: 3.5 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'school', number: '10,000+', label: 'Students Trained' },
+    { icon: 'military_tech', number: '95%', label: 'Certification Rate' },
+    { icon: 'trending_up', number: '85%', label: 'Career Growth' }
+  ] as HeroStat[],
 
   FEATURES: {
     header: 'Program Features',
