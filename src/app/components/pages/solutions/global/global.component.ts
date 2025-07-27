@@ -28,6 +28,7 @@ export class GlobalComponent {
   services = GLOBAL_CONSTANTS.SERVICES;
   process = GLOBAL_CONSTANTS.PROCESS;
   phases = GLOBAL_CONSTANTS.PHASES;
+  stepFeatures = GLOBAL_CONSTANTS.STEP_FEATURES;
   technologies = GLOBAL_CONSTANTS.TECHNOLOGIES;
   technologiesSection = GLOBAL_CONSTANTS.TECHNOLOGIES_SECTION;
 }

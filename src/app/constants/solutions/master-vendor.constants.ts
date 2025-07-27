@@ -130,4 +130,11 @@ export const MASTER_VENDOR_CONSTANTS = {
       ],
     },
   ] as Expertise[],
+
+  STEP_FEATURES: [
+    ['Vendor Evaluation', 'Capability Assessment', 'Risk Analysis'],
+    ['Onboarding Setup', 'Process Integration', 'System Configuration'],
+    ['Performance Monitoring', 'Quality Tracking', 'Service Delivery'],
+    ['Process Optimization', 'Continuous Improvement', 'Efficiency Gains'],
+  ],
 };

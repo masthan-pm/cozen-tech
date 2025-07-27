@@ -111,4 +111,11 @@ export const GLOBAL_CONSTANTS = {
     'MongoDB',
     'PostgreSQL',
   ],
+
+  STEP_FEATURES: [
+    ['Requirements Gathering', 'Stakeholder Interviews', 'Business Analysis'],
+    ['Solution Architecture', 'Technology Selection', 'Project Planning'],
+    ['Agile Development', 'Code Implementation', 'Quality Assurance'],
+    ['Testing & Deployment', 'Documentation', 'Ongoing Support'],
+  ],
 };
