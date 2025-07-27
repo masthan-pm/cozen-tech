@@ -1,0 +1,34 @@
+<section class="story-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="story-content">
+        <div class="story-text" scrollReveal [revealDelay]="100">
+          <div class="section-label">Our Journey</div>
+          <h2 class="story-title">{{ story.title }}</h2>
+          <div class="story-paragraphs">
+            <p class="story-paragraph" scrollAnimation animationType="fadeInLeft" [animationDelay]="200">
+              {{ story.paragraph1 }}
+            </p>
+            <p class="story-paragraph" scrollAnimation animationType="fadeInRight" [animationDelay]="400">
+              {{ story.paragraph2 }}
+            </p>
+          </div>
+        </div>
+
+        <div class="story-visual" scrollAnimation animationType="scaleIn" [animationDelay]="300">
+          <div class="timeline-container">
+            <div class="timeline-line"></div>
+            @for (milestone of milestones; track milestone; let i = $index) {
+              <div class="milestone"
+                   scrollAnimation animationType="fadeInUp" [animationDelay]="i * 150 + 500">
+                <div class="milestone-year">{{ milestone.year }}</div>
+                <div class="milestone-content">
+                  <h4>{{ milestone.title }}</h4>
+                  <p>{{ milestone.description }}</p>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

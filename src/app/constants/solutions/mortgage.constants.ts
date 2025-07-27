@@ -131,4 +131,11 @@ export const MORTGAGE_CONSTANTS = {
       ],
     },
   ] as Expertise[],
+
+  STEP_FEATURES: [
+    ['Application Review', 'Document Collection', 'Initial Assessment'],
+    ['Document Verification', 'Credit Analysis', 'Income Validation'],
+    ['Risk Assessment', 'Policy Compliance', 'Decision Support'],
+    ['Final Approval', 'Document Preparation', 'Closing Coordination'],
+  ],
 };

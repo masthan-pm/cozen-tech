@@ -10,21 +10,21 @@
       </div>
       <div class="gradient-overlay"></div>
     </div>
-    
+
     <div class="hero-content">
       <div class="hero-badge" scrollAnimation animationType="fadeInDown">
         <i class="material-icons">public</i>
         <span>Global Technology Solutions</span>
       </div>
-      
+
       <h1 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
         {{ global.header }}
       </h1>
-      
+
       <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
         {{ global.text }}
       </p>
-      
+
       <div class="hero-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
         <a routerLink="/contact" class="cta-button primary">
           <span>Get Started</span>
@@ -36,7 +36,7 @@
           <i class="material-icons">expand_more</i>
         </a>
       </div>
-      
+
       <div class="hero-stats" scrollAnimation animationType="fadeInUp" [animationDelay]="800">
         <div class="stat-item">
           <div class="stat-number">500+</div>
@@ -67,11 +67,11 @@
       </div>
 
       <div class="services-interactive-grid stagger-animation" staggerAnimation>
-        <div 
-          *ngFor="let service of services; let i = index" 
+        <div
+          *ngFor="let service of services; let i = index"
           class="service-card-interactive stagger-item"
-          scrollAnimation 
-          animationType="fadeInUp" 
+          scrollAnimation
+          animationType="fadeInUp"
           [animationDelay]="i * 150"
           (mouseenter)="onServiceHover(i, true)"
           (mouseleave)="onServiceHover(i, false)"
@@ -84,19 +84,19 @@
               <i class="material-icons">{{ service.icon }}</i>
               <div class="icon-ripple"></div>
             </div>
-            
+
             <div class="service-info">
               <h3>{{ service.title }}</h3>
               <p>{{ service.description }}</p>
             </div>
-            
+
             <div class="service-features">
               <div class="feature-dot"></div>
               <div class="feature-dot"></div>
               <div class="feature-dot"></div>
             </div>
           </div>
-          
+
           <div class="card-hover-overlay">
             <div class="overlay-content">
               <i class="material-icons">{{ service.icon }}</i>
@@ -114,44 +114,12 @@
   </section>
 
   <!-- Enhanced Process Section -->
-  <section class="process-section" scrollAnimation animationType="fadeInUp">
-    <div class="container">
-      <div class="section-header" scrollReveal [revealDelay]="100">
-        <div class="section-badge">
-          <i class="material-icons">timeline</i>
-          <span>Our Process</span>
-        </div>
-        <h2>{{ process.header }}</h2>
-        <p>{{ process.subheader }}</p>
-      </div>
+  <app-process
+  [process]="process"
+  [phases]="phases"
+  [stepFeatures]="stepFeatures"
+></app-process>
 
-      <div class="process-timeline">
-        <div class="timeline-line"></div>
-        <div 
-          *ngFor="let phase of phases; let i = index" 
-          class="timeline-item"
-          scrollAnimation 
-          animationType="scaleIn" 
-          [animationDelay]="i * 200"
-        >
-          <div class="timeline-marker">
-            <div class="marker-inner">{{ phase.step }}</div>
-            <div class="marker-pulse"></div>
-          </div>
-          
-          <div class="timeline-content">
-            <div class="phase-card">
-              <h3>{{ phase.title }}</h3>
-              <p>{{ phase.description }}</p>
-              <div class="phase-progress">
-                <div class="progress-bar"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Technologies Showcase -->
   <section class="technologies-section" scrollAnimation animationType="fadeInUp">
@@ -170,27 +138,27 @@
           <div class="orbit-center">
             <i class="material-icons">psychology</i>
           </div>
-          
+
           <div class="orbit-ring ring-1">
-            <div 
-              *ngFor="let tech of technologies.slice(0, 6); let i = index" 
+            <div
+              *ngFor="let tech of technologies.slice(0, 6); let i = index"
               class="tech-node"
               [style.--rotation]="(360 / 6 * i) + 'deg'"
-              scrollAnimation 
-              animationType="scaleIn" 
+              scrollAnimation
+              animationType="scaleIn"
               [animationDelay]="i * 100 + 500"
             >
               <span>{{ tech }}</span>
             </div>
           </div>
-          
+
           <div class="orbit-ring ring-2">
-            <div 
-              *ngFor="let tech of technologies.slice(6); let i = index" 
+            <div
+              *ngFor="let tech of technologies.slice(6); let i = index"
               class="tech-node"
               [style.--rotation]="(360 / 6 * i) + 'deg'"
-              scrollAnimation 
-              animationType="scaleIn" 
+              scrollAnimation
+              animationType="scaleIn"
               [animationDelay]="i * 100 + 800"
             >
               <span>{{ tech }}</span>
@@ -210,28 +178,28 @@
         <div class="shape shape-3"></div>
       </div>
     </div>
-    
+
     <div class="container">
       <div class="cta-content">
         <div class="cta-icon" scrollAnimation animationType="scaleIn">
           <i class="material-icons">rocket_launch</i>
         </div>
-        
+
         <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
           {{ cta.header }}
         </h2>
-        
+
         <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
           {{ cta.text }}
         </p>
-        
+
         <div class="cta-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
           <a routerLink="/contact" class="cta-button primary">
             <span>Start Your Project</span>
             <i class="material-icons">arrow_forward</i>
             <div class="button-ripple"></div>
           </a>
-          
+
           <div class="contact-info">
             <a href="mailto:info@cozentech.com" class="contact-item">
               <i class="material-icons">email</i>

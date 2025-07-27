@@ -1,0 +1,141 @@
+@use "../../../../../styles/glassmorphism" as *;
+@use "../../../../../styles/colors" as *;
+@use "../../../../../styles/shared" as *;
+@use "../../../../../styles/mixins" as *;
+
+.awards-section {
+    @extend %section-base;
+    background: linear-gradient(
+      135deg,
+      rgba(249, 250, 251, 0.8),
+      rgba(243, 244, 246, 0.9)
+    );
+    position: relative;
+
+    .awards-header {
+      text-align: center;
+      margin-bottom: 4rem;
+
+      .section-label {
+        display: inline-block;
+        background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $blue-gray;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.125rem;
+        color: $gray-dark;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .award-card {
+      @include glass-card(rgba(255, 255, 255, 0.15));
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      &:hover {
+        transform: translateY(-15px) scale(1.05);
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 25px 50px rgba(31, 38, 135, 0.4);
+
+        .award-icon {
+          transform: scale(1.2) rotate(10deg);
+          background: linear-gradient(135deg, #fbbf24, #f59e0b);
+
+          i {
+            color: $white;
+          }
+
+          .award-shine {
+            animation: awardShine 2s ease-in-out infinite;
+          }
+        }
+      }
+
+      .award-icon {
+        width: 80px;
+        height: 80px;
+        @include glass-base(rgba(251, 191, 36, 0.2), 10px);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        border: 1px solid rgba(251, 191, 36, 0.3);
+        transition: all 0.6s ease;
+        position: relative;
+
+        i {
+          font-size: 2.5rem;
+          color: #fbbf24;
+          transition: all 0.6s ease;
+        }
+
+        .award-shine {
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          right: -5px;
+          bottom: -5px;
+          background: linear-gradient(45deg, rgba(251, 191, 36, 0.3), transparent, rgba(251, 191, 36, 0.3));
+          border-radius: 25px;
+          opacity: 0;
+        }
+      }
+
+      .award-content {
+        h3 {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: $blue-gray;
+          margin-bottom: 0.75rem;
+        }
+
+        .award-organization {
+          font-size: 1rem;
+          color: #667eea;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+        }
+
+        .award-year {
+          font-size: 0.9rem;
+          color: $gray-charcol;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
+
+        .award-description {
+          font-size: 0.9rem;
+          color: $gray-dark;
+          line-height: 1.5;
+          margin: 0;
+        }
+      }
+    }
+  }

@@ -1,16 +1,73 @@
-<section class="process-section">
+<section class="process-section" scrollAnimation animationType="fadeInUp">
   <div class="container">
-    <div class="header">
-      <h2>{{ header }}</h2>
-      <p>{{ subheader }}</p>
+    <div class="section-header" scrollReveal [revealDelay]="100">
+      <div class="section-badge">
+        <i class="material-icons">timeline</i>
+        <span>Our Process</span>
+      </div>
+      <h2>{{ process.header }}</h2>
+      <p>{{ process.subheader }}</p>
     </div>
 
-    <div class="process-grid">
-      <div *ngFor="let phase of phases" class="phase-card">
-        <div class="step-number">{{ phase.step }}</div>
-        <h3>{{ phase.title }}</h3>
-        <p>{{ phase.description }}</p>
+    <div class="process-flow">
+      @for (phase of phases; track $index) {
+      <div
+        class="process-step"
+        scrollAnimation
+        animationType="fadeInUp"
+        [animationDelay]="$index * 200"
+        (mouseenter)="highlightStep($index)"
+        (mouseleave)="highlightStep(-1)"
+        [class.highlighted]="highlightedStep === $index"
+      >
+        @if ($index < phases.length - 1) {
+        <div class="step-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">
+            <i class="material-icons">arrow_forward</i>
+          </div>
+        </div>
+        }
+
+        <div class="step-card">
+          <div class="step-number">
+            <span>{{ phase.step }}</span>
+            <div class="number-glow"></div>
+          </div>
+
+          <div class="step-content">
+            <h3>{{ phase.title }}</h3>
+            <p>{{ phase.description }}</p>
+
+            <div class="step-features">
+              @for (feature of stepFeatures[$index]; track $index) {
+              <div class="feature-item">
+                <i class="material-icons">check_circle</i>
+                <span>{{ feature }}</span>
+              </div>
+              }
+            </div>
+          </div>
+
+          <div class="step-progress">
+            <div class="progress-circle">
+              <svg viewBox="0 0 36 36">
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  class="circle"
+                  [style.stroke-dasharray]="getStepProgress($index) + ', 100'"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+              </svg>
+              <div class="progress-text">{{ getStepProgress($index) }}%</div>
+            </div>
+          </div>
+        </div>
       </div>
+      }
     </div>
   </div>
 </section>

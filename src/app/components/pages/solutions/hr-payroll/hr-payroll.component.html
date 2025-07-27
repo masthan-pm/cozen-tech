@@ -192,69 +192,11 @@
   </section>
 
   <!-- Enhanced Process Flow -->
-  <section class="process-section" scrollAnimation animationType="fadeInUp">
-    <div class="container">
-      <div class="section-header" scrollReveal [revealDelay]="100">
-        <div class="section-badge">
-          <i class="material-icons">timeline</i>
-          <span>Our Process</span>
-        </div>
-        <h2>{{ process.header }}</h2>
-        <p>{{ process.subheader }}</p>
-      </div>
-
-      <div class="process-workflow">
-        <div class="workflow-container">
-          <div
-            *ngFor="let phase of phases; let i = index"
-            class="workflow-step"
-            scrollAnimation
-            animationType="fadeInUp"
-            [animationDelay]="i * 200"
-            (mouseenter)="highlightWorkflowStep(i)"
-            (mouseleave)="highlightWorkflowStep(-1)"
-            [class.highlighted]="highlightedStep === i"
-          >
-            <div class="step-connector" *ngIf="i < phases.length - 1">
-              <div class="connector-flow">
-                <div class="flow-particle" *ngFor="let p of [1,2,3]"></div>
-              </div>
-            </div>
-
-            <div class="step-container">
-              <div class="step-icon">
-                <div class="icon-background">
-                  <i class="material-icons">{{ getPhaseIcon(i) }}</i>
-                </div>
-                <div class="step-number">{{ phase.step }}</div>
-                <div class="icon-pulse-ring"></div>
-              </div>
-
-              <div class="step-content">
-                <h3>{{ phase.title }}</h3>
-                <p>{{ phase.description }}</p>
-
-                <div class="step-timeline">
-                  <div class="timeline-bar">
-                    <div class="timeline-progress" [style.width]="getStepProgress(i) + '%'"></div>
-                  </div>
-                  <span class="timeline-text">{{ getStepDuration(i) }}</span>
-                </div>
-
-                <div class="step-tools">
-                  <div class="tool-item" *ngFor="let tool of getStepTools(i)">
-                    <i class="material-icons">{{ tool.icon }}</i>
-                    <span>{{ tool.name }}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <app-process
+    [process]="process"
+    [phases]="phases"
+    [stepFeatures]="stepFeatures"
+  ></app-process>
   <!-- Features Showcase -->
   <section class="features-section" scrollAnimation animationType="fadeInUp">
     <div class="container">

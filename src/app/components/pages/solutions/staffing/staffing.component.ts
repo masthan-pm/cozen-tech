@@ -5,6 +5,7 @@ import { ScrollAnimationDirective } from '../../../../directives/scroll-animatio
 import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.directive';
 import { StaggerAnimationDirective } from '../../../../directives/stagger-animation.directive';
 import { STAFFING_CONSTANTS } from '../../../../constants/solutions/staffing.constants';
+import { ProcessComponent } from '../../../shared/process/process.component';
 
 @Component({
   selector: 'app-staffing',
@@ -15,6 +16,7 @@ import { STAFFING_CONSTANTS } from '../../../../constants/solutions/staffing.con
     ScrollAnimationDirective,
     ScrollRevealDirective,
     StaggerAnimationDirective,
+    ProcessComponent
   ],
   templateUrl: './staffing.component.html',
   styleUrls: ['./staffing.component.scss'],
@@ -26,6 +28,7 @@ export class StaffingComponent {
   process = STAFFING_CONSTANTS.PROCESS;
   services = STAFFING_CONSTANTS.SERVICES;
   phases = STAFFING_CONSTANTS.PHASES;
+  stepFeatures = STAFFING_CONSTANTS.STEP_FEATURES;
   specializations = STAFFING_CONSTANTS.SPECIALIZATIONS;
   specializationsSection = STAFFING_CONSTANTS.SPECIALIZATIONS_SECTION;
 
@@ -102,7 +105,7 @@ export class StaffingComponent {
 
   getSpecializationIcon(index: number): string {
     const icons = [
-      'code', 'cloud', 'analytics', 'security', 
+      'code', 'cloud', 'analytics', 'security',
       'inventory', 'palette', 'bug_report', 'engineering'
     ];
     return icons[index] || 'work';

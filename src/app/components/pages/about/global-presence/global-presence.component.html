@@ -1,0 +1,55 @@
+<section class="global-section" scrollAnimation animationType="fadeInUp">
+  <div class="container">
+    <div class="global-header" scrollReveal [revealDelay]="100">
+      <div class="section-label">Global Reach</div>
+      <h2>{{ globalPresence.title }}</h2>
+      <p>{{ globalPresence.subtitle }}</p>
+    </div>
+
+    <div
+      class="global-map-container"
+      scrollAnimation
+      animationType="scaleIn"
+      [animationDelay]="200"
+    >
+      <div class="world-map">
+        @for (location of globalPresence.locations; track $index) {
+        <div
+          class="location-pin"
+          [style.left]="location.x + '%'"
+          [style.top]="location.y + '%'"
+          scrollAnimation
+          animationType="scaleIn"
+          [animationDelay]="$index * 200 + 400"
+        >
+          <div class="pin-dot"></div>
+          <div class="pin-pulse"></div>
+          <div class="location-tooltip">
+            <h4>{{ location.city }}</h4>
+            <p>{{ location.description }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+
+    <div
+      class="global-stats"
+      scrollAnimation
+      animationType="fadeInUp"
+      [animationDelay]="600"
+    >
+      @for (stat of globalPresence.stats; track $index) {
+      <div
+        class="global-stat"
+        scrollAnimation
+        animationType="scaleIn"
+        [animationDelay]="$index * 100 + 700"
+      >
+        <div class="stat-value">{{ stat.value }}</div>
+        <div class="stat-description">{{ stat.description }}</div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

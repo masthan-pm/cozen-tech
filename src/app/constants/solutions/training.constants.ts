@@ -156,4 +156,11 @@ export const TRAINING_CONSTANTS = {
     'DevOps',
     'Agile',
   ],
+
+  STEP_FEATURES: [
+    ['Skills Gap Analysis', 'Learning Objectives', 'Assessment Tools'],
+    ['Custom Curriculum Design', 'Learning Path Creation', 'Resource Planning'],
+    ['Interactive Sessions', 'Hands-on Practice', 'Progress Monitoring'],
+    ['Skill Validation', 'Certification Testing', 'Performance Evaluation'],
+  ],
 };

@@ -5,6 +5,7 @@ import { ScrollAnimationDirective } from '../../../../directives/scroll-animatio
 import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.directive';
 import { StaggerAnimationDirective } from '../../../../directives/stagger-animation.directive';
 import { GLOBAL_CONSTANTS } from '../../../../constants/solutions/global.constants';
+import { ProcessComponent } from '../../../shared/process/process.component';
 
 @Component({
   selector: 'app-global',
@@ -15,6 +16,7 @@ import { GLOBAL_CONSTANTS } from '../../../../constants/solutions/global.constan
     ScrollAnimationDirective,
     ScrollRevealDirective,
     StaggerAnimationDirective,
+    ProcessComponent
   ],
   templateUrl: './global.component.html',
   styleUrls: ['./global.component.scss'],
@@ -26,6 +28,7 @@ export class GlobalComponent {
   services = GLOBAL_CONSTANTS.SERVICES;
   process = GLOBAL_CONSTANTS.PROCESS;
   phases = GLOBAL_CONSTANTS.PHASES;
+  stepFeatures = GLOBAL_CONSTANTS.STEP_FEATURES;
   technologies = GLOBAL_CONSTANTS.TECHNOLOGIES;
   technologiesSection = GLOBAL_CONSTANTS.TECHNOLOGIES_SECTION;
 

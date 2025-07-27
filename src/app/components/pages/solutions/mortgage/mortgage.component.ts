@@ -31,5 +31,6 @@ export class MortgageComponent {
   features = MORTGAGE_CONSTANTS.FEATURES;
   services = MORTGAGE_CONSTANTS.SERVICES;
   phases = MORTGAGE_CONSTANTS.PHASES;
+  stepFeatures = MORTGAGE_CONSTANTS.STEP_FEATURES;
   featuresContent = MORTGAGE_CONSTANTS.FEATURES_CONTENT;
 }
