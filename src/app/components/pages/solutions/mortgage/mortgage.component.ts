@@ -25,6 +25,7 @@ import { MORTGAGE_CONSTANTS } from '../../../../constants/solutions/mortgage.con
 })
 export class MortgageComponent {
   mortgage = MORTGAGE_CONSTANTS.HERO;
+  heroAction = MORTGAGE_CONSTANTS.HERO_ACTION;
   cta = MORTGAGE_CONSTANTS.CTA;
   assistance = MORTGAGE_CONSTANTS.ASSISTANCE;
   process = MORTGAGE_CONSTANTS.PROCESS;
@@ -33,4 +34,6 @@ export class MortgageComponent {
   phases = MORTGAGE_CONSTANTS.PHASES;
   stepFeatures = MORTGAGE_CONSTANTS.STEP_FEATURES;
   featuresContent = MORTGAGE_CONSTANTS.FEATURES_CONTENT;
+  floatingIcons = MORTGAGE_CONSTANTS.HERO_FLOATING_ICONS;
+  heroStats = MORTGAGE_CONSTANTS.HERO_STATS;
 }

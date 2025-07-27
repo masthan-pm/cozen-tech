@@ -6,6 +6,7 @@ import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.dire
 import { StaggerAnimationDirective } from '../../../../directives/stagger-animation.directive';
 import { HR_PAYROLL_CONSTANTS } from '../../../../constants/solutions/hr-payroll.constants';
 import { ProcessComponent } from '../../../shared/process/process.component';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-hr-payroll',
@@ -16,13 +17,15 @@ import { ProcessComponent } from '../../../shared/process/process.component';
     ScrollAnimationDirective,
     ScrollRevealDirective,
     StaggerAnimationDirective,
-    ProcessComponent
+    ProcessComponent,
+    HeroComponent
   ],
   templateUrl: './hr-payroll.component.html',
   styleUrls: ['./hr-payroll.component.scss'],
 })
 export class HRPayrollComponent {
   hrPayroll = HR_PAYROLL_CONSTANTS.HERO;
+  heroAction = HR_PAYROLL_CONSTANTS.HERO_ACTION;
   cta = HR_PAYROLL_CONSTANTS.CTA;
   features = HR_PAYROLL_CONSTANTS.FEATURES;
   assistance = HR_PAYROLL_CONSTANTS.ASSISTANCE;
@@ -31,6 +34,8 @@ export class HRPayrollComponent {
   phases = HR_PAYROLL_CONSTANTS.PHASES;
   stepFeatures = HR_PAYROLL_CONSTANTS.STEP_FEATURES;
   featuresContent = HR_PAYROLL_CONSTANTS.FEATURES_CONTENT;
+  floatingIcons = HR_PAYROLL_CONSTANTS.HERO_FLOATING_ICONS;
+  heroStats = HR_PAYROLL_CONSTANTS.HERO_STATS;
 
   hoveredService: number | null = null;
   selectedService: number | null = null;

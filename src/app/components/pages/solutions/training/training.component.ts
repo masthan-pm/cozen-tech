@@ -25,6 +25,7 @@ import { TRAINING_CONSTANTS } from '../../../../constants/solutions/training.con
 })
 export class TrainingComponent {
   training = TRAINING_CONSTANTS.HERO;
+  heroAction = TRAINING_CONSTANTS.HERO_ACTION;
   cta = TRAINING_CONSTANTS.CTA;
   features = TRAINING_CONSTANTS.FEATURES;
   assistance = TRAINING_CONSTANTS.ASSISTANCE;
@@ -35,4 +36,6 @@ export class TrainingComponent {
   featuresContent = TRAINING_CONSTANTS.FEATURES_CONTENT;
   technologies = TRAINING_CONSTANTS.TECHNOLOGIES;
   technologiesSection = TRAINING_CONSTANTS.TECHNOLOGIES_SECTION;
+  floatingIcons = TRAINING_CONSTANTS.HERO_FLOATING_ICONS;
+  heroStats = TRAINING_CONSTANTS.HERO_STATS;
 }

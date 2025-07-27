@@ -25,6 +25,7 @@ import { MASTER_VENDOR_CONSTANTS } from '../../../../constants/solutions/master-
 })
 export class MasterVendorComponent {
   masterVendor = MASTER_VENDOR_CONSTANTS.HERO;
+  heroAction = MASTER_VENDOR_CONSTANTS.HERO_ACTION;
   cta = MASTER_VENDOR_CONSTANTS.CTA;
   assistance = MASTER_VENDOR_CONSTANTS.ASSISTANCE;
   process = MASTER_VENDOR_CONSTANTS.PROCESS;
@@ -33,4 +34,6 @@ export class MasterVendorComponent {
   phases = MASTER_VENDOR_CONSTANTS.PHASES;
   stepFeatures = MASTER_VENDOR_CONSTANTS.STEP_FEATURES;
   benefits = MASTER_VENDOR_CONSTANTS.BENEFITS;
+  floatingIcons = MASTER_VENDOR_CONSTANTS.HERO_FLOATING_ICONS;
+  heroStats = MASTER_VENDOR_CONSTANTS.HERO_STATS;
 }

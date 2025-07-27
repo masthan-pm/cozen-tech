@@ -3,6 +3,8 @@ import {
   Service,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const MORTGAGE_CONSTANTS = {
@@ -12,10 +14,33 @@ export const MORTGAGE_CONSTANTS = {
     image: '/assets/shared/services/mortgage.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Optimize Mortgage Process',
+    icon: 'home',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Streamline Your Mortgage Operations?',
     text: "Let's discuss how our mortgage services can enhance your business efficiency.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 20, y: 25, icon: 'home', delay: 0 },
+    { x: 70, y: 30, icon: 'description', delay: 0.5 },
+    { x: 30, y: 65, icon: 'search', delay: 1 },
+    { x: 80, y: 70, icon: 'schedule', delay: 1.5 },
+    { x: 15, y: 80, icon: 'security', delay: 2 },
+    { x: 85, y: 20, icon: 'verified', delay: 2.5 },
+    { x: 50, y: 15, icon: 'gavel', delay: 3 },
+    { x: 60, y: 85, icon: 'assignment', delay: 3.5 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'home', number: '5,000+', label: 'Loans Processed' },
+    { icon: 'schedule', number: '48hrs', label: 'Avg. Processing' },
+    { icon: 'verified', number: '99.5%', label: 'Accuracy Rate' }
+  ] as HeroStat[],
 
   ASSISTANCE: {
     header: 'Our Mortgage Services',

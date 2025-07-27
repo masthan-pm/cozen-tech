@@ -4,6 +4,8 @@ import {
   Capability,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const DATA_SUPPORT_CONSTANTS = {
@@ -13,10 +15,33 @@ export const DATA_SUPPORT_CONSTANTS = {
     image: '/assets/shared/services/data.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Unlock Data Insights',
+    icon: 'insights',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Transform Your Data?',
     text: "Let's discuss how our data solutions can drive your business success.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 20, y: 30, icon: 'storage', delay: 0 },
+    { x: 70, y: 25, icon: 'analytics', delay: 0.5 },
+    { x: 30, y: 60, icon: 'bar_chart', delay: 1 },
+    { x: 80, y: 70, icon: 'search', delay: 1.5 },
+    { x: 15, y: 75, icon: 'security', delay: 2 },
+    { x: 85, y: 15, icon: 'share', delay: 2.5 },
+    { x: 50, y: 80, icon: 'cloud', delay: 3 },
+    { x: 60, y: 20, icon: 'insights', delay: 3.5 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'storage', number: '10TB+', label: 'Data Processed' },
+    { icon: 'analytics', number: '95%', label: 'Accuracy Rate' },
+    { icon: 'speed', number: '24/7', label: 'Monitoring' }
+  ] as HeroStat[],
 
   FEATURES: {
     header: 'Our Capabilities',

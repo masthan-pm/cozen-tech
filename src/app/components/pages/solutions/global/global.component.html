@@ -1,61 +1,21 @@
 <div class="global-solutions">
-  <!-- Enhanced Hero Section -->
-  <section class="hero-section">
-    <div class="hero-background">
-      <div class="floating-elements">
-        <div class="element element-1"></div>
-        <div class="element element-2"></div>
-        <div class="element element-3"></div>
-        <div class="element element-4"></div>
-      </div>
-      <div class="gradient-overlay"></div>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-badge" scrollAnimation animationType="fadeInDown">
-        <i class="material-icons">public</i>
-        <span>Global Technology Solutions</span>
-      </div>
-
-      <h1 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
-        {{ global.header }}
-      </h1>
-
-      <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
-        {{ global.text }}
-      </p>
-
-      <div class="hero-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
-        <a routerLink="/contact" class="cta-button primary">
-          <span>Get Started</span>
-          <i class="material-icons">arrow_forward</i>
-          <div class="button-ripple"></div>
-        </a>
-        <a href="#services" class="cta-button secondary">
-          <span>Learn More</span>
-          <i class="material-icons">expand_more</i>
-        </a>
-      </div>
-
-      <div class="hero-stats" scrollAnimation animationType="fadeInUp" [animationDelay]="800">
-        <div class="stat-item">
-          <div class="stat-number">500+</div>
-          <div class="stat-label">Projects Delivered</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">50+</div>
-          <div class="stat-label">Technologies</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">98%</div>
-          <div class="stat-label">Success Rate</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-hero
+    variant="enhanced"
+    [header]="global.header"
+    [text]="global.text"
+    [floatingIcons]="floatingIcons"
+    [heroStats]="heroStats"
+    primaryColor="#667eea"
+    [heroAction]="heroAction"
+  ></app-hero>
 
   <!-- Interactive Services Section -->
-  <section id="services" class="services-section" scrollAnimation animationType="fadeInUp">
+  <section
+    id="services"
+    class="services-section"
+    scrollAnimation
+    animationType="fadeInUp"
+  >
     <div class="container">
       <div class="section-header" scrollReveal [revealDelay]="100">
         <div class="section-badge">
@@ -115,14 +75,17 @@
 
   <!-- Enhanced Process Section -->
   <app-process
-  [process]="process"
-  [phases]="phases"
-  [stepFeatures]="stepFeatures"
-></app-process>
-
+    [process]="process"
+    [phases]="phases"
+    [stepFeatures]="stepFeatures"
+  ></app-process>
 
   <!-- Technologies Showcase -->
-  <section class="technologies-section" scrollAnimation animationType="fadeInUp">
+  <section
+    class="technologies-section"
+    scrollAnimation
+    animationType="fadeInUp"
+  >
     <div class="container">
       <div class="section-header" scrollReveal [revealDelay]="100">
         <div class="section-badge">
@@ -143,7 +106,7 @@
             <div
               *ngFor="let tech of technologies.slice(0, 6); let i = index"
               class="tech-node"
-              [style.--rotation]="(360 / 6 * i) + 'deg'"
+              [style.--rotation]="(360 / 6) * i + 'deg'"
               scrollAnimation
               animationType="scaleIn"
               [animationDelay]="i * 100 + 500"
@@ -156,7 +119,7 @@
             <div
               *ngFor="let tech of technologies.slice(6); let i = index"
               class="tech-node"
-              [style.--rotation]="(360 / 6 * i) + 'deg'"
+              [style.--rotation]="(360 / 6) * i + 'deg'"
               scrollAnimation
               animationType="scaleIn"
               [animationDelay]="i * 100 + 800"
@@ -193,7 +156,12 @@
           {{ cta.text }}
         </p>
 
-        <div class="cta-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
+        <div
+          class="cta-actions"
+          scrollAnimation
+          animationType="fadeInUp"
+          [animationDelay]="600"
+        >
           <a routerLink="/contact" class="cta-button primary">
             <span>Start Your Project</span>
             <i class="material-icons">arrow_forward</i>

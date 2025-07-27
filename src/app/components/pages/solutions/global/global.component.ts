@@ -6,6 +6,7 @@ import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.dire
 import { StaggerAnimationDirective } from '../../../../directives/stagger-animation.directive';
 import { GLOBAL_CONSTANTS } from '../../../../constants/solutions/global.constants';
 import { ProcessComponent } from '../../../shared/process/process.component';
+import { HeroComponent } from '../../../shared/hero/hero.component';
 
 @Component({
   selector: 'app-global',
@@ -16,13 +17,15 @@ import { ProcessComponent } from '../../../shared/process/process.component';
     ScrollAnimationDirective,
     ScrollRevealDirective,
     StaggerAnimationDirective,
-    ProcessComponent
+    ProcessComponent,
+    HeroComponent
   ],
   templateUrl: './global.component.html',
   styleUrls: ['./global.component.scss'],
 })
 export class GlobalComponent {
   global = GLOBAL_CONSTANTS.HERO;
+  heroAction = GLOBAL_CONSTANTS.HERO_ACTION;
   cta = GLOBAL_CONSTANTS.CTA;
   assistance = GLOBAL_CONSTANTS.ASSISTANCE;
   services = GLOBAL_CONSTANTS.SERVICES;
@@ -31,6 +34,8 @@ export class GlobalComponent {
   stepFeatures = GLOBAL_CONSTANTS.STEP_FEATURES;
   technologies = GLOBAL_CONSTANTS.TECHNOLOGIES;
   technologiesSection = GLOBAL_CONSTANTS.TECHNOLOGIES_SECTION;
+  floatingIcons = GLOBAL_CONSTANTS.HERO_FLOATING_ICONS;
+  heroStats = GLOBAL_CONSTANTS.HERO_STATS;
 
   hoveredService: number | null = null;
 

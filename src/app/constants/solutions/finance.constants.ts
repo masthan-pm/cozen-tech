@@ -4,6 +4,8 @@ import {
   Expertise,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const FINANCE_CONSTANTS = {
@@ -12,6 +14,12 @@ export const FINANCE_CONSTANTS = {
     text: 'Comprehensive financial solutions to drive your business growth and success',
     image: '/assets/shared/services/finance.jpg',
   } as HeroContent,
+
+  HERO_ACTION: {
+    label: 'Get Financial Consultation',
+    icon: 'trending_up',
+    route: '/contact'
+  },
 
   HEADER: {
     title: 'Why Choose Our Financial Services',
@@ -23,6 +31,23 @@ export const FINANCE_CONSTANTS = {
     header: 'Ready to Optimize Your Finances?',
     text: "Let's discuss how our financial solutions can drive your business success.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 15, y: 25, icon: 'attach_money', delay: 0 },
+    { x: 75, y: 35, icon: 'euro_symbol', delay: 0.5 },
+    { x: 25, y: 65, icon: 'currency_pound', delay: 1 },
+    { x: 85, y: 75, icon: 'currency_yen', delay: 1.5 },
+    { x: 45, y: 15, icon: 'account_balance', delay: 2 },
+    { x: 65, y: 85, icon: 'trending_up', delay: 2.5 },
+    { x: 10, y: 80, icon: 'analytics', delay: 3 },
+    { x: 90, y: 20, icon: 'calculate', delay: 3.5 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'trending_up', number: '$2.5B+', label: 'Managed Assets' },
+    { icon: 'account_balance', number: '500+', label: 'Clients Served' },
+    { icon: 'verified', number: '99.9%', label: 'Accuracy Rate' }
+  ] as HeroStat[],
 
   FEATURES: {
     header: 'Areas of Expertise',
