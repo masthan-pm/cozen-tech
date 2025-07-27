@@ -25,6 +25,7 @@ import { DATA_SUPPORT_CONSTANTS } from '../../../../constants/solutions/data-sup
 })
 export class DataSupportComponent {
   dataSupport = DATA_SUPPORT_CONSTANTS.HERO;
+  heroAction = DATA_SUPPORT_CONSTANTS.HERO_ACTION;
   cta = DATA_SUPPORT_CONSTANTS.CTA;
   features = DATA_SUPPORT_CONSTANTS.FEATURES;
   assistance = DATA_SUPPORT_CONSTANTS.ASSISTANCE;

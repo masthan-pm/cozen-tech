@@ -78,17 +78,22 @@
 
     <!-- Hero Actions -->
     <div
-      class="hero-actions"
+      class="hero-actions stagger-animation"
+      staggerAnimation
       scrollAnimation
       animationType="fadeInUp"
       [animationDelay]="800"
     >
-      <a routerLink="/contact" class="cta-button primary">
-        <span>Get Started</span>
-        <i class="material-icons">arrow_forward</i>
+    @if (heroAction) {
+      <a
+         [routerLink]="heroAction.route"
+         class="cta-button primary stagger-item">
+        <span>{{ heroAction.label }}</span>
+        <i class="material-icons">{{ heroAction.icon }}</i>
         <div class="button-ripple"></div>
       </a>
-      <a href="/solutions" class="cta-button secondary">
+    }
+      <a href="/solutions" class="cta-button secondary stagger-item">
         <span>Learn More</span>
         <i class="material-icons">expand_more</i>
       </a>

@@ -15,6 +15,12 @@ export const FINANCE_CONSTANTS = {
     image: '/assets/shared/services/finance.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Get Financial Consultation',
+    icon: 'trending_up',
+    route: '/contact'
+  },
+
   HEADER: {
     title: 'Why Choose Our Financial Services',
     content:

@@ -14,6 +14,12 @@ export const MASTER_VENDOR_CONSTANTS = {
     image: '/assets/shared/services/master.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Optimize Vendor Management',
+    icon: 'handshake',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Optimize Your Vendor Management?',
     text: "Let's discuss how our master vendor program can streamline your operations.",

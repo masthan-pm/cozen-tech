@@ -15,6 +15,12 @@ export const DATA_SUPPORT_CONSTANTS = {
     image: '/assets/shared/services/data.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Unlock Data Insights',
+    icon: 'insights',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Transform Your Data?',
     text: "Let's discuss how our data solutions can drive your business success.",

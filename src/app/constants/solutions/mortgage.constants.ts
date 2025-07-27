@@ -14,6 +14,12 @@ export const MORTGAGE_CONSTANTS = {
     image: '/assets/shared/services/mortgage.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Optimize Mortgage Process',
+    icon: 'home',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Streamline Your Mortgage Operations?',
     text: "Let's discuss how our mortgage services can enhance your business efficiency.",

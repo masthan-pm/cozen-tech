@@ -23,6 +23,7 @@ import { HeroComponent } from '../../../shared/hero/hero.component';
 })
 export class FinanceComponent {
   finance = FINANCE_CONSTANTS.HERO;
+  heroAction = FINANCE_CONSTANTS.HERO_ACTION;
   benefitsHeading = FINANCE_CONSTANTS.HEADER;
   cta = FINANCE_CONSTANTS.CTA;
   features = FINANCE_CONSTANTS.FEATURES;

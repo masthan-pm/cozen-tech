@@ -14,6 +14,12 @@ export const GLOBAL_CONSTANTS = {
     image: '/assets/shared/services/global.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Start Your Project',
+    icon: 'arrow_forward',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Transform Your Business?',
     text: "Let's discuss how our solutions can help you achieve your business goals.",

@@ -15,6 +15,12 @@ export const HR_PAYROLL_CONSTANTS = {
     image: '/assets/shared/services/hr.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Streamline HR Operations',
+    icon: 'rocket_launch',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Optimize Your HR Operations?',
     text: "Let's discuss how our HR solutions can streamline your workforce management.",

@@ -128,3 +128,9 @@ export interface Milestone {
   title: string;
   description: string;
 }
+
+export interface HeroAction {
+  label: string;
+  icon: string;
+  route: string;
+}

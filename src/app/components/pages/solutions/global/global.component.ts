@@ -25,6 +25,7 @@ import { HeroComponent } from '../../../shared/hero/hero.component';
 })
 export class GlobalComponent {
   global = GLOBAL_CONSTANTS.HERO;
+  heroAction = GLOBAL_CONSTANTS.HERO_ACTION;
   cta = GLOBAL_CONSTANTS.CTA;
   assistance = GLOBAL_CONSTANTS.ASSISTANCE;
   services = GLOBAL_CONSTANTS.SERVICES;

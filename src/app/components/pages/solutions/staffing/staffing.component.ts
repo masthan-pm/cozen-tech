@@ -25,6 +25,7 @@ import { HeroComponent } from '../../../shared/hero/hero.component';
 })
 export class StaffingComponent {
   staffing = STAFFING_CONSTANTS.HERO;
+  heroAction = STAFFING_CONSTANTS.HERO_ACTION;
   cta = STAFFING_CONSTANTS.CTA;
   assistance = STAFFING_CONSTANTS.ASSISTANCE;
   process = STAFFING_CONSTANTS.PROCESS;

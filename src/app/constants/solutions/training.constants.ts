@@ -14,6 +14,12 @@ export const TRAINING_CONSTANTS = {
     image: '/assets/shared/services/training.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Start Learning',
+    icon: 'school',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Start Your Learning Journey?',
     text: "Let's discuss how our training programs can benefit your team.",

@@ -25,6 +25,7 @@ import { MORTGAGE_CONSTANTS } from '../../../../constants/solutions/mortgage.con
 })
 export class MortgageComponent {
   mortgage = MORTGAGE_CONSTANTS.HERO;
+  heroAction = MORTGAGE_CONSTANTS.HERO_ACTION;
   cta = MORTGAGE_CONSTANTS.CTA;
   assistance = MORTGAGE_CONSTANTS.ASSISTANCE;
   process = MORTGAGE_CONSTANTS.PROCESS;

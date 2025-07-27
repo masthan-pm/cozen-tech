@@ -14,6 +14,12 @@ export const STAFFING_CONSTANTS = {
     image: '/assets/shared/services/staffing.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Find Talent',
+    icon: 'search',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Find Your Next Tech Star?',
     text: "Let's discuss how our recruitment solutions can help build your dream team.",

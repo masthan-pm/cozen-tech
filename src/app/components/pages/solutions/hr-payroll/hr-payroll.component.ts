@@ -25,6 +25,7 @@ import { HeroComponent } from '../../../shared/hero/hero.component';
 })
 export class HRPayrollComponent {
   hrPayroll = HR_PAYROLL_CONSTANTS.HERO;
+  heroAction = HR_PAYROLL_CONSTANTS.HERO_ACTION;
   cta = HR_PAYROLL_CONSTANTS.CTA;
   features = HR_PAYROLL_CONSTANTS.FEATURES;
   assistance = HR_PAYROLL_CONSTANTS.ASSISTANCE;

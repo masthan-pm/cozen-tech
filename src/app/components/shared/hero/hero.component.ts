@@ -1,24 +1,13 @@
 import { Component, ElementRef, Input, Renderer2, AfterViewInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ScrollAnimationDirective } from '../../../directives/scroll-animation.directive';
-
-interface FloatingIcon {
-  x: number;
-  y: number;
-  icon: string;
-  delay: number;
-}
-
-interface HeroStat {
-  icon: string;
-  number: string;
-  label: string;
-}
+import { FloatingIcon, HeroStat, HeroAction } from '../interfaces/solutions.interface';
+import { StaggerAnimationDirective } from '../../../directives/stagger-animation.directive';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [RouterModule, ScrollAnimationDirective],
+  imports: [RouterModule, ScrollAnimationDirective, StaggerAnimationDirective],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
@@ -31,6 +20,7 @@ export class HeroComponent implements AfterViewInit {
   @Input() heroStats: HeroStat[] = [];
   @Input() primaryColor: string = '#667eea';
   @Input() accentColor: string = '#4facfe';
+  @Input() heroAction?: HeroAction;
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 

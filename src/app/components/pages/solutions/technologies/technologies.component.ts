@@ -23,6 +23,7 @@ import { TECHNOLOGIES_CONSTANTS } from '../../../../constants/solutions/technolo
 })
 export class TechnologiesComponent {
   technologies = TECHNOLOGIES_CONSTANTS.HERO;
+  heroAction = TECHNOLOGIES_CONSTANTS.HERO_ACTION;
   cta = TECHNOLOGIES_CONSTANTS.CTA;
   features = TECHNOLOGIES_CONSTANTS.FEATURES;
   assistance = TECHNOLOGIES_CONSTANTS.ASSISTANCE;

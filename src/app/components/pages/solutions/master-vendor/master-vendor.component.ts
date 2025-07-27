@@ -25,6 +25,7 @@ import { MASTER_VENDOR_CONSTANTS } from '../../../../constants/solutions/master-
 })
 export class MasterVendorComponent {
   masterVendor = MASTER_VENDOR_CONSTANTS.HERO;
+  heroAction = MASTER_VENDOR_CONSTANTS.HERO_ACTION;
   cta = MASTER_VENDOR_CONSTANTS.CTA;
   assistance = MASTER_VENDOR_CONSTANTS.ASSISTANCE;
   process = MASTER_VENDOR_CONSTANTS.PROCESS;
