@@ -65,35 +65,53 @@ export const HR_PAYROLL_CONSTANTS = {
       title: 'Payroll Processing',
       description:
         'Accurate and timely payroll processing with tax compliance and reporting.',
+      category: 'Payroll',
+      features: ['Tax Compliance', 'Direct Deposit', 'Automated Calculations'],
+      stats: { employees: '10K+', accuracy: '99.9%', processing: '24hrs' }
     },
     {
       icon: 'group',
       title: 'HR Management',
       description:
         'Comprehensive HR services including employee onboarding and benefits administration.',
+      category: 'HR',
+      features: ['Employee Onboarding', 'Records Management', 'Policy Administration'],
+      stats: { clients: '500+', employees: '50K+', efficiency: '75%' }
     },
     {
       icon: 'description',
       title: 'Compliance Management',
       description:
         'Ensuring compliance with labor laws and regulatory requirements.',
+      category: 'Compliance',
+      features: ['Regulatory Updates', 'Audit Trails', 'Risk Management'],
+      stats: { compliance: '100%', audits: '0', updates: '24/7' }
     },
     {
       icon: 'security',
       title: 'Benefits Administration',
       description:
         'Management of employee benefits programs and related services.',
+      category: 'Benefits',
+      features: ['Health Insurance', 'Retirement Plans', 'Wellness Programs'],
+      stats: { plans: '50+', enrollment: '95%', satisfaction: '98%' }
     },
     {
       icon: 'schedule',
       title: 'Time & Attendance',
       description:
         'Advanced time tracking and attendance management solutions.',
+      category: 'Time Tracking',
+      features: ['Clock In/Out', 'Overtime Tracking', 'Leave Management'],
+      stats: { accuracy: '99.9%', time_saved: '50%', compliance: '100%' }
     },
     {
       icon: 'star',
       title: 'Performance Management',
       description: 'Employee performance tracking and development programs.',
+      category: 'Performance',
+      features: ['Goal Setting', 'Reviews', 'Feedback', 'Development'],
+      stats: { reviews: '1000+', improvement: '40%', retention: '95%' }
     },
   ] as Service[],
 

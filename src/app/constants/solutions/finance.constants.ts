@@ -66,36 +66,54 @@ export const FINANCE_CONSTANTS = {
       title: 'Financial Planning',
       description:
         'Strategic financial planning and analysis to drive business growth and profitability.',
+      category: 'Planning',
+      features: ['Strategic Analysis', 'Growth Planning', 'Risk Assessment'],
+      stats: { clients: '200+', accuracy: '99.9%', growth: '25% avg' }
     },
     {
       icon: 'pie_chart',
       title: 'Management Accounting',
       description:
         'Comprehensive management accounting services for informed decision-making.',
+      category: 'Accounting',
+      features: ['Cost Analysis', 'Performance Metrics', 'Decision Support'],
+      stats: { reports: '500+', insights: '1000+', efficiency: '40%' }
     },
     {
       icon: 'description',
       title: 'Financial Reporting',
       description:
         'Accurate and timely financial reporting compliant with regulatory standards.',
+      category: 'Reporting',
+      features: ['Regulatory Compliance', 'Real-time Data', 'Custom Dashboards'],
+      stats: { reports: '1000+', compliance: '100%', accuracy: '99.9%' }
     },
     {
       icon: 'trending_up',
       title: 'Business Analytics',
       description:
         'Data-driven insights to optimize financial performance and identify opportunities.',
+      category: 'Analytics',
+      features: ['Data Visualization', 'Predictive Analytics', 'KPI Tracking'],
+      stats: { insights: '500+', improvement: '30%', roi: '300%' }
     },
     {
       icon: 'calculate',
       title: 'Tax Services',
       description:
         'Expert tax planning and compliance services for businesses of all sizes.',
+      category: 'Tax',
+      features: ['Tax Planning', 'Compliance Management', 'Optimization'],
+      stats: { savings: '$2M+', compliance: '100%', audits: '0' }
     },
     {
       icon: 'fact_check',
       title: 'Audit & Assurance',
       description:
         'Independent audit and assurance services to ensure financial integrity.',
+      category: 'Audit',
+      features: ['Internal Controls', 'Risk Assessment', 'Compliance Review'],
+      stats: { audits: '150+', findings: '99% clean', trust: '100%' }
     },
   ] as Service[],
 

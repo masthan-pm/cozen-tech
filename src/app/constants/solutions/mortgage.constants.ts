@@ -66,32 +66,50 @@ export const MORTGAGE_CONSTANTS = {
       title: 'Loan Processing',
       description:
         'Efficient processing of mortgage applications with attention to detail.',
+      category: 'Processing',
+      features: ['Application Review', 'Document Verification', 'Efficient Processing'],
+      stats: { loans: '5000+', accuracy: '99.5%', processing: '48hrs' }
     },
     {
       icon: 'search',
       title: 'Underwriting Support',
       description:
         'Thorough evaluation of mortgage applications following lending guidelines.',
+      category: 'Underwriting',
+      features: ['Risk Assessment', 'Policy Compliance', 'Decision Support'],
+      stats: { applications: '3000+', approval_rate: '85%', compliance: '100%' }
     },
     {
       icon: 'schedule',
       title: 'Quick Closing',
       description: 'Streamlined closing process to ensure timely completion.',
+      category: 'Closing',
+      features: ['Timely Completion', 'Document Preparation', 'Coordination'],
+      stats: { closings: '2000+', time_saved: '50%', satisfaction: '98%' }
     },
     {
       icon: 'security',
       title: 'Quality Control',
       description: 'Rigorous quality checks to maintain high standards.',
+      category: 'Quality',
+      features: ['File Audits', 'Compliance Checks', 'Error Prevention'],
+      stats: { audits: '1000+', accuracy: '99.9%', errors: '<0.1%' }
     },
     {
       icon: 'group',
       title: 'Customer Support',
       description: 'Dedicated support throughout the mortgage process.',
+      category: 'Support',
+      features: ['Communication', 'Status Updates', 'Issue Resolution'],
+      stats: { customers: '5000+', response: '24hrs', satisfaction: '95%' }
     },
     {
       icon: 'home',
       title: 'Property Evaluation',
       description: 'Comprehensive property assessment and valuation services.',
+      category: 'Evaluation',
+      features: ['Property Assessment', 'Valuation', 'Market Analysis'],
+      stats: { properties: '3000+', accuracy: '98%', market_data: 'Real-time' }
     },
   ] as Service[],
 

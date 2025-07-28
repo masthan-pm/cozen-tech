@@ -54,36 +54,54 @@ export const GLOBAL_CONSTANTS = {
       title: 'Custom Software Development',
       description:
         'Tailored software solutions designed to meet your specific business needs and objectives.',
+      category: 'Development',
+      features: ['Agile Methodology', 'Scalable Architecture', 'Modern Tech Stack'],
+      stats: { projects: '200+', satisfaction: '98%', delivery: '2-4 weeks' }
     },
     {
       icon: 'cloud',
       title: 'Cloud Solutions',
       description:
         'Comprehensive cloud services including migration, optimization, and management.',
+      category: 'Infrastructure',
+      features: ['Multi-Cloud Support', 'Auto-Scaling', '99.9% Uptime'],
+      stats: { migrations: '150+', cost_saving: '40%', performance: '3x faster' }
     },
     {
       icon: 'phone_android',
       title: 'Mobile App Development',
       description:
         'Native and cross-platform mobile applications for iOS and Android devices.',
+      category: 'Mobile',
+      features: ['Cross-Platform', 'Native Performance', 'App Store Ready'],
+      stats: { apps: '100+', downloads: '1M+', rating: '4.8/5' }
     },
     {
       icon: 'business',
       title: 'Enterprise Solutions',
       description:
         'Scalable enterprise applications and systems integration services.',
+      category: 'Enterprise',
+      features: ['System Integration', 'Legacy Modernization', 'API Development'],
+      stats: { enterprises: '50+', integrations: '300+', efficiency: '60%' }
     },
     {
       icon: 'security',
       title: 'Cybersecurity',
       description:
         'Advanced security solutions to protect your digital assets and infrastructure.',
+      category: 'Security',
+      features: ['Threat Detection', 'Compliance', '24/7 Monitoring'],
+      stats: { threats_blocked: '10K+', compliance: '100%', response: '<1min' }
     },
     {
       icon: 'settings',
       title: 'DevOps Services',
       description:
         'Streamlined development and operations with modern DevOps practices.',
+      category: 'Operations',
+      features: ['CI/CD Pipeline', 'Infrastructure as Code', 'Monitoring'],
+      stats: { deployments: '1K+', downtime: '99.9%', speed: '10x faster' }
     },
   ] as Service[],
 

@@ -9,71 +9,13 @@
     [heroAction]="heroAction"
   ></app-hero>
 
-  <!-- Interactive Services Grid -->
-  <section id="services" class="services-section" scrollAnimation animationType="fadeInUp">
-    <div class="container">
-      <div class="section-header" scrollReveal [revealDelay]="100">
-        <div class="section-badge">
-          <i class="material-icons">business_center</i>
-          <span>Our Services</span>
-        </div>
-        <h2>{{ assistance.header }}</h2>
-        <p>{{ assistance.subheader }}</p>
-      </div>
-
-      <div class="services-hexagon-grid stagger-animation" staggerAnimation>
-        <div
-          *ngFor="let service of services; let i = index"
-          class="service-hexagon stagger-item"
-          scrollAnimation
-          animationType="scaleIn"
-          [animationDelay]="i * 150"
-          (mouseenter)="onServiceHover(i, true)"
-          (mouseleave)="onServiceHover(i, false)"
-          [class.active]="hoveredService === i"
-          (click)="selectService(i)"
-          [class.selected]="selectedService === i"
-        >
-          <div class="hexagon-shape">
-            <div class="hexagon-inner">
-              <div class="service-content">
-                <div class="service-icon-container">
-                  <i class="material-icons">{{ service.icon }}</i>
-                  <div class="icon-orbit">
-                    <div class="orbit-dot" *ngFor="let dot of [1,2,3]"></div>
-                  </div>
-                </div>
-
-                <h3>{{ service.title }}</h3>
-                <p>{{ service.description }}</p>
-
-                <div class="service-metrics">
-                  <div class="metric">
-                    <span class="metric-value">{{ getServiceMetric(i).value }}</span>
-                    <span class="metric-label">{{ getServiceMetric(i).label }}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="hexagon-glow"></div>
-            </div>
-          </div>
-
-          <div class="service-details" [class.visible]="selectedService === i">
-            <div class="details-content">
-              <h4>Key Features</h4>
-              <ul class="feature-list">
-                <li *ngFor="let feature of getServiceFeatures(i)">
-                  <i class="material-icons">check_circle</i>
-                  <span>{{ feature }}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-assistance
+    [header]="assistance.header"
+    [subheader]="assistance.subheader"
+    [services]="services"
+    badgeIcon="business_center"
+    badgeText="Our Services"
+  ></app-assistance>
 
   <app-process
     [process]="process"
