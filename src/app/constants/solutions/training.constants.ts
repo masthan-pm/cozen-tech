@@ -72,36 +72,54 @@ export const TRAINING_CONSTANTS = {
       title: 'Technical Training',
       description:
         'Comprehensive technical skills development programs for modern technologies.',
+      category: 'Technical',
+      features: ['Modern Technologies', 'Hands-on Labs', 'Expert Instructors'],
+      stats: { students: '5000+', success: '95%', technologies: '50+' }
     },
     {
       icon: 'group',
       title: 'Soft Skills Development',
       description:
         'Essential communication and leadership skills training for professionals.',
+      category: 'Soft Skills',
+      features: ['Communication', 'Leadership', 'Team Building'],
+      stats: { participants: '2000+', improvement: '85%', satisfaction: '98%' }
     },
     {
       icon: 'computer',
       title: 'Virtual Learning',
       description:
         'Interactive online training sessions with expert instructors.',
+      category: 'Virtual',
+      features: ['Online Sessions', 'Interactive Tools', 'Flexible Schedule'],
+      stats: { sessions: '1000+', attendance: '90%', engagement: '95%' }
     },
     {
       icon: 'track_changes',
       title: 'Customized Programs',
       description:
         'Tailored training solutions designed for specific organizational needs.',
+      category: 'Custom',
+      features: ['Tailored Content', 'Organizational Focus', 'Flexible Delivery'],
+      stats: { programs: '200+', customization: '100%', effectiveness: '90%' }
     },
     {
       icon: 'military_tech',
       title: 'Certification Courses',
       description:
         'Industry-recognized certification preparation and training.',
+      category: 'Certification',
+      features: ['Industry Standards', 'Exam Preparation', 'Practice Tests'],
+      stats: { certifications: '1000+', pass_rate: '95%', recognition: '100%' }
     },
     {
       icon: 'school',
       title: 'Career Development',
       description:
         'Comprehensive career advancement and skill enhancement programs.',
+      category: 'Career',
+      features: ['Career Planning', 'Skill Enhancement', 'Mentoring'],
+      stats: { careers: '500+', growth: '85%', advancement: '75%' }
     },
   ] as Service[],
 

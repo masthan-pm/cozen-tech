@@ -64,33 +64,51 @@ export const MASTER_VENDOR_CONSTANTS = {
       title: 'Vendor Management',
       description:
         'Centralized management of vendor relationships and performance tracking.',
+      category: 'Management',
+      features: ['Centralized Control', 'Performance Tracking', 'Relationship Management'],
+      stats: { vendors: '200+', efficiency: '85%', satisfaction: '95%' }
     },
     {
       icon: 'group',
       title: 'Resource Allocation',
       description:
         'Strategic allocation of resources across multiple projects and teams.',
+      category: 'Resources',
+      features: ['Strategic Allocation', 'Project Management', 'Team Optimization'],
+      stats: { projects: '500+', utilization: '90%', cost_saving: '30%' }
     },
     {
       icon: 'trending_up',
       title: 'Performance Analytics',
       description: 'Comprehensive vendor performance monitoring and analytics.',
+      category: 'Analytics',
+      features: ['Performance Monitoring', 'Data Analytics', 'Reporting'],
+      stats: { metrics: '50+', accuracy: '99%', insights: '1000+' }
     },
     {
       icon: 'security',
       title: 'Risk Management',
       description:
         'Proactive identification and mitigation of vendor-related risks.',
+      category: 'Risk',
+      features: ['Risk Assessment', 'Mitigation Strategies', 'Compliance'],
+      stats: { risks_mitigated: '100+', compliance: '100%', incidents: '0' }
     },
     {
       icon: 'settings',
       title: 'Process Optimization',
       description: 'Streamlined vendor onboarding and management processes.',
+      category: 'Process',
+      features: ['Streamlined Onboarding', 'Automated Workflows', 'Efficiency'],
+      stats: { processes: '20+', automation: '80%', time_saved: '50%' }
     },
     {
       icon: 'handshake',
       title: 'Contract Management',
       description: 'Efficient handling of vendor contracts and agreements.',
+      category: 'Contracts',
+      features: ['Contract Handling', 'Agreement Management', 'Compliance'],
+      stats: { contracts: '300+', compliance: '100%', renewals: '95%' }
     },
   ] as Service[],
 

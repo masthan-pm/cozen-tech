@@ -66,36 +66,54 @@ export const STAFFING_CONSTANTS = {
       title: 'Talent Sourcing',
       description:
         'Strategic identification and attraction of top tech talent through our extensive network.',
+      category: 'Sourcing',
+      features: ['Network Access', 'Active Sourcing', 'Referral Programs'],
+      stats: { candidates: '500+', network: '10K+', response: '48hrs' }
     },
     {
       icon: 'check_circle',
       title: 'Screening & Assessment',
       description:
         "Comprehensive evaluation of candidates' technical skills and cultural fit.",
+      category: 'Assessment',
+      features: ['Technical Testing', 'Cultural Fit', 'Reference Checks'],
+      stats: { assessments: '1000+', accuracy: '95%', quality: '98%' }
     },
     {
       icon: 'person_pin',
       title: 'Permanent Placement',
       description:
         'Full-time placement services for critical technical and leadership roles.',
+      category: 'Placement',
+      features: ['Full-time Roles', 'Leadership Positions', 'Long-term Success'],
+      stats: { placements: '500+', retention: '95%', satisfaction: '98%' }
     },
     {
       icon: 'schedule',
       title: 'Contract Staffing',
       description:
         'Flexible staffing solutions for project-based and temporary requirements.',
+      category: 'Contract',
+      features: ['Project-based', 'Flexible Terms', 'Quick Deployment'],
+      stats: { contracts: '300+', deployment: '14 days', flexibility: '100%' }
     },
     {
       icon: 'group',
       title: 'Team Augmentation',
       description:
         'Seamless integration of skilled professionals into your existing teams.',
+      category: 'Augmentation',
+      features: ['Team Integration', 'Scalable Solutions', 'Expert Support'],
+      stats: { teams: '200+', integration: '7 days', expertise: '100%' }
     },
     {
       icon: 'star',
       title: 'Executive Search',
       description:
         'Specialized recruitment for senior technical and leadership positions.',
+      category: 'Executive',
+      features: ['Leadership Roles', 'Strategic Positions', 'Board Level'],
+      stats: { executives: '50+', seniority: 'C-level', success: '100%' }
     },
   ] as Service[],
 

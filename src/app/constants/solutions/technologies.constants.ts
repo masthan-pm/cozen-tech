@@ -66,31 +66,49 @@ export const TECHNOLOGIES_CONSTANTS = {
       title: 'Application Development',
       description:
         'Custom software solutions using cutting-edge technologies and frameworks.',
+      category: 'Development',
+      features: ['Custom Solutions', 'Modern Frameworks', 'Scalable Architecture'],
+      stats: { applications: '300+', technologies: '50+', satisfaction: '98%' }
     },
     {
       icon: 'cloud',
       title: 'Cloud Solutions',
       description: 'Scalable cloud infrastructure and migration services.',
+      category: 'Cloud',
+      features: ['Infrastructure', 'Migration', 'Optimization'],
+      stats: { migrations: '200+', uptime: '99.9%', cost_saving: '40%' }
     },
     {
       icon: 'storage',
       title: 'Data Management',
       description: 'Advanced data storage and analytics solutions.',
+      category: 'Data',
+      features: ['Storage Solutions', 'Analytics', 'Management'],
+      stats: { data_processed: '10TB+', insights: '1000+', efficiency: '80%' }
     },
     {
       icon: 'security',
       title: 'Cybersecurity',
       description: 'Comprehensive security solutions for digital assets.',
+      category: 'Security',
+      features: ['Threat Protection', 'Compliance', 'Monitoring'],
+      stats: { threats_blocked: '10K+', compliance: '100%', breaches: '0' }
     },
     {
       icon: 'memory',
       title: 'AI & Machine Learning',
       description: 'Intelligent solutions powered by advanced algorithms.',
+      category: 'AI/ML',
+      features: ['Machine Learning', 'Predictive Analytics', 'Automation'],
+      stats: { models: '100+', accuracy: '95%', automation: '70%' }
     },
     {
       icon: 'wifi',
       title: 'IoT Solutions',
       description: 'Connected device solutions for smart applications.',
+      category: 'IoT',
+      features: ['Device Connectivity', 'Smart Applications', 'Real-time Data'],
+      stats: { devices: '1000+', connectivity: '99.9%', data_points: '1M+' }
     },
   ] as Service[],
 

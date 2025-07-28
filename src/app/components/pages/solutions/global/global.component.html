@@ -9,69 +9,13 @@
     [heroAction]="heroAction"
   ></app-hero>
 
-  <!-- Interactive Services Section -->
-  <section
-    id="services"
-    class="services-section"
-    scrollAnimation
-    animationType="fadeInUp"
-  >
-    <div class="container">
-      <div class="section-header" scrollReveal [revealDelay]="100">
-        <div class="section-badge">
-          <i class="material-icons">build</i>
-          <span>Our Services</span>
-        </div>
-        <h2>{{ assistance.header }}</h2>
-        <p>{{ assistance.subheader }}</p>
-      </div>
-
-      <div class="services-interactive-grid stagger-animation" staggerAnimation>
-        <div
-          *ngFor="let service of services; let i = index"
-          class="service-card-interactive stagger-item"
-          scrollAnimation
-          animationType="fadeInUp"
-          [animationDelay]="i * 150"
-          (mouseenter)="onServiceHover(i, true)"
-          (mouseleave)="onServiceHover(i, false)"
-          [class.active]="hoveredService === i"
-        >
-          <div class="card-glow"></div>
-          <div class="card-content">
-            <div class="service-icon-container">
-              <div class="icon-background"></div>
-              <i class="material-icons">{{ service.icon }}</i>
-              <div class="icon-ripple"></div>
-            </div>
-
-            <div class="service-info">
-              <h3>{{ service.title }}</h3>
-              <p>{{ service.description }}</p>
-            </div>
-
-            <div class="service-features">
-              <div class="feature-dot"></div>
-              <div class="feature-dot"></div>
-              <div class="feature-dot"></div>
-            </div>
-          </div>
-
-          <div class="card-hover-overlay">
-            <div class="overlay-content">
-              <i class="material-icons">{{ service.icon }}</i>
-              <h4>{{ service.title }}</h4>
-              <p>{{ service.description }}</p>
-              <div class="learn-more-btn">
-                <span>Learn More</span>
-                <i class="material-icons">arrow_forward</i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-assistance
+    [header]="assistance.header"
+    [subheader]="assistance.subheader"
+    [services]="services"
+    badgeIcon="build"
+    badgeText="Our Services"
+  ></app-assistance>
 
   <!-- Enhanced Process Section -->
   <app-process

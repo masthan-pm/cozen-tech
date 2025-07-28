@@ -68,6 +68,9 @@ export interface Service {
   icon: string;
   title: string;
   description: string;
+  category?: string;
+  features?: string[];
+  stats?: { [key: string]: string };
 }
 
 export interface Phase {

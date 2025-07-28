@@ -10,71 +10,14 @@
     [heroAction]="heroAction"
   ></app-hero>
 
-  <!-- Interactive Services Grid -->
-  <section id="services" class="services-section" scrollAnimation animationType="fadeInUp">
-    <div class="container">
-      <div class="section-header" scrollReveal [revealDelay]="100">
-        <div class="section-badge">
-          <i class="material-icons">work</i>
-          <span>Our Services</span>
-        </div>
-        <h2>{{ assistance.header }}</h2>
-        <p>{{ assistance.subheader }}</p>
-      </div>
+  <app-assistance
+    [header]="assistance.header"
+    [subheader]="assistance.subheader"
+    [services]="services"
+    badgeIcon="work"
+    badgeText="Our Services"
+  ></app-assistance>
 
-      <div class="services-masonry stagger-animation" staggerAnimation>
-        <div
-          *ngFor="let service of services; let i = index"
-          class="service-card-modern stagger-item"
-          scrollAnimation
-          animationType="fadeInUp"
-          [animationDelay]="i * 150"
-          (click)="selectService(i)"
-          [class.selected]="selectedService === i"
-        >
-          <div class="card-background">
-            <div class="background-pattern"></div>
-          </div>
-
-          <div class="card-content">
-            <div class="service-header">
-              <div class="service-icon">
-                <i class="material-icons">{{ service.icon }}</i>
-                <div class="icon-glow"></div>
-              </div>
-
-              <div class="service-badge">
-                <span>{{ getServiceCategory(i) }}</span>
-              </div>
-            </div>
-
-            <h3>{{ service.title }}</h3>
-            <p>{{ service.description }}</p>
-
-            <div class="service-stats">
-              <div class="stat">
-                <span class="stat-number">{{ getServiceStat(i).number }}</span>
-                <span class="stat-label">{{ getServiceStat(i).label }}</span>
-              </div>
-            </div>
-
-            <div class="card-footer">
-              <div class="explore-btn">
-                <span>Explore</span>
-                <i class="material-icons">arrow_forward</i>
-              </div>
-            </div>
-          </div>
-
-          <div class="selection-indicator">
-            <div class="indicator-dot"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Enhanced Process Flow -->
   <app-process
     [process]="process"
     [phases]="phases"
