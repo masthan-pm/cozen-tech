@@ -362,13 +362,6 @@
         }
       }
     }
-
-    // Dimmed State
-    &.dimmed {
-      opacity: 0.3;
-      transform: scale(0.92);
-      filter: blur(2px);
-    }
   }
 }
 
