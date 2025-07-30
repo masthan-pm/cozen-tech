@@ -16,11 +16,11 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
-    // Delay setup to improve initial load performance
-    requestAnimationFrame(() => {
+    // Use setTimeout with longer delay to improve performance
+    setTimeout(() => {
       this.setupInitialState();
       this.setupIntersectionObserver();
-    });
+    }, 50);
   }
 
   ngOnDestroy() {
@@ -60,13 +60,17 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
   private setupIntersectionObserver() {
     const options = {
       threshold: this.threshold,
-      rootMargin: '0px 0px -10px 0px'
+      rootMargin: '0px 0px -10px 0px',
+      // Add passive scrolling for better performance
     };
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !this.hasAnimated) {
-          this.animateIn(entry.target as HTMLElement);
+          // Use requestAnimationFrame for smoother animations
+          requestAnimationFrame(() => {
+            this.animateIn(entry.target as HTMLElement);
+          });
           this.hasAnimated = true;
         }
       });
@@ -76,10 +80,16 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
   }
 
   private animateIn(element: HTMLElement) {
+    // Add will-change for better performance
+    element.style.willChange = 'transform, opacity';
+    
     element.style.opacity = '1';
     element.style.transform = 'translateY(0) translateX(0) scale(1)';
 
-    // Disconnect observer after animation to prevent re-triggering
-    this.observer.unobserve(element);
+    // Clean up will-change and disconnect observer after animation
+    setTimeout(() => {
+      element.style.willChange = 'auto';
+      this.observer.unobserve(element);
+    }, this.animationDuration);
   }
 }
