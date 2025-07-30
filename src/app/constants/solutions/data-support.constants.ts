@@ -89,7 +89,7 @@ export const DATA_SUPPORT_CONSTANTS = {
       description: 'Robust security measures to protect sensitive information.',
       category: 'Security',
       features: ['Encryption', 'Access Control', 'Compliance Monitoring'],
-      stats: { threats_blocked: '10K+', compliance: '100%', breaches: '0' }
+      stats: { 'threats blocked': '10K+', compliance: '100%', breaches: '0' }
     },
     {
       icon: 'storage',
@@ -106,7 +106,7 @@ export const DATA_SUPPORT_CONSTANTS = {
         'Seamless integration of data across multiple platforms and sources.',
       category: 'Integration',
       features: ['ETL Processing', 'API Integration', 'Real-time Sync'],
-      stats: { integrations: '500+', platforms: '50+', sync_time: '<1min' }
+      stats: { integrations: '500+', platforms: '50+', 'sync time': '<1min' }
     },
   ] as Service[],
 

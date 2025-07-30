@@ -77,7 +77,7 @@ export const MORTGAGE_CONSTANTS = {
         'Thorough evaluation of mortgage applications following lending guidelines.',
       category: 'Underwriting',
       features: ['Risk Assessment', 'Policy Compliance', 'Decision Support'],
-      stats: { applications: '3000+', approval_rate: '85%', compliance: '100%' }
+      stats: { applications: '3000+', 'approval rate': '85%', compliance: '100%' }
     },
     {
       icon: 'schedule',
@@ -85,7 +85,7 @@ export const MORTGAGE_CONSTANTS = {
       description: 'Streamlined closing process to ensure timely completion.',
       category: 'Closing',
       features: ['Timely Completion', 'Document Preparation', 'Coordination'],
-      stats: { closings: '2000+', time_saved: '50%', satisfaction: '98%' }
+      stats: { closings: '2000+', 'time saved': '50%', satisfaction: '98%' }
     },
     {
       icon: 'security',
@@ -109,7 +109,7 @@ export const MORTGAGE_CONSTANTS = {
       description: 'Comprehensive property assessment and valuation services.',
       category: 'Evaluation',
       features: ['Property Assessment', 'Valuation', 'Market Analysis'],
-      stats: { properties: '3000+', accuracy: '98%', market_data: 'Real-time' }
+      stats: { properties: '3000+', accuracy: '98%', 'market data': 'Real-time' }
     },
   ] as Service[],
 
