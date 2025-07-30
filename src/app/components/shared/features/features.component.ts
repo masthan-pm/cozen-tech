@@ -31,13 +31,17 @@ export class FeaturesComponent implements OnInit, AfterViewInit {
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit(): void {
-    // Add intersection observer for enhanced animations
-    this.setupIntersectionObserver();
+    // Delay setup to improve performance
+    requestAnimationFrame(() => {
+      this.setupIntersectionObserver();
+    });
   }
 
   ngAfterViewInit(): void {
-    // Add mouse tracking for enhanced glass effects
-    this.setupMouseTracking();
+    // Delay mouse tracking setup to improve initial load performance
+    setTimeout(() => {
+      this.setupMouseTracking();
+    }, 100);
   }
 
   onFeatureHover(index: number, isHovered: boolean): void {
@@ -59,7 +63,7 @@ export class FeaturesComponent implements OnInit, AfterViewInit {
   }
 
   getFeatureProgress(index: number): number {
-    const progress = [95, 88, 92, 85, 90, 87, 93, 89];
+    const progress = [95, 88, 92, 85, 90, 87, 93, 89, 91, 86];
     return progress[index] || 90;
   }
 
@@ -77,7 +81,8 @@ export class FeaturesComponent implements OnInit, AfterViewInit {
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -50px 0px',
+        // Add passive option for better performance
       }
     );
 
@@ -92,7 +97,37 @@ export class FeaturesComponent implements OnInit, AfterViewInit {
     const cards = this.elementRef.nativeElement.querySelectorAll('.feature-card');
 
     cards.forEach((card: HTMLElement) => {
+      let isHovering = false;
+      let animationFrameId: number;
+
       card.addEventListener('mousemove', (e: MouseEvent) => {
+        if (!isHovering) return;
+        
+        // Use requestAnimationFrame for smoother performance
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+        }
+        
+        animationFrameId = requestAnimationFrame(() => {
+          this.updateCardTransform(card, e);
+        });
+      });
+
+      card.addEventListener('mouseenter', () => {
+        isHovering = true;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        isHovering = false;
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+        }
+        this.resetCardTransform(card);
+      });
+    });
+  }
+
+  private updateCardTransform(card: HTMLElement, e: MouseEvent): void {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -100,8 +135,8 @@ export class FeaturesComponent implements OnInit, AfterViewInit {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        const rotateX = (y - centerY) / 15;
-        const rotateY = (centerX - x) / 15;
+        const rotateX = (y - centerY) / 20; // Reduced intensity for smoother performance
+        const rotateY = (centerX - x) / 20;
 
         card.style.transform = `
           translateY(-20px)
@@ -116,16 +151,16 @@ export class FeaturesComponent implements OnInit, AfterViewInit {
           spotlight.style.background = `
             radial-gradient(
               circle at ${x}px ${y}px,
-              rgba(102, 126, 234, 0.2) 0%,
-              rgba(79, 172, 254, 0.1) 30%,
-              rgba(0, 178, 178, 0.05) 70%,
+              rgba(79, 172, 254, 0.25) 0%,
+              rgba(0, 242, 254, 0.15) 30%,
+              rgba(79, 172, 254, 0.08) 70%,
               transparent 100%
             )
           `;
         }
-      });
+  }
 
-      card.addEventListener('mouseleave', () => {
+  private resetCardTransform(card: HTMLElement): void {
         card.style.transform = 'translateY(0) rotateX(0) rotateY(0) scale(1)';
 
         // Reset spotlight effect
@@ -134,14 +169,12 @@ export class FeaturesComponent implements OnInit, AfterViewInit {
           spotlight.style.background = `
             linear-gradient(
               135deg,
-              rgba(102, 126, 234, 0.05) 0%,
-              rgba(79, 172, 254, 0.03) 50%,
-              rgba(0, 178, 178, 0.05) 100%
+              rgba(79, 172, 254, 0.08) 0%,
+              rgba(0, 242, 254, 0.05) 50%,
+              rgba(79, 172, 254, 0.08) 100%
             )
           `;
         }
-      });
-    });
   }
 
   // Method to track feature interactions for analytics
