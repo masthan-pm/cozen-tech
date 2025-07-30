@@ -3,6 +3,8 @@ import {
   Phase,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const STAFFING_CONSTANTS = {
@@ -12,10 +14,33 @@ export const STAFFING_CONSTANTS = {
     image: '/assets/shared/services/staffing.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Find Talent',
+    icon: 'search',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Find Your Next Tech Star?',
     text: "Let's discuss how our recruitment solutions can help build your dream team.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 20, y: 30, icon: 'group', delay: 0 },
+    { x: 70, y: 25, icon: 'person', delay: 0.5 },
+    { x: 30, y: 60, icon: 'work', delay: 1 },
+    { x: 80, y: 70, icon: 'business', delay: 1.5 },
+    { x: 15, y: 75, icon: 'handshake', delay: 2 },
+    { x: 85, y: 15, icon: 'star', delay: 2.5 },
+    { x: 50, y: 80, icon: 'search', delay: 3 },
+    { x: 60, y: 20, icon: 'check_circle', delay: 3.5 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'people', number: '1000+', label: 'Successful Placements' },
+    { icon: 'schedule', number: '14', label: 'Days Avg. Placement' },
+    { icon: 'star', number: '95%', label: 'Retention Rate' }
+  ] as HeroStat[],
 
   ASSISTANCE: {
     header: 'Our Recruitment Services',
@@ -41,36 +66,54 @@ export const STAFFING_CONSTANTS = {
       title: 'Talent Sourcing',
       description:
         'Strategic identification and attraction of top tech talent through our extensive network.',
+      category: 'Sourcing',
+      features: ['Network Access', 'Active Sourcing', 'Referral Programs'],
+      stats: { candidates: '500+', network: '10K+', response: '48hrs' }
     },
     {
       icon: 'check_circle',
       title: 'Screening & Assessment',
       description:
         "Comprehensive evaluation of candidates' technical skills and cultural fit.",
+      category: 'Assessment',
+      features: ['Technical Testing', 'Cultural Fit', 'Reference Checks'],
+      stats: { assessments: '1000+', accuracy: '95%', quality: '98%' }
     },
     {
       icon: 'person_pin',
       title: 'Permanent Placement',
       description:
         'Full-time placement services for critical technical and leadership roles.',
+      category: 'Placement',
+      features: ['Full-time Roles', 'Leadership Positions', 'Long-term Success'],
+      stats: { placements: '500+', retention: '95%', satisfaction: '98%' }
     },
     {
       icon: 'schedule',
       title: 'Contract Staffing',
       description:
         'Flexible staffing solutions for project-based and temporary requirements.',
+      category: 'Contract',
+      features: ['Project-based', 'Flexible Terms', 'Quick Deployment'],
+      stats: { contracts: '300+', deployment: '14 days', flexibility: '100%' }
     },
     {
       icon: 'group',
       title: 'Team Augmentation',
       description:
         'Seamless integration of skilled professionals into your existing teams.',
+      category: 'Augmentation',
+      features: ['Team Integration', 'Scalable Solutions', 'Expert Support'],
+      stats: { teams: '200+', integration: '7 days', expertise: '100%' }
     },
     {
       icon: 'star',
       title: 'Executive Search',
       description:
         'Specialized recruitment for senior technical and leadership positions.',
+      category: 'Executive',
+      features: ['Leadership Roles', 'Strategic Positions', 'Board Level'],
+      stats: { executives: '50+', seniority: 'C-level', success: '100%' }
     },
   ] as Service[],
 

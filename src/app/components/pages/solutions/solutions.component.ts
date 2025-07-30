@@ -21,5 +21,6 @@ import { SOLUTIONS_CONSTANTS } from '../../../constants/solutions/solutions.cons
 })
 export class OurSolutionsComponent {
   solutionsHero = SOLUTIONS_CONSTANTS.HERO;
+  heroAction = SOLUTIONS_CONSTANTS.HERO_ACTION;
   cta = SOLUTIONS_CONSTANTS.CTA;
 }

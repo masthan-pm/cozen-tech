@@ -1,15 +1,21 @@
 <div class="staffing-solutions">
   <app-hero
-    [backgroundImage]="staffing.image"
+    variant="enhanced"
     [header]="staffing.header"
     [text]="staffing.text"
-  >
-  </app-hero>
+    [floatingIcons]="floatingIcons"
+    [heroStats]="heroStats"
+    primaryColor="#667eea"
+    accentColor="#4facfe"
+    [heroAction]="heroAction"
+  ></app-hero>
 
   <app-assistance
     [header]="assistance.header"
     [subheader]="assistance.subheader"
     [services]="services"
+    badgeIcon="work"
+    badgeText="Our Services"
   ></app-assistance>
 
   <app-process
@@ -17,21 +23,116 @@
     [phases]="phases"
     [stepFeatures]="stepFeatures"
   ></app-process>
-
-  <section class="specializations-section">
+  <!-- Specializations Showcase -->
+  <section class="specializations-section" scrollAnimation animationType="fadeInUp">
     <div class="container">
-      <div class="header">
+      <div class="section-header" scrollReveal [revealDelay]="100">
+        <div class="section-badge">
+          <i class="material-icons">psychology</i>
+          <span>Specializations</span>
+        </div>
         <h2>{{ specializationsSection.header }}</h2>
         <p>{{ specializationsSection.subheader }}</p>
       </div>
 
-      <div class="tech-grid">
-        <div *ngFor="let specialization of specializations" class="tech-card">
-          <span>{{ specialization }}</span>
+      <div class="specializations-grid">
+        <div
+          *ngFor="let specialization of specializations; let i = index"
+          class="specialization-card"
+          scrollAnimation
+          animationType="scaleIn"
+          [animationDelay]="i * 100"
+          (mouseenter)="onSpecializationHover(i, true)"
+          (mouseleave)="onSpecializationHover(i, false)"
+          [class.hovered]="hoveredSpecialization === i"
+        >
+          <div class="card-glow"></div>
+
+          <div class="specialization-icon">
+            <i class="material-icons">{{ getSpecializationIcon(i) }}</i>
+            <div class="icon-particles">
+              <div class="particle" *ngFor="let p of [1,2,3,4,5]"></div>
+            </div>
+          </div>
+
+          <h3>{{ specialization }}</h3>
+
+          <div class="demand-indicator">
+            <div class="demand-bar">
+              <div class="demand-fill" [style.width]="getSpecializationDemand(i) + '%'"></div>
+            </div>
+            <span class="demand-text">{{ getSpecializationDemand(i) }}% Demand</span>
+          </div>
+
+          <div class="specialization-stats">
+            <div class="stat-item">
+              <i class="material-icons">trending_up</i>
+              <span>High Growth</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
+  <!-- Enhanced CTA Section -->
+  <section class="cta-section" scrollAnimation animationType="fadeInUp">
+    <div class="cta-background">
+      <div class="talent-network">
+        <div class="network-grid">
+          <div *ngFor="let dot of talentDots; let i = index"
+               class="talent-dot"
+               [style.left]="dot.x + '%'"
+               [style.top]="dot.y + '%'"
+               [style.animation-delay]="i * 0.1 + 's'">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-icon" scrollAnimation animationType="scaleIn">
+          <i class="material-icons">groups</i>
+          <div class="icon-orbit">
+            <div class="orbit-dot" *ngFor="let dot of [1,2,3,4]"></div>
+          </div>
+        </div>
+
+        <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
+          {{ cta.header }}
+        </h2>
+
+        <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
+          {{ cta.text }}
+        </p>
+
+        <div class="cta-options" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="material-icons">business</i>
+            </div>
+            <h4>For Employers</h4>
+            <p>Find exceptional talent for your team</p>
+            <a routerLink="/contact" class="option-btn">
+              <span>Hire Talent</span>
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="material-icons">person</i>
+            </div>
+            <h4>For Candidates</h4>
+            <p>Discover your next career opportunity</p>
+            <a routerLink="/careers" class="option-btn">
+              <span>Find Jobs</span>
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

@@ -1,37 +1,129 @@
 <div class="global-solutions">
   <app-hero
-    [backgroundImage]="global.image"
+    variant="enhanced"
     [header]="global.header"
     [text]="global.text"
-  >
-  </app-hero>
+    [floatingIcons]="floatingIcons"
+    [heroStats]="heroStats"
+    primaryColor="#667eea"
+    [heroAction]="heroAction"
+  ></app-hero>
 
   <app-assistance
     [header]="assistance.header"
     [subheader]="assistance.subheader"
     [services]="services"
+    badgeIcon="build"
+    badgeText="Our Services"
   ></app-assistance>
 
+  <!-- Enhanced Process Section -->
   <app-process
     [process]="process"
     [phases]="phases"
     [stepFeatures]="stepFeatures"
   ></app-process>
 
-  <section class="technologies-section">
+  <!-- Technologies Showcase -->
+  <section
+    class="technologies-section"
+    scrollAnimation
+    animationType="fadeInUp"
+  >
     <div class="container">
-      <div class="header">
+      <div class="section-header" scrollReveal [revealDelay]="100">
+        <div class="section-badge">
+          <i class="material-icons">code</i>
+          <span>Technologies</span>
+        </div>
         <h2>{{ technologiesSection.header }}</h2>
         <p>{{ technologiesSection.subheader }}</p>
       </div>
 
-      <div class="tech-grid">
-        <div *ngFor="let tech of technologies" class="tech-card">
-          <span>{{ tech }}</span>
+      <div class="tech-showcase">
+        <div class="tech-orbit">
+          <div class="orbit-center">
+            <i class="material-icons">psychology</i>
+          </div>
+
+          <div class="orbit-ring ring-1">
+            <div
+              *ngFor="let tech of technologies.slice(0, 6); let i = index"
+              class="tech-node"
+              [style.--rotation]="(360 / 6) * i + 'deg'"
+              scrollAnimation
+              animationType="scaleIn"
+              [animationDelay]="i * 100 + 500"
+            >
+              <span>{{ tech }}</span>
+            </div>
+          </div>
+
+          <div class="orbit-ring ring-2">
+            <div
+              *ngFor="let tech of technologies.slice(6); let i = index"
+              class="tech-node"
+              [style.--rotation]="(360 / 6) * i + 'deg'"
+              scrollAnimation
+              animationType="scaleIn"
+              [animationDelay]="i * 100 + 800"
+            >
+              <span>{{ tech }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
+  <!-- Enhanced CTA Section -->
+  <section class="cta-section" scrollAnimation animationType="fadeInUp">
+    <div class="cta-background">
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-icon" scrollAnimation animationType="scaleIn">
+          <i class="material-icons">rocket_launch</i>
+        </div>
+
+        <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
+          {{ cta.header }}
+        </h2>
+
+        <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
+          {{ cta.text }}
+        </p>
+
+        <div
+          class="cta-actions"
+          scrollAnimation
+          animationType="fadeInUp"
+          [animationDelay]="600"
+        >
+          <a routerLink="/contact" class="cta-button primary">
+            <span>Start Your Project</span>
+            <i class="material-icons">arrow_forward</i>
+            <div class="button-ripple"></div>
+          </a>
+
+          <div class="contact-info">
+            <a href="mailto:info@cozentech.com" class="contact-item">
+              <i class="material-icons">email</i>
+              <span>info&#64;cozentech.com</span>
+            </a>
+            <a href="tel:+16292742295" class="contact-item">
+              <i class="material-icons">phone</i>
+              <span>(629) 274-2295</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

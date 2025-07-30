@@ -1,10 +1,13 @@
 <div class="master-vendor">
   <app-hero
-    [backgroundImage]="masterVendor.image"
+    variant="enhanced"
     [header]="masterVendor.header"
     [text]="masterVendor.text"
-  >
-  </app-hero>
+    [floatingIcons]="floatingIcons"
+    [heroStats]="heroStats"
+    primaryColor="#f59e0b"
+    [heroAction]="heroAction"
+  ></app-hero>
 
   <app-assistance
     [header]="assistance.header"

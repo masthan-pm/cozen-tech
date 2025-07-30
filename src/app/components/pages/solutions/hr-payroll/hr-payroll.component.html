@@ -1,15 +1,20 @@
 <div class="hr-payroll-solutions">
   <app-hero
-    [backgroundImage]="hrPayroll.image"
+    variant="enhanced"
     [header]="hrPayroll.header"
     [text]="hrPayroll.text"
-  >
-  </app-hero>
+    [floatingIcons]="floatingIcons"
+    [heroStats]="heroStats"
+    primaryColor="#4facfe"
+    [heroAction]="heroAction"
+  ></app-hero>
 
   <app-assistance
     [header]="assistance.header"
     [subheader]="assistance.subheader"
     [services]="services"
+    badgeIcon="business_center"
+    badgeText="Our Services"
   ></app-assistance>
 
   <app-process
@@ -17,12 +22,207 @@
     [phases]="phases"
     [stepFeatures]="stepFeatures"
   ></app-process>
+  <!-- Features Showcase -->
+  <section class="features-section" scrollAnimation animationType="fadeInUp">
+    <div class="container">
+      <div class="section-header" scrollReveal [revealDelay]="100">
+        <div class="section-badge">
+          <i class="material-icons">featured_play_list</i>
+          <span>Features</span>
+        </div>
+        <h2>{{ features.header }}</h2>
+        <p>{{ features.subheader }}</p>
+      </div>
 
-  <app-features
-    [header]="features.header"
-    [subheader]="features.subheader"
-    [features]="featuresContent"
-  ></app-features>
+      <div class="features-interactive-showcase">
+        <div class="feature-categories">
+          <div
+            *ngFor="let feature of featuresContent; let i = index"
+            class="category-card"
+            scrollAnimation
+            animationType="fadeInLeft"
+            [animationDelay]="i * 200"
+            (click)="selectFeatureCategory(i)"
+            [class.active]="activeFeatureCategory === i"
+          >
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="material-icons">{{ getFeatureCategoryIcon(i) }}</i>
+              </div>
+              <h3>{{ feature.category }}</h3>
+            </div>
 
-  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
+            <div class="category-preview">
+              <div class="preview-items">
+                <div class="preview-item" *ngFor="let item of feature.items.slice(0, 3)">
+                  {{ item }}
+                </div>
+              </div>
+              <div class="items-count">+{{ feature.items.length - 3 }} more</div>
+            </div>
+
+            <div class="category-progress">
+              <div class="progress-indicator">
+                <div class="progress-fill" [style.width]="getFeatureCategoryProgress(i) + '%'"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-details">
+          <div
+            *ngFor="let feature of featuresContent; let i = index"
+            class="feature-detail-panel"
+            [class.active]="activeFeatureCategory === i">
+
+            <div class="detail-header">
+              <div class="detail-icon">
+                <i class="material-icons">{{ getFeatureCategoryIcon(i) }}</i>
+              </div>
+              <div class="detail-info">
+                <h3>{{ feature.category }}</h3>
+                <p>Comprehensive {{ feature.category.toLowerCase() }} solutions</p>
+              </div>
+            </div>
+
+            <div class="detail-grid">
+              <div
+                *ngFor="let item of feature.items; let j = index"
+                class="detail-item"
+                scrollAnimation
+                animationType="fadeInUp"
+                [animationDelay]="j * 50">
+
+                <div class="item-icon">
+                  <i class="material-icons">{{ getFeatureItemIcon(i, j) }}</i>
+                </div>
+
+                <div class="item-content">
+                  <h4>{{ item }}</h4>
+                  <p>{{ getFeatureItemDescription(i, j) }}</p>
+                </div>
+
+                <div class="item-status">
+                  <div class="status-indicator active"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced CTA Section -->
+  <section class="cta-section" scrollAnimation animationType="fadeInUp">
+    <div class="cta-background">
+      <div class="hr-network">
+        <div class="network-nodes">
+          <div *ngFor="let node of hrNetworkNodes; let i = index"
+               class="hr-node"
+               [style.left]="(node?.x ?? 0) + '%'"
+               [style.top]="(node?.y ?? 0) + '%'"
+               [style.animation-delay]="i * 0.1 + 's'">
+            <i class="material-icons">{{ node?.icon }}</i>
+          </div>
+        </div>
+
+        <div class="network-connections">
+          <svg class="hr-connections" viewBox="0 0 100 100">
+            <path *ngFor="let connection of hrConnections"
+                  [attr.d]="connection.path"
+                  class="hr-connection-line"
+                  [style.animation-delay]="connection.delay + 's'">
+            </path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-visual" scrollAnimation animationType="scaleIn">
+          <div class="hr-dashboard">
+            <div class="dashboard-widgets">
+              <div class="widget employee-widget">
+                <div class="widget-header">
+                  <i class="material-icons">people</i>
+                  <span>Employees</span>
+                </div>
+                <div class="widget-value">1,247</div>
+                <div class="widget-trend">
+                  <i class="material-icons">trending_up</i>
+                  <span>+12%</span>
+                </div>
+              </div>
+
+              <div class="widget payroll-widget">
+                <div class="widget-header">
+                  <i class="material-icons">attach_money</i>
+                  <span>Payroll</span>
+                </div>
+                <div class="widget-value">$2.4M</div>
+                <div class="widget-trend">
+                  <i class="material-icons">trending_up</i>
+                  <span>+8%</span>
+                </div>
+              </div>
+
+              <div class="widget efficiency-widget">
+                <div class="widget-header">
+                  <i class="material-icons">speed</i>
+                  <span>Efficiency</span>
+                </div>
+                <div class="widget-chart">
+                  <div class="efficiency-meter">
+                    <div class="meter-fill" style="width: 94%"></div>
+                  </div>
+                  <span class="efficiency-value">94%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-text">
+          <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
+            {{ cta.header }}
+          </h2>
+
+          <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
+            {{ cta.text }}
+          </p>
+
+          <div class="cta-benefits" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
+            <div class="benefit-highlight" *ngFor="let benefit of ctaBenefits">
+              <i class="material-icons">{{ benefit.icon }}</i>
+              <div class="benefit-text">
+                <h4>{{ benefit.title }}</h4>
+                <p>{{ benefit.description }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="800">
+            <a routerLink="/contact" class="cta-button primary">
+              <span>Transform Your HR Operations</span>
+              <i class="material-icons">rocket_launch</i>
+              <div class="button-ripple"></div>
+            </a>
+
+            <div class="contact-info">
+              <a href="mailto:hr@cozentech.com" class="contact-link">
+                <i class="material-icons">email</i>
+                <span>hr&#64;cozentech.com</span>
+              </a>
+              <a href="tel:+16292742295" class="contact-link">
+                <i class="material-icons">phone</i>
+                <span>(629) 274-2295</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

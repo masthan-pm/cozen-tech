@@ -4,6 +4,19 @@ export interface HeroContent {
   image: string;
 }
 
+export interface FloatingIcon {
+  x: number;
+  y: number;
+  icon: string;
+  delay: number;
+}
+
+export interface HeroStat {
+  icon: string;
+  number: string;
+  label: string;
+}
+
 export interface CTAContent {
   header: string;
   text: string;
@@ -55,6 +68,9 @@ export interface Service {
   icon: string;
   title: string;
   description: string;
+  category?: string;
+  features?: string[];
+  stats?: { [key: string]: string };
 }
 
 export interface Phase {
@@ -114,4 +130,10 @@ export interface Milestone {
   year: string;
   title: string;
   description: string;
+}
+
+export interface HeroAction {
+  label: string;
+  icon: string;
+  route: string;
 }

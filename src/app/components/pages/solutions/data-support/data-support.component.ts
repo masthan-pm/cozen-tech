@@ -25,6 +25,7 @@ import { DATA_SUPPORT_CONSTANTS } from '../../../../constants/solutions/data-sup
 })
 export class DataSupportComponent {
   dataSupport = DATA_SUPPORT_CONSTANTS.HERO;
+  heroAction = DATA_SUPPORT_CONSTANTS.HERO_ACTION;
   cta = DATA_SUPPORT_CONSTANTS.CTA;
   features = DATA_SUPPORT_CONSTANTS.FEATURES;
   assistance = DATA_SUPPORT_CONSTANTS.ASSISTANCE;
@@ -33,4 +34,6 @@ export class DataSupportComponent {
   phases = DATA_SUPPORT_CONSTANTS.PHASES;
   stepFeatures = DATA_SUPPORT_CONSTANTS.STEP_FEATURES;
   capabilities = DATA_SUPPORT_CONSTANTS.CAPABILITIES;
+  floatingIcons = DATA_SUPPORT_CONSTANTS.HERO_FLOATING_ICONS;
+  heroStats = DATA_SUPPORT_CONSTANTS.HERO_STATS;
 }

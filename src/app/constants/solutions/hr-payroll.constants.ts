@@ -4,6 +4,8 @@ import {
   Feature,
   HeroContent,
   CTAContent,
+  FloatingIcon,
+  HeroStat,
 } from '../../components/shared/interfaces/solutions.interface';
 
 export const HR_PAYROLL_CONSTANTS = {
@@ -13,10 +15,33 @@ export const HR_PAYROLL_CONSTANTS = {
     image: '/assets/shared/services/hr.jpg',
   } as HeroContent,
 
+  HERO_ACTION: {
+    label: 'Streamline HR Operations',
+    icon: 'rocket_launch',
+    route: '/contact'
+  },
+
   CTA: {
     header: 'Ready to Optimize Your HR Operations?',
     text: "Let's discuss how our HR solutions can streamline your workforce management.",
   } as CTAContent,
+
+  HERO_FLOATING_ICONS: [
+    { x: 15, y: 20, icon: 'groups', delay: 0 },
+    { x: 35, y: 15, icon: 'person', delay: 0.3 },
+    { x: 55, y: 25, icon: 'schedule', delay: 0.6 },
+    { x: 75, y: 18, icon: 'attach_money', delay: 0.9 },
+    { x: 25, y: 45, icon: 'security', delay: 1.2 },
+    { x: 65, y: 40, icon: 'favorite', delay: 1.5 },
+    { x: 85, y: 50, icon: 'business_center', delay: 1.8 },
+    { x: 45, y: 70, icon: 'verified', delay: 2.1 }
+  ] as FloatingIcon[],
+
+  HERO_STATS: [
+    { icon: 'people', number: '10,000+', label: 'Employees Managed' },
+    { icon: 'schedule', number: '99.9%', label: 'Accuracy Rate' },
+    { icon: 'speed', number: '24hrs', label: 'Processing Time' }
+  ] as HeroStat[],
 
   FEATURES: {
     header: 'Comprehensive Features',
@@ -40,35 +65,53 @@ export const HR_PAYROLL_CONSTANTS = {
       title: 'Payroll Processing',
       description:
         'Accurate and timely payroll processing with tax compliance and reporting.',
+      category: 'Payroll',
+      features: ['Tax Compliance', 'Direct Deposit', 'Automated Calculations'],
+      stats: { employees: '10K+', accuracy: '99.9%', processing: '24hrs' }
     },
     {
       icon: 'group',
       title: 'HR Management',
       description:
         'Comprehensive HR services including employee onboarding and benefits administration.',
+      category: 'HR',
+      features: ['Employee Onboarding', 'Records Management', 'Policy Administration'],
+      stats: { clients: '500+', employees: '50K+', efficiency: '75%' }
     },
     {
       icon: 'description',
       title: 'Compliance Management',
       description:
         'Ensuring compliance with labor laws and regulatory requirements.',
+      category: 'Compliance',
+      features: ['Regulatory Updates', 'Audit Trails', 'Risk Management'],
+      stats: { compliance: '100%', audits: '0', updates: '24/7' }
     },
     {
       icon: 'security',
       title: 'Benefits Administration',
       description:
         'Management of employee benefits programs and related services.',
+      category: 'Benefits',
+      features: ['Health Insurance', 'Retirement Plans', 'Wellness Programs'],
+      stats: { plans: '50+', enrollment: '95%', satisfaction: '98%' }
     },
     {
       icon: 'schedule',
       title: 'Time & Attendance',
       description:
         'Advanced time tracking and attendance management solutions.',
+      category: 'Time Tracking',
+      features: ['Clock In/Out', 'Overtime Tracking', 'Leave Management'],
+      stats: { accuracy: '99.9%', 'time saved': '50%', compliance: '100%' }
     },
     {
       icon: 'star',
       title: 'Performance Management',
       description: 'Employee performance tracking and development programs.',
+      category: 'Performance',
+      features: ['Goal Setting', 'Reviews', 'Feedback', 'Development'],
+      stats: { reviews: '1000+', improvement: '40%', retention: '95%' }
     },
   ] as Service[],
 
