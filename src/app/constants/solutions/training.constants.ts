@@ -110,7 +110,7 @@ export const TRAINING_CONSTANTS = {
         'Industry-recognized certification preparation and training.',
       category: 'Certification',
       features: ['Industry Standards', 'Exam Preparation', 'Practice Tests'],
-      stats: { certifications: '1000+', pass_rate: '95%', recognition: '100%' }
+      stats: { certifications: '1000+', 'pass rate': '95%', recognition: '100%' }
     },
     {
       icon: 'school',

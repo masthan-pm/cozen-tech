@@ -92,7 +92,7 @@ export const GLOBAL_CONSTANTS = {
         'Advanced security solutions to protect your digital assets and infrastructure.',
       category: 'Security',
       features: ['Threat Detection', 'Compliance', '24/7 Monitoring'],
-      stats: { threats_blocked: '10K+', compliance: '100%', response: '<1min' }
+      stats: { 'threats blocked': '10K+', compliance: '100%', response: '<1min' }
     },
     {
       icon: 'settings',

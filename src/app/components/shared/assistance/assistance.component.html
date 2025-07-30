@@ -1,6 +1,6 @@
 <section id="services" class="services-section" scrollAnimation animationType="fadeInUp">
   <div class="container">
-    <div class="section-header" scrollReveal [revealDelay]="100">
+    <div class="section-header" scrollReveal>
       <div class="section-badge">
         <i class="material-icons">{{ badgeIcon }}</i>
         <span>{{ badgeText }}</span>
@@ -21,29 +21,6 @@
         [class.active]="hoveredService === $index"
         [class.dimmed]="hoveredService !== null && hoveredService !== $index"
       >
-        <!-- Neural Network Background -->
-        <div class="neural-background">
-          <div class="neural-nodes">
-            @for (n of [1,2,3,4,5,6]; track $index) {
-            <div class="node"></div>
-            }
-          </div>
-          <div class="neural-connections">
-            <svg class="connections-svg" viewBox="0 0 300 200">
-              <path class="connection-line" d="M50,50 Q150,25 250,50"></path>
-              <path class="connection-line" d="M50,100 Q150,75 250,100"></path>
-              <path class="connection-line" d="M50,150 Q150,125 250,150"></path>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Holographic Border -->
-        <div class="holographic-border">
-          <div class="border-segment top"></div>
-          <div class="border-segment right"></div>
-          <div class="border-segment bottom"></div>
-          <div class="border-segment left"></div>
-        </div>
 
         <!-- Card Content -->
         <div class="card-content">
@@ -94,40 +71,7 @@
               }
             </div>
           </div>
-
-          <!-- Interactive Elements -->
-          <div class="card-interactions">
-            <div class="interaction-button">
-              <span>Explore</span>
-              <div class="button-ripple"></div>
-            </div>
-          </div>
         </div>
-
-        <!-- Hover Overlay -->
-        <div class="hover-overlay">
-          <div class="overlay-content">
-            <div class="overlay-icon">
-              <i class="material-icons">{{ service.icon }}</i>
-            </div>
-            <h4>{{ service.title }}</h4>
-            <div class="overlay-features">
-              @for (feature of service.features; track $index) {
-              <div class="overlay-feature">
-                <i class="material-icons">check_circle</i>
-                <span>{{ feature }}</span>
-              </div>
-              }
-            </div>
-            <div class="overlay-action">
-              <span>Learn More</span>
-              <i class="material-icons">arrow_forward</i>
-            </div>
-          </div>
-        </div>
-
-        <!-- Energy Field -->
-        <div class="energy-field"></div>
       </div>}
     </div>
   </div>

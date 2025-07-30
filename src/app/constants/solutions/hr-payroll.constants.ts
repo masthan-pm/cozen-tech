@@ -103,7 +103,7 @@ export const HR_PAYROLL_CONSTANTS = {
         'Advanced time tracking and attendance management solutions.',
       category: 'Time Tracking',
       features: ['Clock In/Out', 'Overtime Tracking', 'Leave Management'],
-      stats: { accuracy: '99.9%', time_saved: '50%', compliance: '100%' }
+      stats: { accuracy: '99.9%', 'time saved': '50%', compliance: '100%' }
     },
     {
       icon: 'star',

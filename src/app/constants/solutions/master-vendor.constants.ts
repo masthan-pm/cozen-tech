@@ -75,7 +75,7 @@ export const MASTER_VENDOR_CONSTANTS = {
         'Strategic allocation of resources across multiple projects and teams.',
       category: 'Resources',
       features: ['Strategic Allocation', 'Project Management', 'Team Optimization'],
-      stats: { projects: '500+', utilization: '90%', cost_saving: '30%' }
+      stats: { projects: '500+', utilization: '90%', 'cost saving': '30%' }
     },
     {
       icon: 'trending_up',
@@ -92,7 +92,7 @@ export const MASTER_VENDOR_CONSTANTS = {
         'Proactive identification and mitigation of vendor-related risks.',
       category: 'Risk',
       features: ['Risk Assessment', 'Mitigation Strategies', 'Compliance'],
-      stats: { risks_mitigated: '100+', compliance: '100%', incidents: '0' }
+      stats: { 'risks mitigated': '100+', compliance: '100%', incidents: '0' }
     },
     {
       icon: 'settings',
@@ -100,7 +100,7 @@ export const MASTER_VENDOR_CONSTANTS = {
       description: 'Streamlined vendor onboarding and management processes.',
       category: 'Process',
       features: ['Streamlined Onboarding', 'Automated Workflows', 'Efficiency'],
-      stats: { processes: '20+', automation: '80%', time_saved: '50%' }
+      stats: { processes: '20+', automation: '80%', 'time saved': '50%' }
     },
     {
       icon: 'handshake',

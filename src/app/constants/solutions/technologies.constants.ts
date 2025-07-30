@@ -76,7 +76,7 @@ export const TECHNOLOGIES_CONSTANTS = {
       description: 'Scalable cloud infrastructure and migration services.',
       category: 'Cloud',
       features: ['Infrastructure', 'Migration', 'Optimization'],
-      stats: { migrations: '200+', uptime: '99.9%', cost_saving: '40%' }
+      stats: { migrations: '200+', uptime: '99.9%', 'cost saving': '40%' }
     },
     {
       icon: 'storage',
@@ -84,7 +84,7 @@ export const TECHNOLOGIES_CONSTANTS = {
       description: 'Advanced data storage and analytics solutions.',
       category: 'Data',
       features: ['Storage Solutions', 'Analytics', 'Management'],
-      stats: { data_processed: '10TB+', insights: '1000+', efficiency: '80%' }
+      stats: { 'data processed': '10TB+', insights: '1000+', efficiency: '80%' }
     },
     {
       icon: 'security',
@@ -92,7 +92,7 @@ export const TECHNOLOGIES_CONSTANTS = {
       description: 'Comprehensive security solutions for digital assets.',
       category: 'Security',
       features: ['Threat Protection', 'Compliance', 'Monitoring'],
-      stats: { threats_blocked: '10K+', compliance: '100%', breaches: '0' }
+      stats: { 'threats blocked': '10K+', compliance: '100%', breaches: '0' }
     },
     {
       icon: 'memory',
@@ -108,7 +108,7 @@ export const TECHNOLOGIES_CONSTANTS = {
       description: 'Connected device solutions for smart applications.',
       category: 'IoT',
       features: ['Device Connectivity', 'Smart Applications', 'Real-time Data'],
-      stats: { devices: '1000+', connectivity: '99.9%', data_points: '1M+' }
+      stats: { devices: '1000+', connectivity: '99.9%', 'data points': '1M+' }
     },
   ] as Service[],
 
