@@ -1,20 +1,112 @@
-<section class="features-section">
+<section class="features-section" scrollAnimation animationType="fadeInUp">
   <div class="container">
-    <div class="header">
+    <div class="section-header" scrollReveal [revealDelay]="100">
+      <div class="section-badge">
+        <i class="material-icons">featured_play_list</i>
+        <span>Features</span>
+      </div>
       <h2>{{ header }}</h2>
       <p>{{ subheader }}</p>
     </div>
 
-    <div class="features-grid">
-      <div *ngFor="let feature of features" class="feature-card">
-        <h3>{{ feature.category }}</h3>
-        <ul>
-          <li *ngFor="let item of feature.items">
-            <span class="bullet"></span>
-            {{ item }}
-          </li>
-        </ul>
+    <div class="features-grid stagger-animation" staggerAnimation>
+      @for (feature of features; track $index) {
+      <div 
+        class="feature-card stagger-item scroll-enhanced-card"
+        scrollAnimation 
+        animationType="fadeInUp" 
+        [animationDelay]="$index * 150"
+        (mouseenter)="onFeatureHover($index, true)"
+        (mouseleave)="onFeatureHover($index, false)"
+        [class.hovered]="hoveredFeature === $index"
+        [class.dimmed]="hoveredFeature !== null && hoveredFeature !== $index"
+      >
+        <!-- Card Background Effects -->
+        <div class="card-background">
+          <div class="gradient-overlay"></div>
+          <div class="pattern-overlay"></div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+          <div class="floating-dot dot-1"></div>
+          <div class="floating-dot dot-2"></div>
+          <div class="floating-dot dot-3"></div>
+        </div>
+
+        <!-- Card Content -->
+        <div class="card-content">
+          <div class="feature-header">
+            <div class="category-icon">
+              <i class="material-icons">{{ getCategoryIcon($index) }}</i>
+              <div class="icon-ripple"></div>
+              <div class="icon-glow"></div>
+            </div>
+            
+            <div class="category-badge">
+              <span>{{ feature.category }}</span>
+              <div class="badge-shine"></div>
+            </div>
+          </div>
+
+          <div class="feature-content">
+            <h3>{{ feature.category }}</h3>
+            
+            <div class="feature-items">
+              @for (item of feature.items; track $index) {
+              <div 
+                class="feature-item"
+                scrollAnimation
+                animationType="fadeInLeft"
+                [animationDelay]="$index * 50"
+              >
+                <div class="item-indicator">
+                  <div class="indicator-dot"></div>
+                  <div class="indicator-pulse"></div>
+                </div>
+                <span class="item-text">{{ item }}</span>
+                <div class="item-hover-effect"></div>
+              </div>
+              }
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="feature-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" [style.width]="getFeatureProgress($index) + '%'"></div>
+                <div class="progress-shimmer"></div>
+              </div>
+              <span class="progress-text">{{ getFeatureProgress($index) }}% Complete</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Glow Effect -->
+        <div class="card-glow"></div>
+        
+        <!-- Interactive Border -->
+        <div class="interactive-border"></div>
+
+        <!-- Hover Overlay -->
+        <div class="hover-overlay">
+          <div class="overlay-content">
+            <i class="material-icons">{{ getCategoryIcon($index) }}</i>
+            <h4>{{ feature.category }}</h4>
+            <p>Comprehensive {{ feature.category.toLowerCase() }} solutions</p>
+            <div class="overlay-stats">
+              <div class="stat">
+                <span class="stat-value">{{ getFeatureProgress($index) }}%</span>
+                <span class="stat-label">Coverage</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">{{ feature.items.length }}</span>
+                <span class="stat-label">Features</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      }
     </div>
   </div>
 </section>
