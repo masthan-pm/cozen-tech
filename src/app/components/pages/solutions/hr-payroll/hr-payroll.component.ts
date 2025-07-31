@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ScrollAnimationDirective } from '../../../../directives/scroll-animation.directive';
-import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.directive';
-
 import { HR_PAYROLL_CONSTANTS } from '../../../../constants/solutions/hr-payroll.constants';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
+import { FeaturesComponent } from '../../../shared/features/features.component';
 
 @Component({
   selector: 'app-hr-payroll',
@@ -16,10 +15,10 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
     CommonModule,
     RouterModule,
     ScrollAnimationDirective,
-    ScrollRevealDirective,
     ProcessComponent,
     HeroComponent,
     AssistanceComponent,
+    FeaturesComponent
   ],
   templateUrl: './hr-payroll.component.html',
   styleUrls: ['./hr-payroll.component.scss'],
@@ -37,11 +36,6 @@ export class HRPayrollComponent {
   featuresContent = HR_PAYROLL_CONSTANTS.FEATURES_CONTENT;
   floatingIcons = HR_PAYROLL_CONSTANTS.HERO_FLOATING_ICONS;
   heroStats = HR_PAYROLL_CONSTANTS.HERO_STATS;
-
-  hoveredService: number | null = null;
-  selectedService: number | null = null;
-  highlightedStep: number = -1;
-  activeFeatureCategory: number = 0;
 
   // HR Network for CTA
   hrNetworkNodes = [
@@ -76,58 +70,4 @@ export class HRPayrollComponent {
       description: 'Instant insights into HR metrics',
     },
   ];
-
-  selectFeatureCategory(index: number): void {
-    this.activeFeatureCategory = index;
-  }
-
-  getFeatureCategoryIcon(index: number): string {
-    const icons = ['attach_money', 'group', 'favorite', 'description'];
-    return icons[index] || 'star';
-  }
-
-  getFeatureCategoryProgress(index: number): number {
-    const progress = [95, 88, 92, 85];
-    return progress[index] || 90;
-  }
-
-  getFeatureItemIcon(categoryIndex: number, itemIndex: number): string {
-    const icons = [
-      ['calculate', 'account_balance', 'receipt', 'trending_up'],
-      ['person_add', 'folder', 'assignment', 'school'],
-      ['favorite', 'fitness_center', 'local_hospital', 'psychology'],
-      ['description', 'bar_chart', 'security', 'folder_shared'],
-    ];
-    return icons[categoryIndex]?.[itemIndex] || 'check_circle';
-  }
-
-  getFeatureItemDescription(categoryIndex: number, itemIndex: number): string {
-    const descriptions = [
-      [
-        'Automated salary calculations',
-        'Secure payment processing',
-        'Digital pay stubs',
-        'Financial reporting',
-      ],
-      [
-        'Streamlined onboarding',
-        'Centralized document storage',
-        'Task management',
-        'Training programs',
-      ],
-      [
-        'Health and wellness tracking',
-        'Fitness program management',
-        'Medical benefits',
-        'Mental health support',
-      ],
-      [
-        'Regulatory compliance',
-        'Performance analytics',
-        'Data protection',
-        'Audit documentation',
-      ],
-    ];
-    return descriptions[categoryIndex]?.[itemIndex] || 'Feature description';
-  }
 }
