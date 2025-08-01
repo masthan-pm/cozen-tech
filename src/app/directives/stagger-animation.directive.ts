@@ -76,15 +76,22 @@ export class StaggerAnimationDirective
   }
 
   private animateItem(child: HTMLElement, index: number) {
+    // Add will-change for better performance
+    child.style.willChange = 'transform, opacity';
+    
     child.style.transition = `all ${this.animationDuration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
 
-    child.offsetHeight;
+    // Force reflow more efficiently
+    void child.offsetHeight;
 
     child.style.opacity = '1';
     child.style.transform = 'translateY(0)';
 
     const animationEndHandler = () => {
       child.removeEventListener('transitionend', animationEndHandler);
+      
+      // Clean up will-change
+      child.style.willChange = 'auto';
 
       setTimeout(() => {
         child.style.transform = 'translateY(-15px)';

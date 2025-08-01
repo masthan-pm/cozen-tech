@@ -86,16 +86,19 @@ export interface Benefit {
 
 export interface Capability {
   category: string;
+  icon?: string;
   items: string[];
 }
 
 export interface Expertise {
   category: string;
+  icon?: string;
   items: string[];
 }
 
 export interface Feature {
   category: string;
+  icon?: string;
   items: string[];
 }
 
