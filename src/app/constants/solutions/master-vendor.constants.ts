@@ -138,6 +138,7 @@ export const MASTER_VENDOR_CONSTANTS = {
   BENEFITS: [
     {
       category: 'Cost Management',
+      icon: 'attach_money',
       items: [
         'Reduced Operational Costs',
         'Optimized Resource Allocation',
@@ -147,6 +148,7 @@ export const MASTER_VENDOR_CONSTANTS = {
     },
     {
       category: 'Quality Assurance',
+      icon: 'fact_check',
       items: [
         'Performance Monitoring',
         'Quality Standards',
@@ -156,6 +158,7 @@ export const MASTER_VENDOR_CONSTANTS = {
     },
     {
       category: 'Risk Mitigation',
+      icon: 'security',
       items: [
         'Compliance Management',
         'Risk Assessment',
@@ -165,6 +168,7 @@ export const MASTER_VENDOR_CONSTANTS = {
     },
     {
       category: 'Efficiency',
+      icon: 'speed',
       items: [
         'Streamlined Processes',
         'Automated Workflows',

@@ -138,6 +138,7 @@ export const FINANCE_CONSTANTS = {
   EXPERTISE: [
     {
       category: 'Financial Management',
+      icon: 'attach_money',
       items: [
         'Budgeting & Forecasting',
         'Cash Flow Management',
@@ -147,6 +148,7 @@ export const FINANCE_CONSTANTS = {
     },
     {
       category: 'Accounting Services',
+      icon: 'description',
       items: [
         'Bookkeeping',
         'Payroll Processing',
@@ -156,6 +158,7 @@ export const FINANCE_CONSTANTS = {
     },
     {
       category: 'Compliance',
+      icon: 'fact_check',
       items: [
         'Tax Compliance',
         'Regulatory Reporting',
@@ -165,6 +168,7 @@ export const FINANCE_CONSTANTS = {
     },
     {
       category: 'Advisory Services',
+      icon: 'trending_up',
       items: [
         'Business Valuation',
         'M&A Support',

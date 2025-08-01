@@ -141,6 +141,7 @@ export const HR_PAYROLL_CONSTANTS = {
   FEATURES_CONTENT: [
     {
       category: 'Payroll Services',
+      icon: 'attach_money',
       items: [
         'Salary Processing',
         'Tax Calculations',
@@ -150,6 +151,7 @@ export const HR_PAYROLL_CONSTANTS = {
     },
     {
       category: 'HR Administration',
+      icon: 'person',
       items: [
         'Employee Onboarding',
         'Personnel Records',
@@ -159,6 +161,7 @@ export const HR_PAYROLL_CONSTANTS = {
     },
     {
       category: 'Benefits Management',
+      icon: 'star',
       items: [
         'Health Insurance',
         'Retirement Plans',
@@ -168,6 +171,7 @@ export const HR_PAYROLL_CONSTANTS = {
     },
     {
       category: 'Compliance & Reporting',
+      icon: 'fact_check',
       items: [
         'Regulatory Compliance',
         'Statutory Reports',

@@ -149,6 +149,7 @@ export const TRAINING_CONSTANTS = {
   FEATURES_CONTENT: [
     {
       category: 'Learning Methods',
+      icon: 'school',
       items: [
         'Interactive Workshops',
         'Virtual Classrooms',
@@ -158,6 +159,7 @@ export const TRAINING_CONSTANTS = {
     },
     {
       category: 'Course Content',
+      icon: 'library_books',
       items: [
         'Industry Best Practices',
         'Real-world Projects',
@@ -167,6 +169,7 @@ export const TRAINING_CONSTANTS = {
     },
     {
       category: 'Support Services',
+      icon: 'support_agent',
       items: [
         'Expert Mentoring',
         'Learning Resources',
@@ -176,6 +179,7 @@ export const TRAINING_CONSTANTS = {
     },
     {
       category: 'Specializations',
+      icon: 'code',
       items: [
         'Software Development',
         'Cloud Computing',

@@ -22,6 +22,7 @@ export class FeaturesComponent implements AfterViewInit {
   @Input() features: Array<{
     category: string;
     items: string[];
+    icon?: string;
   }> = [];
 
 

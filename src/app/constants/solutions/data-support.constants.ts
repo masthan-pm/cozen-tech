@@ -141,6 +141,7 @@ export const DATA_SUPPORT_CONSTANTS = {
   CAPABILITIES: [
     {
       category: 'Data Analytics',
+      icon: 'analytics',
       items: [
         'Predictive Analytics',
         'Business Intelligence',
@@ -150,6 +151,7 @@ export const DATA_SUPPORT_CONSTANTS = {
     },
     {
       category: 'Data Management',
+      icon: 'storage',
       items: [
         'Data Warehousing',
         'ETL Processing',
@@ -159,6 +161,7 @@ export const DATA_SUPPORT_CONSTANTS = {
     },
     {
       category: 'Security & Compliance',
+      icon: 'security',
       items: [
         'Data Encryption',
         'Access Control',
@@ -168,6 +171,7 @@ export const DATA_SUPPORT_CONSTANTS = {
     },
     {
       category: 'Infrastructure',
+      icon: 'cloud',
       items: [
         'Cloud Solutions',
         'Database Design',
