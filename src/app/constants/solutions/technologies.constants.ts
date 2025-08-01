@@ -115,6 +115,7 @@ export const TECHNOLOGIES_CONSTANTS = {
   TECH_STACK: [
     {
       category: 'Frontend',
+      icon: 'web',
       items: [
         'React',
         'Angular',
@@ -126,10 +127,12 @@ export const TECHNOLOGIES_CONSTANTS = {
     },
     {
       category: 'Backend',
+      icon: 'storage',
       items: ['Node.js', 'Python', 'Java', '.NET', 'Go', 'Ruby on Rails'],
     },
     {
       category: 'Cloud & DevOps',
+      icon: 'cloud',
       items: [
         'AWS',
         'Azure',
@@ -141,6 +144,7 @@ export const TECHNOLOGIES_CONSTANTS = {
     },
     {
       category: 'Data & AI',
+      icon: 'memory',
       items: [
         'TensorFlow',
         'PyTorch',
@@ -155,6 +159,7 @@ export const TECHNOLOGIES_CONSTANTS = {
   FEATURES_CONTENT: [
     {
       category: 'Development',
+      icon: 'code',
       items: [
         'Agile Methodology',
         'CI/CD Integration',
@@ -164,6 +169,7 @@ export const TECHNOLOGIES_CONSTANTS = {
     },
     {
       category: 'Security',
+      icon: 'security',
       items: [
         'Penetration Testing',
         'Security Audits',
@@ -173,10 +179,12 @@ export const TECHNOLOGIES_CONSTANTS = {
     },
     {
       category: 'Support',
+      icon: 'support_agent',
       items: ['24/7 Monitoring', 'Technical Support', 'Maintenance', 'Updates'],
     },
     {
       category: 'Integration',
+      icon: 'integration_instructions',
       items: [
         'API Development',
         'Third-party Integration',

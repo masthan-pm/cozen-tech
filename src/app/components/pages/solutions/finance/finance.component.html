@@ -88,70 +88,12 @@
     </div>
   </section>
 
-  <!-- Expertise Areas -->
-  <section class="expertise-section" scrollAnimation animationType="fadeInUp">
-    <div class="container">
-      <div class="section-header" scrollReveal [revealDelay]="100">
-        <div class="section-badge">
-          <i class="material-icons">psychology</i>
-          <span>Expertise</span>
-        </div>
-        <h2>{{ features.header }}</h2>
-        <p>{{ features.subheader }}</p>
-      </div>
+  <app-features
+    [header]="features.header"
+    [subheader]="features.subheader"
+    [features]="expertise"
+  ></app-features>
 
-      <div class="expertise-tabs">
-        <div class="tab-navigation">
-          <button
-            *ngFor="let area of expertise; let i = index"
-            class="tab-btn"
-            [class.active]="activeTab === i"
-            (click)="selectTab(i)">
-            <i class="material-icons">{{ getExpertiseIcon(i) }}</i>
-            <span>{{ area.category }}</span>
-          </button>
-        </div>
-
-        <div class="tab-content">
-          <div
-            *ngFor="let area of expertise; let i = index"
-            class="tab-panel"
-            [class.active]="activeTab === i">
-
-            <div class="expertise-showcase">
-              <div class="showcase-visual">
-                <div class="expertise-icon-large">
-                  <i class="material-icons">{{ getExpertiseIcon(i) }}</i>
-                </div>
-
-                <div class="expertise-network">
-                  <div class="network-node" *ngFor="let item of area.items; let j = index"
-                       [style.transform]="getNodePosition(j, area.items.length)">
-                    <span>{{ item }}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="showcase-content">
-                <h3>{{ area.category }}</h3>
-                <div class="expertise-grid">
-                  <div class="expertise-item" *ngFor="let item of area.items; let j = index"
-                       scrollAnimation
-                       animationType="fadeInLeft"
-                       [animationDelay]="j * 100">
-                    <div class="item-icon">
-                      <i class="material-icons">check_circle</i>
-                    </div>
-                    <span>{{ item }}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Enhanced CTA Section -->
   <section class="cta-section" scrollAnimation animationType="fadeInUp">

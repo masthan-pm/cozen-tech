@@ -22,96 +22,12 @@
     [phases]="phases"
     [stepFeatures]="stepFeatures"
   ></app-process>
-  <!-- Features Showcase -->
-  <section class="features-section" scrollAnimation animationType="fadeInUp">
-    <div class="container">
-      <div class="section-header" scrollReveal [revealDelay]="100">
-        <div class="section-badge">
-          <i class="material-icons">featured_play_list</i>
-          <span>Features</span>
-        </div>
-        <h2>{{ features.header }}</h2>
-        <p>{{ features.subheader }}</p>
-      </div>
 
-      <div class="features-interactive-showcase">
-        <div class="feature-categories">
-          <div
-            *ngFor="let feature of featuresContent; let i = index"
-            class="category-card"
-            scrollAnimation
-            animationType="fadeInLeft"
-            [animationDelay]="i * 200"
-            (click)="selectFeatureCategory(i)"
-            [class.active]="activeFeatureCategory === i"
-          >
-            <div class="category-header">
-              <div class="category-icon">
-                <i class="material-icons">{{ getFeatureCategoryIcon(i) }}</i>
-              </div>
-              <h3>{{ feature.category }}</h3>
-            </div>
-
-            <div class="category-preview">
-              <div class="preview-items">
-                <div class="preview-item" *ngFor="let item of feature.items.slice(0, 3)">
-                  {{ item }}
-                </div>
-              </div>
-              <div class="items-count">+{{ feature.items.length - 3 }} more</div>
-            </div>
-
-            <div class="category-progress">
-              <div class="progress-indicator">
-                <div class="progress-fill" [style.width]="getFeatureCategoryProgress(i) + '%'"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="feature-details">
-          <div
-            *ngFor="let feature of featuresContent; let i = index"
-            class="feature-detail-panel"
-            [class.active]="activeFeatureCategory === i">
-
-            <div class="detail-header">
-              <div class="detail-icon">
-                <i class="material-icons">{{ getFeatureCategoryIcon(i) }}</i>
-              </div>
-              <div class="detail-info">
-                <h3>{{ feature.category }}</h3>
-                <p>Comprehensive {{ feature.category.toLowerCase() }} solutions</p>
-              </div>
-            </div>
-
-            <div class="detail-grid">
-              <div
-                *ngFor="let item of feature.items; let j = index"
-                class="detail-item"
-                scrollAnimation
-                animationType="fadeInUp"
-                [animationDelay]="j * 50">
-
-                <div class="item-icon">
-                  <i class="material-icons">{{ getFeatureItemIcon(i, j) }}</i>
-                </div>
-
-                <div class="item-content">
-                  <h4>{{ item }}</h4>
-                  <p>{{ getFeatureItemDescription(i, j) }}</p>
-                </div>
-
-                <div class="item-status">
-                  <div class="status-indicator active"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-features
+    [header]="features.header"
+    [subheader]="features.subheader"
+    [features]="featuresContent"
+  ></app-features>
 
   <!-- Enhanced CTA Section -->
   <section class="cta-section" scrollAnimation animationType="fadeInUp">

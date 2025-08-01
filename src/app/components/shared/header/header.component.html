@@ -37,10 +37,10 @@
         (mouseleave)="menuTrigger.closeMenu(); isOpen = false"
       >
         @for (subItem of item.submenu; track $index) {
-        <div class="dropdown-item">
+        <div class="dropdown-item" (click)="toggleArrow()">
           <a [routerLink]="subItem.route">
             <div class="dropdown-content">
-              <span class="dropdown-label" (click)="toggleArrow()">{{ subItem.label }}</span>
+              <span class="dropdown-label">{{ subItem.label }}</span>
             </div>
           </a>
         </div>

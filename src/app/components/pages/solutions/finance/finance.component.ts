@@ -7,6 +7,7 @@ import { StaggerAnimationDirective } from '../../../../directives/stagger-animat
 import { FINANCE_CONSTANTS } from '../../../../constants/solutions/finance.constants';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
+import { FeaturesComponent } from '../../../shared/features/features.component';
 
 @Component({
   selector: 'app-finance',
@@ -19,6 +20,7 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
     StaggerAnimationDirective,
     HeroComponent,
     AssistanceComponent,
+    FeaturesComponent
   ],
   templateUrl: './finance.component.html',
   styleUrls: ['./finance.component.scss'],
@@ -52,10 +54,6 @@ export class FinanceComponent {
     this.hoveredBenefit = isHovered ? index : null;
   }
 
-  selectTab(index: number): void {
-    this.activeTab = index;
-  }
-
   getBenefitIcon(index: number): string {
     const icons = ['groups', 'tune', 'computer'];
     return icons[index] || 'star';
@@ -73,18 +71,5 @@ export class FinanceComponent {
       ['Cloud-based', 'Real-time Updates', 'Mobile Access'],
     ];
     return features[index] || [];
-  }
-
-  getExpertiseIcon(index: number): string {
-    const icons = ['trending_up', 'calculate', 'gavel', 'lightbulb'];
-    return icons[index] || 'business';
-  }
-
-  getNodePosition(index: number, total: number): string {
-    const angle = (360 / total) * index;
-    const radius = 80;
-    const x = Math.cos((angle * Math.PI) / 180) * radius;
-    const y = Math.sin((angle * Math.PI) / 180) * radius;
-    return `translate(${x}px, ${y}px)`;
   }
 }

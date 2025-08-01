@@ -139,6 +139,7 @@ export const MORTGAGE_CONSTANTS = {
   FEATURES_CONTENT: [
     {
       category: 'Processing Services',
+      icon: 'description',
       items: [
         'Application Review',
         'Document Verification',
@@ -148,6 +149,7 @@ export const MORTGAGE_CONSTANTS = {
     },
     {
       category: 'Underwriting',
+      icon: 'fact_check',
       items: [
         'Risk Assessment',
         'Policy Compliance',
@@ -157,6 +159,7 @@ export const MORTGAGE_CONSTANTS = {
     },
     {
       category: 'Quality Assurance',
+      icon: 'security',
       items: [
         'File Audits',
         'Compliance Checks',
@@ -166,6 +169,7 @@ export const MORTGAGE_CONSTANTS = {
     },
     {
       category: 'Support Services',
+      icon: 'support_agent',
       items: [
         'Customer Communication',
         'Status Updates',
