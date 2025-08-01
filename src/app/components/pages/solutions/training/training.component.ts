@@ -6,6 +6,7 @@ import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 import { FeaturesComponent } from '../../../shared/features/features.component';
+import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 import { TRAINING_CONSTANTS } from '../../../../constants/solutions/training.constants';
 
 @Component({
@@ -19,6 +20,7 @@ import { TRAINING_CONSTANTS } from '../../../../constants/solutions/training.con
     ProcessComponent,
     AssistanceComponent,
     FeaturesComponent,
+    SolutionCTAComponent,
   ],
   templateUrl: './training.component.html',
   styleUrls: ['./training.component.scss'],
