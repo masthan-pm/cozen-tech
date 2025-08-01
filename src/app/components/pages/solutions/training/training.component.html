@@ -42,5 +42,14 @@
     </div>
   </section>
 
-  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
+  <app-solution-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    buttonText="Start Learning Journey"
+    buttonIcon="school"
+    centralIcon="school"
+    badgeIcon="emoji_events"
+    badgeText="Training"
+    [floatingIcons]="['menu_book', 'computer', 'track_changes', 'military_tech', 'psychology', 'trending_up']"
+  ></app-solution-cta>
 </div>

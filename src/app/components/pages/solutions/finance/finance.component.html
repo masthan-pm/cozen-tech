@@ -95,66 +95,14 @@
   ></app-features>
 
 
-  <!-- Enhanced CTA Section -->
-  <section class="cta-section" scrollAnimation animationType="fadeInUp">
-    <div class="cta-background">
-      <div class="financial-particles">
-        <div class="particle" *ngFor="let particle of financialParticles; let i = index"
-             [style.left]="particle.x + '%'"
-             [style.top]="particle.y + '%'"
-             [style.animation-delay]="i * 0.2 + 's'">
-          <i class="material-icons">{{ particle.icon }}</i>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="cta-content">
-        <div class="cta-visual" scrollAnimation animationType="scaleIn">
-          <div class="financial-dashboard">
-            <div class="dashboard-header">
-              <div class="dashboard-title">Financial Growth</div>
-              <div class="dashboard-value">+24.5%</div>
-            </div>
-            <div class="dashboard-chart">
-              <div class="chart-line-animated">
-                <svg viewBox="0 0 200 100">
-                  <polyline class="growth-line" points="0,80 40,60 80,40 120,30 160,20 200,10"></polyline>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cta-text">
-          <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
-            {{ cta.header }}
-          </h2>
-
-          <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
-            {{ cta.text }}
-          </p>
-
-          <div class="cta-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
-            <a routerLink="/contact" class="cta-button primary">
-              <span>Start Your Financial Journey</span>
-              <i class="material-icons">trending_up</i>
-              <div class="button-ripple"></div>
-            </a>
-
-            <div class="contact-options">
-              <a href="mailto:finance@cozentech.com" class="contact-option">
-                <i class="material-icons">email</i>
-                <span>finance&#64;cozentech.com</span>
-              </a>
-              <a href="tel:+16292742295" class="contact-option">
-                <i class="material-icons">phone</i>
-                <span>(629) 274-2295</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-solution-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    buttonText="Start Financial Journey"
+    buttonIcon="trending_up"
+    centralIcon="attach_money"
+    badgeIcon="account_balance"
+    badgeText="Finance"
+    [floatingIcons]="['analytics', 'pie_chart', 'calculate', 'fact_check', 'trending_up', 'euro_symbol']"
+  ></app-solution-cta>
 </div>

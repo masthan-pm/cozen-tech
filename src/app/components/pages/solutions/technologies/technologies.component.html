@@ -42,5 +42,14 @@
     [features]="featuresContent"
   ></app-features>
 
-  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
+  <app-solution-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    buttonText="Explore Technologies"
+    buttonIcon="rocket_launch"
+    centralIcon="code"
+    badgeIcon="memory"
+    badgeText="Technologies"
+    [floatingIcons]="['cloud', 'security', 'analytics', 'integration_instructions', 'wifi', 'psychology']"
+  ></app-solution-cta>
 </div>

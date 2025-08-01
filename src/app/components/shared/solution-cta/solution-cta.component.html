@@ -1,0 +1,77 @@
+<section class="solution-cta-section" scrollAnimation animationType="fadeInUp">
+  <div class="cta-background">
+    <div class="floating-particles">
+      <div class="particle" *ngFor="let particle of particles; let i = index"
+           [style.left]="particle.x + '%'"
+           [style.top]="particle.y + '%'"
+           [style.animation-delay]="i * 0.2 + 's'">
+        <i class="material-icons">{{ particle.icon }}</i>
+      </div>
+    </div>
+    
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cta-content">
+      <div class="cta-visual" scrollAnimation animationType="scaleIn" [animationDelay]="100">
+        <div class="visual-container">
+          <div class="central-icon">
+            <i class="material-icons">{{ centralIcon }}</i>
+            <div class="icon-rings">
+              <div class="ring ring-1"></div>
+              <div class="ring ring-2"></div>
+              <div class="ring ring-3"></div>
+            </div>
+          </div>
+          
+          <div class="floating-icons">
+            <div class="floating-icon" *ngFor="let icon of floatingIcons; let i = index"
+                 [style.--rotation]="(360 / floatingIcons.length) * i + 'deg'"
+                 [style.animation-delay]="i * 0.1 + 's'">
+              <i class="material-icons">{{ icon }}</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-text">
+        <div class="cta-badge" scrollAnimation animationType="fadeInDown" [animationDelay]="200">
+          <i class="material-icons">{{ badgeIcon }}</i>
+          <span>{{ badgeText }}</span>
+        </div>
+
+        <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="300">
+          {{ header }}
+        </h2>
+
+        <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
+          {{ text }}
+        </p>
+
+        <div class="cta-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="500">
+          <a routerLink="/contact" class="cta-button primary">
+            <span>{{ buttonText }}</span>
+            <i class="material-icons">{{ buttonIcon }}</i>
+            <div class="button-ripple"></div>
+          </a>
+
+          <div class="contact-links">
+            <a href="mailto:info@cozentech.com" class="contact-link">
+              <i class="material-icons">email</i>
+              <span>info@cozentech.com</span>
+            </a>
+            <a href="tel:+16292742295" class="contact-link">
+              <i class="material-icons">phone</i>
+              <span>(629) 274-2295</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

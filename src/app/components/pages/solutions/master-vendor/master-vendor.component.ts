@@ -6,6 +6,7 @@ import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 import { FeaturesComponent } from '../../../shared/features/features.component';
+import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 import { MASTER_VENDOR_CONSTANTS } from '../../../../constants/solutions/master-vendor.constants';
 
 @Component({
@@ -19,6 +20,7 @@ import { MASTER_VENDOR_CONSTANTS } from '../../../../constants/solutions/master-
     ProcessComponent,
     AssistanceComponent,
     FeaturesComponent,
+    SolutionCTAComponent,
   ],
   templateUrl: './master-vendor.component.html',
   styleUrls: ['./master-vendor.component.scss'],

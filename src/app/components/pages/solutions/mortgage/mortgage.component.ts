@@ -6,6 +6,7 @@ import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 import { FeaturesComponent } from '../../../shared/features/features.component';
+import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 import { MORTGAGE_CONSTANTS } from '../../../../constants/solutions/mortgage.constants';
 
 @Component({
@@ -19,6 +20,7 @@ import { MORTGAGE_CONSTANTS } from '../../../../constants/solutions/mortgage.con
     ProcessComponent,
     AssistanceComponent,
     FeaturesComponent,
+    SolutionCTAComponent,
   ],
   templateUrl: './mortgage.component.html',
   styleUrls: ['./mortgage.component.scss'],

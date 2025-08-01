@@ -27,5 +27,14 @@
     [features]="benefits"
   ></app-features>
 
-  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
+  <app-solution-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    buttonText="Optimize Vendor Management"
+    buttonIcon="handshake"
+    centralIcon="work"
+    badgeIcon="business_center"
+    badgeText="Vendor Solutions"
+    [floatingIcons]="['group', 'trending_up', 'security', 'settings', 'analytics', 'verified']"
+  ></app-solution-cta>
 </div>

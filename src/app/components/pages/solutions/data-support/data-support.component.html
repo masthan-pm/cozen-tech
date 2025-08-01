@@ -26,5 +26,14 @@
     [features]="capabilities"
   ></app-features>
 
-  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
+  <app-solution-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    buttonText="Unlock Data Insights"
+    buttonIcon="insights"
+    centralIcon="storage"
+    badgeIcon="analytics"
+    badgeText="Data Solutions"
+    [floatingIcons]="['analytics', 'bar_chart', 'search', 'security', 'share', 'cloud']"
+  ></app-solution-cta>
 </div>
