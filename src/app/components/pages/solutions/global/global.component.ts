@@ -7,6 +7,7 @@ import { GLOBAL_CONSTANTS } from '../../../../constants/solutions/global.constan
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
+import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 
 @Component({
   selector: 'app-global',
@@ -18,7 +19,8 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
     ScrollRevealDirective,
     ProcessComponent,
     HeroComponent,
-    AssistanceComponent
+    AssistanceComponent,
+    SolutionCTAComponent
   ],
   templateUrl: './global.component.html',
   styleUrls: ['./global.component.scss'],

@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeroComponent } from '../../../shared/hero/hero.component';
-import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 import { FeaturesComponent } from '../../../shared/features/features.component';
+import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 import { MORTGAGE_CONSTANTS } from '../../../../constants/solutions/mortgage.constants';
 
 @Component({
@@ -15,10 +15,10 @@ import { MORTGAGE_CONSTANTS } from '../../../../constants/solutions/mortgage.con
     CommonModule,
     RouterModule,
     HeroComponent,
-    CTAComponent,
     ProcessComponent,
     AssistanceComponent,
     FeaturesComponent,
+    SolutionCTAComponent,
   ],
   templateUrl: './mortgage.component.html',
   styleUrls: ['./mortgage.component.scss'],

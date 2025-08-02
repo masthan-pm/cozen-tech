@@ -27,5 +27,14 @@
     [features]="featuresContent"
   ></app-features>
 
-  <app-cta [header]="cta.header" [text]="cta.text"></app-cta>
+  <app-solution-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    buttonText="Streamline Mortgage Process"
+    buttonIcon="home"
+    centralIcon="home"
+    badgeIcon="gavel"
+    badgeText="Mortgage"
+    [floatingIcons]="['description', 'search', 'schedule', 'security', 'verified', 'assignment']"
+  ></app-solution-cta>
 </div>

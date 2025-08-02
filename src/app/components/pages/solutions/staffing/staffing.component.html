@@ -75,64 +75,14 @@
     </div>
   </section>
 
-  <!-- Enhanced CTA Section -->
-  <section class="cta-section" scrollAnimation animationType="fadeInUp">
-    <div class="cta-background">
-      <div class="talent-network">
-        <div class="network-grid">
-          <div *ngFor="let dot of talentDots; let i = index"
-               class="talent-dot"
-               [style.left]="dot.x + '%'"
-               [style.top]="dot.y + '%'"
-               [style.animation-delay]="i * 0.1 + 's'">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="cta-content">
-        <div class="cta-icon" scrollAnimation animationType="scaleIn">
-          <i class="material-icons">groups</i>
-          <div class="icon-orbit">
-            <div class="orbit-dot" *ngFor="let dot of [1,2,3,4]"></div>
-          </div>
-        </div>
-
-        <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
-          {{ cta.header }}
-        </h2>
-
-        <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
-          {{ cta.text }}
-        </p>
-
-        <div class="cta-options" scrollAnimation animationType="fadeInUp" [animationDelay]="600">
-          <div class="option-card">
-            <div class="option-icon">
-              <i class="material-icons">business</i>
-            </div>
-            <h4>For Employers</h4>
-            <p>Find exceptional talent for your team</p>
-            <a routerLink="/contact" class="option-btn">
-              <span>Hire Talent</span>
-              <i class="material-icons">arrow_forward</i>
-            </a>
-          </div>
-
-          <div class="option-card">
-            <div class="option-icon">
-              <i class="material-icons">person</i>
-            </div>
-            <h4>For Candidates</h4>
-            <p>Discover your next career opportunity</p>
-            <a routerLink="/careers" class="option-btn">
-              <span>Find Jobs</span>
-              <i class="material-icons">arrow_forward</i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-solution-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    buttonText="Find Top Talent"
+    buttonIcon="search"
+    centralIcon="groups"
+    badgeIcon="work"
+    badgeText="Staffing"
+    [floatingIcons]="['person', 'business', 'handshake', 'star', 'check_circle', 'trending_up']"
+  ></app-solution-cta>
 </div>

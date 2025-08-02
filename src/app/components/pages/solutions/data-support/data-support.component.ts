@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeroComponent } from '../../../shared/hero/hero.component';
-import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 import { FeaturesComponent } from '../../../shared/features/features.component';
+import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 import { DATA_SUPPORT_CONSTANTS } from '../../../../constants/solutions/data-support.constants';
 
 @Component({
@@ -15,10 +15,10 @@ import { DATA_SUPPORT_CONSTANTS } from '../../../../constants/solutions/data-sup
     CommonModule,
     RouterModule,
     HeroComponent,
-    CTAComponent,
     ProcessComponent,
     AssistanceComponent,
     FeaturesComponent,
+    SolutionCTAComponent,
   ],
   templateUrl: './data-support.component.html',
   styleUrls: ['./data-support.component.scss'],
