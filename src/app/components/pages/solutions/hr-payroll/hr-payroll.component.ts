@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ScrollAnimationDirective } from '../../../../directives/scroll-animation.directive';
 import { HR_PAYROLL_CONSTANTS } from '../../../../constants/solutions/hr-payroll.constants';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { HeroComponent } from '../../../shared/hero/hero.component';
@@ -15,7 +14,6 @@ import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.
   imports: [
     CommonModule,
     RouterModule,
-    ScrollAnimationDirective,
     ProcessComponent,
     HeroComponent,
     AssistanceComponent,

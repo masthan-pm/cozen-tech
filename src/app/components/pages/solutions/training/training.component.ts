@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeroComponent } from '../../../shared/hero/hero.component';
-import { CTAComponent } from '../../../shared/cta/cta.component';
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 import { FeaturesComponent } from '../../../shared/features/features.component';
@@ -16,7 +15,6 @@ import { TRAINING_CONSTANTS } from '../../../../constants/solutions/training.con
     CommonModule,
     RouterModule,
     HeroComponent,
-    CTAComponent,
     ProcessComponent,
     AssistanceComponent,
     FeaturesComponent,
