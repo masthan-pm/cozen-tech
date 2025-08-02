@@ -6,6 +6,8 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
 import { FeaturesComponent } from '../../../shared/features/features.component';
 import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 import { TECHNOLOGIES_CONSTANTS } from '../../../../constants/solutions/technologies.constants';
+import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.directive';
+import { ScrollAnimationDirective } from '../../../../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-technologies',
@@ -17,6 +19,8 @@ import { TECHNOLOGIES_CONSTANTS } from '../../../../constants/solutions/technolo
     AssistanceComponent,
     FeaturesComponent,
     SolutionCTAComponent,
+    ScrollRevealDirective,
+    ScrollAnimationDirective
   ],
   templateUrl: './technologies.component.html',
   styleUrls: ['./technologies.component.scss'],

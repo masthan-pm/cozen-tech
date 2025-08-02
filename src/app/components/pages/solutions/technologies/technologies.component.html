@@ -44,10 +44,10 @@
         <!-- Tech Category Clusters -->
         <div class="tech-clusters">
           @for (stack of techStack; track $index) {
-          <div class="tech-cluster" 
+          <div class="tech-cluster"
                [class]="'cluster-' + ($index + 1)"
                scrollAnimation animationType="fadeInUp" [animationDelay]="$index * 200 + 500">
-            
+
             <!-- Cluster Hub -->
             <div class="cluster-hub">
               <div class="hub-icon">
@@ -59,11 +59,11 @@
 
             <!-- Tech Nodes orbiting around the hub -->
             <div class="tech-nodes">
-              @for (tech of stack.items; track techIndex) {
-              <div class="tech-node" 
-                   [style.--orbit-delay]="techIndex * 0.5 + 's'"
-                   [style.--orbit-radius]="80 + (techIndex % 2) * 20 + 'px'"
-                   [style.--orbit-angle]="(360 / stack.items.length) * techIndex + 'deg'">
+              @for (tech of stack.items; track $index) {
+              <div class="tech-node"
+                   [style.--orbit-delay]="$index * 0.5 + 's'"
+                   [style.--orbit-radius]="80 + ($index % 2) * 20 + 'px'"
+                   [style.--orbit-angle]="(360 / stack.items.length) * $index + 'deg'">
                 <div class="node-content">
                   <span class="tech-name">{{ tech }}</span>
                   <div class="node-pulse"></div>
@@ -76,14 +76,14 @@
             <!-- Neural Connections to Central Brain -->
             <div class="neural-connection">
               <svg class="connection-svg" viewBox="0 0 200 200">
-                <path class="connection-path" 
-                      d="M100,100 Q150,50 180,80" 
-                      stroke="rgba(79, 172, 254, 0.3)" 
-                      stroke-width="2" 
+                <path class="connection-path"
+                      d="M100,100 Q150,50 180,80"
+                      stroke="rgba(79, 172, 254, 0.3)"
+                      stroke-width="2"
                       fill="none">
-                  <animate attributeName="stroke-dasharray" 
-                           values="0,100;50,50;100,0;0,100" 
-                           dur="4s" 
+                  <animate attributeName="stroke-dasharray"
+                           values="0,100;50,50;100,0;0,100"
+                           dur="4s"
                            repeatCount="indefinite"/>
                 </path>
               </svg>
@@ -95,7 +95,7 @@
         <!-- Floating Data Particles -->
         <div class="data-particles">
           @for (particle of [1,2,3,4,5,6,7,8,9,10]; track $index) {
-          <div class="data-particle" 
+          <div class="data-particle"
                [style.--particle-delay]="$index * 0.8 + 's'"
                [style.--particle-duration]="6 + ($index % 3) + 's'">
             <div class="particle-core"></div>
@@ -103,148 +103,9 @@
           </div>
           }
         </div>
-
-        <!-- Interactive Tech Stats -->
-        <div class="tech-stats-overlay">
-          <div class="stat-node stat-1">
-            <div class="stat-value">100+</div>
-            <div class="stat-label">Technologies</div>
-          </div>
-          <div class="stat-node stat-2">
-            <div class="stat-value">99.9%</div>
-            <div class="stat-label">Uptime</div>
-          </div>
-          <div class="stat-node stat-3">
-            <div class="stat-value">24/7</div>
-            <div class="stat-label">Support</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
-
-  <app-features
-    [header]="features.header"
-    [subheader]="features.subheader"
-    [features]="featuresContent"
-  ></app-features>
-
-  <app-solution-cta
-    [header]="cta.header"
-    [text]="cta.text"
-    buttonText="Explore Technologies"
-    buttonIcon="rocket_launch"
-    centralIcon="code"
-    badgeIcon="memory"
-    badgeText="Technologies"
-    [floatingIcons]="['cloud', 'security', 'analytics', 'integration_instructions', 'wifi', 'psychology']"
-  ></app-solution-cta>
-</div>              <div class="ring ring-1"></div>
-              <div class="ring ring-2"></div>
-              <div class="ring ring-3"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tech Category Clusters -->
-        <div class="tech-clusters">
-          @for (stack of techStack; track $index) {
-          <div class="tech-cluster" 
-               [class]="'cluster-' + ($index + 1)"
-               scrollAnimation animationType="fadeInUp" [animationDelay]="$index * 200 + 500">
-            
-            <!-- Cluster Hub -->
-            <div class="cluster-hub">
-              <div class="hub-icon">
-                <i class="material-icons">{{ stack.icon }}</i>
-              </div>
-              <div class="hub-label">{{ stack.category }}</div>
-              <div class="hub-glow"></div>
-            </div>
-
-            <!-- Tech Nodes orbiting around the hub -->
-            <div class="tech-nodes">
-              @for (tech of stack.items; track techIndex) {
-              <div class="tech-node" 
-                   [style.--orbit-delay]="techIndex * 0.5 + 's'"
-                   [style.--orbit-radius]="80 + (techIndex % 2) * 20 + 'px'"
-                   [style.--orbit-angle]="(360 / stack.items.length) * techIndex + 'deg'">
-                <div class="node-content">
-                  <span class="tech-name">{{ tech }}</span>
-                  <div class="node-pulse"></div>
-                </div>
-                <div class="connection-line"></div>
-              </div>
-              }
-            </div>
-
-            <!-- Neural Connections to Central Brain -->
-            <div class="neural-connection">
-              <svg class="connection-svg" viewBox="0 0 200 200">
-                <path class="connection-path" 
-                      d="M100,100 Q150,50 180,80" 
-                      stroke="rgba(79, 172, 254, 0.3)" 
-                      stroke-width="2" 
-                      fill="none">
-                  <animate attributeName="stroke-dasharray" 
-                           values="0,100;50,50;100,0;0,100" 
-                           dur="4s" 
-                           repeatCount="indefinite"/>
-                </path>
-              </svg>
-            </div>
-          </div>
-          }
-        </div>
-
-        <!-- Floating Data Particles -->
-        <div class="data-particles">
-          @for (particle of [1,2,3,4,5,6,7,8,9,10]; track $index) {
-          <div class="data-particle" 
-               [style.--particle-delay]="$index * 0.8 + 's'"
-               [style.--particle-duration]="6 + ($index % 3) + 's'">
-            <div class="particle-core"></div>
-            <div class="particle-trail"></div>
-          </div>
-          }
-        </div>
-
-        <!-- Interactive Tech Stats -->
-        <div class="tech-stats-overlay">
-          <div class="stat-node stat-1">
-            <div class="stat-value">100+</div>
-            <div class="stat-label">Technologies</div>
-          </div>
-          <div class="stat-node stat-2">
-            <div class="stat-value">99.9%</div>
-            <div class="stat-label">Uptime</div>
-          </div>
-          <div class="stat-node stat-3">
-            <div class="stat-value">24/7</div>
-            <div class="stat-label">Support</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <app-features
-    [header]="features.header"
-    [subheader]="features.subheader"
-    [features]="featuresContent"
-  ></app-features>
-
-  <app-solution-cta
-    [header]="cta.header"
-    [text]="cta.text"
-    buttonText="Explore Technologies"
-    buttonIcon="rocket_launch"
-    centralIcon="code"
-    badgeIcon="memory"
-    badgeText="Technologies"
-    [floatingIcons]="['cloud', 'security', 'analytics', 'integration_instructions', 'wifi', 'psychology']"
-  ></app-solution-cta>
-</div>  </section>
 
   <app-features
     [header]="features.header"

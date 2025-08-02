@@ -23,7 +23,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: 
+    background:
       radial-gradient(circle at 20% 20%, rgba(79, 172, 254, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
       radial-gradient(circle at 40% 60%, rgba(0, 242, 254, 0.06) 0%, transparent 50%);
@@ -139,7 +139,7 @@
         justify-content: center;
         border: 3px solid rgba(79, 172, 254, 0.5);
         animation: brainPulse 4s ease-in-out infinite;
-        box-shadow: 
+        box-shadow:
           0 0 40px rgba(79, 172, 254, 0.6),
           inset 0 0 40px rgba(255, 255, 255, 0.1);
 
@@ -198,22 +198,22 @@
 
       .tech-cluster {
         position: absolute;
-        
+
         &.cluster-1 {
           top: 10%;
           left: 15%;
         }
-        
+
         &.cluster-2 {
           top: 15%;
           right: 15%;
         }
-        
+
         &.cluster-3 {
           bottom: 15%;
           left: 15%;
         }
-        
+
         &.cluster-4 {
           bottom: 10%;
           right: 15%;
@@ -298,9 +298,9 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) 
-                     rotate(var(--orbit-angle)) 
-                     translateY(calc(-1 * var(--orbit-radius))) 
+            transform: translate(-50%, -50%)
+                     rotate(var(--orbit-angle))
+                     translateY(calc(-1 * var(--orbit-radius)))
                      rotate(calc(-1 * var(--orbit-angle)));
             animation: nodeOrbit 20s linear infinite;
             animation-delay: var(--orbit-delay);
@@ -409,57 +409,6 @@
             background: #00f2fe;
             box-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
           }
-        }
-      }
-    }
-
-    .tech-stats-overlay {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 5;
-
-      .stat-node {
-        position: absolute;
-        @include glass-base(rgba(255, 255, 255, 0.1), 12px);
-        padding: 1rem 1.5rem;
-        border-radius: 16px;
-        border: 1px solid rgba(79, 172, 254, 0.3);
-        text-align: center;
-        animation: statFloat 8s ease-in-out infinite;
-
-        &.stat-1 {
-          top: 20%;
-          left: 10%;
-          animation-delay: 0s;
-        }
-
-        &.stat-2 {
-          top: 30%;
-          right: 10%;
-          animation-delay: 2s;
-        }
-
-        &.stat-3 {
-          bottom: 20%;
-          left: 50%;
-          transform: translateX(-50%);
-          animation-delay: 4s;
-        }
-
-        .stat-value {
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: #4facfe;
-          margin-bottom: 0.25rem;
-          display: block;
-        }
-
-        .stat-label {
-          font-size: 0.8rem;
-          color: rgba(255, 255, 255, 0.7);
-          text-transform: uppercase;
-          letter-spacing: 1px;
         }
       }
     }
@@ -582,14 +531,14 @@
 
 // Enhanced Animations
 @keyframes neuralBackgroundShift {
-  0%, 100% { 
-    background-position: 0% 0%, 100% 100%, 50% 50%; 
+  0%, 100% {
+    background-position: 0% 0%, 100% 100%, 50% 50%;
   }
-  33% { 
-    background-position: 100% 0%, 0% 100%, 80% 20%; 
+  33% {
+    background-position: 100% 0%, 0% 100%, 80% 20%;
   }
-  66% { 
-    background-position: 0% 100%, 100% 0%, 20% 80%; 
+  66% {
+    background-position: 0% 100%, 100% 0%, 20% 80%;
   }
 }
 
@@ -604,11 +553,11 @@
 }
 
 @keyframes underlineGlow {
-  0%, 100% { 
+  0%, 100% {
     box-shadow: 0 0 15px rgba(79, 172, 254, 0.5);
     transform: translateX(-50%) scaleX(1);
   }
-  50% { 
+  50% {
     box-shadow: 0 0 30px rgba(79, 172, 254, 0.8);
     transform: translateX(-50%) scaleX(1.2);
   }
@@ -620,15 +569,15 @@
 }
 
 @keyframes brainPulse {
-  0%, 100% { 
+  0%, 100% {
     transform: translate(-50%, -50%) scale(1);
-    box-shadow: 
+    box-shadow:
       0 0 40px rgba(79, 172, 254, 0.6),
       inset 0 0 40px rgba(255, 255, 255, 0.1);
   }
-  50% { 
+  50% {
     transform: translate(-50%, -50%) scale(1.05);
-    box-shadow: 
+    box-shadow:
       0 0 60px rgba(79, 172, 254, 0.8),
       inset 0 0 60px rgba(255, 255, 255, 0.2);
   }
@@ -641,13 +590,13 @@
 }
 
 @keyframes brainRipple {
-  0%, 100% { 
-    transform: scale(1); 
-    opacity: 0.3; 
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
   }
-  50% { 
-    transform: scale(1.3); 
-    opacity: 0.1; 
+  50% {
+    transform: scale(1.3);
+    opacity: 0.1;
   }
 }
 
@@ -668,44 +617,44 @@
 }
 
 @keyframes nodeOrbit {
-  0% { 
-    transform: translate(-50%, -50%) 
-               rotate(var(--orbit-angle)) 
-               translateY(calc(-1 * var(--orbit-radius))) 
-               rotate(calc(-1 * var(--orbit-angle))); 
+  0% {
+    transform: translate(-50%, -50%)
+               rotate(var(--orbit-angle))
+               translateY(calc(-1 * var(--orbit-radius)))
+               rotate(calc(-1 * var(--orbit-angle)));
   }
-  100% { 
-    transform: translate(-50%, -50%) 
-               rotate(calc(var(--orbit-angle) + 360deg)) 
-               translateY(calc(-1 * var(--orbit-radius))) 
-               rotate(calc(-1 * var(--orbit-angle) - 360deg)); 
+  100% {
+    transform: translate(-50%, -50%)
+               rotate(calc(var(--orbit-angle) + 360deg))
+               translateY(calc(-1 * var(--orbit-radius)))
+               rotate(calc(-1 * var(--orbit-angle) - 360deg));
   }
 }
 
 @keyframes nodePulse {
-  0%, 100% { 
-    transform: scale(1); 
-    opacity: 0; 
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0;
   }
-  50% { 
-    transform: scale(1.2); 
-    opacity: 1; 
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
   }
 }
 
 @keyframes particleFlow {
-  0% { 
-    left: -5%; 
-    top: 50%; 
-    opacity: 0; 
+  0% {
+    left: -5%;
+    top: 50%;
+    opacity: 0;
   }
-  10%, 90% { 
-    opacity: 1; 
+  10%, 90% {
+    opacity: 1;
   }
-  100% { 
-    left: 105%; 
-    top: 30%; 
-    opacity: 0; 
+  100% {
+    left: 105%;
+    top: 30%;
+    opacity: 0;
   }
 }
 
