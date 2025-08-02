@@ -1,20 +1,16 @@
 <section class="solution-cta-section" scrollAnimation animationType="fadeInUp">
   <div class="cta-background">
-    <div class="mesh-gradient"></div>
-    <div class="floating-grid"></div>
     <div class="neural-particles" #neuralParticlesContainer>
-      <div
-        class="neural-particle"
-        *ngFor="let particle of neuralParticles; trackBy: trackByParticleId"
-        [ngStyle]="getParticleStyle(particle)">
-      </div>
+      @for (particle of neuralParticles; track $index) {
+      <div class="neural-particle" [ngStyle]="getParticleStyle(particle)"></div>
+      }
     </div>
   </div>
 
   <div class="container">
     <div class="cta-content">
       <div class="cta-text">
-        <div class="cta-badge" scrollAnimation animationType="fadeInDown" [animationDelay]="200">
+        <div class="cta-badge" scrollAnimation animationType="fadeInDown">
           <i class="material-icons">{{ badgeIcon }}</i>
           <span>{{ badgeText }}</span>
         </div>
@@ -27,15 +23,26 @@
           {{ text }}
         </p>
 
-        <div class="cta-actions" scrollAnimation animationType="fadeInUp" [animationDelay]="500">
+        <div
+          class="cta-actions"
+          scrollAnimation
+          animationType="fadeInUp"
+          [animationDelay]="500"
+        >
           <a routerLink="/contact" class="cta-button">
+            <div class="button-ripple"></div>
             <span>{{ buttonText }}</span>
             <i class="material-icons">{{ buttonIcon }}</i>
           </a>
         </div>
       </div>
 
-      <div class="cta-visual" scrollAnimation animationType="scaleIn" [animationDelay]="100">
+      <div
+        class="cta-visual"
+        scrollAnimation
+        animationType="scaleIn"
+        [animationDelay]="100"
+      >
         <div class="visual-container">
           <div class="center-orb">
             <i class="material-icons center-icon">{{ centralIcon }}</i>
@@ -48,13 +55,12 @@
           </div>
 
           <div class="floating-elements">
-            <div
-              class="floating-element"
-              *ngFor="let icon of floatingIcons; trackBy: trackByIconIndex"
-              (mouseenter)="onFloatingElementHover($event, true)"
+            @for (icon of floatingIcons; track $index) {
+            <div class="floating-element" (mouseenter)="onFloatingElementHover($event, true)"
               (mouseleave)="onFloatingElementHover($event, false)">
-              <i class="material-icons">{{ icon }}</i>
-            </div>
+                <i class="material-icons">{{ icon }}</i>
+              </div>
+            }
           </div>
         </div>
       </div>
