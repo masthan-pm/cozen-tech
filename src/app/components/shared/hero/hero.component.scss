@@ -74,12 +74,13 @@
 // Enhanced Hero Section styles
 .hero-section-enhanced {
   position: relative;
-  min-height: 100vh;
+  // min-height: 100vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #1a365d 0%, #2d3748 50%, #4a5568 100%);
   overflow: hidden;
   margin-top: 5.25rem;
+  padding: 5.5rem 0rem;
 
   .hero-background {
     position: absolute;

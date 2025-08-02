@@ -76,54 +76,14 @@
     </div>
   </section>
 
-  <!-- Enhanced CTA Section -->
-  <section class="cta-section" scrollAnimation animationType="fadeInUp">
-    <div class="cta-background">
-      <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="cta-content">
-        <div class="cta-icon" scrollAnimation animationType="scaleIn">
-          <i class="material-icons">rocket_launch</i>
-        </div>
-
-        <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="200">
-          {{ cta.header }}
-        </h2>
-
-        <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
-          {{ cta.text }}
-        </p>
-
-        <div
-          class="cta-actions"
-          scrollAnimation
-          animationType="fadeInUp"
-          [animationDelay]="600"
-        >
-          <a routerLink="/contact" class="cta-button primary">
-            <span>Start Your Project</span>
-            <i class="material-icons">arrow_forward</i>
-            <div class="button-ripple"></div>
-          </a>
-
-          <div class="contact-info">
-            <a href="mailto:info@cozentech.com" class="contact-item">
-              <i class="material-icons">email</i>
-              <span>info&#64;cozentech.com</span>
-            </a>
-            <a href="tel:+16292742295" class="contact-item">
-              <i class="material-icons">phone</i>
-              <span>(629) 274-2295</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-solution-cta
+    [header]="cta.header"
+    [text]="cta.text"
+    buttonText="Start Your Project"
+    buttonIcon="rocket_launch"
+    centralIcon="public"
+    badgeIcon="build"
+    badgeText="Solutions"
+    [floatingIcons]="['code', 'cloud', 'security', 'integration_instructions', 'language', 'devices']"
+  ></app-solution-cta>
 </div>

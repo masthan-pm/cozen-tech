@@ -8,6 +8,7 @@ import { STAFFING_CONSTANTS } from '../../../../constants/solutions/staffing.con
 import { ProcessComponent } from '../../../shared/process/process.component';
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
+import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 
 @Component({
   selector: 'app-staffing',
@@ -19,7 +20,8 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
     ScrollRevealDirective,
     ProcessComponent,
     HeroComponent,
-    AssistanceComponent
+    AssistanceComponent,
+    SolutionCTAComponent
   ],
   templateUrl: './staffing.component.html',
   styleUrls: ['./staffing.component.scss'],
@@ -39,11 +41,6 @@ export class StaffingComponent {
   heroStats = STAFFING_CONSTANTS.HERO_STATS;
 
   hoveredSpecialization: number | null = null;
-
-  talentDots = Array.from({ length: 50 }, (_, i) => ({
-    x: Math.random() * 100,
-    y: Math.random() * 100
-  }));
 
   onSpecializationHover(index: number, isHovered: boolean): void {
     this.hoveredSpecialization = isHovered ? index : null;

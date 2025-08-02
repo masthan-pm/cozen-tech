@@ -1,0 +1,69 @@
+<section class="solution-cta-section" scrollAnimation animationType="fadeInUp">
+  <div class="cta-background">
+    <div class="neural-particles" #neuralParticlesContainer>
+      @for (particle of neuralParticles; track $index) {
+      <div class="neural-particle" [ngStyle]="getParticleStyle(particle)"></div>
+      }
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cta-content">
+      <div class="cta-text">
+        <div class="cta-badge" scrollAnimation animationType="fadeInDown">
+          <i class="material-icons">{{ badgeIcon }}</i>
+          <span>{{ badgeText }}</span>
+        </div>
+
+        <h2 scrollAnimation animationType="fadeInUp" [animationDelay]="300">
+          {{ header }}
+        </h2>
+
+        <p scrollAnimation animationType="fadeInUp" [animationDelay]="400">
+          {{ text }}
+        </p>
+
+        <div
+          class="cta-actions"
+          scrollAnimation
+          animationType="fadeInUp"
+          [animationDelay]="500"
+        >
+          <a routerLink="/contact" class="cta-button">
+            <div class="button-ripple"></div>
+            <span>{{ buttonText }}</span>
+            <i class="material-icons">{{ buttonIcon }}</i>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="cta-visual"
+        scrollAnimation
+        animationType="scaleIn"
+        [animationDelay]="100"
+      >
+        <div class="visual-container">
+          <div class="center-orb">
+            <i class="material-icons center-icon">{{ centralIcon }}</i>
+          </div>
+
+          <div class="orbital-rings">
+            <div class="orbital-ring ring-1"></div>
+            <div class="orbital-ring ring-2"></div>
+            <div class="orbital-ring ring-3"></div>
+          </div>
+
+          <div class="floating-elements">
+            @for (icon of floatingIcons; track $index) {
+            <div class="floating-element" (mouseenter)="onFloatingElementHover($event, true)"
+              (mouseleave)="onFloatingElementHover($event, false)">
+                <i class="material-icons">{{ icon }}</i>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

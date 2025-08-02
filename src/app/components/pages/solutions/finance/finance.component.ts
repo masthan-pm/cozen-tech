@@ -8,6 +8,7 @@ import { FINANCE_CONSTANTS } from '../../../../constants/solutions/finance.const
 import { HeroComponent } from '../../../shared/hero/hero.component';
 import { AssistanceComponent } from '../../../shared/assistance/assistance.component';
 import { FeaturesComponent } from '../../../shared/features/features.component';
+import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 
 @Component({
   selector: 'app-finance',
@@ -20,7 +21,8 @@ import { FeaturesComponent } from '../../../shared/features/features.component';
     StaggerAnimationDirective,
     HeroComponent,
     AssistanceComponent,
-    FeaturesComponent
+    FeaturesComponent,
+    SolutionCTAComponent
   ],
   templateUrl: './finance.component.html',
   styleUrls: ['./finance.component.scss'],
@@ -40,15 +42,6 @@ export class FinanceComponent {
 
   hoveredBenefit: number | null = null;
   activeTab: number = 0;
-
-  // Financial particles for CTA
-  financialParticles = Array.from({ length: 20 }, (_, i) => ({
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    icon: ['trending_up', 'account_balance', 'attach_money', 'analytics'][
-      Math.floor(Math.random() * 4)
-    ],
-  }));
 
   onBenefitHover(index: number, isHovered: boolean): void {
     this.hoveredBenefit = isHovered ? index : null;

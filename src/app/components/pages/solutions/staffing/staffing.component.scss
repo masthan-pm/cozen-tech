@@ -12,10 +12,12 @@
   @extend %section-base;
   background: linear-gradient(
     135deg,
-    rgba(249, 250, 251, 0.8),
-    rgba(243, 244, 246, 0.9)
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(30, 41, 59, 0.9) 50%,
+    rgba(51, 65, 85, 0.95) 100%
   );
   position: relative;
+  color: $white;
 
   .container {
     @extend %container;
@@ -31,15 +33,23 @@
       display: inline-flex;
       align-items: center;
       gap: 0.75rem;
-      @include glass-base(rgba(102, 126, 234, 0.1), 8px);
+      @include glass-base(rgba(255, 255, 255, 0.15), 10px);
       padding: 0.75rem 1.5rem;
       border-radius: 50px;
-      border: 1px solid rgba(102, 126, 234, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       margin-bottom: 1.5rem;
-      color: #667eea;
+      color: $white;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        border-color: rgba(0, 178, 178, 0.5);
+        box-shadow: 0 8px 25px rgba(0, 178, 178, 0.2);
+      }
 
       i {
         font-size: 1.1rem;
+        color: var(--accent-color, #4facfe);
       }
 
       span {
@@ -54,7 +64,7 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, #2d3748, #4a5568);
+      background: linear-gradient(135deg, #ffffff, #e2e8f0);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -62,7 +72,7 @@
 
     p {
       font-size: 1.125rem;
-      color: #4a5568;
+      color: rgba(255, 255, 255, 0.8);
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -77,47 +87,48 @@
 
   .specialization-card {
     position: relative;
-    @include glass-base(rgba(255, 255, 255, 0.12), 12px);
+    @include glass-base(rgba(255, 255, 255, 0.05), 12px);
     padding: 2rem 1.5rem;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
     cursor: pointer;
-    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s ease;
     overflow: hidden;
 
-    .card-glow {
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, #667eea, #4facfe, #00f2fe, #667eea);
-      border-radius: 22px;
-      opacity: 0;
-      z-index: -1;
-      transition: opacity 0.6s ease;
-      background-size: 400% 400%;
-      animation: gradientRotate 4s ease infinite;
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 178, 178, 0.3);
+      box-shadow: 0 15px 30px rgba(0, 178, 178, 0.15);
     }
 
     .specialization-icon {
       position: relative;
       width: 80px;
       height: 80px;
-      @include glass-base(rgba(102, 126, 234, 0.15), 10px);
+      @include glass-base(rgba(255, 255, 255, 0.08), 10px);
       border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 1.5rem;
-      border: 1px solid rgba(102, 126, 234, 0.3);
-      transition: all 0.6s ease;
+      border: 1px solid rgba(0, 178, 178, 0.3);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(0, 178, 178, 0.1);
+        border-color: rgba(0, 178, 178, 0.5);
+      }
 
       i {
         font-size: 2.2rem;
-        color: #667eea;
-        transition: all 0.6s ease;
+        color: rgba(0, 178, 178, 0.9);
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: var(--accent-color, #4facfe);
+          transform: scale(1.1);
+        }
       }
 
       .icon-particles {
@@ -128,7 +139,7 @@
           position: absolute;
           width: 4px;
           height: 4px;
-          background: rgba(102, 126, 234, 0.6);
+          background: rgba(0, 178, 178, 0.6);
           border-radius: 50%;
           opacity: 0;
           animation: particleFloat 3s ease-in-out infinite;
@@ -170,9 +181,13 @@
     h3 {
       font-size: 1.2rem;
       font-weight: 600;
-      color: $blue-gray;
+      color: rgba(255, 255, 255, 0.9);
       margin-bottom: 1.5rem;
-      transition: all 0.6s ease;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--accent-color, #4facfe);
+      }
     }
 
     .demand-indicator {
@@ -181,35 +196,29 @@
       .demand-bar {
         width: 100%;
         height: 6px;
-        background: rgba(102, 126, 234, 0.1);
+        background: rgba(0, 178, 178, 0.1);
         border-radius: 3px;
         overflow: hidden;
         margin-bottom: 0.5rem;
 
         .demand-fill {
           height: 100%;
-          background: linear-gradient(90deg, #667eea, #4facfe);
+          background: linear-gradient(90deg, rgba(0, 178, 178, 0.8), rgba(79, 172, 254, 0.8));
           border-radius: 3px;
           transition: width 2s ease-in-out;
           position: relative;
-
-          &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 20px;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5));
-            animation: demandShimmer 2s ease-in-out infinite;
-          }
         }
       }
 
       .demand-text {
         font-size: 0.85rem;
         font-weight: 500;
-        color: #667eea;
+        color: rgba(0, 178, 178, 0.9);
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--accent-color, #4facfe);
+        }
       }
     }
 
@@ -218,20 +227,33 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        @include glass-base(rgba(102, 126, 234, 0.08), 6px);
+        @include glass-base(rgba(255, 255, 255, 0.05), 6px);
         padding: 0.5rem 1rem;
         border-radius: 20px;
-        border: 1px solid rgba(102, 126, 234, 0.15);
+        border: 1px solid rgba(0, 178, 178, 0.2);
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          border-color: rgba(0, 178, 178, 0.4);
+          background: rgba(0, 178, 178, 0.05);
+        }
 
         i {
           font-size: 1rem;
-          color: #4facfe;
+          color: rgba(79, 172, 254, 0.9);
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: var(--accent-color, #4facfe);
+            transform: scale(1.1);
+          }
         }
 
         span {
           font-size: 0.8rem;
           font-weight: 500;
-          color: $gray-charcol;
+          color: rgba(255, 255, 255, 0.8);
         }
       }
     }
@@ -239,13 +261,9 @@
     &.hovered {
       transform: translateY(-10px) scale(1.05);
 
-      .card-glow {
-        opacity: 1;
-      }
-
       .specialization-icon {
-        background: linear-gradient(135deg, #667eea, #4facfe);
-        border-color: rgba(102, 126, 234, 0.5);
+        background: linear-gradient(135deg, rgba(0, 178, 178, 0.8), rgba(79, 172, 254, 0.8));
+        border-color: rgba(0, 178, 178, 0.5);
 
         i {
           color: $white;
@@ -259,226 +277,10 @@
       }
 
       h3 {
-        background: linear-gradient(135deg, #667eea, #4facfe);
+        background: linear-gradient(135deg, rgba(0, 178, 178, 0.9), rgba(79, 172, 254, 0.9));
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-      }
-    }
-  }
-}
-
-// Enhanced CTA Section
-.cta-section {
-  @extend %section-base;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4facfe 100%);
-  color: $white;
-  position: relative;
-  overflow: hidden;
-
-  .cta-background {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-
-    .talent-network {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-
-      .network-grid {
-        position: relative;
-        width: 100%;
-        height: 100%;
-
-        .talent-dot {
-          position: absolute;
-          width: 6px;
-          height: 6px;
-          background: rgba(255, 255, 255, 0.4);
-          border-radius: 50%;
-          animation: talentDotFloat 4s ease-in-out infinite;
-
-          &::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            animation: talentDotPulse 3s ease-in-out infinite;
-          }
-        }
-      }
-    }
-  }
-
-  .container {
-    @extend %container;
-    position: relative;
-    z-index: 2;
-  }
-
-  .cta-content {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-
-    .cta-icon {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      @include glass-base(rgba(255, 255, 255, 0.15), 15px);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 2rem;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-
-      i {
-        font-size: 3.5rem;
-        color: $white;
-        animation: iconFloat 3s ease-in-out infinite;
-      }
-
-      .icon-orbit {
-        position: absolute;
-        inset: -20px;
-
-        .orbit-dot {
-          position: absolute;
-          width: 8px;
-          height: 8px;
-          background: rgba(255, 255, 255, 0.6);
-          border-radius: 50%;
-          animation: orbitRotate 8s linear infinite;
-
-          &:nth-child(1) {
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            animation-delay: 0s;
-          }
-
-          &:nth-child(2) {
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-            animation-delay: 2s;
-          }
-
-          &:nth-child(3) {
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            animation-delay: 4s;
-          }
-
-          &:nth-child(4) {
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            animation-delay: 6s;
-          }
-        }
-      }
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      font-size: 1.125rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 3rem;
-      line-height: 1.6;
-    }
-
-    .cta-options {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 700px;
-      margin: 0 auto;
-
-      .option-card {
-        @include glass-base(rgba(255, 255, 255, 0.12), 15px);
-        padding: 2.5rem 2rem;
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        text-align: center;
-        transition: all 0.6s ease;
-
-        &:hover {
-          background: rgba(255, 255, 255, 0.18);
-          transform: translateY(-10px);
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .option-icon {
-          width: 80px;
-          height: 80px;
-          @include glass-base(rgba(255, 255, 255, 0.15), 10px);
-          border-radius: 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto 1.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.3);
-
-          i {
-            font-size: 2.5rem;
-            color: $white;
-          }
-        }
-
-        h4 {
-          font-size: 1.4rem;
-          font-weight: 600;
-          margin-bottom: 1rem;
-          color: $white;
-        }
-
-        p {
-          color: rgba(255, 255, 255, 0.8);
-          margin-bottom: 2rem;
-          line-height: 1.6;
-        }
-
-        .option-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.75rem;
-          padding: 1rem 2rem;
-          background: rgba(255, 255, 255, 0.2);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          border-radius: 50px;
-          color: $white;
-          text-decoration: none;
-          font-weight: 600;
-          transition: all 0.3s ease;
-
-          &:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
-          }
-
-          i {
-            transition: transform 0.3s ease;
-          }
-
-          &:hover i {
-            transform: translateX(5px);
-          }
-        }
       }
     }
   }
@@ -556,48 +358,6 @@
   50% { transform: translateX(100px); }
 }
 
-@keyframes talentDotFloat {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes talentDotPulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.3;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0;
-  }
-}
-
-@keyframes iconFloat {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes orbitRotate {
-  0% {
-    transform: rotate(0deg) translateX(70px) rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg) translateX(70px) rotate(-360deg);
-  }
-}
-
 // Responsive Design
 @media (max-width: 768px) {
   .hero-section .hero-content {
@@ -633,9 +393,10 @@
     gap: 1.5rem;
   }
 
-  .cta-options {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .specialization-card {
+    &:hover {
+      transform: translateY(-4px);
+    }
   }
 }
 
