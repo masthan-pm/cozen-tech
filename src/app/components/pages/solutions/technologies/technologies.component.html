@@ -32,12 +32,6 @@
         <div class="neural-core">
           <div class="core-brain">
             <i class="material-icons">psychology</i>
-            <div class="brain-pulse"></div>
-            <div class="brain-rings">
-              <div class="ring ring-1"></div>
-              <div class="ring ring-2"></div>
-              <div class="ring ring-3"></div>
-            </div>
           </div>
         </div>
 
@@ -68,38 +62,9 @@
                   <span class="tech-name">{{ tech }}</span>
                   <div class="node-pulse"></div>
                 </div>
-                <div class="connection-line"></div>
               </div>
               }
             </div>
-
-            <!-- Neural Connections to Central Brain -->
-            <div class="neural-connection">
-              <svg class="connection-svg" viewBox="0 0 200 200">
-                <path class="connection-path"
-                      d="M100,100 Q150,50 180,80"
-                      stroke="rgba(79, 172, 254, 0.3)"
-                      stroke-width="2"
-                      fill="none">
-                  <animate attributeName="stroke-dasharray"
-                           values="0,100;50,50;100,0;0,100"
-                           dur="4s"
-                           repeatCount="indefinite"/>
-                </path>
-              </svg>
-            </div>
-          </div>
-          }
-        </div>
-
-        <!-- Floating Data Particles -->
-        <div class="data-particles">
-          @for (particle of [1,2,3,4,5,6,7,8,9,10]; track $index) {
-          <div class="data-particle"
-               [style.--particle-delay]="$index * 0.8 + 's'"
-               [style.--particle-duration]="6 + ($index % 3) + 's'">
-            <div class="particle-core"></div>
-            <div class="particle-trail"></div>
           </div>
           }
         </div>
