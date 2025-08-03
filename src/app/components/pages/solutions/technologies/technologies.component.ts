@@ -6,6 +6,8 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
 import { FeaturesComponent } from '../../../shared/features/features.component';
 import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 import { TECHNOLOGIES_CONSTANTS } from '../../../../constants/solutions/technologies.constants';
+import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.directive';
+import { ScrollAnimationDirective } from '../../../../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-technologies',
@@ -17,6 +19,8 @@ import { TECHNOLOGIES_CONSTANTS } from '../../../../constants/solutions/technolo
     AssistanceComponent,
     FeaturesComponent,
     SolutionCTAComponent,
+    ScrollRevealDirective,
+    ScrollAnimationDirective
   ],
   templateUrl: './technologies.component.html',
   styleUrls: ['./technologies.component.scss'],
@@ -33,4 +37,22 @@ export class TechnologiesComponent {
   techStackSection = TECHNOLOGIES_CONSTANTS.TECH_STACK_SECTION;
   floatingIcons = TECHNOLOGIES_CONSTANTS.HERO_FLOATING_ICONS;
   heroStats = TECHNOLOGIES_CONSTANTS.HERO_STATS;
+
+  // Neural particles for background animation
+  neuralParticles = Array.from({ length: 20 }, (_, i) => ({
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 8,
+    size: Math.random() * 3 + 1
+  }));
+
+  getParticleStyle(particle: any) {
+    return {
+      left: particle.x + '%',
+      top: particle.y + '%',
+      width: particle.size + 'px',
+      height: particle.size + 'px',
+      animationDelay: particle.delay + 's'
+    };
+  }
 }

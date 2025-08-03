@@ -7,165 +7,476 @@
   width: 100%;
 }
 
-// Container styles
-.container {
-  @extend %container;
-  position: relative;
-  z-index: 2;
-}
-
-// Tech Stack section styles
-.tech-stack-section {
+// Neural Tech Stack Section
+.neural-tech-section {
   @extend %section-base;
-  background: linear-gradient(
-    135deg,
-    rgba(249, 250, 251, 0.8),
-    rgba(243, 244, 246, 0.9)
-  );
-  position: relative;
-
-  .container {
-    color: inherit;
-  }
-}
-
-.header {
-  @extend %section-header;
-  animation: fadeInDown 0.6s ease-out;
-
-  h2 {
-    background: linear-gradient(135deg, #667eea, #4facfe);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-.features-grid {
-  gap: 2rem;
-  @include responsive-grid-standard(1, 2, 4);
-}
-
-.feature-card {
-  @include glass-card(rgba(255, 255, 255, 0.15));
-  padding: 2rem 1.5rem;
-  animation: fadeInUp 0.6s ease-out;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  color: $white;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 
-  &::before {
-    content: "";
+  .neural-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2, #4facfe);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    inset: 0;
+    z-index: 1;
+
+    .neural-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      .neural-particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(0, 178, 178, 0.6);
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(0, 178, 178, 0.8);
+        animation: neuralFloat 8s ease-in-out infinite;
+      }
+    }
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #667eea, #4facfe);
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
+  .container {
+    @extend %container;
+    position: relative;
+    z-index: 2;
   }
 
-  &:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 20px 40px rgba(31, 38, 135, 0.3);
+  .section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
 
-    &::before {
-      transform: scaleX(1);
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      @include glass-base(rgba(255, 255, 255, 0.15), 10px);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin-bottom: 2rem;
+      backdrop-filter: blur(20px);
+
+      i {
+        font-size: 1.2rem;
+        color: #4facfe;
+        animation: iconPulse 2s ease-in-out infinite;
+      }
+
+      span {
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
     }
 
-    &::after {
-      width: 80%;
-    }
-
-    h3 {
-      background: linear-gradient(135deg, #667eea, #4facfe);
+    h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #ffffff, #e2e8f0, #4facfe);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      animation: gradientText 4s ease infinite;
+      position: relative;
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
   }
 
-  h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: $blue-gray;
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-  }
+  .neural-network-container {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    .tech-clusters {
+      position: absolute;
+      width: 100%;
+      height: 100%;
 
-    li {
-      display: flex;
-      align-items: center;
-      color: $gray-dark;
-      margin-bottom: 0.75rem;
-      @include glass-base(rgba(102, 126, 234, 0.1), 6px);
-      padding: 0.5rem 0.75rem;
-      border-radius: 8px;
-      border: 1px solid rgba(102, 126, 234, 0.2);
-      transition: all 0.3s ease;
+      .tech-cluster {
+        position: absolute;
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+        &.cluster-1 {
+          top: 15%;
+          left: 20%;
+        }
 
-      &:hover {
-        background: rgba(102, 126, 234, 0.15);
-        transform: translateX(5px);
-      }
+        &.cluster-2 {
+          top: 15%;
+          right: 20%;
+        }
 
-      .bullet {
-        width: 0.4rem;
-        height: 0.4rem;
-        background: linear-gradient(135deg, #667eea, #4facfe);
-        border-radius: 50%;
-        margin-right: 0.75rem;
-        flex-shrink: 0;
+        &.cluster-3 {
+          bottom: 15%;
+          left: 20%;
+        }
+
+        &.cluster-4 {
+          bottom: 15%;
+          right: 20%;
+        }
+
+        .cluster-hub {
+          position: relative;
+          width: 80px;
+          height: 80px;
+          background: radial-gradient(
+              circle at 30% 30%,
+              rgba(0, 178, 178, 0.8) 0%,
+              rgba(79, 172, 254, 0.4) 50%,
+              transparent 100%
+            ),
+            radial-gradient(
+              circle at 70% 70%,
+              rgba(79, 172, 254, 0.6) 0%,
+              transparent 70%
+            );
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          @include glass-base(rgba(255, 255, 255, 0.05), 20px);
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 0 60px rgba(0, 178, 178, 0.5),
+            inset 0 0 60px rgba(255, 255, 255, 0.1);
+          animation: orbPulse 4s ease-in-out infinite;
+          cursor: pointer;
+          transition: all 0.6s ease;
+          z-index: 5;
+
+          &:hover {
+            transform: scale(1.2);
+            background: rgba(0, 178, 178, 0.2);
+            border-color: rgba(0, 178, 178, 0.6);
+            box-shadow: 0 15px 30px rgba(0, 178, 178, 0.4);
+
+            .hub-glow {
+              opacity: 1;
+              animation: hubGlow 2s ease-in-out infinite;
+            }
+
+            ~ .orbital-line {
+              border-color: rgba(0, 178, 178, 0.4);
+              box-shadow: 0 0 20px rgba(0, 178, 178, 0.3);
+            }
+
+            ~ .tech-nodes .tech-node {
+              .node-content {
+                background: rgba(0, 178, 178, 0.3);
+                border-color: rgba(0, 178, 178, 0.6);
+                transform: scale(1.1);
+              }
+
+              .node-pulse {
+                animation: nodePulse 1.5s ease-in-out infinite;
+              }
+            }
+          }
+
+          .hub-icon {
+            i {
+              font-size: 1.8rem;
+              color: rgba(255, 255, 255, 0.9);
+              margin-bottom: 0.25rem;
+              text-shadow: 0 0 30px rgba(0, 178, 178, 0.8);
+            }
+          }
+
+          .hub-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+
+          .hub-glow {
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(
+              45deg,
+              rgba(0, 178, 178, 0.3),
+              transparent,
+              rgba(79, 172, 254, 0.3)
+            );
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            background-size: 200% 200%;
+          }
+        }
+
+        // Orbital line around each cluster
+        .orbital-line {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 280px;
+          height: 280px;
+          transform: translate(-50%, -50%);
+          border: 1px solid rgba(79, 172, 254, 0.15);
+          border-radius: 50%;
+          z-index: 1;
+          transition: all 0.6s ease;
+        }
+
+        .tech-nodes {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 280px;
+          height: 280px;
+          z-index: 3;
+
+          .tech-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(var(--orbit-angle))
+              translateY(calc(-1 * var(--orbit-radius)))
+              rotate(calc(-1 * var(--orbit-angle)));
+            animation: nodeOrbit 20s linear infinite;
+            animation-delay: var(--orbit-delay);
+
+            .node-content {
+              @include glass-base(rgba(255, 255, 255, 0.08), 8px);
+              padding: 0.5rem 0.75rem;
+              border-radius: 15px;
+              border: 1px solid rgba(79, 172, 254, 0.2);
+              transition: all 0.3s ease;
+              position: relative;
+              cursor: pointer;
+              backdrop-filter: blur(10px);
+
+              &:hover {
+                background: rgba(79, 172, 254, 0.2);
+                border-color: rgba(79, 172, 254, 0.5);
+                transform: scale(1.15);
+                box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
+              }
+
+              .tech-name {
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.9);
+                white-space: nowrap;
+                display: block;
+                text-align: center;
+              }
+
+              .node-pulse {
+                position: absolute;
+                inset: -2px;
+                border: 1px solid rgba(79, 172, 254, 0.4);
+                border-radius: 17px;
+                opacity: 0;
+              }
+            }
+          }
+        }
       }
     }
   }
 }
 
-// Responsive adjustments
-@media (max-width: 768px) {
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+// Animations
+@keyframes neuralFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.6;
   }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(-10px) translateX(-10px);
+    opacity: 0.4;
+  }
+}
 
-  .feature-card {
-    padding: 1.5rem 1rem;
+@keyframes orbPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 60px rgba(0, 178, 178, 0.5),
+      inset 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 80px rgba(0, 178, 178, 0.8),
+      inset 0 0 80px rgba(255, 255, 255, 0.2);
+  }
+}
 
-    h3 {
-      font-size: 1.1rem;
+@keyframes gradientText {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes underlineGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.5);
+    transform: translateX(-50%) scaleX(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(79, 172, 254, 0.8);
+    transform: translateX(-50%) scaleX(1.2);
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes hubGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes nodeOrbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(var(--orbit-angle))
+      translateY(calc(-1 * var(--orbit-radius)))
+      rotate(calc(-1 * var(--orbit-angle)));
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(calc(var(--orbit-angle) + 360deg))
+      translateY(calc(-1 * var(--orbit-radius)))
+      rotate(calc(-1 * var(--orbit-angle) - 360deg));
+  }
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .neural-tech-section {
+    .neural-network-container {
+      height: 600px;
+
+      .tech-clusters .tech-cluster {
+        .cluster-hub {
+          width: 60px;
+          height: 60px;
+
+          .hub-icon i {
+            font-size: 1.4rem;
+          }
+
+          .hub-label {
+            font-size: 0.6rem;
+          }
+        }
+
+        .orbital-line {
+          width: 220px;
+          height: 220px;
+        }
+
+        .tech-nodes {
+          width: 220px;
+          height: 220px;
+
+          .tech-node .node-content .tech-name {
+            font-size: 0.65rem;
+          }
+        }
+      }
     }
 
-    ul li {
-      font-size: 0.9rem;
-      padding: 0.4rem 0.6rem;
+    .section-header {
+      margin-bottom: 3rem;
+
+      h2 {
+        font-size: 2.5rem;
+      }
     }
   }
 }
 
 @media (max-width: 480px) {
-  .features-grid {
-    grid-template-columns: 1fr;
+  .neural-tech-section {
+    .neural-network-container {
+      height: 500px;
+
+      .tech-clusters .tech-cluster {
+        &.cluster-1 {
+          top: 10%;
+          left: 10%;
+        }
+        &.cluster-2 {
+          top: 10%;
+          right: 10%;
+        }
+        &.cluster-3 {
+          bottom: 10%;
+          left: 10%;
+        }
+        &.cluster-4 {
+          bottom: 10%;
+          right: 10%;
+        }
+
+        .orbital-line {
+          width: 180px;
+          height: 180px;
+        }
+
+        .tech-nodes {
+          width: 180px;
+          height: 180px;
+        }
+      }
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .neural-tech-section * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.3s !important;
   }
 }
