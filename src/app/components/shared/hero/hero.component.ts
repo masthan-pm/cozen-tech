@@ -18,8 +18,8 @@ export class HeroComponent implements AfterViewInit {
   @Input() variant: 'default' | 'enhanced' = 'default';
   @Input() floatingIcons: FloatingIcon[] = [];
   @Input() heroStats: HeroStat[] = [];
-  @Input() primaryColor: string = '#667eea';
-  @Input() accentColor: string = '#4facfe';
+  @Input() primaryColor: string = '#00b2b2';
+  @Input() accentColor: string = '#00b2b2';
   @Input() heroAction?: HeroAction;
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}

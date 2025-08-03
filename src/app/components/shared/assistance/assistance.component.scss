@@ -5,12 +5,7 @@
 
 .services-section {
   @extend %section-base;
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.95) 0%,
-    rgba(30, 41, 59, 0.9) 50%,
-    rgba(51, 65, 85, 0.95) 100%
-  );
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   position: relative;
   overflow: hidden;
   color: $white;
@@ -38,7 +33,7 @@
 
       i {
         font-size: 1.2rem;
-        color: var(--accent-color, #4facfe);
+        color: var(--accent-color, #00b2b2);
       }
 
       span {
@@ -108,16 +103,16 @@
 
         .category-badge {
           position: relative;
-          @include glass-base(rgba(79, 172, 254, 0.2), 8px);
+          @include glass-base(rgba(0, 178, 178, 0.2), 8px);
           padding: 0.5rem 1rem;
           border-radius: 20px;
-          border: 1px solid rgba(79, 172, 254, 0.4);
+          border: 1px solid rgba(0, 178, 178, 0.4);
           overflow: hidden;
 
           span {
             font-size: 0.8rem;
             font-weight: 600;
-            color: #4facfe;
+            color: #00b2b2;
             text-transform: uppercase;
             letter-spacing: 1px;
             position: relative;
@@ -127,7 +122,7 @@
           .badge-glow {
             position: absolute;
             inset: 0;
-            background: linear-gradient(45deg, rgba(79, 172, 254, 0.1), transparent, rgba(79, 172, 254, 0.1));
+            background: linear-gradient(45deg, rgba(0, 178, 178, 0.1), transparent, rgba(0, 178, 178, 0.1));
             opacity: 0;
             transition: opacity 0.8s ease;
             animation: badgeGlow 3s ease-in-out infinite;
@@ -146,18 +141,18 @@
             transform: translate(-50%, -50%);
             width: 50px;
             height: 50px;
-            @include glass-base(rgba(79, 172, 254, 0.2), 12px);
+            @include glass-base(rgba(0, 178, 178, 0.2), 12px);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(79, 172, 254, 0.4);
+            border: 1px solid rgba(0, 178, 178, 0.4);
             z-index: 3;
 
             i {
               font-size: 1.8rem;
-              color: #4facfe;
-              filter: drop-shadow(0 0 10px rgba(79, 172, 254, 0.5));
+              color: #00b2b2;
+              filter: drop-shadow(0 0 10px rgba(0, 178, 178, 0.5));
               transition: all 0.8s ease;
             }
           }
@@ -170,7 +165,7 @@
 
             .ring {
               position: absolute;
-              border: 1px solid rgba(79, 172, 254, 0.3);
+              border: 1px solid rgba(0, 178, 178, 0.3);
               border-radius: 50%;
               animation: ringRotate 8s linear infinite;
 
@@ -209,7 +204,7 @@
               position: absolute;
               width: 3px;
               height: 3px;
-              background: #4facfe;
+              background: #00b2b2;
               border-radius: 50%;
               animation: particleOrbit 6s ease-in-out infinite;
 
@@ -253,22 +248,22 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            @include glass-base(rgba(79, 172, 254, 0.1), 6px);
+            @include glass-base(rgba(0, 178, 178, 0.1), 6px);
             padding: 0.5rem 0.75rem;
             border-radius: 12px;
-            border: 1px solid rgba(79, 172, 254, 0.2);
+            border: 1px solid rgba(0, 178, 178, 0.2);
             transition: all 0.3s ease;
 
             &:hover {
-              background: rgba(79, 172, 254, 0.15);
+              background: rgba(0, 178, 178, 0.15);
               transform: translateX(10px);
-              border-color: rgba(79, 172, 254, 0.4);
+              border-color: rgba(0, 178, 178, 0.4);
             }
 
             .feature-dot {
               width: 6px;
               height: 6px;
-              background: #4facfe;
+              background: #00b2b2;
               border-radius: 50%;
               flex-shrink: 0;
               animation: featurePulse 2s ease-in-out infinite;
@@ -289,21 +284,21 @@
 
           .stat-item {
             text-align: center;
-            @include glass-base(rgba(79, 172, 254, 0.08), 6px);
+            @include glass-base(rgba(0, 178, 178, 0.08), 6px);
             padding: 0.75rem 0.5rem;
             border-radius: 10px;
-            border: 1px solid rgba(79, 172, 254, 0.15);
+            border: 1px solid rgba(0, 178, 178, 0.15);
             transition: all 0.3s ease;
 
             &:hover {
-              background: rgba(79, 172, 254, 0.12);
+              background: rgba(0, 178, 178, 0.12);
               transform: translateY(-3px);
             }
 
             .stat-value {
               font-size: 1rem;
               font-weight: 700;
-              color: #4facfe;
+              color: #00b2b2;
               margin-bottom: 0.25rem;
               display: block;
             }
@@ -334,8 +329,8 @@
 
           .service-icon-container {
             .icon-core {
-              background: linear-gradient(135deg, #4facfe, #00f2fe);
-              border-color: rgba(0, 242, 254, 0.6);
+              background: linear-gradient(135deg, #00b2b2, #00d4d4);
+              border-color: rgba(0, 212, 212, 0.6);
 
               i {
                 color: $white;
@@ -344,18 +339,18 @@
             }
 
             .icon-rings .ring {
-              border-color: rgba(0, 242, 254, 0.6);
+              border-color: rgba(0, 212, 212, 0.6);
             }
 
             .icon-particles .particle {
-              background: #00f2fe;
-              box-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+              background: #00d4d4;
+              box-shadow: 0 0 10px rgba(0, 212, 212, 0.8);
             }
           }
         }
 
         .service-info h3 {
-          background: linear-gradient(135deg, #4facfe, #00f2fe);
+          background: linear-gradient(135deg, #00b2b2, #00d4d4);
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;

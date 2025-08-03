@@ -106,7 +106,7 @@
 
         i {
           font-size: 1.5rem;
-          color: var(--accent-color, #4facfe);
+          color: var(--accent-color, #00b2b2);
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
 
@@ -132,7 +132,7 @@
       .element {
         position: absolute;
         border-radius: 50%;
-        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(79, 172, 254, 0.1));
+        background: linear-gradient(135deg, rgba(0, 178, 178, 0.1), rgba(0, 212, 212, 0.1));
         animation: floatElement 20s ease-in-out infinite;
 
         &.element-1 {
@@ -204,7 +204,7 @@
 
       i {
         font-size: 1.2rem;
-        color: var(--accent-color, #4facfe);
+        color: var(--accent-color, #00b2b2);
       }
 
       span {
@@ -275,7 +275,7 @@
 
           i {
             font-size: 1.5rem;
-            color: var(--accent-color, #4facfe);
+            color: var(--accent-color, #00b2b2);
           }
         }
 

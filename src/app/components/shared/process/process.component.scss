@@ -98,7 +98,7 @@
           left: 0;
           width: 0;
           height: 100%;
-          background: linear-gradient(90deg, #4facfe, #00f2fe);
+          background: linear-gradient(90deg, #00b2b2, #00d4d4);
           animation: connectorFlow 3s ease-in-out infinite;
         }
       }
@@ -110,7 +110,7 @@
         transform: translateY(-60%);
         width: 16px;
         height: 16px;
-        @include glass-base(rgba(79, 172, 254, 0.3), 4px);
+        @include glass-base(rgba(0, 178, 178, 0.3), 4px);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -118,7 +118,7 @@
 
         i {
           font-size: 0.8rem;
-          color: #4facfe;
+          color: #00b2b2;
         }
       }
     }
@@ -145,7 +145,7 @@
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(79, 172, 254, 0.6),
+          rgba(0, 178, 178, 0.6),
           transparent
         );
         transform: scaleX(0);
@@ -156,19 +156,19 @@
         position: relative;
         width: 60px;
         height: 60px;
-        @include glass-base(rgba(79, 172, 254, 0.2), 8px);
+        @include glass-base(rgba(0, 178, 178, 0.2), 8px);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 1.5rem;
-        border: 2px solid rgba(79, 172, 254, 0.4);
+        border: 2px solid rgba(0, 178, 178, 0.4);
         align-self: center;
 
         span {
           font-size: 1.5rem;
           font-weight: 700;
-          color: #4facfe;
+          color: #00b2b2;
           z-index: 2;
           position: relative;
         }
@@ -178,9 +178,9 @@
           inset: -3px;
           background: linear-gradient(
             45deg,
-            rgba(79, 172, 254, 0.3),
+            rgba(0, 178, 178, 0.3),
             transparent,
-            rgba(0, 242, 254, 0.3)
+            rgba(0, 212, 212, 0.3)
           );
           border-radius: 50%;
           opacity: 0;
@@ -232,7 +232,7 @@
 
             i {
               font-size: 1rem;
-              color: #4facfe;
+              color: #00b2b2;
             }
 
             span {
@@ -266,7 +266,7 @@
 
             .circle {
               fill: none;
-              stroke: #4facfe;
+              stroke: #00b2b2;
               stroke-width: 2;
               stroke-linecap: round;
               transition: stroke-dasharray 1s ease-in-out;
@@ -280,7 +280,7 @@
             transform: translate(-50%, -50%);
             font-size: 0.8rem;
             font-weight: 600;
-            color: #4facfe;
+            color: #00b2b2;
           }
         }
       }
@@ -291,8 +291,8 @@
 
       .step-card {
         background: rgba(255, 255, 255, 0.15);
-        border-color: rgba(79, 172, 254, 0.5);
-        box-shadow: 0 25px 50px rgba(79, 172, 254, 0.3);
+        border-color: rgba(0, 178, 178, 0.5);
+        box-shadow: 0 25px 50px rgba(0, 178, 178, 0.3);
 
         &::before {
           transform: scaleX(1);
