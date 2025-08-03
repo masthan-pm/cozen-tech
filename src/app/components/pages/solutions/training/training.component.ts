@@ -7,6 +7,7 @@ import { AssistanceComponent } from '../../../shared/assistance/assistance.compo
 import { FeaturesComponent } from '../../../shared/features/features.component';
 import { SolutionCTAComponent } from '../../../shared/solution-cta/solution-cta.component';
 import { TRAINING_CONSTANTS } from '../../../../constants/solutions/training.constants';
+import { TechComponent } from '../../../shared/tech/tech.component';
 
 @Component({
   selector: 'app-training',
@@ -19,6 +20,7 @@ import { TRAINING_CONSTANTS } from '../../../../constants/solutions/training.con
     AssistanceComponent,
     FeaturesComponent,
     SolutionCTAComponent,
+    TechComponent
   ],
   templateUrl: './training.component.html',
   styleUrls: ['./training.component.scss'],
