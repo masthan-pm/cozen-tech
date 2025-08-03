@@ -47,15 +47,9 @@
               <i class="material-icons">{{ getBenefitIcon(i) }}</i>
             </div>
 
-            <div class="benefit-chart">
-              <div class="chart-circle">
-                <svg viewBox="0 0 36 36">
-                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                  <path class="circle-progress" [style.stroke-dasharray]="getBenefitProgress(i) + ', 100'"
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                </svg>
-                <div class="progress-text">{{ getBenefitProgress(i) }}%</div>
-              </div>
+            <div class="benefit-preview">
+              <div class="benefit-title">{{ benefit.title }}</div>
+              <div class="benefit-description">{{ benefit.description }}</div>
             </div>
           </div>
 
@@ -69,20 +63,6 @@
               </div>
             </div>
           </div>
-
-          <div class="benefit-hover-overlay">
-            <div class="overlay-content">
-              <i class="material-icons">{{ getBenefitIcon(i) }}</i>
-              <h4>{{ benefit.title }}</h4>
-              <p>{{ benefit.description }}</p>
-              <div class="overlay-stats">
-                <div class="stat">
-                  <span class="stat-value">{{ getBenefitProgress(i) }}%</span>
-                  <span class="stat-label">Improvement</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -93,7 +73,6 @@
     [subheader]="features.subheader"
     [features]="expertise"
   ></app-features>
-
 
   <app-solution-cta
     [header]="cta.header"
