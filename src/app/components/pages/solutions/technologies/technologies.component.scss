@@ -87,19 +87,6 @@
       background-size: 200% 200%;
       animation: gradientText 4s ease infinite;
       position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120px;
-        height: 4px;
-        background: linear-gradient(90deg, #4facfe, #00f2fe);
-        border-radius: 2px;
-        animation: underlineGlow 3s ease-in-out infinite;
-      }
     }
 
     p {
