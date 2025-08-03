@@ -17,20 +17,9 @@
 // Technologies section styles
 .technologies-section {
   @extend %section-base;
-  background: linear-gradient(
-    135deg,
-    rgba(249, 250, 251, 0.8),
-    rgba(243, 244, 246, 0.9)
-  );
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23667eea' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-  }
+  color: $white;
 
   .container {
     color: inherit;
@@ -42,10 +31,14 @@
   animation: fadeInDown 0.6s ease-out;
 
   h2 {
-    background: linear-gradient(135deg, #667eea, #4facfe);
+    background: linear-gradient(135deg, #ffffff, #e2e8f0);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.8);
   }
 }
 
@@ -55,53 +48,27 @@
 }
 
 .tech-card {
-  @include glass-card(rgba(255, 255, 255, 0.15));
+  @include glass-card(rgba(255, 255, 255, 0.05));
   padding: 2rem 1.5rem;
   text-align: center;
   animation: fadeInUp 0.6s ease-out;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2, #4facfe);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #667eea, #4facfe);
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
+    display: none;
   }
 
   &:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 20px 40px rgba(31, 38, 135, 0.3);
-
-    &::before {
-      transform: scaleX(1);
-    }
-
-    &::after {
-      width: 80%;
-    }
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 178, 178, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 178, 178, 0.15);
 
     span {
-      background: linear-gradient(135deg, #667eea, #4facfe);
+      background: linear-gradient(135deg, rgba(0, 178, 178, 0.9), rgba(79, 172, 254, 0.9));
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -110,7 +77,7 @@
   }
 
   span {
-    color: $blue-gray;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s ease;
