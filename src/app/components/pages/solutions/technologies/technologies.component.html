@@ -17,6 +17,14 @@
 
   <!-- Neural Tech Stack Visualization -->
   <section class="neural-tech-section" scrollAnimation animationType="fadeInUp">
+    <div class="neural-background">
+      <div class="neural-particles" #neuralParticlesContainer>
+        @for (particle of neuralParticles; track $index) {
+        <div class="neural-particle" [ngStyle]="getParticleStyle(particle)"></div>
+        }
+      </div>
+    </div>
+
     <div class="container">
       <div class="section-header" scrollReveal [revealDelay]="100">
         <div class="section-badge">
@@ -28,12 +36,6 @@
       </div>
 
       <div class="neural-network-container" scrollAnimation animationType="scaleIn" [animationDelay]="300">
-        <!-- Central Brain/Core -->
-        <div class="neural-core">
-          <div class="core-brain">
-            <i class="material-icons">psychology</i>
-          </div>
-        </div>
 
         <!-- Tech Category Clusters -->
         <div class="tech-clusters">
@@ -41,6 +43,7 @@
           <div class="tech-cluster"
                [class]="'cluster-' + ($index + 1)"
                scrollAnimation animationType="fadeInUp" [animationDelay]="$index * 200 + 500">
+            <div class="orbital-line"></div>
 
             <!-- Cluster Hub -->
             <div class="cluster-hub">
@@ -55,8 +58,7 @@
             <div class="tech-nodes">
               @for (tech of stack.items; track $index) {
               <div class="tech-node"
-                   [style.--orbit-delay]="$index * 0.5 + 's'"
-                   [style.--orbit-radius]="80 + ($index % 2) * 20 + 'px'"
+                   [style.--orbit-radius]="125 + ($index % 2) * 20 + 'px'"
                    [style.--orbit-angle]="(360 / stack.items.length) * $index + 'deg'">
                 <div class="node-content">
                   <span class="tech-name">{{ tech }}</span>
