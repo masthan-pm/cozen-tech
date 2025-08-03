@@ -17,64 +17,13 @@
     badgeText="Our Services"
   ></app-assistance>
 
-  <!-- Enhanced Process Section -->
   <app-process
     [process]="process"
     [phases]="phases"
     [stepFeatures]="stepFeatures"
   ></app-process>
 
-  <!-- Technologies Showcase -->
-  <section
-    class="technologies-section"
-    scrollAnimation
-    animationType="fadeInUp"
-  >
-    <div class="container">
-      <div class="section-header" scrollReveal [revealDelay]="100">
-        <div class="section-badge">
-          <i class="material-icons">code</i>
-          <span>Technologies</span>
-        </div>
-        <h2>{{ technologiesSection.header }}</h2>
-        <p>{{ technologiesSection.subheader }}</p>
-      </div>
-
-      <div class="tech-showcase">
-        <div class="tech-orbit">
-          <div class="orbit-center">
-            <i class="material-icons">psychology</i>
-          </div>
-
-          <div class="orbit-ring ring-1">
-            <div
-              *ngFor="let tech of technologies.slice(0, 6); let i = index"
-              class="tech-node"
-              [style.--rotation]="(360 / 6) * i + 'deg'"
-              scrollAnimation
-              animationType="scaleIn"
-              [animationDelay]="i * 100 + 500"
-            >
-              <span>{{ tech }}</span>
-            </div>
-          </div>
-
-          <div class="orbit-ring ring-2">
-            <div
-              *ngFor="let tech of technologies.slice(6); let i = index"
-              class="tech-node"
-              [style.--rotation]="(360 / 6) * i + 'deg'"
-              scrollAnimation
-              animationType="scaleIn"
-              [animationDelay]="i * 100 + 800"
-            >
-              <span>{{ tech }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-tech [technologies]="technologies" [technologiesSection]="technologiesSection"></app-tech>
 
   <app-solution-cta
     [header]="cta.header"

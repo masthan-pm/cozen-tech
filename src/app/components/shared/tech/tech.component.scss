@@ -1,0 +1,445 @@
+@use "../../../../styles/glassmorphism" as *;
+@use "../../../../styles/colors" as *;
+@use "../../../../styles/shared" as *;
+@use "../../../../styles/mixins" as *;
+
+// Technologies Showcase
+.technologies-section {
+  @extend %section-base;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  position: relative;
+  color: $white;
+  padding: 5rem 0;
+
+  .container {
+    @extend %container;
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      @include glass-base(rgba(255, 255, 255, 0.08), 12px);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 1.5rem;
+      color: $white;
+
+      i {
+        font-size: 1.1rem;
+        color: var(--accent-color, #4facfe);
+      }
+
+      span {
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff, #e2e8f0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .tech-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+
+    .tech-orbit {
+      position: relative;
+      width: 500px;
+      height: 500px;
+
+      .orbit-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        // Glass effect inline instead of mixin to avoid positioning issues
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(0, 178, 178, 0.4);
+        z-index: 3;
+        box-shadow: 0 0 30px rgba(0, 178, 178, 0.3);
+
+        i {
+          font-size: 3rem;
+          color: rgba(0, 178, 178, 0.9);
+        }
+      }
+
+      .orbit-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 3px solid rgba(0, 178, 178, 0.3);
+
+        &.ring-1 {
+          width: 300px;
+          height: 300px;
+          animation: ringRotate 30s linear infinite;
+        }
+
+        &.ring-2 {
+          width: 550px;
+          height: 525px;
+          animation: ringRotate 40s linear infinite reverse;
+        }
+
+        .tech-node {
+          position: absolute;
+          // Glass effect inline instead of mixin to avoid positioning issues
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border-radius: 16px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          padding: 0.75rem 1.25rem;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          white-space: nowrap;
+          transform-origin: center;
+          overflow: hidden;
+
+          &:hover {
+            background: rgba(0, 178, 178, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px 0 rgba(31, 38, 135, 0.5);
+            border-color: rgba(0, 178, 178, 0.4);
+          }
+
+          span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            display: block;
+          }
+
+          &:hover span {
+            background: linear-gradient(
+              135deg,
+              rgba(0, 178, 178, 0.9),
+              rgba(79, 172, 254, 0.9)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+
+      // Ring 1 positioning (6 nodes)
+      .ring-1 {
+        .tech-node {
+          animation: counterRotate1 30s linear infinite;
+        }
+
+        .tech-node-1 {
+          top: -20px;
+          left: calc(50% - 40px);
+        }
+        .tech-node-2 {
+          top: 45px;
+          right: -30px;
+        }
+        .tech-node-3 {
+          bottom: 75px;
+          right: -40px;
+        }
+        .tech-node-4 {
+          bottom: -20px;
+          left: calc(50% - 30px);
+        }
+        .tech-node-5 {
+          bottom: 40px;
+          left: -10px;
+        }
+        .tech-node-6 {
+          top: 40px;
+          left: -10px;
+        }
+      }
+
+      // Ring 2 positioning (6 nodes)
+      .ring-2 {
+        .tech-node {
+          animation: counterRotate2 40s linear infinite;
+        }
+
+        .tech-node-1 {
+          top: -20px;
+          left: calc(50% - 40px);
+        }
+        .tech-node-2 {
+          top: 100px;
+          right: 0px;
+        }
+        .tech-node-3 {
+          bottom: 100px;
+          right: 0px;
+        }
+        .tech-node-4 {
+          bottom: -20px;
+          left: calc(50% - 40px);
+        }
+        .tech-node-5 {
+          bottom: 150px;
+          left: -40px;
+        }
+        .tech-node-6 {
+          top: 100px;
+          left: -10px;
+        }
+      }
+    }
+  }
+}
+
+// Required Animations
+@keyframes ringRotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+// Counter-rotation animations to keep tech nodes upright
+@keyframes counterRotate1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes counterRotate2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .technologies-section {
+    .section-header {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .tech-showcase .tech-orbit {
+      width: 350px;
+      height: 350px;
+
+      .orbit-center {
+        width: 80px;
+        height: 80px;
+
+        i {
+          font-size: 2rem;
+        }
+      }
+
+      .orbit-ring {
+        &.ring-1 {
+          width: 200px;
+          height: 200px;
+        }
+
+        &.ring-2 {
+          width: 300px;
+          height: 300px;
+        }
+
+        .tech-node {
+          padding: 0.5rem 1rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      // Adjusted positioning for mobile
+      .ring-1 {
+        .tech-node-1 {
+          top: -15px;
+          left: calc(50% - 30px);
+        }
+        .tech-node-2 {
+          top: 25px;
+          right: -30px;
+        }
+        .tech-node-3 {
+          bottom: 25px;
+          right: -30px;
+        }
+        .tech-node-4 {
+          bottom: -15px;
+          left: calc(50% - 30px);
+        }
+        .tech-node-5 {
+          bottom: 25px;
+          left: -30px;
+        }
+        .tech-node-6 {
+          top: 25px;
+          left: -30px;
+        }
+      }
+
+      .ring-2 {
+        .tech-node-1 {
+          top: -15px;
+          left: calc(50% - 30px);
+        }
+        .tech-node-2 {
+          top: 40px;
+          right: -30px;
+        }
+        .tech-node-3 {
+          bottom: 40px;
+          right: -30px;
+        }
+        .tech-node-4 {
+          bottom: -15px;
+          left: calc(50% - 30px);
+        }
+        .tech-node-5 {
+          bottom: 40px;
+          left: -30px;
+        }
+        .tech-node-6 {
+          top: 40px;
+          left: -30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .technologies-section .tech-showcase .tech-orbit {
+    width: 280px;
+    height: 280px;
+
+    .orbit-ring {
+      &.ring-1 {
+        width: 160px;
+        height: 160px;
+      }
+
+      &.ring-2 {
+        width: 240px;
+        height: 240px;
+      }
+    }
+
+    // Further adjusted positioning for small mobile
+    .ring-1 {
+      .tech-node-1 {
+        top: -12px;
+        left: calc(50% - 25px);
+      }
+      .tech-node-2 {
+        top: 20px;
+        right: -25px;
+      }
+      .tech-node-3 {
+        bottom: 20px;
+        right: -25px;
+      }
+      .tech-node-4 {
+        bottom: -12px;
+        left: calc(50% - 25px);
+      }
+      .tech-node-5 {
+        bottom: 20px;
+        left: -25px;
+      }
+      .tech-node-6 {
+        top: 20px;
+        left: -25px;
+      }
+    }
+
+    .ring-2 {
+      .tech-node-1 {
+        top: -12px;
+        left: calc(50% - 25px);
+      }
+      .tech-node-2 {
+        top: 30px;
+        right: -25px;
+      }
+      .tech-node-3 {
+        bottom: 30px;
+        right: -25px;
+      }
+      .tech-node-4 {
+        bottom: -12px;
+        left: calc(50% - 25px);
+      }
+      .tech-node-5 {
+        bottom: 30px;
+        left: -25px;
+      }
+      .tech-node-6 {
+        top: 30px;
+        left: -25px;
+      }
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
