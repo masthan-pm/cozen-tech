@@ -190,7 +190,7 @@ export const TRAINING_CONSTANTS = {
   ] as Feature[],
 
   TECHNOLOGIES: [
-    'JavaScript/TypeScript',
+    'TypeScript',
     'Python',
     'Java',
     'React',
