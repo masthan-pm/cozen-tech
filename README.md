@@ -101,26 +101,6 @@ The project uses SCSS with a well-organized structure:
 - `_shared.scss` - Shared styles
 - `_utilities.scss` - Utility classes
 
-## 🧪 Testing
-
-### Unit Tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner:
-
-```bash
-npm test
-# or
-ng test
-```
-
-### End-to-End Tests
-
-For end-to-end (e2e) testing:
-
-```bash
-ng e2e
-```
-
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
 ## 🏗️ Building
