@@ -10,6 +10,7 @@ import { ScrollAnimationDirective } from '../../../directives/scroll-animation.d
 import { ScrollRevealDirective } from '../../../directives/scroll-reveal.directive';
 import { WELCOME_CONSTANT, CAROUSEL_SLIDES } from '../../../constants/home/welcome.constants';
 import { StaggerAnimationDirective } from '../../../directives/stagger-animation.directive';
+import { HuddleDragComponent } from '../../huddle-drag/huddle-drag.component';
 
 @Component({
   selector: 'app-welcome',
@@ -24,7 +25,8 @@ import { StaggerAnimationDirective } from '../../../directives/stagger-animation
     HeroCarouselComponent,
     ScrollAnimationDirective,
     ScrollRevealDirective,
-    StaggerAnimationDirective
+    StaggerAnimationDirective,
+    HuddleDragComponent
   ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss',
