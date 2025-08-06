@@ -1,0 +1,76 @@
+<section class="services-new-section" scrollAnimation animationType="fadeInUp">
+  <div class="container">
+    <div class="header" scrollReveal [revealDelay]="100">
+      <h2>{{ header.title }}</h2>
+      <p>{{ header.content }}</p>
+    </div>
+
+    <div class="services-grid stagger-animation" staggerAnimation>
+      @for (service of services; track $index) {
+      <div
+        class="service-card stagger-item"
+        scrollAnimation
+        animationType="fadeInUp"
+        [animationDelay]="$index * 100"
+        (mouseenter)="onCardHover($index, true)"
+        (mouseleave)="onCardHover($index, false)"
+        [class.hovered]="hoveredCard === $index"
+        [class.dimmed]="hoveredCard !== null && hoveredCard !== $index"
+        [routerLink]="service.route"
+      >
+        <!-- Background Image -->
+        <div class="card-background">
+          <img
+            [src]="service.image"
+            [alt]="service.title"
+            class="background-image"
+            loading="lazy"
+          />
+          <div class="image-overlay"></div>
+          <div class="gradient-overlay"></div>
+        </div>
+
+        <!-- Default Content -->
+        <div class="card-content default-content">
+          <h3 class="service-title">{{ service.title }}</h3>
+        </div>
+
+        <!-- Hover Content -->
+        <div class="card-content hover-content">
+          <div class="hover-inner">
+            <h3 class="service-title-hover">{{ service.title }}</h3>
+            <p class="service-description">{{ service.description }}</p>
+            
+            <div class="service-features">
+              @for (feature of service.features; track $index) {
+              <div class="feature-item">
+                <i class="material-icons">play_arrow</i>
+                <span>{{ feature }}</span>
+              </div>
+              }
+            </div>
+
+            <div class="service-stats" *ngIf="service.stats">
+              @for (stat of service.stats | keyvalue; track $index) {
+              <div class="stat-item">
+                <span class="stat-value">{{ stat.value }}</span>
+                <span class="stat-label">{{ stat.key | titlecase }}</span>
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Effects -->
+        <div class="card-glow"></div>
+        <div class="card-border-animation"></div>
+        
+        <!-- Floating Particles -->
+        <div class="floating-particles">
+          <div class="particle" *ngFor="let p of [1,2,3,4,5]"></div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

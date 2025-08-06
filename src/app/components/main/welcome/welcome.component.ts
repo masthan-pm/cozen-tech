@@ -10,6 +10,7 @@ import { ScrollAnimationDirective } from '../../../directives/scroll-animation.d
 import { ScrollRevealDirective } from '../../../directives/scroll-reveal.directive';
 import { WELCOME_CONSTANT, CAROUSEL_SLIDES } from '../../../constants/home/welcome.constants';
 import { StaggerAnimationDirective } from '../../../directives/stagger-animation.directive';
+import { ServicesNewComponent } from '../services-new/services-new.component';
 
 @Component({
   selector: 'app-welcome',
@@ -18,6 +19,7 @@ import { StaggerAnimationDirective } from '../../../directives/stagger-animation
     CommonModule,
     RouterModule,
     ServicesComponent,
+    ServicesNewComponent,
     ClientsComponent,
     TestimonialsComponent,
     CTAComponent,
